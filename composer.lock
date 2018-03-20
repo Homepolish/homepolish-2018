@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a72a6b98a9df2b66a0cb55cd49be47e",
-    "content-hash": "7e711ed98b364ab1670751ad1079ff25",
+    "hash": "ce37bd508a453496689885471122fb1b",
+    "content-hash": "917820bf3de472711770728faf2e9df6",
     "packages": [
         {
             "name": "composer/installers",
@@ -415,7 +415,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.7.zip",
-                "reference": null,
+                "reference": "tags/1.5.7",
                 "shasum": null
             },
             "require": {
@@ -423,6 +423,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
+        },
+        {
+            "name": "wpackagist-plugin/post-types-order",
+            "version": "1.9.3.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/post-types-order/",
+                "reference": "tags/1.9.3.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/post-types-order.1.9.3.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/post-types-order/"
         }
     ],
     "packages-dev": [
