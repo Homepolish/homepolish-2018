@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ced4289dec9663cf17b84bf23b0d8d43",
-    "content-hash": "4c90c805f3e245f857ec763de9db7edb",
+    "hash": "d4cc2963fbc63ddd258c21265f7c8459",
+    "content-hash": "9d04b33950bdf8d733027a0ad585fd39",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -486,7 +486,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/adminimize.1.11.4.zip",
-                "reference": null,
+                "reference": "tags/1.11.4",
                 "shasum": null
             },
             "require": {
@@ -514,6 +514,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
+        },
+        {
+            "name": "wpackagist-plugin/menu-image",
+            "version": "2.7.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/menu-image/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/menu-image.zip?timestamp=1479667670",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/menu-image/"
         },
         {
             "name": "wpackagist-plugin/post-types-order",
