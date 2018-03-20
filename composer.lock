@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "327dfc5c0193e2ce0d98bd111f24fab8",
+    "hash": "9a72a6b98a9df2b66a0cb55cd49be47e",
+    "content-hash": "7e711ed98b364ab1670751ad1079ff25",
     "packages": [
         {
             "name": "composer/installers",
@@ -124,7 +125,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2017-12-29 09:13:20"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -163,7 +164,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-02-06T16:42:18+00:00"
+            "time": "2018-02-06 16:42:18"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -203,7 +204,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2018-02-06T16:42:13+00:00"
+            "time": "2018-02-06 16:42:13"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -252,7 +253,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-01-29T14:49:29+00:00"
+            "time": "2018-01-29 14:49:29"
         },
         {
             "name": "oscarotero/env",
@@ -294,7 +295,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2017-07-17T20:41:59+00:00"
+            "time": "2017-07-17 20:41:59"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -351,7 +352,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01T16:27:06+00:00"
+            "time": "2016-03-01 16:27:06"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -401,7 +402,27 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01T10:05:43+00:00"
+            "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "wpackagist-plugin/custom-post-type-ui",
+            "version": "1.5.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
+                "reference": "tags/1.5.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
         }
     ],
     "packages-dev": [
@@ -454,7 +475,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-12-19T21:44:46+00:00"
+            "time": "2017-12-19 21:44:46"
         }
     ],
     "aliases": [],
