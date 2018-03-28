@@ -1,3 +1,5 @@
+<?php
+
 //flush_rewrite_rules();
 
 add_theme_support( 'post-thumbnails' );
