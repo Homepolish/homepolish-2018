@@ -1,4 +1,1 @@
 .DS_Store
-homepolish/.gitignore
-!homepolish/wp-content
-!homepolish/wp-config-sample.php
