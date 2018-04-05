@@ -26,17 +26,17 @@
     </h1>
 
     <div class="hero__signup" data-hero-content>
-        <div class='book-now-signup book-now-signup-start-email'>
-            <p class='signup-subheader'>
+        <div class="book-now-signup book-now-signup-start-email">
+            <p class="signup-subheader">
                 <?php the_field( 'sign_up_copy' ); ?>
             </p>
             <?php the_field( 'sign_up_email_form' ); ?>
-            <h6 class='existing-account-link'>
+            <h6 class="existing-account-link">
 
                 <?php 
                     $sign_up_link = get_field( 'sign_up_link' );
                     echo '<a href="' . $sign_up_link['url'] . '">' . $sign_up_link['title'] . '</a>';
-                ?><span class='v1-icon-caret-right'></span>
+                ?><span class="v1-icon-caret-right"></span>
             </h6>
         </div>
     </div>
@@ -177,9 +177,9 @@
                         “<?php the_field( 'quote', $testimonial->ID ); ?>”
                     </p>
                     <h5 class="testimonial__link">
-                        <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target='_blank'>
-                            <span class='cta-link-text'><?php echo $testimonial_link['title']; ?></span>
-                            <span class='v1-icon-caret-right'></span>
+                        <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target="_blank">
+                            <span class="cta-link-text"><?php echo $testimonial_link['title']; ?></span>
+                            <span class="v1-icon-caret-right"></span>
                         </a>
                     </h5>
                 </div>
@@ -206,9 +206,9 @@
             <h5 class="testimonial__name"><?php echo get_the_title( $testimonial->ID ); ?></h5>
             <p class="testimonial__text testimonial__text--1">“<?php the_field( 'quote', $testimonial->ID ); ?>”</p>
             <h5 class="testimonial__link">
-            <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target='_blank'>
-            <span class='cta-link-text'><?php echo $testimonial_link['title']; ?></span>
-            <span class='v1-icon-caret-right'></span>
+            <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target="_blank">
+            <span class="cta-link-text"><?php echo $testimonial_link['title']; ?></span>
+            <span class="v1-icon-caret-right"></span>
             </a>
             </h5>
             </div>
