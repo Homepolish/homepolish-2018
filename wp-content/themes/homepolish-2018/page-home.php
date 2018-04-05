@@ -24,22 +24,11 @@
     <h1 class="hero__tagline formatted-copy--desktop">
         <?php the_field( 'heading' ); ?>
     </h1>
-    <!-- 
-        <div class="hero">
-            <div class="hero__slideshow" data-slideshow>
-            <div class="hero__slide hero__slide--1" data-slideshow-index="1"></div>
-            <div class="hero__slide hero__slide--2" data-slideshow-index="2"></div>
-            <div class="hero__slide hero__slide--3" data-slideshow-index="3"></div>
-            <div class="hero__slide hero__slide--4" data-slideshow-index="4"></div>
-            <div class="hero__slide hero__slide--5" data-slideshow-index="5"></div>
-            <div class="hero__slide hero__slide--6" data-slideshow-index="6"></div>
-        </div>
-    -->
+
     <div class="hero__signup" data-hero-content>
         <div class='book-now-signup book-now-signup-start-email'>
             <p class='signup-subheader'>
                 <?php the_field( 'sign_up_copy' ); ?>
-                Sign up for top interior designers and general contractors, selected just for you.
             </p>
             <?php the_field( 'sign_up_email_form' ); ?>
             <h6 class='existing-account-link'>
@@ -57,27 +46,18 @@
 
 <div class="about-blurb">
 
-    <!-- 
+    <?php $center_copy = get_field( 'ctr_copy' ); ?>
+
     <h2 class="about-blurb__content formatted-copy--mobile">
-        Homepolish represents the<br />
-        nation’s top interior design talent<br />
-        and offers our clients<br />
-        a personal and seamless<br />
-        interior design experience.
+        <?php echo $center_copy; ?>
     </h2>
 
     <h2 class="about-blurb__content formatted-copy--tablet">
-        Homepolish represents the nation’s top<br />
-        interior design talent and offers our clients<br />
-        a personal and seamless interior design experience.   
+        <?php echo $center_copy; ?>
     </h2>
-    -->
 
     <h2 class="about-blurb__content formatted-copy--desktop">
-        <?php 
-            $center_copy = get_field( 'ctr_copy' ); 
-            echo $center_copy; 
-        ?>
+        <?php echo $center_copy; ?>
     </h2>
 </div><!-- about-blurb -->
 
@@ -98,12 +78,9 @@
             echo $value['header'];
             echo '</h6>';
 
-            /*
-            <h3 class="step__title formatted-copy--mobile">
-            Sign Up &<br />
-            Meet Your Designer
-            </h3>
-            */
+            echo '<h3 class="step__title formatted-copy--mobile">';
+            echo $value['title'];
+            echo '</h3>';
 
             echo '<h3 class="step__title formatted-copy--tablet-desktop">';
             echo $value['title'];
@@ -113,23 +90,37 @@
 
             $paragraphs = $value['copy'];
 
-            foreach( $paragraphs as $parakey => $p ) {
+            foreach( $paragraphs as $parakey => $p ) {             
                 
                 if ( $p['paragraph_header'] ) {
+                    echo '<h5 class="step__subtitle formatted-copy--mobile">' . $p['paragraph_header'] . '</h5>';
                     echo '<h5 class="step__subtitle formatted-copy--tablet-desktop">' . $p['paragraph_header'] . '</h5>';
                 }
 
-                if ( $p['paragraph_copy'] ) {
-                    echo '<p class="step__description">' . $p['paragraph_copy'] . '</p>';
-                }
                 if ( $p['paragraph_link'] ) {
 
-                    echo '<h5 class="step__link">
-                        <a class="cta-link" href="' . $p['paragraph_link']['url'] . '" target="_self">
-                        <span class="cta-link-text">' . $p['paragraph_link']['title'] . '</span>
-                        <span class="v1-icon-caret-right"></span>
-                        </a>
-                        </h5>';
+                    echo '<h5 class="step__link formatted-copy--mobile">
+                    <a href="' . $p['paragraph_link']['url'] . '" class="cta-link">
+                    <span class="cta-link-text">' . $p['paragraph_link']['title'] . '</span>
+                    <span class="v1-icon-caret-right"></span>
+                    </a>
+                    </h5>';
+
+                }
+
+                if ( $p['paragraph_copy'] ) {
+                    
+                    echo '<p class="step__description">' . $p['paragraph_copy'];
+                    
+                    if ( $p['paragraph_link'] ) {
+
+                        echo '<br><a href="' . $p['paragraph_link']['url'] . '" class="cta-link">
+                            <span class="cta-link-text">' . $p['paragraph_link']['title'] . '</span>
+                            <span class="v1-icon-caret-right"></span>
+                            </a>';
+                    }
+
+                    echo '</p>';
                 }
             }
 
@@ -162,36 +153,69 @@
 
 <!-- influencers -->
 
-<div class="influencers">
-    <h2 class="influencers__header"><?php the_field( 'cel_titleText' ); ?></h2>
-
-    <div class="influencers__testimonials influencers__testimonials--desktop">
+<div class="influencers"><h2 class="influencers__header"><?php the_field( 'cel_titleText' ); ?></h2>
 
     <?php $testimonials = get_field( 'cel_testimonials' ); ?>
 
-    <?php foreach( $testimonials as $t ) { ?>
+    <!-- mobile -->
 
-        <?php
-            $testimonial        = $t['cel_testimonial'];
-            $testimonial_avatar = get_field( 'avatar', $testimonial->ID );
-            $testimonial_link   = get_field( 'link', $testimonial->ID );
-        ?>
+     <div class="influencers__testimonials influencers__testimonials--mobile">
+        <div class="owl-carousel" data-owl-carousel>
 
-        <div class="testimonial">
-        <img src="<?php echo $testimonial_avatar['url']; ?>" class="testimonial__image" />
-        <h5 class="testimonial__name"><?php echo get_the_title( $testimonial->ID ); ?></h5>
-        <p class="testimonial__text testimonial__text--1">“<?php the_field( 'quote', $testimonial->ID ); ?>”</p>
-        <h5 class="testimonial__link">
-        <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target='_blank'>
-        <span class='cta-link-text'><?php echo $testimonial_link['title']; ?></span>
-        <span class='v1-icon-caret-right'></span>
-        </a>
-        </h5>
+            <?php foreach( $testimonials as $t ) { ?>
+
+                <?php
+                    $testimonial        = $t['cel_testimonial'];
+                    $testimonial_avatar = get_field( 'avatar', $testimonial->ID );
+                    $testimonial_link   = get_field( 'link', $testimonial->ID );
+                ?>
+
+                <div class="testimonial">
+                    <img src="<?php echo $testimonial_avatar['url']; ?>" class="testimonial__image" />
+                    <h5 class="testimonial__name"><?php echo get_the_title( $testimonial->ID ); ?></h5>
+                    <p class="testimonial__text testimonial__text--1">
+                        “<?php the_field( 'quote', $testimonial->ID ); ?>”
+                    </p>
+                    <h5 class="testimonial__link">
+                        <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target='_blank'>
+                            <span class='cta-link-text'><?php echo $testimonial_link['title']; ?></span>
+                            <span class='v1-icon-caret-right'></span>
+                        </a>
+                    </h5>
+                </div>
+            
+            <?php } ?>
+            
         </div>
-        
-    <?php } ?>
+    </div><!-- ./mobile -->
 
-    </div>
+    <!-- desktop -->
+
+    <div class="influencers__testimonials influencers__testimonials--desktop">
+
+        <?php foreach( $testimonials as $t ) { ?>
+
+            <?php
+                $testimonial        = $t['cel_testimonial'];
+                $testimonial_avatar = get_field( 'avatar', $testimonial->ID );
+                $testimonial_link   = get_field( 'link', $testimonial->ID );
+            ?>
+
+            <div class="testimonial">
+            <img src="<?php echo $testimonial_avatar['url']; ?>" class="testimonial__image" />
+            <h5 class="testimonial__name"><?php echo get_the_title( $testimonial->ID ); ?></h5>
+            <p class="testimonial__text testimonial__text--1">“<?php the_field( 'quote', $testimonial->ID ); ?>”</p>
+            <h5 class="testimonial__link">
+            <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target='_blank'>
+            <span class='cta-link-text'><?php echo $testimonial_link['title']; ?></span>
+            <span class='v1-icon-caret-right'></span>
+            </a>
+            </h5>
+            </div>
+            
+        <?php } ?>
+
+    </div><!-- ./desktop -->
 </div><!-- ./influencers -->
 
 <!-- our-designers -->
@@ -202,10 +226,15 @@
 
     <?php $ctr2_link = the_field( 'ctr2_link' ); ?>
 
+    <h5 class="our-designers__link our-designers__link--mobile">
+        <a class="cta-link" href="<?php echo $ctr2_link['url']; ?>" target="_self">
+            <span class="cta-link-text"><?php echo $ctr2_link['title']; ?></span><span class="v1-icon-caret-right"></span>
+        </a>
+    </h5>
+
     <h5 class="our-designers__link our-designers__link--desktop">
-        <a class='cta-link' href='<?php echo $ctr2_link['url']; ?>' target='_self'>
-        <span class='cta-link-text'><?php echo $ctr2_link['title']; ?></span>
-        <span class='v1-icon-caret-right'></span>
+        <a class="cta-link" href="<?php echo $ctr2_link['url']; ?>" target="_self">
+            <span class="cta-link-text"><?php echo $ctr2_link['title']; ?></span><span class="v1-icon-caret-right"></span>
         </a>
     </h5>
 </div><!-- ./our-designers -->
