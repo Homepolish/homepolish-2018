@@ -1,5 +1,3 @@
-<!-- MOVED FROM LOCAL -->
-
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/Organization" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
