@@ -14,11 +14,12 @@ function post_slug() {
 	if( $post_slug == 'home' ) {
 		$post_slug = 'homepage';
 	}
+	if( is_404() ) {
+		$post_slug = 'about-us';
+	}
 
 	return $post_slug;
 }
-
-
 
 /**
 @ Enqueue Scripts and Styles
