@@ -1,19 +1,23 @@
 <?php get_header(); ?>
 
+<!-- 
+    move to content tpls, perhaps with <styles> written in to show our images in the same loops for mobile and for desktop?
+    will need to create php style sheet for background images check for mobile? background images based on breakpoints
+    change heading to header
+-->
+
+<!-- hero -->
 
 <div class="hero">
     <div class="hero__slideshow" data-slideshow>
-
-        <!-- will need to create php style sheet for background images check for mobile? background images based on breakpoints?-->
 
         <?php 
             $i = 1;
             $slideshow = get_field( 'slideshow' );
             foreach( $slideshow[0] as $key => $value ) {
-                echo '<div class="hero__slide hero__slide--' . $i . '" data-slideshow-index="' . $i . '">';
+                echo '<div class="hero__slide hero__slide--' . $i++ . '" data-slideshow-index="' . $i . '">';
                 //echo $value['url'];
                 echo '</div>';
-                $i++;
             }
         ?>
     </div>
@@ -224,7 +228,7 @@
     <h2 class="our-designers__header"><?php the_field( 'ctr2_title' ); ?></h2>
     <p class="our-designers__content"><?php the_field( 'ctr2_copy' ); ?></p>
 
-    <?php $ctr2_link = the_field( 'ctr2_link' ); ?>
+    <?php $ctr2_link = get_field( 'ctr2_link' ); ?>
 
     <h5 class="our-designers__link our-designers__link--mobile">
         <a class="cta-link" href="<?php echo $ctr2_link['url']; ?>" target="_self">
@@ -276,12 +280,6 @@
 
 <!-- book-now -->
 
-<?php $sur_link = get_field( 'sur_link' ); ?>
-
-<div class="book-now-cta">
-    <h5 class="cta-header"><?php the_field( 'sur_title' ); ?></h5>
-    <h3 class="cta-content"><?php the_field( 'sur_subtitle' ); ?></h3>
-    <a class="cta-button" data-track-book-now="true" data-button-id="inline_cta" href="<?php echo $sur_link['url']; ?>"><?php echo $sur_link['title']; ?></a>
-</div>
+<?php get_template_part('templates/block', 'signup'); ?>
 
 <?php get_footer(); ?>

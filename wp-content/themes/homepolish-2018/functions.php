@@ -6,6 +6,20 @@ add_theme_support( 'post-thumbnails' );
 register_nav_menus(); 
 show_admin_bar( 0 );
 
+function post_slug() {
+
+	global $post; 
+	$post_slug = $post->post_name;
+
+	if ( $post_slug == 'home' ) {
+		$post_slug = 'homepage';
+	}
+
+	return $post_slug;
+}
+
+
+
 /**
 @ Enqueue Scripts and Styles
 */
