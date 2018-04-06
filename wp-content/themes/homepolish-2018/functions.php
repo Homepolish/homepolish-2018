@@ -11,7 +11,7 @@ function post_slug() {
 	global $post; 
 	$post_slug = $post->post_name;
 
-	if ( $post_slug == 'home' ) {
+	if( $post_slug == 'home' ) {
 		$post_slug = 'homepage';
 	}
 

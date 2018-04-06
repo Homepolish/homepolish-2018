@@ -96,12 +96,12 @@
 
             foreach( $paragraphs as $parakey => $p ) {             
                 
-                if ( $p['paragraph_header'] ) {
+                if( $p['paragraph_header'] ) {
                     echo '<h5 class="step__subtitle formatted-copy--mobile">' . $p['paragraph_header'] . '</h5>';
                     echo '<h5 class="step__subtitle formatted-copy--tablet-desktop">' . $p['paragraph_header'] . '</h5>';
                 }
 
-                if ( $p['paragraph_link'] ) {
+                if( $p['paragraph_link'] ) {
 
                     echo '<h5 class="step__link formatted-copy--mobile">
                     <a href="' . $p['paragraph_link']['url'] . '" class="cta-link">
@@ -112,11 +112,11 @@
 
                 }
 
-                if ( $p['paragraph_copy'] ) {
+                if( $p['paragraph_copy'] ) {
                     
                     echo '<p class="step__description">' . $p['paragraph_copy'];
                     
-                    if ( $p['paragraph_link'] ) {
+                    if( $p['paragraph_link'] ) {
 
                         echo '<br><a href="' . $p['paragraph_link']['url'] . '" class="cta-link">
                             <span class="cta-link-text">' . $p['paragraph_link']['title'] . '</span>
@@ -128,7 +128,7 @@
                 }
             }
 
-            if ( $value['link'] ) {
+            if( $value['link'] ) {
 
                 echo '<h5 class="step__link">
                     <a class="cta-link" href="' .  $value['link']['url'] . '" target="_self">

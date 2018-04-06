@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-
-
-<?php get_template_part('templates/header', $post_slug ); ?>
-
 <!-- to do, fix 2x links that are floating left -->
 
 <!-- our-mission -->
