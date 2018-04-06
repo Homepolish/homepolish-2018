@@ -14,6 +14,9 @@ function post_slug() {
 	if( $post_slug == 'home' ) {
 		$post_slug = 'homepage';
 	}
+	if( $post_slug == 'page' ) {
+		$post_slug = 'about-us';
+	}
 	if( is_404() ) {
 		$post_slug = 'about-us';
 	}
