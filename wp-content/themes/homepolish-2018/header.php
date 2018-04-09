@@ -27,15 +27,16 @@
 
 </head>
 
-<body class="svelte landing-pages landing-pages--<?php echo post_slug(); ?>" 
-	data-action="<?php echo post_slug(); ?>'" data-controller="landing_pages">
+<body class="svelte landing-pages landing-pages--<?php echo page_body_vals()['body_class']; ?>"
+ data-action="<?php echo page_body_vals()['data_action']; ?>" 
+ data-controller="<?php echo page_body_vals()['data_controller']; ?>">
 <div class="fixed-banner"></div>
 <div class="main-container">
 	<div class="hp-header-container">
 
 <!-- transparency -->
 
-<?php if( post_slug() == "homepage" ) {
+<?php if( page_body_vals()['body_class'] == 'homepage' ) {
 
 	$transparency = 'hp-header--transparent';
 }
@@ -107,4 +108,4 @@
 <div class="scroll-shadow"></div>
 </div>
 
-<?php get_template_part('templates/header', post_slug() ); ?>
+<?php //get_template_part('templates/header', post_slug() ); ?>

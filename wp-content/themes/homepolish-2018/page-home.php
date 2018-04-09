@@ -3,6 +3,8 @@
 <!-- 
     To Do:
         Seems hero images need to have their own CSS, not just backgrounds.
+        And Press
+        How it works
 -->
 
 <!-- hero -->
@@ -50,7 +52,7 @@
                 <?php 
                     $sign_up_link = get_field( 'sign_up_link' );
                     echo '<a href="' . $sign_up_link['url'] . '">' . $sign_up_link['title'] . '</a>';
-                ?><span class="v1-icon-caret-right"></span>
+                ?> <span class="v1-icon-caret-right"></span>
             </h6>
         </div>
     </div>
