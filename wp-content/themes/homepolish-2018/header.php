@@ -28,7 +28,7 @@
 </head>
 
 <body class="svelte landing-pages landing-pages--<?php echo post_slug(); ?>" 
-	data-action="<?php echo $data_action; ?>'" data-controller="landing_pages">
+	data-action="<?php echo post_slug(); ?>'" data-controller="landing_pages">
 <div class="fixed-banner"></div>
 <div class="main-container">
 	<div class="hp-header-container">

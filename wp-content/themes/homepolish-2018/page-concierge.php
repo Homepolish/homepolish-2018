@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<!-- to do brands code mobile and desktop, with repeater and brand post type -->
+
 <!-- no pages have this? -->
 <div class="concierge-page">
 
@@ -60,72 +62,73 @@
 	</div>
 </div><!-- ./make-ordering-breeze -->
 
+<!-- testamonials how it works/concierge -->
+
 <div class="hiw-step pop-the-champagne">
-<div class="hiw-step-head">
-<h6 class="step-number">
-what our clients say
-</h6>
-<h3 class="step-title">
-Concierge Shoutouts
-</h3>
-<p class="step-description">
-You don’t have to take our word for it–read what our clients have to say about the Concierge experience.
-</p>
-</div>
-<div class="client-reviews">
-<div class="client-review-content-container">
-<div class="client-review-card-content" data-slide-index="1">
-<p class="client-review-body">
-The Concierge is super organized, and their ability to place the orders for us made all the difference. They saved us time and money.
-</p>
-<div class="client-review-attribution"><h6 class="client-name">Joshua K</h6></div>
-</div>
+	<div class="hiw-step-head">
+		<h6 class="step-number">
+		<?php the_field( 'tr_title' ); ?>
+		</h6>
+		<h3 class="step-title">
+		<?php the_field( 'tr_subtitle' ); ?>
+		</h3>
+		<p class="step-description">
+		<?php the_field( 'tr_copy' ); ?>
+		</p>
+	</div>
+	<div class="client-reviews">
+		<div class="client-review-content-container">
 
-<div class="client-review-card-content" data-slide-index="2">
-<p class="client-review-body">
-The Concierge team is so great! Organized, diligent, and simply awesome to work with.
-</p>
-<div class="client-review-attribution"><h6 class="client-name">Candace D</h6></div>
-</div>
+		<?php 
+			$i=1;
+			$testimonials = get_field( 'tr_testimonials' );
+			foreach( $testimonials as $t ) { ?>
 
-<div class="client-review-card-content" data-slide-index="3">
-<p class="client-review-body">
-I really enjoyed my experience with Homepolish and my designer Jessica. Having the sales team take care of multiple orders helped save time.
-</p>
-<div class="client-review-attribution"><h6 class="client-name">Frank L</h6></div>
-</div>
+			    <?php
+			        $testimonial        = $t['tr_testimonial'];
+			        $testimonial_avatar = get_field( 'avatar', $testimonial->ID );
+			        $testimonial_link   = get_field( 'link', $testimonial->ID );
+			    ?>
 
-<div class="client-review-card-content" data-slide-index="4">
-<p class="client-review-body">
-Before Concierge, shopping was a nightmare. This is much more streamlined.
-</p>
-<div class="client-review-attribution"><h6 class="client-name">Ashley J</h6></div>
-</div>
+				<div class="client-review-card-content" data-slide-index="<?php echo $i++; ?>">
+					<p class="client-review-body">
+					“<?php the_field( 'quote', $testimonial->ID ); ?>
+					</p>
+					<div class="client-review-attribution">
+						<h6 class="client-name"><?php echo get_the_title( $testimonial->ID ); ?></h6>
+					</div>
+				</div>
 
-</div>
-<div class="owl-carousel" data-owl-carousel>
-<div class="client-review-image client-review-image-1" data-slide-index="1"></div>
-<div class="client-review-image client-review-image-2" data-slide-index="2"></div>
-<div class="client-review-image client-review-image-3" data-slide-index="3"></div>
-<div class="client-review-image client-review-image-4" data-slide-index="4"></div>
-</div>
-</div>
-</div>
+			<?php 
+			}
+		?>
+
+		</div>
+		<div class="owl-carousel" data-owl-carousel>
+
+			<?php 
+				$count = 1;
+				while( $count <= $i ) {
+					echo '<div class="client-review-image client-review-image-' . $count . '" data-slide-index="' . $count++ . '"></div>';
+				}
+			?>
+		</div>
+	</div>
+</div><!-- ./hiw testimonials -->
+
+
 
 <div class="concierge-mobile">
 <div class="client-logos partners">
 <div class="partners-header">
 <h2>
-Participating Brands
+<?php the_field( 'pb_title' ); ?>
 </h2>
 <p class="description formatted-copy--mobile">
-From favorites to unique<br />
-discoverable brands, there’s<br />
-something in our Concierge<br />
-experience for everyone.
+<?php the_field( 'pb_copy' ); ?>
 </p>
 <h5 class="intro">
-To name a few:
+<?php the_field( 'pb_subtitle' ); ?>
 </h5>
 </div>
 <div class="owl-carousel" data-owl-carousel>
@@ -181,18 +184,20 @@ To name a few:
 <div class="client-logos partners">
 <div class="partners-header">
 <h2 class="title">
-Participating Brands
+<?php the_field( 'pb_title' ); ?>
 </h2>
 <p class="description formatted-copy--tablet-desktop">
-From favorites to unique, discoverable brands,<br />
-there’s something in our Concierge experience for everyone.
+<?php the_field( 'pb_copy' ); ?>
 </p>
 <h5 class="intro">
-To name a few:
+<?php the_field( 'pb_subtitle' ); ?>
 </h5>
 </div>
 <div class="logos-desktop">
-<img class="logos-desktop-img" src="https://www.homepolish.com/cdn/concierge/partners/desktop.png">
+
+<?php $image = get_field( 'pb_image' ); ?>
+
+<img class="logos-desktop-img" src="<?php echo $image['url']; ?>">
 </div>
 </div>
 
@@ -200,7 +205,6 @@ To name a few:
 
 
 <?php get_template_part('templates/block', 'signup'); ?>
-
 
 <!-- 
 <div class="concierge-book-now-cta">
