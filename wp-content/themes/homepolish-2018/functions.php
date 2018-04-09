@@ -31,6 +31,7 @@ function hp_enqueue_scripts() {
 	
 	// Header
 	wp_enqueue_style( 'svelte', get_template_directory_uri() . '/assets/styles/svelte.css' );
+	wp_enqueue_style( 'styles', get_template_directory_uri() . '/assets/styles/styles.css' );
 	//wp_enqueue_style( 'litycss', get_template_directory_uri() . '/stylesheets/lity.css' );
 	//wp_enqueue_style( 'css', get_template_directory_uri() . '/stylesheets/app.css' );
 	//wp_enqueue_style( 'css', get_template_directory_uri() . '/stylesheets/app.css?v='.time(), array(), false, 'all' );

@@ -1,9 +1,8 @@
 <?php get_header(); ?>
 
 <!-- 
-    move to content tpls, perhaps with <styles> written in to show our images in the same loops for mobile and for desktop?
-    will need to create php style sheet for background images check for mobile? background images based on breakpoints
-    change heading to header
+    To Do:
+        Seems hero images need to have their own CSS, not just backgrounds.
 -->
 
 <!-- hero -->
@@ -15,8 +14,19 @@
             $i = 1;
             $slideshow = get_field( 'slideshow' );
             foreach( $slideshow[0] as $key => $value ) {
-                echo '<div class="hero__slide hero__slide--' . $i++ . '" data-slideshow-index="' . $i . '">';
-                //echo $value['url'];
+
+                //mobile
+
+                echo '<div class="hero__slide hero__slide--' . $i . '"';
+                echo ' data-slideshow-index="' . $i++ . '"'; 
+                echo ' style="background-image: ' . $value['url'] . '">';
+                echo '</div>';
+
+                //desktop
+
+                echo '<div class="hero__slide hero__slide--' . $i . '"';
+                echo ' data-slideshow-index="' . $i++ . '"'; 
+                echo ' style="background-image: ' . $value['url'] . '">';
                 echo '</div>';
             }
         ?>
