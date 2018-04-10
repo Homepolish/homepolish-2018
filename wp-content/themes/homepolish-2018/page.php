@@ -4,10 +4,16 @@
 
 <div id="frequently-asked-questions">
 
-	<?php
-		the_title( '<h1 class="page-title">', '</h1>' );
-		the_content();
+	<?php 
+
+		the_title( '<h2 class="page-title">', '</h2>' );
+		if ( have_posts()) : 
+			while ( have_posts()) : the_post();
+				the_content();
+			endwhile; 
+		endif;
 	?>
+			
 </div>
 
 <?php get_footer(); ?>
