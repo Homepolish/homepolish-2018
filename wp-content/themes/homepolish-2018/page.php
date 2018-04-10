@@ -5,9 +5,13 @@
 <div id="frequently-asked-questions">
 
 	<?php
-		the_title( '<h1 class="page-title">', '</h1>' );
-		the_content();
+
+		the_title( '<h2 class="page-title">', '</h2>' );
+		while ( the_post() ) {
+			the_content();
+		}
 	?>
+			
 </div>
 
 <?php get_footer(); ?>
