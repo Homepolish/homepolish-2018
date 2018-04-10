@@ -22,9 +22,9 @@ function page_body_vals() {
 		$vals['data_action'] = 'about_us';
 	}
 	if( $post_slug == 'build' ) {
-		$vals['body_class']	 = 'show';
-		$vals['data_action'] = 'show';
-		$vals['data_controller'] = 'tags';
+		$vals['body_class']	 	= 'show';
+		$vals['data_action'] 	= 'show';
+		$vals['data_controller']= 'tags';
 	}
 	if( $post_slug == 'terms' ) {
 		$vals['data_controller'] = 'static_pages';

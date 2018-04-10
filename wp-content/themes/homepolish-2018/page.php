@@ -4,12 +4,14 @@
 
 <div id="frequently-asked-questions">
 
-	<?php
+	<?php 
 
 		the_title( '<h2 class="page-title">', '</h2>' );
-		while ( the_post() ) {
-			the_content();
-		}
+		if ( have_posts()) : 
+			while ( have_posts()) : the_post();
+				the_content();
+			endwhile; 
+		endif;
 	?>
 			
 </div>
