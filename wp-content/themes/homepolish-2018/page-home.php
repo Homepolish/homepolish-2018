@@ -15,21 +15,28 @@
         <?php 
             $i = 1;
             $slideshow = get_field( 'slideshow' );
-            foreach( $slideshow[0] as $key => $value ) {
 
-                //mobile
+            /*echo '<pre>';
+            var_dump( $slideshow[0]);
+            exit;
+            */
 
+            foreach( $slideshow as $key => $value ) {
+
+                // I think this is working correctly.
+
+                echo '<style>.landing-pages--homepage .hero .hero__slide.hero__slide--1 {background-image: url(';
+                    echo $value['mobile_image']['url'];
+                echo ');}';
+                echo '@media only screen and (-webkit-min-device-pixel-ratio: 1.3), not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {.landing-pages--homepage .hero .hero__slide.hero__slide--1 {background-image: url(';
+                    echo $value['image']['url'];
+                echo ');}}</style>';
+
+echo "\n";
                 echo '<div class="hero__slide hero__slide--' . $i . '"';
-                echo ' data-slideshow-index="' . $i++ . '"'; 
-                echo ' style="background-image: ' . $value['url'] . '">';
+                echo ' data-slideshow-index="' . $i++ . '">';
                 echo '</div>';
-
-                //desktop
-
-                echo '<div class="hero__slide hero__slide--' . $i . '"';
-                echo ' data-slideshow-index="' . $i++ . '"'; 
-                echo ' style="background-image: ' . $value['url'] . '">';
-                echo '</div>';
+echo "\n\n";                
             }
         ?>
     </div>
