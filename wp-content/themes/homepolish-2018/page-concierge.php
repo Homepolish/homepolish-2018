@@ -85,9 +85,11 @@
 						<?php if ( $i % 3 == 0 ) { ?>
 							</div>
 							<div class="logos-card">
-						<?php } ?>
-					
-				<?php } ?>
+						<?php } 
+
+						$i++;
+					} 
+				?>
 			</div>
 		</div>
 	</div>
