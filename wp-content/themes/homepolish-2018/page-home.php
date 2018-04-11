@@ -81,41 +81,30 @@
 
         foreach( $rows as $key => $value ) {
 
+            $args = array( 
+                $value['mobile_image']['url'], 
+                $value['image']['url'], 
+                '.landing-pages--homepage .how-it-works .step.step--' . $i ' .step__image'
+            );
+            echo hp_image_styles( $args  );
             ?>
 
-                <style>
-                .landing-pages--homepage .how-it-works .step.step--<?php echo $i; ?> .step__image {
-                    background-image: url(<?php echo $value['mobile_image']['url']; ?>);
-                }
-                @media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
-                not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
-                only screen and (min-resolution: 125dpi), 
-                only screen and (min-resolution: 1.3dppx) {
-                    .landing-pages--homepage .how-it-works .step.step--<?php echo $i; ?> .step__image {
-                        background-image: url(<?php echo $value['image']['url']; ?>);
-                    }
-                }
-                </style>
-
-
-                <div class="step step--<?php echo $i; ?>">
-                <div class="step__image"></div>
-                <div class="step__text">
-                <h6 class="step__header">
+            <div class="step step--<?php echo $i; ?>">
+            <div class="step__image"></div>
+            <div class="step__text">
+            <h6 class="step__header">
                 <?php echo $value['header']; ?>
-                </h6>
+            </h6>
 
-                <h3 class="step__title formatted-copy--mobile">
+            <h3 class="step__title formatted-copy--mobile">
                 <?php echo $value['title']; ?>
-                </h3>
+            </h3>
 
-                <h3 class="step__title formatted-copy--tablet-desktop">
+            <h3 class="step__title formatted-copy--tablet-desktop">
                 <?php echo $value['title']; ?>
-                </h3>
+            </h3>
 
             <?php
-
-            /* Investigate current mobile markup, very different */
 
             $paragraphs = $value['copy'];
 

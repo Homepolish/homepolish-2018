@@ -4,24 +4,14 @@
 
 <!-- our-mission -->
 
-    
-
-<style>
-.landing-pages--about-us .our-mission {url(
-    <?php 
-        $mobile_image = get_field( 'mobile_image' ); 
-        echo $mobile_image['url'];
-    ?>
-);}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 768px), not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208) and (min-width: 768px), only screen and (min-resolution: 125dpi) and (min-width: 768px), only screen and (min-resolution: 1.3dppx) and (min-width: 768px) {
-    .landing-pages--about-us .our-mission {url(
-        <?php 
-            $image = get_field( 'image' ); 
-            echo $image['url'];
-        ?>
-    );}
-}
-</style>
+<?php 
+    $args = array( 
+        the_field( 'mobile_image' )['url'], 
+        the_field( 'image' )['url'], 
+        '.landing-pages--about-us .our-mission'
+    );
+    echo hp_image_styles( $args  );
+?>
 
 <div class="our-mission">
     <h1 class="our-mission__tagline formatted-copy--mobile">
