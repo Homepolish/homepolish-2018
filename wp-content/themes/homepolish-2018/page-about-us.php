@@ -7,10 +7,10 @@
     
 
 <style>
-.landing-pages--about-us .our-mission {url(<?php the_field( 'mobile_image' )['url']; ?>);}
+.landing-pages--about-us .our-mission {url(<?php echo get_field( 'mobile_image' )['url']; ?>);}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 768px), not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208) and (min-width: 768px), only screen and (min-resolution: 125dpi) and (min-width: 768px), only screen and (min-resolution: 1.3dppx) and (min-width: 768px) {
     .landing-pages--about-us .our-mission {url(
-        <?php the_field( 'image' )['url']; ?>
+        <?php echo get_field( 'image' )['url']; ?>
     );}
 }
 </style>
