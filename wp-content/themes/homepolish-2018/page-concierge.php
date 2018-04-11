@@ -80,6 +80,26 @@
 </h5>
 </div>
 <div class="owl-carousel" data-owl-carousel>
+
+
+<?php 
+
+	echo '<div class="logos-card">'
+
+	$i = 1;
+	$brands = get_field( 'pb_brand_images' );
+	var_dump( $brands );
+	exit;
+	
+	foreach( $brands as $brand ) {
+
+		get_the_post_thumbnail_url( ;
+	}
+
+	echo '</div>'
+?>
+
+
 <div class="logos-card">
 <div class="logo-img-container">
 <img alt="The logo of Homepolish partner West Elm" class="logo-img" src="https://www.homepolish.com/cdn/concierge/partners/west_elm.png">
