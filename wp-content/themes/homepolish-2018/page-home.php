@@ -84,7 +84,7 @@
             $args = array( 
                 $value['mobile_image']['url'], 
                 $value['image']['url'], 
-                '.landing-pages--homepage .how-it-works .step.step--' . $i ' .step__image'
+                '.landing-pages--homepage .how-it-works .step.step--' . $i . ' .step__image'
             );
             echo hp_image_styles( $args  );
             ?>
