@@ -21,7 +21,7 @@
                     not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
                     only screen and (min-resolution: 125dpi), 
                     only screen and (min-resolution: 1.3dppx) {
-                        .landing-pages--homepage .hero .hero__slide.hero__slide--1 {
+                        .landing-pages--homepage .hero .hero__slide.hero__slide--<?php echo $i; ?> {
                             background-image: url(<?php echo $value['image']['url']; ?>);
                         }
                 }
@@ -97,7 +97,7 @@
                 not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
                 only screen and (min-resolution: 125dpi), 
                 only screen and (min-resolution: 1.3dppx) {
-                    .landing-pages--homepage .how-it-works .step.step--2 .step__image {
+                    .landing-pages--homepage .how-it-works .step.step--<?php echo $i; ?> .step__image {
                         background-image: url(<?php echo $value['mobile_image']['url']; ?>);
                     }
                 }
