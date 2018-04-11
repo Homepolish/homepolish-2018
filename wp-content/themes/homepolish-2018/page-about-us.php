@@ -5,9 +5,10 @@
 <!-- our-mission -->
 
 <?php 
+
     $args = array( 
-        the_field( 'mobile_image' )['url'], 
-        the_field( 'image' )['url'], 
+        get_field( 'mobile_image' )['url'], 
+        get_field( 'image' )['url'], 
         '.landing-pages--about-us .our-mission'
     );
     echo hp_image_styles( $args  );
