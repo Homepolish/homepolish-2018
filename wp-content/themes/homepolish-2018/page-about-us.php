@@ -7,8 +7,8 @@
 <?php 
 
     $args = array( 
-        get_field( 'mobile_image' )['url'], 
-        get_field( 'image' )['url'], 
+        get_field( 'mobile_image' ), 
+        get_field( 'image' ), 
         '.landing-pages--about-us .our-mission'
     );
     echo hp_image_styles( $args  );
