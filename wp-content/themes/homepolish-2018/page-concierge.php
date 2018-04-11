@@ -14,6 +14,7 @@
         '.svelte.landing-pages--concierge .concierge-hero .hero-image'
     );
     echo hp_image_styles( $args );
+?>
 
 <div class="concierge-hero hero-container">
 	<div class="hero-image"></div>
