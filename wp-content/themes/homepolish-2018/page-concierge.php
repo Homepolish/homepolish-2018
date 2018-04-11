@@ -4,6 +4,17 @@
 
 <!-- concierge-hero -->
 
+<?php 
+	$image = get_field( 'image' );
+	$mobile_image = get_field( 'mobile_image' );
+
+	$args = array( 
+        $mobile_image['url'], 
+        $image['url'], 
+        '.svelte.landing-pages--concierge .concierge-hero .hero-image'
+    );
+    echo hp_image_styles( $args );
+
 <div class="concierge-hero hero-container">
 	<div class="hero-image"></div>
 	<div class="hero-content">
