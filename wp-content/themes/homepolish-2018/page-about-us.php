@@ -23,8 +23,6 @@
 }
 </style>
 
-<?php the_field( 'image' )['url']; ?>
-
 <div class="our-mission">
     <h1 class="our-mission__tagline formatted-copy--mobile">
         <?php the_field( 'header' ); ?>

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<!-- turn these into a function -->
+
 <!-- hero -->
 
 <div class="hero">
@@ -11,24 +13,17 @@
 
             foreach( $slideshow as $key => $value ) {
 
+                $args = array( 
+                    $value['mobile_image']['url'], 
+                    $value['image']['url'], 
+                    '.landing-pages--homepage .hero .hero__slide.hero__slide--' . $i
+                );
+                echo hp_image_styles( $args  );
                 ?>
 
-                <style>
-                .landing-pages--homepage .hero .hero__slide.hero__slide--<?php echo $i; ?> {
-                    background-image: url(<?php echo $value['mobile_image']['url']; ?>);
-                }
-                @media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
-                    not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
-                    only screen and (min-resolution: 125dpi), 
-                    only screen and (min-resolution: 1.3dppx) {
-                        .landing-pages--homepage .hero .hero__slide.hero__slide--<?php echo $i; ?> {
-                            background-image: url(<?php echo $value['image']['url']; ?>);
-                        }
-                }
-            </style>
-            <div class="hero__slide hero__slide--<?php echo $i; ?>" data-slideshow-index="<?php echo $i++; ?>"></div>
+                <div class="hero__slide hero__slide--<?php echo $i; ?>" data-slideshow-index="<?php echo $i++; ?>"></div>
 
-                <?php // I think this is working correctly though would like to create CSS from same.             
+                <?php
             }
         ?>
     </div>

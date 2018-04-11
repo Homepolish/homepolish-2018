@@ -80,3 +80,33 @@ function hp_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'hp_enqueue_scripts' );
 
+/**
+@ Print Mobile and Desktop Styles for Images 
+*/
+
+function hp_image_styles( $mobile_desktop_array ) {
+
+	$mobile = $mobile_desktop_array[0];
+	$desktop = $mobile_desktop_array[1];
+	$selector = $mobile_desktop_array[2];
+
+	$styles = '<!-- testing -->
+		<style>
+			' . $selector . ' {
+				background-image: url(
+					' . $mobile . '
+				);
+			}
+			@media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
+			not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
+			only screen and (min-resolution: 125dpi), 
+			only screen and (min-resolution: 1.3dppx) {
+				' . $selector . ' {
+					background-image: url(
+						' . $desktop . ');
+				}
+			}
+		</style>';
+
+	return $styles;	
+}
