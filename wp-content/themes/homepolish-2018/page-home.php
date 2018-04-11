@@ -90,15 +90,14 @@
 
                 <style>
                 .landing-pages--homepage .how-it-works .step.step--<?php echo $i; ?> .step__image {
-                    
-                    background-image: url(<?php echo $value['image']['url']; ?>);
+                    background-image: url(<?php echo $value['mobile_image']['url']; ?>);
                 }
                 @media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
                 not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
                 only screen and (min-resolution: 125dpi), 
                 only screen and (min-resolution: 1.3dppx) {
                     .landing-pages--homepage .how-it-works .step.step--<?php echo $i; ?> .step__image {
-                        background-image: url(<?php echo $value['mobile_image']['url']; ?>);
+                        background-image: url(<?php echo $value['image']['url']; ?>);
                     }
                 }
                 </style>
