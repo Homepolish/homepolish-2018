@@ -2,7 +2,7 @@
 
 <!-- Fix this ID-->
 
-<div id="frequently-asked-questions">
+<div id="page-template">
 
 	<?php 
 
