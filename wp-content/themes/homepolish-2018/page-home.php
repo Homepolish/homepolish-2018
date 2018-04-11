@@ -1,12 +1,5 @@
 <?php get_header(); ?>
 
-<!-- 
-    To Do:
-        Seems hero images need to have their own CSS, not just backgrounds.
-        And Press
-        How it works
--->
-
 <!-- hero -->
 
 <div class="hero">
@@ -16,27 +9,30 @@
             $i = 1;
             $slideshow = get_field( 'slideshow' );
 
-            /*echo '<pre>';
-            var_dump( $slideshow[0]);
-            exit;
-            */
-
             foreach( $slideshow as $key => $value ) {
 
-                // I think this is working correctly.
+                ?>
 
-                echo '<style>.landing-pages--homepage .hero .hero__slide.hero__slide--1 {background-image: url(';
-                    echo $value['mobile_image']['url'];
-                echo ');}';
-                echo '@media only screen and (-webkit-min-device-pixel-ratio: 1.3), not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {.landing-pages--homepage .hero .hero__slide.hero__slide--1 {background-image: url(';
-                    echo $value['image']['url'];
-                echo ');}}</style>';
+                <style>
+                .landing-pages--homepage .hero .hero__slide.hero__slide--<?php echo $i; ?> {
+                    background-image: url(
+                        <?php echo $value['mobile_image']['url']; ?>
+                    );
+                }
+                @media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
+                    not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
+                    only screen and (min-resolution: 125dpi), 
+                    only screen and (min-resolution: 1.3dppx) {
+                        .landing-pages--homepage .hero .hero__slide.hero__slide--1 {
+                            background-image: url(
+                                <?php echo $value['image']['url']; ?>
+                            );
+                        }
+                }
+            </style>
+            <div class="hero__slide hero__slide--<?php echo $i; ?>" data-slideshow-index="<?php echo $i++; ?>"></div>
 
-echo "\n";
-                echo '<div class="hero__slide hero__slide--' . $i . '"';
-                echo ' data-slideshow-index="' . $i++ . '">';
-                echo '</div>';
-echo "\n\n";                
+                <?php // I think this is working correctly though would like to create CSS from same.             
             }
         ?>
     </div>
@@ -94,20 +90,44 @@ echo "\n\n";
 
         foreach( $rows as $key => $value ) {
 
-            echo '<div class="step step--' . $i . '">';
-            echo '<div class="step__image"></div>';
-            echo '<div class="step__text">';
-            echo '<h6 class="step__header">';
-            echo $value['header'];
-            echo '</h6>';
+            ?>
 
-            echo '<h3 class="step__title formatted-copy--mobile">';
-            echo $value['title'];
-            echo '</h3>';
+                <style>
+                .landing-pages--homepage .how-it-works .step.step--<?php echo $i; ?> .step__image {
+                    
+                    background-image: url(
+                        mobile
+                    )
+                }
+                @media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
+                not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
+                only screen and (min-resolution: 125dpi), 
+                only screen and (min-resolution: 1.3dppx) {
+                    .landing-pages--homepage .how-it-works .step.step--2 .step__image {
+                        background-image: url(
+                            desktop
+                        )
+                    }
+                }
+                </style>
 
-            echo '<h3 class="step__title formatted-copy--tablet-desktop">';
-            echo $value['title'];
-            echo '</h3>';
+
+                <div class="step step--<?php echo $i; ?>">
+                <div class="step__image"></div>
+                <div class="step__text">
+                <h6 class="step__header">
+                <?php echo $value['header']; ?>
+                </h6>
+
+                <h3 class="step__title formatted-copy--mobile">
+                <?php echo $value['title']; ?>
+                </h3>
+
+                <h3 class="step__title formatted-copy--tablet-desktop">
+                <?php echo $value['title']; ?>
+                </h3>
+
+            <?php
 
             /* Investigate current mobile markup, very different */
 
@@ -117,6 +137,7 @@ echo "\n\n";
                 
                 if( $p['paragraph_header'] ) {
                     echo '<h5 class="step__subtitle formatted-copy--mobile">' . $p['paragraph_header'] . '</h5>';
+                    echo "\n";
                     echo '<h5 class="step__subtitle formatted-copy--tablet-desktop">' . $p['paragraph_header'] . '</h5>';
                 }
 
@@ -137,7 +158,8 @@ echo "\n\n";
                     
                     if( $p['paragraph_link'] ) {
 
-                        echo '<br><a href="' . $p['paragraph_link']['url'] . '" class="cta-link">
+                        echo '<br>
+                            <a href="' . $p['paragraph_link']['url'] . '" class="cta-link">
                             <span class="cta-link-text">' . $p['paragraph_link']['title'] . '</span>
                             <span class="v1-icon-caret-right"></span>
                             </a>';
