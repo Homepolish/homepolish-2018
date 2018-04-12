@@ -1,6 +1,8 @@
 *~
 
 watch
+.sass-cache
+
 
 .DS_Store
 .svn
