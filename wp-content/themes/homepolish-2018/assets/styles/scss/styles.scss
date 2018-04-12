@@ -1,34 +1,11 @@
-﻿#page-template {
+﻿@import "center-text";
+@import "page-template";
 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    max-width: 1080px;
+/* 
+	@media (min-width: 768px) {
 
-	h2, .page-title {
-		
-		border-bottom: 1px solid #e5e5e5;
-		margin-bottom: 20px;
-		padding-bottom: 20px;
-		text-align: center;
+		a {
+			width: 75%;
+		}
 	}
-
-	h3 {
-
-		margin: 0 0 20px;
-	}
-
-	p {
-
-		margin: 0 0 20px;
-	}
-
-	li {
-
-		margin: 0 0 20px;
-	}
-
-	
-}
-
+*/

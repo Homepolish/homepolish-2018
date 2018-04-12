@@ -54,7 +54,7 @@
 
 <!-- about-blurb -->
 
-<div class="about-blurb">
+<div class="about-blurb center-text">
 
     <?php $center_copy = get_field( 'ctr_copy' ); ?>
 

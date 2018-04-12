@@ -22,7 +22,15 @@
 			        $testimonial        = $t['tr_testimonial'];
 			        $testimonial_avatar = get_field( 'avatar', $testimonial->ID );
 			        $testimonial_link   = get_field( 'link', $testimonial->ID );
-			    ?>
+
+			    	$args = array( 
+			        	get_the_post_thumbnail_url( $testimonial->ID ), 
+			        	get_the_post_thumbnail_url( $testimonial->ID ), 
+						'.svelte .client-reviews .client-review-image.client-review-image-' . $i
+						//
+				    );
+				    echo hp_image_styles( $args );
+				?>
 
 				<div class="client-review-card-content" data-slide-index="<?php echo $i++; ?>">
 					<p class="client-review-body">

@@ -1,3 +1,9 @@
+.center-text .formatted-copy--desktop {
+  width: 80%; }
+  @media (min-width: 768px) {
+    .center-text .formatted-copy--desktop {
+      max-width: 1080px; } }
+
 #page-template {
   margin-left: auto;
   margin-right: auto;
@@ -15,5 +21,14 @@
     margin: 0 0 20px; }
   #page-template li {
     margin: 0 0 20px; }
+
+/* 
+	@media (min-width: 768px) {
+
+		a {
+			width: 75%;
+		}
+	}
+*/
 
 /*# sourceMappingURL=styles.css.map */
