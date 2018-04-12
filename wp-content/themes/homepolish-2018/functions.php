@@ -90,8 +90,7 @@ function hp_image_styles( $mobile_desktop_array ) {
 	$desktop = $mobile_desktop_array[1];
 	$selector = $mobile_desktop_array[2];
 
-	$styles = '<!-- testing -->
-		<style>
+	$styles = '<style>
 			' . $selector . ' {
 				background-image: url(
 					' . $mobile . '
