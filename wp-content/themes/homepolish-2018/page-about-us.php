@@ -89,8 +89,18 @@
         ?>
 
         <div class="why-homepolish__section">
-            <div class="section__image section__image--<?php echo $i++; ?>">
-                <!-- <?php echo $value['wchr_image']; ?> --></div>
+
+            <?php 
+
+                $args = array( 
+                    get_field( 'mobile_mobile_image' ), 
+                    get_field( 'wchr_image' ), 
+                    '.landing-pages--about-us .why-homepolish .section__image.section__image--' . $i;
+                );
+                echo hp_image_styles( $args );
+            ?>
+
+            <div class="section__image section__image--<?php echo $i++; ?>"></div>
             <div class="section__text">
                 <div class="text__wrapper">
                     <h4 class="text__header" itemprop="specialty">
