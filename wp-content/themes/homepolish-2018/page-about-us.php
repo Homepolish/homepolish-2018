@@ -95,7 +95,7 @@
                 $args = array( 
                     get_field( 'mobile_mobile_image' ), 
                     get_field( 'wchr_image' ), 
-                    '.landing-pages--about-us .why-homepolish .section__image.section__image--' . $i;
+                    '.landing-pages--about-us .why-homepolish .section__image.section__image--' . $i
                 );
                 echo hp_image_styles( $args );
             ?>
