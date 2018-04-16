@@ -275,6 +275,13 @@
 
             $press_id       = $press['pss_slide']->ID; 
             $press_logo     = get_field( 'logo', $press_id );
+
+            $args = array( 
+                get_the_post_thumbnail_url( $press_id ),  
+                get_the_post_thumbnail_url( $press_id ),  
+                '.landing-pages--homepage .press .slide.slide--' . $i;
+            );
+            echo hp_image_styles( $args  );
             ?>
 
             <div class="slide slide--<?php echo $i; ?>">
