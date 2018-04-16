@@ -279,7 +279,7 @@
             $args = array( 
                 get_the_post_thumbnail_url( $press_id ),  
                 get_the_post_thumbnail_url( $press_id ),  
-                '.landing-pages--homepage .press .slide.slide--' . $i;
+                '.landing-pages--homepage .press .slide.slide--' . $i
             );
             echo hp_image_styles( $args  );
             ?>
