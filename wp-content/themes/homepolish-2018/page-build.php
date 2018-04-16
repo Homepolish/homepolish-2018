@@ -53,6 +53,10 @@
 			<?php
 			$row = the_field( 'ls_list_items' );
 			foreach( $row as $value ) {
+
+				var_dump( $value );
+				exit;
+
 				?>
 					<li itemprop="serviceArea"><?php echo $value['ls_list_item']; ?></li>
 				<?php 
