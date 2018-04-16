@@ -29,9 +29,18 @@
 
 <!-- hiw -->
 
-<?php the_field( 'free_html' ); ?>
+<div class=""><div class="hiw-desktop"><h5 class="hiw-header"><?php the_field( 'hiw_title' ); ?></h5><div class="hiw-desktop-numbers"><div class="hiw-number-line"><div class="hiw-number-circle">
+<?php $i = 1; $row = get_field( 'hiw_steps' ); foreach( $row as $value ) { ?>
+<h6 class="hiw-number"><?php echo $i; ?></h6></div><div class="horizontal-dotted-line"></div></div><div class="hiw-number-line"><div class="hiw-number-circle">
+<?php } ?>
+<h6 class="hiw-number">2</h6></div><div class="horizontal-dotted-line"></div></div><div class="hiw-number-line"><div class="hiw-number-circle">
+<h6 class="hiw-number">3</h6></div><div class="horizontal-dotted-line"></div></div><div class="hiw-number-line"><div class="hiw-number-circle">
+<h6 class="hiw-number">4</h6></div></div></div><div class="hiw">
+<?php foreach( $row as $value ) { ?>
+<div class="hiw-step-container"><p class="hiw-step-text"><?php echo $value['hiw_step']; ?></p></div>
+<?php } ?>
+</div></div></div><!-- ./hiw -->
 
-<!-- ./hiw -->
 
 <!-- make-ordering-breeze -->
 
