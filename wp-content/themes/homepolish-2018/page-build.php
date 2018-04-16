@@ -40,15 +40,27 @@
 
 <!-- </div> --><!-- ./hiw testimonials -->
 
+<!-- mag image grid -->
+<?php the_field( 'free_html' );?>
+<!-- ./mag image grid -->
 
-	<!-- mag image grid -->
-	<?php the_field( 'free_html' );?>
-	<!-- ./mag image grid -->
+<!-- what we offer -->
 
-
-	<!-- mag image grid -->
-	<?php the_field( 'free2_html' );?>
-	<!-- ./mag image grid -->
+<div class="list-section">
+	<div class="list-container">
+		<h3 class="title"><?php get_field( 'ls_title' ); ?></h3>
+		<ul>
+			<?php
+			$row = the_field( 'ls_list_items' );
+			foreach( $row as $value ) {
+				?>
+					<li itemprop="serviceArea"><?php echo $value['ls_list_item']; ?></li>
+				<?php 
+			}
+			?>
+		</ul>
+	</div>
+</div><!-- ./what we offer -->
 
 
 </div>
