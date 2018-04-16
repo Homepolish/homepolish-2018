@@ -1,14 +1,36 @@
 <?php get_header(); ?>
 
-<!-- to do, fix 2x links that are floating left (PHASE 2) -->
-
 <!-- our-mission -->
 
-<?php get_template_part('templates/block', 'our-mission'); ?><!-- ./our-mission -->
+<?php 
+
+    $args = array( 
+        get_field( 'mobile_image' ), 
+        get_field( 'image' ), 
+        '.landing-pages--about-us .our-mission'
+    );
+    echo hp_image_styles( $args );
+?>
+
+<div class="our-mission">
+    <h1 class="our-mission__tagline formatted-copy--mobile">
+        <?php the_field( 'header' ); ?>
+    </h1>
+
+    <h1 class="our-mission__tagline formatted-copy--tablet-desktop">
+        <?php the_field( 'header' ); ?>
+    </h1>
+
+    <p class="our-mission__body formatted-copy--mobile">
+        <?php the_field( 'copy' ); ?>
+    </p>
+
+    <p class="our-mission__body formatted-copy--tablet-desktop">
+        <?php the_field( 'copy' ); ?>
+    </p>
+</div><!-- ./our-mission -->
 
 <!-- our-promise -->
-
-<!-- make each box a repeater -->
 
 <div class="our-promise">
 

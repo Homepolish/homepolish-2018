@@ -21,9 +21,11 @@
                 echo hp_image_styles( $args  );
                 ?>
 
-                <div class="hero__slide hero__slide--<?php echo $i; ?>" data-slideshow-index="<?php echo $i++; ?>"></div>
+                <div class="hero__slide hero__slide--<?php echo $i; ?>" data-slideshow-index="<?php echo $i; ?>"></div>
 
                 <?php
+
+                $i++;
             }
         ?>
     </div>
@@ -264,8 +266,6 @@
 <div class="press">
 <div class="press__slides">
 <div class="owl-carousel" data-owl-carousel>
-
-    <!-- featured image goes in css? -->
 
     <?php
         $i = 1;
