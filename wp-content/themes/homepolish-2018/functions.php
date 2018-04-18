@@ -29,10 +29,11 @@ function page_body_vals() {
 	if( $post_slug == 'terms' ) {
 		$vals['data_controller'] = 'static_pages';
 	}
-	if( $post_slug == 'home' ) {
+	/*if( $post_slug == 'home' ) {
 		$vals['body_class'] = 'homepage';
 		$vals['data_action']= 'homepage';
 	}
+	*/
 	if( $post_slug == 'page' ) {
 		$vals['body_class'] = 'about-us';
 	}
@@ -61,10 +62,12 @@ function hp_enqueue_scripts() {
 
 	global $post; 
 	$post_slug = $post->post_name;
+	/*
 	if ( $post_slug = 'home' ) {
 
 		$post_slug = 'homepage';
 	}
+	*/
 	
 	// Header
 	wp_enqueue_style( 'svelte', get_template_directory_uri() . '/assets/styles/svelte.css' );
