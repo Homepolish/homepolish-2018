@@ -1,3 +1,10 @@
+.our-promise div {
+  width: 50%; }
+  .our-promise div:first-child {
+    padding: 0 25px 0 0; }
+  .our-promise div:last-child {
+    padding: 0 0 0 25px; }
+
 .center-text .formatted-copy--desktop {
   width: 80%; }
   @media (min-width: 768px) {
