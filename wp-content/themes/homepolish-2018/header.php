@@ -1,4 +1,4 @@
-<!-- multi-remote 4 -->
+<!-- multi-remote 5 -->
 
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/<?php echo $page_type; ?>" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
