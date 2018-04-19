@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/PAGETYPE?" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
-<!-- header.php values -->
+<!-- hard coded header.php values -->
 <link href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 <link href="<?php echo get_template_directory_uri(); ?>/assets/homepolish_logo.png" rel="apple-touch-icon">
 <meta name="csrf-param" content="authenticity_token" />
