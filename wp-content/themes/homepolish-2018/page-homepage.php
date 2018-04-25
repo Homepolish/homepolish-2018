@@ -225,7 +225,7 @@
 
             <div class="testimonial">
             <img src="<?php echo $testimonial_avatar['url']; ?>" class="testimonial__image" />
-            <h5 class="testimonial__name"><?php echo get_the_title( $testimonial->ID ); ?></h5>
+            <h5 class="testimonial__name"><?php the_field( 'testimonial_name', $testimonial->ID ); ?><?php //echo get_the_title( $testimonial->ID ); ?></h5>
             <p class="testimonial__text testimonial__text--1">“<?php the_field( 'quote', $testimonial->ID ); ?>”</p>
             <h5 class="testimonial__link">
             <a class="cta-link" href="<?php echo $testimonial_link['url']; ?>" target="_blank">
