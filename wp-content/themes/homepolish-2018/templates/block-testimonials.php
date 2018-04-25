@@ -32,7 +32,7 @@
 				    echo hp_image_styles( $args );
 				?>
 
-				<div class="client-review-card-content" data-slide-index="<?php echo $i++; ?>">
+				<div class="client-review-card-content" data-slide-index="<?php echo $i; ?>">
 					<p class="client-review-body">
 					“<?php the_field( 'quote', $testimonial->ID ); ?>
 					</p>
@@ -42,6 +42,9 @@
 				</div>
 
 			<?php 
+
+			$i++;
+
 			}
 		?>
 
@@ -50,7 +53,7 @@
 
 			<?php 
 				$count = 1;
-				while( $count <= $i ) {
+				while( $count < $i ) {
 					echo '<div class="client-review-image client-review-image-' . $count . '" data-slide-index="' . $count++ . '"></div>';
 				}
 			?>
