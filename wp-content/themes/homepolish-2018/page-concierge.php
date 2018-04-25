@@ -75,6 +75,8 @@
 		
 		<?php 
 			$row = get_field( 'mob_row' );
+
+
 			foreach( $row as $value ) {
 			?>
 
@@ -84,6 +86,14 @@
 				</h6>
 				<p class="item-body">
 					<?php echo $value['2xl_copy']; ?>
+				</p>
+			</div>
+			<div class="list-item">
+				<h6 class="item-header">
+					<?php echo $value['2xr_title']; ?>
+				</h6>
+				<p class="item-body">
+					<?php echo $value['2xr_copy']; ?>
 				</p>
 			</div>
 
