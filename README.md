@@ -3,7 +3,7 @@ Replatforming of homepolish.com
 
 # Installation
 
-##1
+## 1
 
 At the command prompt, execute the following:
 ```
@@ -11,19 +11,19 @@ $ git clone https://github.com/Homepolish/homepolish-2018.git
 $ cd homepolish-2018
 ```
 
-##2
+## 2
 
 Download or clone the WordPress repo from https://github.com/WordPress/WordPress.git and copy all the files EXCEPT for the wp-content directory to the wp directory. We don't keep WordPress under version control; it's updated by WP Engine.
 
-##3
+## 3
 
 Open wp-config-hp.php and and enter your database username, password, etc, then save the file as wp-config.php. Don't save or commit your changes to wp-config-hp.php.
 
-##4
+## 4
 
 Download the database from https://my.wpengine.com/installs/devhp/phpmyadmin and load it into your local copy of MySQL.
 
-##5
+## 5
 
 Set your local domain to use homepolish-2018 as your document root and you should be able to see the site, less images, because the devhp.wpengine.com instance where our dev site lives, is blocked by a .htpasswd file.
 
