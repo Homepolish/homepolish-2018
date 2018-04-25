@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<?php
+	$page = get_page_by_path( 'not-found' );
+	echo '<!-- ' . get_the_title( $page ) . '-->';
+?>
+
 <!-- our-mission -->
 
 <style>

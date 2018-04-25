@@ -75,8 +75,6 @@
 		
 		<?php 
 			$row = get_field( 'mob_row' );
-
-
 			foreach( $row as $value ) {
 			?>
 
