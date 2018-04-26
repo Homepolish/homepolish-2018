@@ -23,7 +23,7 @@
 
 			<?php $link = get_field( 'link' ); ?>
 
-			<div class="button-cta"><a target="_blank" class="btn cta-btn" data-click="tags-cta" data-location="hero form" href="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></a></div>
+			<div class="button-cta"><a target="_blank" class="btn cta-btn" data-click="tags-cta" data-location="hero form" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></div>
 		</div>
 	</div>
 	<div class="seo-text">

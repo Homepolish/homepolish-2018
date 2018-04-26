@@ -167,15 +167,100 @@
 <!-- portfolio -->
 
 <div class="portfolio">
-    <h2 class="portfolio__header"><?php the_field( 'free_title' ); ?></h2>
+    <h2 class="portfolio__header"><?php the_field( 'bs_title' ); ?></h2>
+    <div class="portfolio__categories portfolio__categories--mobile">
+        <div class="owl-carousel" data-owl-carousel>
 
-    <?php the_field( 'free_html' ); ?>
+        <?php 
+            $i=1;
+            $row = get_field( 'bs_styles' );
+            foreach( $row as $value ) {
+
+                $term = get_term( $value );
+
+                $name           = $term->name;
+                $slug           = $term->slug;
+                $description    = $term->description;
+                $image          = get_field( 'style_tax_image', 'term_' . $term->term_id );
+                $mobile_image   = get_field( 'style_tax_moble_image', 'term_' . $term->term_id );
+                $args = array( 
+                    $mobile_image,  
+                    $image,  
+                    '.landing-pages--homepage .portfolio .category__image.category__image--' . $i
+                );
+                echo hp_image_styles( $args  ); 
+                ?>          
+
+                <div class="category" data-carousel-index="<?php echo $i; ?>">
+                <div class="category__image category__image--<?php echo $i; ?>"></div>
+                <h5 class="category__label">
+                <a href="/portfolio?browseBy=style#<?php echo $slug; ?>" class="category__link">
+                <?php echo $name; ?>
+                </a>
+                </h5>
+                <div class="category__overlay category__overlay--active"></div>
+                </div>            
+
+                <?php
+                $i++;
+            }
+        ?>
+        </div>
+    </div>
+    <div class="portfolio__categories portfolio__categories--desktop">
+        
+        <?php 
+            $i=1;
+            $row = get_field( 'bs_styles' );
+            foreach( $row as $value ) {
+
+                $term = get_term( $value );
+
+                $name           = $term->name;
+                $slug           = $term->slug;
+                $description    = $term->description;
+                $image          = get_field( 'style_tax_image', 'term_' . $term->term_id );
+                $mobile_image   = get_field( 'style_tax_moble_image', 'term_' . $term->term_id );
+                $args = array( 
+                    $mobile_image,  
+                    $image,  
+                    '.landing-pages--homepage .portfolio .category__image.category__image--' . $i
+                );
+                echo hp_image_styles( $args  ); 
+                ?>          
+                    <div class="category">
+                    <a href="/portfolio?browseBy=style#<?php echo $slug; ?>" class="category__link">
+                    <div class="category__image category__image--<?php echo $i; ?>"></div>
+                    <h5 class="category__label">
+                    <?php echo $name; ?>
+                    </h5>
+                    </a>
+                    </div>           
+                <?php
+                $i++;
+            }
+        ?>
+    </div>
+
+    <?php 
+        $link = get_field( 'bs_link' );
+        if( $link ) {
+        ?>
+            <h5 class="portfolio__link">
+                <a class="cta-link" href="<?php echo $link['url'];?>" target="_self">
+                <span class="cta-link-text"><?php echo $link['title'];?></span>
+                <span class="v1-icon-caret-right"></span>
+                </a>
+            </h5>
+        <?php 
+    } ?>
     
 </div><!-- ./portfolio -->
 
 <!-- influencers -->
 
-<div class="influencers"><h2 class="influencers__header"><?php the_field( 'cel_titleText' ); ?></h2>
+<div class="influencers">
+    <h2 class="influencers__header"><?php the_field( 'cel_title' ); ?></h2>
 
     <?php $testimonials = get_field( 'cel_testimonials' ); ?>
 
