@@ -8,6 +8,7 @@
 <meta name="csrf-token" content="CSRF-TOKEN?" />
 <meta content="Homepolish" itemprop="name">
 <meta content="127512634049491" property="fb:app_id">
+<meta content="width=device-width,initial-scale=1" name="viewport">
 <!-- /header.php values -->
 
 <!-- wp_head -->
