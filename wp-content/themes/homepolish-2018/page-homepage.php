@@ -183,15 +183,20 @@
                 $description    = $term->description;
                 $image          = get_field( 'style_tax_image', 'term_' . $term->term_id );
                 $mobile_image   = get_field( 'style_tax_mobile_image', 'term_' . $term->term_id );
-                $args = array( 
-                    $mobile_image,  
-                    $image,  
-                    '.landing-pages--homepage .portfolio .category__image.category__image--' . $i
-                );
-                echo hp_image_styles( $args  ); 
+
                 ?>          
 
                 <div class="category" data-carousel-index="<?php echo $i; ?>">
+
+                <?php 
+                    $args = array( 
+                        $mobile_image,  
+                        $image,  
+                        '.landing-pages--homepage .portfolio .category__image.category__image--' . $i
+                    );
+                    echo hp_image_styles( $args  ); 
+                ?>
+
                 <div class="category__image category__image--<?php echo $i; ?>"></div>
                 <h5 class="category__label">
                 <a href="/portfolio?browseBy=style#<?php echo $slug; ?>" class="category__link">
