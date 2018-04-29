@@ -182,7 +182,7 @@
                 $slug           = $term->slug;
                 $description    = $term->description;
                 $image          = get_field( 'style_tax_image', 'term_' . $term->term_id );
-                $mobile_image   = get_field( 'style_tax_moble_image', 'term_' . $term->term_id );
+                $mobile_image   = get_field( 'style_tax_mobile_image', 'term_' . $term->term_id );
                 $args = array( 
                     $mobile_image,  
                     $image,  
@@ -220,7 +220,7 @@
                 $slug           = $term->slug;
                 $description    = $term->description;
                 $image          = get_field( 'style_tax_image', 'term_' . $term->term_id );
-                $mobile_image   = get_field( 'style_tax_moble_image', 'term_' . $term->term_id );
+                $mobile_image   = get_field( 'style_tax_mobile_image', 'term_' . $term->term_id );
                 $args = array( 
                     $mobile_image,  
                     $image,  
