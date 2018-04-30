@@ -9,7 +9,7 @@
 <meta content="Homepolish" itemprop="name">
 <meta content="127512634049491" property="fb:app_id">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<!-- /header.php values -->
+<!-- /hard coded header.php values -->
 
 <!-- wp_head -->
 <?php wp_head(); ?>
@@ -22,21 +22,9 @@
  data-controller="<?php echo page_body_vals()['data_controller']; ?>">
 <div class="fixed-banner"></div>
 <div class="main-container">
-	<div class="hp-header-container">
-
-<!-- transparency -->
-
-<?php if( page_body_vals()['body_class'] == 'homepage' || page_body_vals()['body_class'] == 'saks' ) {
-
-	$transparency = 'hp-header--transparent';
-}
-?>
-<header id="header" class="hp-header <?php echo $transparency; ?>">
-
-<!-- ./transparency -->
-
+<div class="hp-header-container">
+<header id="header" class="hp-header <?php echo page_body_vals()['transparency']; ?>">
 <div class="hp-header__main">
-
 <button class="mobile-nav-menu-toggle" data-mobile-nav-menu-toggle="true">
 <span class="toggle-bar"></span>
 <span class="toggle-bar"></span>
@@ -63,7 +51,6 @@
 <a class="tertiary nav__link" href="https://homepolish.com/mag">The Magazine</a>
 </nav>
 </header>
-
 </div>
 <div class="mobile-nav-menu" id="mobile-nav-menu">
 <div class="menu-content">
@@ -97,5 +84,3 @@
 <div class="mobile-nav-buttons" id="mobile-nav-buttons">
 <div class="scroll-shadow"></div>
 </div>
-
-<?php //get_template_part('templates/header', post_slug() ); ?>
