@@ -26,7 +26,7 @@
 
 <!-- transparency -->
 
-<?php if( page_body_vals()['body_class'] == 'homepage' ) {
+<?php if( page_body_vals()['body_class'] == 'homepage' || page_body_vals()['body_class'] == 'saks' ) {
 
 	$transparency = 'hp-header--transparent';
 }

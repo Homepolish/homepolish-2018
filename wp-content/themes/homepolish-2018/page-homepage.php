@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- turn these into a function -->
-
 <!-- hero -->
 
 <div class="hero">
