@@ -11,13 +11,16 @@ show_admin_bar( 0 );
 
 function page_body_vals() {
 
+	// All this could move to custom fields on all pages
+
 	global $post; 
 	$post_slug = $post->post_name;
 	$vals = array();
 
 	$vals['body_class'] 	= $post_slug;
 	$vals['data_action']	= $post_slug;
-	$vals['data_controller'] = 'landing_pages';
+	$vals['data_controller']= 'landing_pages';
+	$vals['transparency'] 	= '';
 
 	if( $post_slug == 'about-us' ) {
 		$vals['data_action'] = 'about_us';
@@ -30,23 +33,22 @@ function page_body_vals() {
 	if( $post_slug == 'terms' ) {
 		$vals['data_controller'] = 'static_pages';
 	}
-	/*if( $post_slug == 'home' ) {
-		$vals['body_class'] = 'homepage';
-		$vals['data_action']= 'homepage';
+	if( $post_slug == 'homepage' ) {
+		$vals['transparency'] = 'hp-header--transparent';
 	}
-	*/
 	if( $post_slug == 'page' ) {
 		$vals['body_class'] = 'about-us';
 	}
 	if( $post_slug == 'privacy' ) {
-		//check legal classes
 		$vals['data_controller'] = 'legal_pages';
+	}
+	if( $post_slug == 'saks' ) {
+		$vals['transparency'] = 'hp-header--transparent';
 	}
 	if( $post_slug == 'terms' ) {
 		//check legal classes
 		$vals['data_controller'] = 'legal_pages';
 	}
-
 	if( is_404() ) {
 		$vals['body_class'] 	= 'about-us';
 		$vals['data_action'] 	= 'not_found';
