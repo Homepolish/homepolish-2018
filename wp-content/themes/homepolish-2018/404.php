@@ -2,39 +2,23 @@
 
 <?php
 	$page = get_page_by_path( 'not-found' );
-	echo '<!-- ' . get_the_title( $page ) . '-->';
+	$page_ID = $page->ID;
 ?>
 
 <!-- our-mission -->
 
-<style>
-	.landing-pages--about-us .our-mission {
-		background-image: url(
-			/wp-content/uploads/2018/04/desktopm.jpg
-		);
-	}
-	@media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
-	not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
-	only screen and (min-resolution: 125dpi), 
-	only screen and (min-resolution: 1.3dppx) {
-		.landing-pages--about-us .our-mission {
-			background-image: url(
-				/wp-content/uploads/2018/04/desktopd.jpg);
-		}
-	}
-</style>
+<?php
+	$args = array( 
+		get_the_post_thumbnail_url( $page_ID ), 
+		get_the_post_thumbnail_url( $page_ID ), 
+		'.our-mission'
+	);
+	echo hp_image_styles( $args );
+?>
+
 <div class="our-mission">
-    <h1 class="our-mission__tagline formatted-copy--mobile">
-        Making the world a better space.™    </h1>
-
-    <h1 class="our-mission__tagline formatted-copy--tablet-desktop">
-        Making the world a better space.™    </h1>
-
-    <p class="our-mission__body formatted-copy--mobile">
-        Homepolish was founded with a simple idea: interior design needed a redesign for the way we live now.    </p>
-
-    <p class="our-mission__body formatted-copy--tablet-desktop">
-        Homepolish was founded with a simple idea: interior design needed a redesign for the way we live now.    </p>
+    <h1 class="our-mission__tagline"><?php get_the_title( $page ); ?></h1>
+    <p class="our-mission__body"><?php echo get_post_field('post_content', $page_id); ?></p>
 </div><!-- ./our-mission -->
 
 <?php get_footer(); ?>
