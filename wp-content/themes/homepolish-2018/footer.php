@@ -212,9 +212,6 @@
 				<a class="secondary" href="https://twitter.com/homepolish" itemprop="sameAs" target="_blank">
 				<span class="v1-icon-twitter"></span>
 				</a>
-				<a class="secondary" href="https://homepolish.com/tumblr" itemprop="sameAs" target="_blank">
-				<span class="v1-icon-tumblr"></span>
-				</a>
 				</div>
 
 
@@ -344,9 +341,6 @@
 				</a>
 				<a class="secondary" href="https://twitter.com/homepolish" itemprop="sameAs" target="_blank">
 				<span class="v1-icon-twitter"></span>
-				</a>
-				<a class="secondary" href="https://homepolish.com/tumblr" itemprop="sameAs" target="_blank">
-				<span class="v1-icon-tumblr"></span>
 				</a>
 				</div>
 
