@@ -2,7 +2,7 @@
 
 <?php
 	$page = get_page_by_path( 'not-found' );
-	$page_ID = $page->ID;
+	echo $page_ID = $page->ID;
 ?>
 
 <!-- our-mission -->
@@ -17,8 +17,8 @@
 ?>
 
 <div class="our-mission">
-    <h1 class="our-mission__tagline"><?php get_the_title( $page ); ?></h1>
-    <p class="our-mission__body"><?php echo get_post_field('post_content', $page_id); ?></p>
+    <h1 class="our-mission__tagline"><?php echo get_post_field('post_title', $page_ID); ?></h1>
+    <p class="our-mission__body"><?php echo get_post_field('post_content', $page_ID); ?></p>
 </div><!-- ./our-mission -->
 
 <?php get_footer(); ?>
