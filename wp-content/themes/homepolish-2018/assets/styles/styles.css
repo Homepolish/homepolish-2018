@@ -21,11 +21,10 @@
       display: inline-block;
       width: 50%; } }
 
-.partners-header {
-  width: 75%; }
-  .partners-header .formatted-copy--mobile {
-    display: inline-block;
-    width: 50%; }
+@media only screen and (max-width: 767px) {
+  .targeted-page-show .seo-text .seo-text-body {
+    font-size: 1.75rem;
+    line-height: 2.25rem; } }
 
 .center-text .formatted-copy--desktop {
   width: 80%; }

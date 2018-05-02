@@ -49,6 +49,11 @@ function page_meta() {
 		$page_meta['data_controller'] = get_field( 'pmv_data_controller', $post_id );
 	}
 
+	if ( is_404() ) {
+
+		$page_meta['body_class'] = 'about-us';
+	}
+
 	return $page_meta;
 }
 
