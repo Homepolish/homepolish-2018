@@ -1,16 +1,38 @@
-﻿.our-promise {
+﻿.our-mission__body {
 
-	div {
+	// Covers mobile and desktop
 
-		width: 50%;
+	width: 50%;
 
-		&:first-child {
+}
 
-			padding: 0 25px 0 0;
-		}
-		&:last-child {
+@media only screen and (min-width: 768px) {
+	
+	.landing-pages--about-us .why-homepolish {
 
-			padding: 0 0 0 25px;
-		}
-	}	
+		margin: 0;
+	}
+}
+
+
+
+
+.our-promise {
+
+	@media only screen and (min-width: 768px) {
+
+		div {
+
+			width: 50%;
+
+			&:first-child {
+
+				padding: 0 25px 0 0;
+			}
+			&:last-child {
+
+				padding: 0 0 0 25px;
+			}
+		}	
+	}
 }

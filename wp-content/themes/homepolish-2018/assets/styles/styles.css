@@ -1,9 +1,28 @@
-.our-promise div {
+.our-mission__body {
   width: 50%; }
-  .our-promise div:first-child {
-    padding: 0 25px 0 0; }
-  .our-promise div:last-child {
-    padding: 0 0 0 25px; }
+
+@media only screen and (min-width: 768px) {
+  .landing-pages--about-us .why-homepolish {
+    margin: 0; } }
+@media only screen and (min-width: 768px) {
+  .our-promise div {
+    width: 50%; }
+    .our-promise div:first-child {
+      padding: 0 25px 0 0; }
+    .our-promise div:last-child {
+      padding: 0 0 0 25px; } }
+
+.partners-header {
+  width: 75%; }
+  .partners-header .formatted-copy--mobile {
+    display: inline-block;
+    width: 50%; }
+
+.partners-header {
+  width: 75%; }
+  .partners-header .formatted-copy--mobile {
+    display: inline-block;
+    width: 50%; }
 
 .center-text .formatted-copy--desktop {
   width: 80%; }
