@@ -1,10 +1,27 @@
-﻿.partners-header {
+﻿.landing-pages--concierge {
 
-	width: 75%;
+	.partners-header {
 
-	.formatted-copy--mobile {
+		width: 75%;
 
-		display: inline-block;
-		width: 50%;
+		.formatted-copy--mobile {
+
+			display: inline-block;
+			width: 50%;
+		}
 	}
+
+	 .about-us {
+
+	 	.item-body {
+
+	 		width: 75%;
+	 		display: inline-block;
+
+	 		@media only screen and (min-width: 768px) {
+
+	 			width: 100%;
+	 		}
+	 	}
+	 }
 }

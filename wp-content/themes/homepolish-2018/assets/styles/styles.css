@@ -25,6 +25,8 @@
   .targeted-page-show .seo-text .seo-text-body {
     font-size: 1.75rem;
     line-height: 2.25rem; } }
+.targeted-page-show .list-section li {
+  text-align: left; }
 
 .center-text .formatted-copy--desktop {
   width: 80%; }
@@ -32,11 +34,17 @@
     .center-text .formatted-copy--desktop {
       max-width: 1080px; } }
 
-.partners-header {
+.landing-pages--concierge .partners-header {
   width: 75%; }
-  .partners-header .formatted-copy--mobile {
+  .landing-pages--concierge .partners-header .formatted-copy--mobile {
     display: inline-block;
     width: 50%; }
+.landing-pages--concierge .about-us .item-body {
+  width: 75%;
+  display: inline-block; }
+  @media only screen and (min-width: 768px) {
+    .landing-pages--concierge .about-us .item-body {
+      width: 100%; } }
 
 .about-blurb__content {
   width: 75%; }
