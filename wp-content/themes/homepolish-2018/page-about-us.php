@@ -99,7 +99,7 @@
             <div class="section__image section__image--<?php echo $i++; ?>"></div>
             <div class="section__text">
                 <div class="text__wrapper">
-                    <h4 class="text__header" itemprop="specialty">
+                    <h4 class="text__header">
                         <?php echo $value['wchr_title']; ?>
                     </h4>
                     <p class="text__body formatted-copy--mobile">
