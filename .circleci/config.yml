@@ -1,0 +1,29 @@
+version: 2.0
+
+jobs:
+  deploy:
+    working_directory: ~/tmp/wp
+    docker:
+      - image: circleci/php
+    steps:
+      - checkout
+      - run:
+          name: Deploy
+          command: |
+            if [[ -n $CIRCLE_BRANCH ]]; then
+              git remote add stage git@git.wpengine.com:production/devhp.git
+              git push remote stage
+            elif [[ -n $CIRCLE_TAG ]]; then
+              git remote add prod
+              git push remote prod
+            fi
+
+workflows:
+  version: 2
+  jobs:
+    - deploy:
+        filters:
+          branches:
+            only: master
+          tags:
+            only: /^20[0-9]{6}\.[a-f0-9]{7,}$/
