@@ -12,15 +12,15 @@
 				<div class="info-line">
 					Homepolish, Inc.
 				</div>
-				<div class="info-line" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span itemprop="streetAddress">27 W 24th Street Fl. 2</span>
-					<span itemprop="addressLocality">New York</span>, <span itemprop="addressRegion">NY</span> 
-					<span itemprop="postalCode">10010</span>
+				<div class="info-line">
+					<span>27 W 24th Street Fl. 2</span>
+					<span>New York</span>, <span>NY</span> 
+					<span>10010</span>
 				</div>
 				<div class="info-line">
-					<span itemprop="email">info@homepolish.com</span>
+					<span>info@homepolish.com</span>
 					| 
-					<span itemprop="telephone">844-808-4434</span>
+					<span>844-808-4434</span>
 				</div>
 				<div class="info-line">
 					&copy; 2012-<script>document.write(new Date().getFullYear())</script>
@@ -200,16 +200,16 @@
 
 
 				<div class="hp-footer__social-icons">
-				<a class="secondary" href="https://facebook.com/Homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://facebook.com/Homepolish" target="_blank">
 				<span class="v1-icon-facebook"></span>
 				</a>
-				<a class="secondary" href="https://pinterest.com/Homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://pinterest.com/Homepolish" target="_blank">
 				<span class="v1-icon-pinterest"></span>
 				</a>
-				<a class="secondary" href="https://instagram.com/Homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://instagram.com/Homepolish" target="_blank">
 				<span class="v1-icon-instagram"></span>
 				</a>
-				<a class="secondary" href="https://twitter.com/homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://twitter.com/homepolish" target="_blank">
 				<span class="v1-icon-twitter"></span>
 				</a>
 				</div>
@@ -297,22 +297,22 @@
 				<div class="info-line">
 				Homepolish, Inc.
 				</div>
-				<div class="info-line" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				<span itemprop="streetAddress">27 W 24th Street Fl. 2</span>
+				<div class="info-line">
+				<span>27 W 24th Street Fl. 2</span>
 
-				<span itemprop="addressLocality">New York</span>
+				<span>New York</span>
 				, 
-				<span itemprop="addressRegion">NY</span>
+				<span>NY</span>
 
-				<span itemprop="postalCode">10010</span>
+				<span>10010</span>
 				</div>
 				<div class="info-line">
-				<span itemprop="email">info@homepolish.com</span>
+				<span>info@homepolish.com</span>
 				| 
-				<span itemprop="telephone">844-808-4434</span>
+				<span>844-808-4434</span>
 				</div>
 				<div class="info-line">
-				© 2012-2018
+				© 2012-<script>document.write(new Date().getFullYear())</script>
 				</div>
 				</div>
 
@@ -330,16 +330,16 @@
 				</div>
 
 				<div class="hp-footer__social-icons">
-				<a class="secondary" href="https://facebook.com/Homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://facebook.com/Homepolish" target="_blank">
 				<span class="v1-icon-facebook"></span>
 				</a>
-				<a class="secondary" href="https://pinterest.com/Homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://pinterest.com/Homepolish" target="_blank">
 				<span class="v1-icon-pinterest"></span>
 				</a>
-				<a class="secondary" href="https://instagram.com/Homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://instagram.com/Homepolish" target="_blank">
 				<span class="v1-icon-instagram"></span>
 				</a>
-				<a class="secondary" href="https://twitter.com/homepolish" itemprop="sameAs" target="_blank">
+				<a class="secondary" href="https://twitter.com/homepolish" target="_blank">
 				<span class="v1-icon-twitter"></span>
 				</a>
 				</div>
