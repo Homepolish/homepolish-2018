@@ -2,7 +2,7 @@
 
 <?php
 	$page = get_page_by_path( 'not-found' );
-	echo $page_ID = $page->ID;
+	$page_ID = $page->ID;
 ?>
 
 <!-- our-mission -->
