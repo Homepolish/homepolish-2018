@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/PAGETYPE?" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html itemscope itemtype="http://schema.org/<?php echo page_meta()['page_type']; ?>" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <!-- hard coded header.php values -->
 <link href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 <link href="<?php echo get_template_directory_uri(); ?>/assets/homepolish_logo.png" rel="apple-touch-icon">
 <meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="CSRF-TOKEN?" />
-<meta content="Homepolish" itemprop="name">
+
+
+<meta content='Homepolish' itemprop='name'>
+<meta content='Homepolish provides both residential and commercial clients with premium interior design, from accessorizing to gut-renovations.' itemprop='description'>
+<meta content='https://www.homepolish.com/assets/homepolish_logo-1345a44d04bde8dd5bd6edfcf421689cdbf630034936a1729f90032078c9920e.png' itemprop='logo'>
+<meta content='https://homepolish.com/' itemprop='url'>
+
+
+
 <meta content="127512634049491" property="fb:app_id">
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <!-- /hard coded header.php values -->
@@ -15,15 +23,34 @@
 <?php wp_head(); ?>
 <!-- /wp_head -->
 
+
+<?php 
+/*
+meta logo
+meta image
+meta description
+canonical url
+
+pmv_transparent_header Y/N
+pmv_data_action
+pmv_data_controller
+pmv_page_type
+pmv_item_properties
+	pmv_ip_name
+	pmv_ip_value
+*/
+?>
+
+
 </head>
 
-<body class="svelte landing-pages landing-pages--<?php echo page_body_vals()['body_class']; ?>"
- data-action="<?php echo page_body_vals()['data_action']; ?>" 
- data-controller="<?php echo page_body_vals()['data_controller']; ?>">
+<body class="svelte landing-pages landing-pages--<?php echo page_meta()['body_class']; ?>"
+ data-action="<?php echo page_meta()['data_action']; ?>" 
+ data-controller="<?php echo page_meta()['data_controller']; ?>">
 <div class="fixed-banner"></div>
 <div class="main-container">
 <div class="hp-header-container">
-<header id="header" class="hp-header <?php echo page_body_vals()['transparency']; ?>">
+<header id="header" class="hp-header <?php echo page_meta()['transparency']; ?>">
 <div class="hp-header__main">
 <button class="mobile-nav-menu-toggle" data-mobile-nav-menu-toggle="true">
 <span class="toggle-bar"></span>

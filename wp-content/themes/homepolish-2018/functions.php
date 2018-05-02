@@ -7,6 +7,60 @@ add_theme_support( 'title-tag' );
 register_nav_menus(); 
 show_admin_bar( 0 );
 
+function page_meta() {
+
+	global $post; 
+	$post_id = $post_ID;
+	$post_slug = $post->post_name;
+
+	// Page Type
+	$page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
+
+	// Transparency
+	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
+
+		$page_meta['transparency'] = 'hp-header--transparent';
+	}
+
+	// Default Meta Values
+	$page_meta['body_class']		= $post_slug;
+	$page_meta['data_action']		= $post_slug;
+	$page_meta['data_controller']	= 'landing_pages';
+
+	// Body Class
+	if ( get_field( 'pmv_body_action', $post_id ) ) {
+
+		$page_meta['body_class'] = get_field( 'pmv_body_class', $post_id );
+	}
+
+	// Data Action
+	if ( get_field( 'pmv_data_action', $post_id ) ) {
+
+		$page_meta['data_action'] = get_field( 'pmv_data_action', $post_id );
+	}
+
+	// Data Controller
+	if ( get_field( 'pmv_data_controller', $post_id ) ) {
+
+		$page_meta['data_controller'] = get_field( 'pmv_data_controller', $post_id );
+	}
+
+	return $page_meta;
+}
+
+function page_meta_tags() {
+
+	global $post; 
+	$post_id = $post_ID;
+
+	$row = get_field( 'pmv_item_properties', $post_id ); 
+	foreach( $row as $key => $value ) {
+
+		echo '<meta itemprop="' . $value['pmv_ip_name'] . '" content="' . $value['pmv_ip_value']. '">';
+	}
+}
+add_action('wp_head', 'page_meta_tags');
+
 
 
 function page_body_vals() {
