@@ -20,10 +20,11 @@ jobs:
 
 workflows:
   version: 2
-  jobs:
-    - deploy:
-        filters:
-          branches:
-            only: /master|circleci/
-          tags:
-            only: /^20[0-9]{6}\.[a-f0-9]{7,}$/
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: /master|circleci/
+            tags:
+              only: /^20[0-9]{6}\.[a-f0-9]{7,}$/
