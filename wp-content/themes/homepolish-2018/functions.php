@@ -66,6 +66,11 @@ function page_meta_tags() {
 	global $post; 
 	$post_id = $post_ID;
 
+	// Itemprop Image
+
+	echo '<meta itemprop="image" content="' . get_the_post_thumbnail_url( $post_ID ) . '">';
+
+	// Item Props
 	$row = get_field( 'pmv_item_properties', $post_id ); 
 	foreach( $row as $key => $value ) {
 
