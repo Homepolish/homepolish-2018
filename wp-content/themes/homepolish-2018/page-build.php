@@ -47,7 +47,7 @@
 <!-- what we offer -->
 
 <div class="list-section">
-	<div class="list-container"><h3 class="title"><?php the_field( 'ls_title' ); ?></h3><ul><?php $row = get_field( 'ls_list_items' ); foreach( $row as $value ) { ?><li itemprop="serviceArea"><?php echo $value['ls_list_item']; ?></li><?php } ?></ul></div>
+	<div class="list-container"><h3 class="title"><?php the_field( 'ls_title' ); ?></h3><ul><?php $row = get_field( 'ls_list_items' ); foreach( $row as $value ) { ?><li><?php echo $value['ls_list_item']; ?></li><?php } ?></ul></div>
 </div><!-- ./what we offer -->
 
 
