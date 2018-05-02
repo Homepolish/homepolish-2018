@@ -7,6 +7,10 @@ add_theme_support( 'title-tag' );
 register_nav_menus(); 
 show_admin_bar( 0 );
 
+/**
+@ Page Meta Values
+*/
+
 function page_meta() {
 
 	global $post; 
@@ -48,6 +52,10 @@ function page_meta() {
 	return $page_meta;
 }
 
+/** 
+@ Itemprop Meta Tags
+*/
+
 function page_meta_tags() {
 
 	global $post; 
@@ -61,7 +69,9 @@ function page_meta_tags() {
 }
 add_action('wp_head', 'page_meta_tags');
 
-
+/** 
+@ Page Body Vals (DEPRECATED)
+*/
 
 function page_body_vals() {
 
@@ -76,19 +86,9 @@ function page_body_vals() {
 	$vals['data_controller']= 'landing_pages';
 	$vals['transparency'] 	= '';
 
-	if( $post_slug == 'about-us' ) {
-		$vals['data_action'] = 'about_us';
-	}
-	if( $post_slug == 'build' ) {
-		$vals['body_class']	 	= 'show';
-		$vals['data_action'] 	= 'show';
-		$vals['data_controller']= 'tags';
-	}
+
 	if( $post_slug == 'terms' ) {
 		$vals['data_controller'] = 'static_pages';
-	}
-	if( $post_slug == 'homepage' ) {
-		$vals['transparency'] = 'hp-header--transparent';
 	}
 	if( $post_slug == 'page' ) {
 		$vals['body_class'] = 'about-us';

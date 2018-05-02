@@ -44,7 +44,7 @@ pmv_item_properties
 
 </head>
 
-<body class="svelte landing-pages landing-pages--<?php echo page_meta()['body_class']; ?>"
+<body class="svelte <?php echo page_meta()['data_controller']; ?> <?php echo page_meta()['data_controller']; ?>--<?php echo page_meta()['body_class']; ?>"
  data-action="<?php echo page_meta()['data_action']; ?>" 
  data-controller="<?php echo page_meta()['data_controller']; ?>">
 <div class="fixed-banner"></div>
