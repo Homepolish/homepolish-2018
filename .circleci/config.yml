@@ -1,0 +1,34 @@
+version: 2.0
+
+jobs:
+  deploy:
+    working_directory: ~/tmp/wp
+    docker:
+      - image: circleci/php
+    steps:
+      - add_ssh_keys
+      - checkout
+      - run: echo "git.wpengine.com,52.44.207.96 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKPFgZ9SUnEqp6yVjT4plVEADyyO7/LQuVqAvOAKF24X1JDgQwT7Fge8daPQYiXZN6vN+UaPIyEGy8fY3xkYbhA=" >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy
+          command: |
+            git config --global user.email "webmaster@homepolish.com"
+            git config --global user.name "Homepolish Bot"
+            if [[ -n $CIRCLE_BRANCH ]]; then
+              git remote add stage git@git.wpengine.com:staging/homepolishwp.git
+              git push -f stage master
+            elif [[ -n $CIRCLE_TAG ]]; then
+              git remote add prod git@git.wpengine.com:production/homepolishwp.git
+              git push -f prod master
+            fi
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+            tags:
+              only: /^20[0-9]{6}\.[a-f0-9]{7,}$/
