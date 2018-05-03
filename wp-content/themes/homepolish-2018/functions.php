@@ -21,7 +21,7 @@ function page_meta() {
 	$page_meta['body_class']		= $post_slug;
 	$page_meta['data_action']		= $post_slug;
 	$page_meta['data_controller']	= 'landing_pages';
-	$page_meta['page_type']			= 'WebSite'
+	$page_meta['page_type']			= 'WebSite';
 
 	// Transparency
 	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
