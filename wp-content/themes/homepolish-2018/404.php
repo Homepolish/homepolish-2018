@@ -11,7 +11,7 @@
 	$args = array( 
 		get_the_post_thumbnail_url( $page_ID ), 
 		get_the_post_thumbnail_url( $page_ID ), 
-		'.our-mission'
+		'.landing-pages--about-us .our-mission'
 	);
 	echo hp_image_styles( $args );
 ?>
