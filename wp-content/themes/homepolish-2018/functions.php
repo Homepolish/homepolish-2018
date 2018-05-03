@@ -15,10 +15,13 @@ function page_meta() {
 
 	global $post; 
 	$post_id = $post_ID;
-	$post_slug = $post->post_name;
+	$post_slug = $post->post_name;	
 
-	// Page Type
-	$page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
+	// Default Meta Values
+	$page_meta['body_class']		= $post_slug;
+	$page_meta['data_action']		= $post_slug;
+	$page_meta['data_controller']	= 'landing_pages';
+	$page_meta['page_type']			= 'WebSite'
 
 	// Transparency
 	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
@@ -26,10 +29,11 @@ function page_meta() {
 		$page_meta['transparency'] = 'hp-header--transparent';
 	}
 
-	// Default Meta Values
-	$page_meta['body_class']		= $post_slug;
-	$page_meta['data_action']		= $post_slug;
-	$page_meta['data_controller']	= 'landing_pages';
+	// Page Type
+	if ( get_field( 'pmv_page_type', $post_id ) ) {
+
+		$page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
+	}
 
 	// Body Class
 	if ( get_field( 'pmv_body_action', $post_id ) ) {
