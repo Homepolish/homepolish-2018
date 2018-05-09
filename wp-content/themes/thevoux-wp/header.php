@@ -1,4 +1,8 @@
-<!-- stage? --><!doctype html>
+<!-- vourx header -->
+
+<?php flush_rewrite_rules(); ?>
+
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
