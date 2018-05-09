@@ -1,0 +1,263 @@
+/*------------------------------------------------------------------
+Body
+*/
+
+.row {
+  max-width: $row-max-width; // overright Zurb's max width with Homepolish's design ~700px
+}
+
+
+/*------------------------------------------------------------------
+Headings
+*/
+
+// Header combos
+h5.title { margin-bottom: 20px; }
+h6.title { margin-bottom: 15px; }
+
+p + p { margin-top: 20px; }
+
+p + article { margin-top: 20px; }
+h5 + article { margin-top: 25px; }
+
+h5 + h4 { margin-top: 20px; }
+
+h1 + .btn { margin-top: 25px; }
+
+p + h5 { margin-top: 10px; }
+p + h6 { margin-top: 20px; }
+
+h1 + p { margin-top: 10px; }
+h4 + p { margin-top: 15px; }
+h5 + p { margin-top: 15px; }
+h6 + p { margin-top: 10px; }
+
+h3 + h5 { margin-top: 10px; }
+h4 + h6 { margin-top: 15px; }
+
+// Typography adjustments
+.dashed {
+  &:before { content: "– "; }
+  &:after { content: " –"; }
+}
+.no-wrap {
+  white-space: nowrap;
+}
+
+/*------------------------------------------------------------------
+Button & Link Styles
+*/
+
+.btn, .btn:focus, input[type=submit] {
+  @extend h6;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  padding: 15px 20px;
+  color: $white;
+  background-color: $black;
+  line-height: 1;
+  outline: 0;
+  text-shadow: none !important;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  &:hover { background-color: $accent; color: $white; }
+
+  &.secondary {
+    background-color: $white;
+    border: 2px solid $black;
+    color: $black;
+    &:hover { border-color: $accent; color: $accent; }
+  }
+
+  &.condensed { padding: 12px; }
+  &.inactive { background-color: $grey_fourth; }
+  &.loading { background-color: $grey_third; } // [TODO] Add in spinning icon
+}
+
+.square-icon {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  width: 80px;
+  height: 34px;
+  color: $white;
+
+  > * {
+    line-height: 34px;
+  }
+
+  .pre-display-count,
+  .display-count {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    color: $white;
+  }
+
+  .display-count {
+    border-left: #D15361 solid 1px;
+
+    // To avoid a weird layout issue
+    > .display-count-inner {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.circle-icon {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  padding-top: 12px;
+  line-height: 15px;
+  margin-top: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: $white;
+}
+
+@each $profile, $color in $social {
+  .#{$profile} {
+    &.circle-icon, &.square-icon {
+      background-color: $color;
+      &:hover, &:active, &:focus {
+        background: darken($color, 10%);
+        color: $white;
+      }
+    }
+  }
+}
+
+/*------------------------------------------------------------------
+Form Styles
+*/
+.input-btn-combo {
+  font-size: 0px !important; // [SOURCE] http://stackoverflow.com/questions/5256533/a-space-between-inline-block-list-items
+  input, .btn {
+    vertical-align: middle;
+    border: 1px solid $grey_first !important;
+  }
+  .btn {
+    padding: 11px;
+    border-left: none !important;
+    &:active { @include translate-y(0px); }
+
+    [class*="v1-icon-"]:before { font-size: inherit; }
+  }
+  input {
+    border-right: none !important;
+  }
+}
+
+@mixin placeholder-color($color) {
+  ::-webkit-input-placeholder { color: $color; }
+  :-moz-placeholder { color: $color; }  /* Firefox 18- */
+  ::-moz-placeholder { color: $color; } /* Firefox 19+ */
+  :-ms-input-placeholder { color: $color; }
+}
+
+/*------------------------------------------------------------------
+Component Utilities For Visual Composer
+*/
+.text-center { text-align: center; }
+
+/*------------------------------------------------------------------
+Notifications
+*/
+.notification {
+  @extend p;
+  @extend .small;
+  text-align: left;
+  padding: 15px 40px 15px 40px;
+  background-color: $light_blue;
+  position: relative;
+
+  &.margin-top { margin-top: 20px; }
+  &.inline-block { display: inline-block; }
+  &:before {
+    font-family: $icon-font-family;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  &:after {
+    content: "×";
+    float: right;
+    cursor: pointer;
+    color: $black !important;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  &.no-x { &:after { content: ""; } }
+  &.success {
+    @extend .v1-icon-circle-check;
+  }
+  &.warning {}
+  &.information {}
+  &.error {
+    background-color: $pink; color: $red;
+    @extend .v1-icon-close;
+  }
+}
+
+/*------------------------------------------------------------------
+Includes
+*/
+// Hidden on mobile, will display per the $display parameter (defaults to 'block')
+@mixin mobile-hidden($display: block) {
+  display: none;
+
+  @media only screen and (min-width: $break-small) {
+    display: $display;
+  }
+}
+
+@mixin desktop-hidden() {
+  @media only screen and (min-width: $break-small) {
+    display: none;
+  }
+}
+
+@mixin triangle-drop($borderWidth, $borderColor) {
+  &:after, &:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: ($borderWidth) + px;
+    margin-left: (-$borderWidth) + px;
+    z-index: 11; // make sure it covers the top header bar
+  }
+  &:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: $borderColor;
+    border-width: ($borderWidth + 1) + px;
+    margin-left: (-($borderWidth + 1)) + px;
+  }
+}
+
+/*------------------------------------------------------------------
+Foundation additions/overrides
+*/
+.columns.no-padding-desktop {
+  @media only screen and (min-width: $break-small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

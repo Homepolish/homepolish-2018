@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'v1-hp-icons';
+  src: url("https://www.homepolish.com/cdn/fonts/hp-icons/v1/v1-hp-icons-b69c72caa77a76b9.eot?iefix") format("embedded-opentype"),
+       url("https://www.homepolish.com/cdn/fonts/hp-icons/v1/v1-hp-icons-b69c72caa77a76b9.woff2") format("woff2"),
+       url("https://www.homepolish.com/cdn/fonts/hp-icons/v1/v1-hp-icons-b69c72caa77a76b9.woff") format("woff"),
+       url("https://www.homepolish.com/cdn/fonts/hp-icons/v1/v1-hp-icons-b69c72caa77a76b9.ttf") format("truetype"),
+       url("https://www.homepolish.com/cdn/fonts/hp-icons/v1/v1-hp-icons-b69c72caa77a76b9.svg#myfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// From Fontello
+[class^="v1-icon-"]:before, [class*=" v1-icon-"]:before {
+  font-family: "v1-hp-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Override, set a default size
+[class^="v1-icon-"]:before, [class*=" v1-icon-"]:before {
+  font-size: 1.8rem;
+}
+
+.v1-icon-twitter:before { content: '\e800'; } /* '' */
+.v1-icon-facebook:before { content: '\e801'; } /* '' */
+.v1-icon-pinterest:before { content: '\e802'; } /* '' */
+.v1-icon-tumblr:before { content: '\e803'; } /* '' */
+.v1-icon-instagram:before { content: '\e804'; } /* '' */
+.v1-icon-loading:before { content: '\e900'; } /* '' */
+.v1-icon-question:before { content: '\e901'; } /* '' */
+.v1-icon-caret-right:before { content: '\e902'; } /* '' */
+.v1-icon-caret-down:before { content: '\e903'; } /* '' */
+.v1-icon-close:before { content: '\e904'; } /* '' */
+.v1-icon-add:before { content: '\e905'; } /* '' */
+.v1-icon-logo:before { content: '\e906'; } /* '' */
+.v1-icon-logo-banner:before { content: '\e907'; } /* '' */
+.v1-icon-search:before { content: '\e908'; } /* '' */
+.v1-icon-shopping-cart:before { content: '\e909'; } /* '' */
+.v1-icon-package-icon-shortsweet:before { content: '\e910'; } /* '' */
+.v1-icon-package-icon-theworks:before { content: '\e911'; } /* '' */
+.v1-icon-package-icon-shortsweet-recd:before { content: '\e912'; } /* '' */
+.v1-icon-package-icon-theworks-recd:before { content: '\e913'; } /* '' */
+.v1-icon-package-icon-theworks-virtual:before { content: '\e914'; } /* '' */
+.v1-icon-package-icon-shortsweet-virtual:before { content: '\e915'; } /* '' */
+.v1-icon-pencil-ruler:before { content: '\e916'; } /* '' */
+.v1-icon-price-tag:before { content: '\e917'; } /* '' */
+.v1-icon-config:before { content: '\e918'; } /* '' */
+.v1-icon-bank:before { content: '\e919'; } /* '' */
+.v1-icon-circle-check:before { content: '\e920'; } /* '' */
+.v1-icon-print:before { content: '\e921'; } /* '' */
+.v1-icon-exclamation-mark:before { content: '\e922'; } /* '' */
+.v1-icon-quotes:before { content: '\e923'; } /* '' */
+.v1-icon-gallery:before { content: '\e924'; } /* '' */
+.v1-icon-handshake-circle:before { content: '\e925'; } /* '' */
+.v1-icon-pencil-circle:before { content: '\e926'; } /* '' */
+.v1-icon-clock:before { content: '\e927'; } /* '' */
+.v1-icon-check:before { content: '\e928'; } /* '' */
+.v1-icon-email:before { content: '\e929'; } /* '' */
+.v1-icon-email-dark:before { content: '\e930'; } /* '' */
+.v1-icon-source-arrow:before { content: '\e931'; } /* '' */
+.v1-icon-pencil:before { content: '\e932'; } /* '' */
+.v1-icon-edit-list:before { content: '\e933'; } /* '' */
+.v1-icon-add-list:before { content: '\e934'; } /* '' */
+.v1-icon-handshake:before { content: '\e935'; } /* '' */
+.v1-icon-bell:before { content: '\e936'; } /* '' */
+.v1-icon-paperclip:before { content: '\e937'; } /* '' */
+.v1-icon-hmarketplace-logo:before { content: '\e938'; } /* '' */

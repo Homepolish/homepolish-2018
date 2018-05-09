@@ -1,0 +1,62 @@
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+}
+
+@mixin translate-x($x) {
+  transform: translateX($x);
+  -webkit-transform: translateX($x);
+  -moz-transform: translateX($x);
+}
+
+@mixin translate-y($y) {
+  transform: translateY($y);
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+}
+
+@mixin block-label {
+  display: block;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+@mixin header-row() {
+  border-bottom: 0px;
+  border-color: $black;
+  border-style: solid;
+  border-top: 3px;
+  margin: 0px;
+}
+
+@mixin no-select() {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin border-box() {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin placeholder-color($color: $hp-blue) {
+  &::-webkit-input-placeholder { color: $color; }
+  &:-moz-placeholder { color: $color; }
+  &::-moz-placeholder { color: $color; }
+  &:-ms-input-placeholder { color: $color; }
+}

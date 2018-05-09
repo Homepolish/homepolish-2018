@@ -1,0 +1,7 @@
+@function hp-patterns-font-path($path) {
+  @if $hp-patterns-sass-asset-helper {
+    @return font-path($path);
+  } @else {
+    @return $path;
+  }
+}
