@@ -15,6 +15,8 @@ if(HMPL_ENV == "dev") {
   //define('WP_HOME', 'https://www.homepolish.com'); // How wordpress view the links * must also change urls in database to match
 }
 
+
+
 // /* Device Readings */
 // if($_SERVER['HTTP_CLOUDFRONT_IS_MOBILE_VIEWER'] == "true") { // [SOURCE] http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
 //   define("HMPL_MOBILE", "YES");
