@@ -1,7 +1,5 @@
 <?php
 
-flush_rewrite_rules();
-
 /*-----------------------------------------------------------------------------------
 
 	Here we have all the custom functions for the theme

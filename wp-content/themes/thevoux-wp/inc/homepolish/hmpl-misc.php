@@ -11,8 +11,8 @@ if(HMPL_ENV == "dev") {
   define('WP_SITEURL', HMPL_LOCALHOST); // Testing URL * uncomment to show https://wp.homepolish.com when ready to go live
   define('WP_HOME', HMPL_LOCALHOST); // Testing URL * uncomment to show https://www.homepolish.com or https://www.homepolish.com when ready to test or go live
 } else {
-  define('WP_SITEURL', 'https://wp.homepolish.com'); // The wp engine endpoint * must be on homepolish.com subdomain to avoid cross-domain issues
-  define('WP_HOME', 'https://www.homepolish.com'); // How wordpress view the links * must also change urls in database to match
+  //define('WP_SITEURL', 'https://wp.homepolish.com'); // The wp engine endpoint * must be on homepolish.com subdomain to avoid cross-domain issues
+  //define('WP_HOME', 'https://www.homepolish.com'); // How wordpress view the links * must also change urls in database to match
 }
 
 // /* Device Readings */
