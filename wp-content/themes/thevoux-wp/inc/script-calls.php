@@ -10,25 +10,29 @@ function version_id() {
 
 // Main Styles
 function thb_main_styles() {
-	 $id = get_queried_object_id();
-	 // Register
-	 wp_register_style('foundation', THB_THEME_ROOT . '/assets/css/foundation.min.css', null, null);
-	 wp_register_style("tooltipster", THB_THEME_ROOT . "/assets/css/tooltipster.bundle.min.css", null, null);
-	 wp_register_style("tooltipster-sidetip", THB_THEME_ROOT . "/assets/css/tooltipster-sideTip-light.min.css", null, null);
-	 wp_register_style("app", THB_THEME_ROOT . "/assets/css/app.css", null, version_id() );
-	 // wp_register_style('selection', THB_THEME_ROOT . '/assets/css/selection.php?id='.$id, null, null); // removed font selection from theme
-	 wp_register_style("mp", THB_THEME_ROOT . "/assets/css/magnific-popup.css", null, null);
 
-	 // Enqueue
-	 wp_enqueue_style('foundation');
-	 // wp_enqueue_style('fa');
-	 wp_enqueue_style('tooltipster');
-	 wp_enqueue_style('tooltipster-sidetip');
-	 wp_enqueue_style('app');
-	 // wp_enqueue_style('selection');
-	 wp_enqueue_style('mp');
-	 wp_enqueue_style('v1-icons');
-	 wp_enqueue_style('style', get_stylesheet_uri(), null, null);
+	if ( hp_page_type() == 'mag' ) {
+
+		$id = get_queried_object_id();
+		// Register
+		wp_register_style('foundation', THB_THEME_ROOT . '/assets/css/foundation.min.css', null, null);
+		wp_register_style("tooltipster", THB_THEME_ROOT . "/assets/css/tooltipster.bundle.min.css", null, null);
+		wp_register_style("tooltipster-sidetip", THB_THEME_ROOT . "/assets/css/tooltipster-sideTip-light.min.css", null, null);
+		wp_register_style("app", THB_THEME_ROOT . "/assets/css/app.css", null, version_id() );
+		// wp_register_style('selection', THB_THEME_ROOT . '/assets/css/selection.php?id='.$id, null, null); // removed font selection from theme
+		wp_register_style("mp", THB_THEME_ROOT . "/assets/css/magnific-popup.css", null, null);
+
+		// Enqueue
+		wp_enqueue_style('foundation');
+		// wp_enqueue_style('fa');
+		wp_enqueue_style('tooltipster');
+		wp_enqueue_style('tooltipster-sidetip');
+		wp_enqueue_style('app');
+		// wp_enqueue_style('selection');
+		wp_enqueue_style('mp');
+		wp_enqueue_style('v1-icons');
+		wp_enqueue_style('style', get_stylesheet_uri(), null, null);
+	}
 }
 
 add_action('wp_enqueue_scripts', 'thb_main_styles');
@@ -36,7 +40,9 @@ add_action('wp_enqueue_scripts', 'thb_main_styles');
 // Main Scripts
 function thb_register_js() {
 
-	if (!is_admin()) {
+
+
+	if ( ! is_admin() && hp_page_type() == 'mag' ) {
 		$url_prefix = is_ssl() ? 'https:' : 'http:';
 		// Register
 		wp_register_script('modernizr', THB_THEME_ROOT . '/assets/js/plugins/modernizr.custom.min.js', 'jquery', null);
