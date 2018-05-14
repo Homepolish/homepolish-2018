@@ -9,7 +9,8 @@ show_admin_bar( 0 );
 function hp_page_type() {
 
 	$page_type 	= '2018';
-	$path 		= explode( '/', $_SERVER['REQUEST_URI'] );
+	$req_uri 	= explode('?', $_SERVER["REQUEST_URI"], 2)[0];
+	$path 		= explode( '/', $req_uri );
 
 	if ( $path[1] == 'mag' || $path[1] == 'designer' || $path[1] == 'wp-search' ) {
 
@@ -99,23 +100,26 @@ add_action('wp_head', 'hp_page_meta_tags');
 */
 function hp_enqueue_scripts() {
 
-	global $post; 
-	$post_slug = $post->post_name;
-	
-	// Header
-	wp_enqueue_style( 'svelte', get_template_directory_uri() . '/assets/styles/svelte.css' );
-	wp_enqueue_style( 'styles', get_template_directory_uri() . '/assets/styles/styles.css' );
-	
-	// Footer
-	wp_enqueue_script( 'vwo_smart_code', get_template_directory_uri() . '/assets/js/vwo_smart_code.js', 0, 0, 0 );
-	wp_enqueue_script( 'rollbar', get_template_directory_uri() . '/assets/js/rollbar.js', 0, 0, 0 );
-	wp_enqueue_script( 'analytics', get_template_directory_uri() . '/assets/js/analytics.js', 0, 0, 0 );
-	wp_enqueue_script( 'vendor', get_template_directory_uri() . '/assets/js/vendor.js', 0, 0, 1 );
-	wp_enqueue_script( 'svelte', get_template_directory_uri() . '/assets/js/svelte.js', 0, 0, 1 );
+	if ( hp_page_type() == '2018' ) {
 
-	if ( file_exists( get_stylesheet_directory() . '/assets/js/' . $post_slug . '.js' ) ) {
+		global $post; 
+		$post_slug = $post->post_name;
+		
+		// Header
+		wp_enqueue_style( 'svelte', get_template_directory_uri() . '/assets/styles/svelte.css' );
+		wp_enqueue_style( 'styles', get_template_directory_uri() . '/assets/styles/styles.css' );
+		
+		// Footer
+		wp_enqueue_script( 'vwo_smart_code', get_template_directory_uri() . '/assets/js/vwo_smart_code.js', 0, 0, 0 );
+		wp_enqueue_script( 'rollbar', get_template_directory_uri() . '/assets/js/rollbar.js', 0, 0, 0 );
+		wp_enqueue_script( 'analytics', get_template_directory_uri() . '/assets/js/analytics.js', 0, 0, 0 );
+		wp_enqueue_script( 'vendor', get_template_directory_uri() . '/assets/js/vendor.js', 0, 0, 1 );
+		wp_enqueue_script( 'svelte', get_template_directory_uri() . '/assets/js/svelte.js', 0, 0, 1 );
 
-		wp_enqueue_script( 'page-slug', get_template_directory_uri() . '/assets/js/' . $post_slug . '.js', 0, 0, 1 );
+		if ( file_exists( get_stylesheet_directory() . '/assets/js/' . $post_slug . '.js' ) ) {
+
+			wp_enqueue_script( 'page-slug', get_template_directory_uri() . '/assets/js/' . $post_slug . '.js', 0, 0, 1 );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'hp_enqueue_scripts' );

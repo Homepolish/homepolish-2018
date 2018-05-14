@@ -1,7 +1,8 @@
+<!-- sidebar.php -->
 <?php
 	$fixed = ot_get_option('article_fixed_sidebar', 'on') == 'on' ? 'fixed-me' : '';
 ?>
-<aside class="sidebar small-12 medium-12 columns" role="complementary">
+<aside class="sidebar small-12 medium-12 large-4 columns" role="complementary">
 	<div class="sidebar_inner <?php echo $fixed; ?>">
 		<?php 
 		
