@@ -482,7 +482,7 @@ function rewrite_rules() {
   }
 
   // Make sure /mag and /magazine go to the homepage
-  add_rewrite_rule('^(mag)(azine)?\/?$', 'index.php', 'top');
+  //add_rewrite_rule('^(mag)(azine)?\/?$', 'index.php', 'top');
 
   // Grab all of the cities
   $terms = get_terms('location');

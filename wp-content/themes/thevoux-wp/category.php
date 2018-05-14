@@ -1,3 +1,4 @@
+<!-- category.php -->
 <?php get_header(); ?>
 <?php get_template_part( 'inc/header/category-title' ); ?>
 <div class="row posts archive-page-container">

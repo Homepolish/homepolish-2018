@@ -1,3 +1,4 @@
+<!-- taxonomy.php -->
 <?php
   $taxonomy_term = get_queried_object();
   if (have_posts()) {
