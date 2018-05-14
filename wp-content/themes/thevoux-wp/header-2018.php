@@ -49,7 +49,7 @@
 <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="https://www.homepolish.com/assets/homepolish-wordmark-f09400f624be850d548380bfb33f6de9292ca7ef1f1f0524e1c979ecab0f5ff7.png" /></a>
 <a class="tertiary nav__link " href="/concierge">Concierge</a>
 <a class="tertiary nav__link" href="/build">Build</a>
-<a class="tertiary nav__link" href="https://homepolish.com/mag">The Magazine</a>
+<a class="tertiary nav__link" href="/mag">The Magazine</a>
 </nav>
 </header>
 </div>
@@ -72,7 +72,7 @@
 <a class="tertiary" href="/build">Build Services</a>
 </h5>
 <h5 class="nav-link">
-<a class="tertiary" href="https://homepolish.com/mag">The Magazine</a>
+<a class="tertiary" href="/mag">The Magazine</a>
 </h5>
 </div>
 <div class="other-links">
