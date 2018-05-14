@@ -118,55 +118,55 @@
 				</div>
 				<div class="hp-footer-column mag-links-column">
 					<li class="cross-site-footer-links-column">
-					<a class="cross-site-footer-links-column-header" data-accordion-trigger href="https://homepolish.com/mag">
+					<a class="cross-site-footer-links-column-header" data-accordion-trigger href="/mag">
 					The Magazine
 					<span class="v1-icon-add"></span>
 					</a>
 					<ul class="submenu">
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/tours">
+					<a class="links-column-link" href="/mag/tours">
 					<p class="links-column-link-text">
 					Tours
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/influencers">
+					<a class="links-column-link" href="/mag/influencers">
 					<p class="links-column-link-text">
 					Influencers
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/commercial-tours">
+					<a class="links-column-link" href="/mag/commercial-tours">
 					<p class="links-column-link-text">
 					Commercial Tours
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/design-guides">
+					<a class="links-column-link" href="/mag/design-guides">
 					<p class="links-column-link-text">
 					Design Guides
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/interviews">
+					<a class="links-column-link" href="/mag/interviews">
 					<p class="links-column-link-text">
 					Interviews
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/handbooks">
+					<a class="links-column-link" href="/mag/handbooks">
 					<p class="links-column-link-text">
 					Handbooks
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/ask-homepolish">
+					<a class="links-column-link" href="/mag/ask-homepolish">
 					<p class="links-column-link-text">
 					Ask Homepolish
 					</p>
@@ -489,49 +489,49 @@
 					</a>
 					<ul class="submenu">
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/tours">
+					<a class="links-column-link" href="/mag/tours">
 					<p class="links-column-link-text">
 					Tours
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/influencers">
+					<a class="links-column-link" href="/mag/influencers">
 					<p class="links-column-link-text">
 					Influencers
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/commercial-tours">
+					<a class="links-column-link" href="/mag/commercial-tours">
 					<p class="links-column-link-text">
 					Commercial Tours
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/design-guides">
+					<a class="links-column-link" href="/mag/design-guides">
 					<p class="links-column-link-text">
 					Design Guides
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/interviews">
+					<a class="links-column-link" href="/mag/interviews">
 					<p class="links-column-link-text">
 					Interviews
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/handbooks">
+					<a class="links-column-link" href="/mag/handbooks">
 					<p class="links-column-link-text">
 					Handbooks
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/mag/ask-homepolish">
+					<a class="links-column-link" href="/mag/ask-homepolish">
 					<p class="links-column-link-text">
 					Ask Homepolish
 					</p>
