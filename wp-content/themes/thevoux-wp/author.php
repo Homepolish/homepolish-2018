@@ -1,3 +1,4 @@
+<!-- author.php -->
 <?php get_header(); ?>
 <?php get_template_part( 'inc/header/author-title' ); ?>
 <div class="row posts archive-page-container">
@@ -19,6 +20,6 @@
 			<?php get_template_part( 'inc/loop/notfound' ); ?>
 	  <?php endif; ?>
 	</div>
-	<?php get_sidebar('author'); ?>
+	<!-- <?php get_sidebar('author'); ?> -->
 </div>
 <?php get_footer(); ?>

@@ -12,7 +12,7 @@ function hp_page_type() {
 	$req_uri 	= explode('?', $_SERVER["REQUEST_URI"], 2)[0];
 	$path 		= explode( '/', $req_uri );
 
-	if ( $path[1] == 'mag' || $path[1] == 'designer' || $path[1] == 'wp-search' ) {
+	if ( $path[1] == 'author' || $path[1] == 'designer' || $path[1] == 'mag' || $path[1] == 'wp-search' ) {
 
 		$page_type = 'mag';
 	}

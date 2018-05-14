@@ -1,3 +1,4 @@
+<!-- single-story -->
 <?php
   $fixed = ot_get_option('article_fixed_sidebar', 'on');
   $fullwidth = ot_get_option('article_fullwidth', 'off');
