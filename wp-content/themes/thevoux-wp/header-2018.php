@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/<?php echo page_meta()['page_type']; ?>" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html itemscope itemtype="http://schema.org/<?php echo hp_page_meta()['page_type']; ?>" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <!-- hard coded header.php values -->
 <link href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -18,13 +18,13 @@
 
 </head>
 
-<body class="svelte landing-pages landing-pages--<?php echo page_meta()['body_class']; ?>"
- data-action="<?php echo page_meta()['data_action']; ?>" 
- data-controller="<?php echo page_meta()['data_controller']; ?>">
+<body class="svelte landing-pages landing-pages--<?php echo hp_page_meta()['body_class']; ?>"
+ data-action="<?php echo hp_page_meta()['data_action']; ?>" 
+ data-controller="<?php echo hp_page_meta()['data_controller']; ?>">
 <div class="fixed-banner"></div>
 <div class="main-container">
 <div class="hp-header-container">
-<header id="header" class="hp-header <?php echo page_meta()['transparency']; ?>">
+<header id="header" class="hp-header <?php echo hp_page_meta()['transparency']; ?>">
 <div class="hp-header__main">
 <button class="mobile-nav-menu-toggle" data-mobile-nav-menu-toggle="true">
 <span class="toggle-bar"></span>

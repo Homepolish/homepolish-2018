@@ -14,14 +14,14 @@
     echo hp_image_styles( $args );
 ?>
 
-<div class="concierge-hero hero-container">
+<div class="concierge-hero hero-container acf-text-hero">
 	<div class="hero-image"></div>
 	<div class="hero-content">
 		<div class="inner-hero-content">
-			<h6 class="uber-title"><?php the_field( 'header' ); ?></h6>
-			<h2 class="title"><?php the_field( 'title' ); ?></h2>
+			<h6 class="uber-title"><?php the_field( 'th_header' ); ?></h6>
+			<h2 class="title"><?php the_field( 'th_title' ); ?></h2>
 			<div class="description">
-				<?php the_field( 'copy' ); ?>
+				<?php the_field( 'th_copy' ); ?>
 			</div>
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 <?php 
 	$args = array( 
         get_field( 'hiw_image' ), 
-        get_field( 'hiw_mobile_image' ), 
+        get_field( 'hiw_image' ), //get_field( 'hiw_mobile_image' ),
         '.svelte.landing-pages--concierge .hiw-desktop'
     );
     echo hp_image_styles( $args );

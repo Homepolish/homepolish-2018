@@ -11,61 +11,61 @@ show_admin_bar( 0 );
 @ Page Meta Values
 */
 
-function page_meta() {
+function hp_page_meta() {
 
 	global $post; 
 	$post_id = $post_ID;
 	$post_slug = $post->post_name;	
 
 	// Default Meta Values
-	$page_meta['body_class']		= $post_slug;
-	$page_meta['data_action']		= $post_slug;
-	$page_meta['data_controller']	= 'landing_pages';
-	$page_meta['page_type']			= 'WebSite';
+	$hp_page_meta['body_class']		= $post_slug;
+	$hp_page_meta['data_action']		= $post_slug;
+	$hp_page_meta['data_controller']	= 'landing_pages';
+	$hp_page_meta['page_type']			= 'WebSite';
 
 	// Transparency
 	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
 
-		$page_meta['transparency'] = 'hp-header--transparent';
+		$hp_page_meta['transparency'] = 'hp-header--transparent';
 	}
 
 	// Page Type
 	if ( get_field( 'pmv_page_type', $post_id ) ) {
 
-		$page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
+		$hp_page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
 	}
 
 	// Body Class
 	if ( get_field( 'pmv_body_action', $post_id ) ) {
 
-		$page_meta['body_class'] = get_field( 'pmv_body_class', $post_id );
+		$hp_page_meta['body_class'] = get_field( 'pmv_body_class', $post_id );
 	}
 
 	// Data Action
 	if ( get_field( 'pmv_data_action', $post_id ) ) {
 
-		$page_meta['data_action'] = get_field( 'pmv_data_action', $post_id );
+		$hp_page_meta['data_action'] = get_field( 'pmv_data_action', $post_id );
 	}
 
 	// Data Controller
 	if ( get_field( 'pmv_data_controller', $post_id ) ) {
 
-		$page_meta['data_controller'] = get_field( 'pmv_data_controller', $post_id );
+		$hp_page_meta['data_controller'] = get_field( 'pmv_data_controller', $post_id );
 	}
 
 	if ( is_404() ) {
 
-		$page_meta['body_class'] = 'about-us';
+		$hp_page_meta['body_class'] = 'about-us';
 	}
 
-	return $page_meta;
+	return $hp_page_meta;
 }
 
 /** 
 @ Itemprop Meta Tags
 */
 
-function page_meta_tags() {
+function hp_hp_page_meta_tags() {
 
 	global $post; 
 	$post_id = $post_ID;
@@ -81,7 +81,7 @@ function page_meta_tags() {
 		echo '<meta itemprop="' . $value['pmv_ip_name'] . '" content="' . $value['pmv_ip_value']. '">';
 	}
 }
-add_action('wp_head', 'page_meta_tags');
+add_action('wp_head', 'hp_hp_page_meta_tags');
 
 /**
 @ Enqueue Scripts and Styles
@@ -114,6 +114,31 @@ add_action( 'wp_enqueue_scripts', 'hp_enqueue_scripts' );
 */
 
 function hp_image_styles( $mobile_desktop_array ) {
+
+	$mobile = $mobile_desktop_array[0];
+	$desktop = $mobile_desktop_array[1];
+	$selector = $mobile_desktop_array[2];
+
+	$styles = '<style>
+			' . $selector . ' {
+				background-image: url(
+					' . $desktop . '
+				);
+			}
+			@media screen and (min-width: 768px) {
+				' . $selector . ' {
+					background-image: url(
+						' . $desktop . '
+					);
+				}
+			}
+
+		</style>';
+
+	return $styles;	
+}
+
+function hp_image_styles_deprecated( $mobile_desktop_array ) {
 
 	$mobile = $mobile_desktop_array[0];
 	$desktop = $mobile_desktop_array[1];

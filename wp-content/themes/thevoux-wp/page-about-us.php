@@ -5,28 +5,28 @@
 <?php 
 
     $args = array( 
-        get_field( 'mobile_image' ), 
-        get_field( 'image' ), 
+        get_field( 'th_mobile_image' ), 
+        get_field( 'th_image' ), 
         '.landing-pages--about-us .our-mission'
     );
     echo hp_image_styles( $args );
 ?>
 
-<div class="our-mission">
+<div class="our-mission acf-text-hero">
     <h1 class="our-mission__tagline formatted-copy--mobile">
-        <?php the_field( 'header' ); ?>
+        <?php the_field( 'th_header' ); ?>
     </h1>
 
     <h1 class="our-mission__tagline formatted-copy--tablet-desktop">
-        <?php the_field( 'header' ); ?>
+        <?php the_field( 'th_header' ); ?>
     </h1>
 
     <p class="our-mission__body formatted-copy--mobile">
-        <?php the_field( 'copy' ); ?>
+        <?php the_field( 'th_copy' ); ?>
     </p>
 
     <p class="our-mission__body formatted-copy--tablet-desktop">
-        <?php the_field( 'copy' ); ?>
+        <?php the_field( 'th_copy' ); ?>
     </p>
 </div><!-- ./our-mission -->
 
