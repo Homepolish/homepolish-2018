@@ -23,6 +23,11 @@
  data-controller="<?php echo hp_page_meta()['data_controller']; ?>">
 <div class="fixed-banner"></div>
 <div class="main-container">
+
+<?php //get_template_part( 'header', 'nav' ); ?>
+
+<!-- hp-header-container -->
+
 <div class="hp-header-container">
 <header id="header" class="hp-header <?php echo hp_page_meta()['transparency']; ?>">
 <div class="hp-header__main">
@@ -33,8 +38,9 @@
 <span class="toggle-bar"></span>
 </button>
 <a href="/" class="hp-header__logo-link hp-header__logo-link--mobile-tablet">
-<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="https://www.homepolish.com/assets/homepolish-wordmark-white-0f8caeca1b03d49cb61da10d0550d68138e1505ba2375ecd033cd2516b5c8efc.png" />
-<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="https://www.homepolish.com/assets/homepolish-wordmark-f09400f624be850d548380bfb33f6de9292ca7ef1f1f0524e1c979ecab0f5ff7.png" />
+<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="/assets/img/homepolish-wordmark-white.png" />
+<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="/assets/img/homepolish-wordmark
+.png" />
 </a>
 <div class="hp-header__auth">
 <a class="auth__link" href="/log_in">Log In</a>
@@ -45,14 +51,19 @@
 <a class="tertiary nav__link " href="https://homepolish.com/portfolio">Portfolio</a>
 <a class="tertiary nav__link " href="https://homepolish.com/commercial">Commercial</a>
 <a href="/" class="hp-header__logo-link hp-header__logo-link--desktop">
-<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="https://www.homepolish.com/assets/homepolish-wordmark-white-0f8caeca1b03d49cb61da10d0550d68138e1505ba2375ecd033cd2516b5c8efc.png" />
-<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="https://www.homepolish.com/assets/homepolish-wordmark-f09400f624be850d548380bfb33f6de9292ca7ef1f1f0524e1c979ecab0f5ff7.png" /></a>
+<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="/assets/img/homepolish-wordmark-white.png" />
+<img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="/assets/img/homepolish-wordmark.png" /></a>
 <a class="tertiary nav__link " href="/concierge">Concierge</a>
 <a class="tertiary nav__link" href="/build">Build</a>
 <a class="tertiary nav__link" href="/mag">The Magazine</a>
 </nav>
 </header>
 </div>
+
+<!-- /hp-header-container -->
+
+<!-- mobile-nav -->
+
 <div class="mobile-nav-menu" id="mobile-nav-menu">
 <div class="menu-content">
 <div class="nav-links">
@@ -85,3 +96,8 @@
 <div class="mobile-nav-buttons" id="mobile-nav-buttons">
 <div class="scroll-shadow"></div>
 </div>
+
+<!-- /mobile-nav -->
+
+
+

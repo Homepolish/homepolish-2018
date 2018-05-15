@@ -172,7 +172,7 @@
         <?php 
             $i=1;
             $row = get_field( 'bs_styles' );
-            foreach( $row as $value ) {
+            foreach( $row as $key => $value ) {
 
                 $term = get_term( $value );
 

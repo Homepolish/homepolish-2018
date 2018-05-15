@@ -15,7 +15,7 @@
 
       <div data-logged-out="true">
         <h5 class="nav-link">
-          <a class="tertiary" href="https://www.homepolish.com/concierge">Concierge</a>
+          <a class="tertiary" href="/concierge">Concierge</a>
         </h5>
       </div>
 

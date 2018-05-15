@@ -100,6 +100,8 @@ add_action('wp_head', 'hp_page_meta_tags');
 */
 function hp_enqueue_scripts() {
 
+	wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/styles/header.css' );
+
 	if ( hp_page_type() == '2018' ) {
 
 		global $post; 

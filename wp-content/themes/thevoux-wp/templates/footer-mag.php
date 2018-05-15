@@ -45,7 +45,7 @@
                   </a>
                 </li>
                 <li class="links-col-link-li">
-                  <a class="links-column-link" href="https://www.homepolish.com/about-us">
+                  <a class="links-column-link" href="/about-us">
                     <p class="links-column-link-text">
                       About
                     </p>
@@ -80,7 +80,7 @@
                   </a>
                 </li>
                 <li class="links-col-link-li">
-                  <a class="links-column-link" href="https://www.homepolish.com/concierge">
+                  <a class="links-column-link" href="/concierge">
                     <p class="links-column-link-text">
                       Concierge
                     </p>
@@ -193,15 +193,15 @@
             <a class="secondary" href="https://twitter.com/Homepolish" target="_blank">
               <span class="v1-icon-twitter"></span>
             </a>
-            <a class="secondary" href="https://homepolish.com/tumblr" target="_blank">
+            <!-- <a class="secondary" href="https://homepolish.com/tumblr" target="_blank">
               <span class="v1-icon-tumblr"></span>
-            </a>
+            </a> -->
           </div>
           <div class="bottom-links-partial-container">
-            <a class="bottom-link" href="/jobs">
+            <a class="bottom-link" href="http://homepolish.com/jobs">
               <h6 class="bottom-link-text">Jobs</h6>
             </a>
-            <a class="bottom-link" href="https://homepolish.com/faq">
+            <a class="bottom-link" href="/faq">
               <h6 class="bottom-link-text">FAQs</h6>
             </a>
             <a class="bottom-link" href="mailto:info@homepolish.com">
@@ -210,7 +210,7 @@
             <a class="bottom-link" href="/terms">
               <h6 class="bottom-link-text">Terms</h6>
             </a>
-            <a class="bottom-link" href="https://www.homepolish.com/privacy">
+            <a class="bottom-link" href="/privacy">
               <h6 class="bottom-link-text">Privacy</h6>
             </a>
           </div>
@@ -259,15 +259,15 @@
             <a class="secondary" href="https://twitter.com/Homepolish" target="_blank">
               <span class="v1-icon-twitter"></span>
             </a>
-            <a class="secondary" href="https://homepolish.com/tumblr" target="_blank">
+            <!-- <a class="secondary" href="https://homepolish.com/tumblr" target="_blank">
               <span class="v1-icon-tumblr"></span>
-            </a>
+            </a> -->
           </div>
           <div class="bottom-links-partial-container">
             <a class="bottom-link" href="/jobs">
               <h6 class="bottom-link-text">Jobs</h6>
             </a>
-            <a class="bottom-link" href="https://homepolish.com/faq">
+            <a class="bottom-link" href="/faq">
               <h6 class="bottom-link-text">FAQs</h6>
             </a>
             <a class="bottom-link" href="mailto:info@homepolish.com">
@@ -276,7 +276,7 @@
             <a class="bottom-link" href="/terms">
               <h6 class="bottom-link-text">Terms</h6>
             </a>
-            <a class="bottom-link" href="https://www.homepolish.com/privacy">
+            <a class="bottom-link" href="/privacy">
               <h6 class="bottom-link-text">Privacy</h6>
             </a>
           </div>
@@ -303,7 +303,7 @@
                   </a>
                 </li>
                 <li class="links-col-link-li">
-                  <a class="links-column-link" href="https://www.homepolish.com/about-us">
+                  <a class="links-column-link" href="/about-us">
                     <p class="links-column-link-text">
                       About
                     </p>
@@ -317,21 +317,21 @@
                   </a>
                 </li>
                 <li class="links-col-link-li">
-                  <a class="links-column-link" href="/commercial">
+                  <a class="links-column-link" href="https://www.homepolish.com/commercial">
                     <p class="links-column-link-text">
                       Commercial Design
                     </p>
                   </a>
                 </li>
                 <li class="links-col-link-li">
-                  <a class="links-column-link" href="/careers">
+                  <a class="links-column-link" href="https://www.homepolish.com/careers">
                     <p class="links-column-link-text">
                       Design Careers
                     </p>
                   </a>
                 </li>
                 <li class="links-col-link-li">
-                  <a class="links-column-link" href="https://www.homepolish.com/concierge">
+                  <a class="links-column-link" href="/concierge">
                     <p class="links-column-link-text">
                       Concierge
                     </p>

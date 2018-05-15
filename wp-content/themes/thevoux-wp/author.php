@@ -20,6 +20,6 @@
 			<?php get_template_part( 'inc/loop/notfound' ); ?>
 	  <?php endif; ?>
 	</div>
-	<!-- <?php get_sidebar('author'); ?> -->
+	<?php //get_sidebar('author'); ?>
 </div>
 <?php get_footer(); ?>
