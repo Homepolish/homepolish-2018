@@ -184,16 +184,22 @@ function hp_image_styles_deprecated( $mobile_desktop_array ) {
 }
 
 /**
-@ Remove WordPress Emoji Code
+@ Remove WordPress Emoji Code and Extraneous Source
 */
 
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /** 
-@Remove Yoast SEO JSON schema
+@ Remove Yoast SEO JSON schema
 */
 
 function hp_remove_yoast_json( $data ) {
@@ -202,6 +208,16 @@ function hp_remove_yoast_json( $data ) {
     return $data;
   }
   add_filter( 'wpseo_json_ld_output', 'hp_remove_yoast_json', 10, 1 );
+
+/** 
+@ Fix Post List Header in wp-admin
+*/
+
+function hp_admin_css() {
+	
+	wp_enqueue_style( 'hp_admin_css' , get_template_directory_uri() . '/assets/styles/admin.css' );
+}
+add_action('admin_head', 'hp_admin_css');  
 
 /**
 @ Mag Functions

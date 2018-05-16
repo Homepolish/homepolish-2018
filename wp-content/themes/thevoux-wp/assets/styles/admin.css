@@ -1,0 +1,6 @@
+/* Fixes layout problem in /wp-admin/edit.php */
+
+table.fixed {
+    
+    table-layout: auto !important;
+}
