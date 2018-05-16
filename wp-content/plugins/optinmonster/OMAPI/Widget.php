@@ -49,7 +49,7 @@ class OMAPI_Widget extends WP_Widget {
         $widget_ops = apply_filters( 'optin_monster_api_widget_ops',
             array(
                 'classname'   => 'optin-monster-api',
-                'description' => __( 'Place an OptinMonster optin into a widgetized area.', 'optin-monster-api' )
+                'description' => __( 'Place an OptinMonster campaign into a widgetized area.', 'optin-monster-api' )
             )
         );
 
@@ -171,7 +171,7 @@ class OMAPI_Widget extends WP_Widget {
         </p>
         <?php do_action( 'optin_monster_api_widget_middle_form', $instance ); ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'optin_monster_id' ); ?>"><?php _e( 'Optin', 'optin-monster-api' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'optin_monster_id' ); ?>"><?php _e( 'Campaign', 'optin-monster-api' ); ?></label>
             <select id="<?php echo esc_attr( $this->get_field_id( 'optin_monster_id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'optin_monster_id' ) ); ?>" style="width: 100%;">
                 <?php
                 foreach ( $optins as $optin ) {

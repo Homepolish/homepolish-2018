@@ -80,7 +80,7 @@ class OMAPI_Review {
 	public function __construct() {
 
 		// Set default class properties
-		$this->protocol = is_ssl() ? 'https://' : 'http://';
+		$this->protocol = 'https://';
 		$this->url      = $this->protocol . $this->route;
 
 		// Set our object.

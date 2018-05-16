@@ -75,19 +75,19 @@ class OMAPI_Type {
 	        array(
 				'labels' => apply_filters( 'optin_monster_api_post_type_labels',
 					array(
-						'name'               => _x( 'Optins', 'post type general name', 'optin-monster-api' ),
-						'singular_name'      => _x( 'Optin', 'post type singular name', 'optin-monster-api' ),
+						'name'               => _x( 'Campaigns', 'post type general name', 'optin-monster-api' ),
+						'singular_name'      => _x( 'Campaign', 'post type singular name', 'optin-monster-api' ),
 						'add_new'            => __( 'Add New', 'optin-monster-api' ),
-						'add_new_item'       => __( 'Add New Optin', 'optin-monster-api' ),
-						'edit_item'          => __( 'Edit Optin', 'optin-monster-api' ),
-						'new_item'           => __( 'New Optin', 'optin-monster-api' ),
-						'all_items'          => __( 'Optins', 'optin-monster-api' ),
-						'view_item'          => __( 'View Optin', 'optin-monster-api' ),
-						'search_items'       => __( 'Search Optins', 'optin-monster-api' ),
-						'not_found'          => __( 'No Optins found', 'optin-monster-api' ),
-						'not_found_in_trash' => __( 'No Optins found in trash', 'optin-monster-api' ),
+						'add_new_item'       => __( 'Add New Campaign', 'optin-monster-api' ),
+						'edit_item'          => __( 'Edit Campaign', 'optin-monster-api' ),
+						'new_item'           => __( 'New Campaign', 'optin-monster-api' ),
+						'all_items'          => __( 'Campaigns', 'optin-monster-api' ),
+						'view_item'          => __( 'View Campaign', 'optin-monster-api' ),
+						'search_items'       => __( 'Search Campaigns', 'optin-monster-api' ),
+						'not_found'          => __( 'No Campaigns found', 'optin-monster-api' ),
+						'not_found_in_trash' => __( 'No Campaigns found in trash', 'optin-monster-api' ),
 						'parent_item_colon'  => '',
-						'menu_name'          => __( 'Optins', 'optin-monster-api' )
+						'menu_name'          => __( 'Campaigns', 'optin-monster-api' )
 					)
 				),
 				'public'          => false,

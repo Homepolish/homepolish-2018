@@ -95,7 +95,14 @@ class OMAPI_Refresh {
     public function refresh() {
 
 		$creds = $this->base->get_api_credentials();
-	    $api   = new OMAPI_Api( 'optins', array( 'user' => $creds['user'], 'key' => $creds['key'] ), 'GET' );
+
+		// Check if we have the new API and if so only use it
+        if ( $creds['apikey'] ){
+            $api   = new OMAPI_Api('optins', array( 'apikey' => $creds['apikey']), 'GET' );
+        } else {
+            $api   = new OMAPI_Api( 'optins', array( 'user' => $creds['user'], 'key' => $creds['key'] ), 'GET' );
+        }
+
 		$ret   = $api->request();
 		if ( is_wp_error( $ret ) ) {
 			// If no optins available, make sure they get deleted.
@@ -144,7 +151,7 @@ class OMAPI_Refresh {
     public function message() {
 
 	    ?>
-	    <div class="updated"><p><?php _e( 'Your optins have been refreshed successfully.', 'optin-monster-api' ); ?></p></div>
+	    <div class="updated"><p><?php _e( 'Your campaigns have been refreshed successfully.', 'optin-monster-api' ); ?></p></div>
 	    <?php
 
     }

@@ -1,34 +1,37 @@
-<?php
 
-$l10n = array(
-	'queue_limit_exceeded' => 'You have attempted to queue too many files.',
-	'file_exceeds_size_limit' => 'This file exceeds the maximum upload size for this site.',
-	'zero_byte_file' => 'This file is empty. Please try another.',
-	'invalid_filetype' => 'This file type is not allowed. Please try another.',
-	'default_error' => 'An error occurred in the upload. Please try again later.',
-	'missing_upload_url' => 'There was a configuration error. Please contact the server administrator.',
-	'upload_limit_exceeded' => 'You may only upload 1 file.',
-	'http_error' => 'HTTP error.',
-	'upload_failed' => 'Upload failed.',
-	'io_error' => 'IO error.',
-	'security_error' => 'Security error.',
-	'file_cancelled' => 'File canceled.',
-	'upload_stopped' => 'Upload stopped.',
-	'dismiss' => 'Dismiss',
-	'crunching' => 'Crunching&hellip;',
-	'deleted' => 'moved to the trash.',
-	'error_uploading' => 'has failed to upload due to an error',
-	'cancel_upload' => 'Cancel upload',
-	'dismiss' => 'Dismiss'
-);
-
-?>
 <script type="text/javascript">
 	var plugin_url = '<?php echo WP_ALL_IMPORT_ROOT_URL; ?>';
-	var swfuploadL10n = <?php echo json_encode($l10n); ?>;
 </script>
 
 <div class="change_file">
+
+	<div class="rad4 first-step-errors error-upload-rejected">
+		<div class="wpallimport-notify-wrapper">
+			<div class="error-headers exclamation">
+				<h3><?php _e('File upload rejected by server', 'wp_all_import_plugin');?></h3>
+				<h4><?php _e("Contact your host and have them check your server's error log.", "wp_all_import_plugin"); ?></h4>
+			</div>		
+		</div>		
+		<a class="button button-primary button-hero wpallimport-large-button wpallimport-notify-read-more" href="http://www.wpallimport.com/documentation/troubleshooting/problems-with-import-files/" target="_blank"><?php _e('Read More', 'wp_all_import_plugin');?></a>		
+	</div>
+
+	<div class="rad4 first-step-errors error-file-validation" <?php if ( ! empty($upload_validation) ): ?> style="display:block;" <?php endif; ?>>
+		<div class="wpallimport-notify-wrapper">
+			<div class="error-headers exclamation">
+				<h3><?php _e('There\'s a problem with your import file', 'wp_all_import_plugin');?></h3>
+				<h4>
+					<?php 
+					if ( ! empty($upload_validation) ): 										
+						$file_type = strtoupper(pmxi_getExtension($post['file']));
+						printf(__('This %s file has errors and is not valid.', 'wp_all_import_plugin'), $file_type); 
+					endif;
+					?>
+				</h4>
+			</div>		
+		</div>		
+		<a class="button button-primary button-hero wpallimport-large-button wpallimport-notify-read-more" href="http://www.wpallimport.com/documentation/troubleshooting/problems-with-import-files/#invalid" target="_blank"><?php _e('Read More', 'wp_all_import_plugin');?></a>		
+	</div>		
+
 	<div class="wpallimport-content-section">
 		<div class="wpallimport-collapsed-header" style="padding-left:30px;">
 			<h3><?php _e('Import File','wp_all_import_plugin');?></h3>	
@@ -96,7 +99,9 @@ $l10n = array(
 										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.psv', PMXI_Helper::GLOB_NODIR),
 										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.json', PMXI_Helper::GLOB_NODIR),
 										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.txt', PMXI_Helper::GLOB_NODIR),
-										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.sql', PMXI_Helper::GLOB_NODIR)
+										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.sql', PMXI_Helper::GLOB_NODIR),
+										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.xls', PMXI_Helper::GLOB_NODIR),
+										PMXI_Helper::safe_glob($upload_dir['basedir'] . $files_directory . '*.xlsx', PMXI_Helper::GLOB_NODIR)
 									);
 									sort($local_files);
 									$sizes = array();

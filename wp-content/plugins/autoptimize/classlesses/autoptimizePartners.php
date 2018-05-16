@@ -3,6 +3,8 @@
 Classlessly add a "more tools" tab to promote (future) AO addons and/ or affiliate services
 */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 add_action('admin_init', 'ao_partner_tabs_preinit');
 function ao_partner_tabs_preinit() {
     if (apply_filters('autoptimize_filter_show_partner_tabs',true)) {
@@ -29,7 +31,7 @@ function ao_partners() {
     .itemDetail {
         background: #fff;
         width: 250px;
-        min-height: 270px;
+        min-height: 290px;
         border: 1px solid #ccc;
         float: left;
         padding: 15px;
@@ -72,7 +74,7 @@ function ao_partners() {
         <h1><?php _e('Autoptimize Settings','autoptimize'); ?></h1>
         <?php echo autoptimizeConfig::ao_admin_tabs(); ?>
         <?php
-            _e("<h2>These Autoptimize power-ups and related services will improve your site's performance even more!</h2>","autoptimize");
+            echo '<h2>'. __("These Autoptimize power-ups and related services will improve your site's performance even more!",'autoptimize') . '</h2>';
         ?>
         <div>
             <?php getAOPartnerFeed(); ?>
@@ -108,7 +110,7 @@ function getAOPartnerFeed() {
                         }
                         ?>
                         <div class="itemDescription"><?php echo wp_kses_post($item -> get_description() ); ?></div>
-                        <div class="itemButtonRow"><div class="itemButton button-secondary"><a href="<?php echo $itemURL; ?>" target="_blank">More info</a></div></div>
+                        <div class="itemButtonRow"><div class="itemButton button-secondary"><a href="<?php echo $itemURL; ?>" target="_blank"><?php _e('More info','autoptimize'); ?></a></div></div>
                     </li>
                 <?php endforeach; ?>
             <?php } ?>

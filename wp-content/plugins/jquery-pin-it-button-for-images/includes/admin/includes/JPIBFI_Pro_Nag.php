@@ -3,8 +3,6 @@
 require_once 'jpibfi_nag.php';
 class JPIBFI_Pro_Nag extends JPIBFI_Nag {
 
-    private $cancel_notice_value;
-	private $stages;
 	private $plugin_name;
 	private $pro_link;
 	private $notice_key;
@@ -14,9 +12,7 @@ class JPIBFI_Pro_Nag extends JPIBFI_Nag {
 		parent::__construct( $plugin_prefix );
 		$this->pro_link = $pro_link;
 		$this->plugin_name = $plugin_name;
-		$this->notice_key = $plugin_prefix . '_pro_notice';
-		$this->stages = array( 30, 60, 90, 135, 180, 225, 270, 315, 360, 405, 450, 495, 540, 585, 630, 675, 720 );
-		$this->cancel_notice_value = 'END';
+		$this->notice_key = $plugin_prefix . '_pro_notice_date';
 
 		$this->notice_text   = sprintf(
 			__( "You've been using <b>%s</b> for quite some time now. How about checking out the Pro version? <a class='button button-primary' href='%s' target='_blank'>Yes, take me there &rarr;</a> <a class='button button-secondary' href='%s'>Thanks, but no thanks.</a>", 'jquery-pin-in-button-for-images' ),
@@ -40,35 +36,46 @@ class JPIBFI_Pro_Nag extends JPIBFI_Nag {
 			return;
 		}
 		global $current_user;
+		
+		/* remove old user meta if it still exists */
+		delete_user_meta($current_user->ID, $this->plugin_prefix . '_pro_notice');
+
 		$datetime_install = $this->get_install_date();
-		$users_stage = $this->cancel_notice_value;
-		for($i = count( $this->stages )-1; $i >= 0 ; $i-- ){
-			$datetime_past = new DateTime( sprintf('-%s days', $this->stages[ $i ] ) );
-			if ( $datetime_past >= $datetime_install && ($i + 1 < count( $this->stages )) ) {
-				$users_stage = $this->stages[ $i + 1 ];
-				break;
-			}
-		}
-		update_user_meta( $current_user->ID, $this->notice_key, $users_stage );
+		$next_date = $this->getNextNagDate( $datetime_install );
+		update_user_meta( $current_user->ID, $this->notice_key, $next_date->format( 'Y-m-d' ) );
 		wp_redirect( remove_query_arg( $this->notice_key ) );
 		exit;
+	}
+
+	private function getNextNagDate($install_date) {
+		$base_period = 45;
+		$stages = array(
+			new DateTime( '-180 days' ),
+			new DateTime( '-365 days' ),
+			new DateTime( '-730 days' ),
+			new DateTime( '-1100 days' )
+		);
+		
+		for( $i = count( $stages) - 1; $i >= 0; $i--) {
+			if ( $install_date < $stages[ $i ]  ) {
+				return new DateTime( sprintf( '+%s days', ($i + 1) * $base_period ) );
+			}
+		}
+		return new DateTime( '+30 days' );
 	}
 
 	/**
 	 * Display the admin notice
 	 */
 	public function display_admin_notice() {
+		$now = new DateTime();
 		$current_user = wp_get_current_user();
-		$users_stage  = get_user_meta( $current_user->ID, $this->notice_key, true );
+		$notice_date_string  = get_user_meta( $current_user->ID, $this->notice_key, true );
+		$notice_date = '' == $notice_date_string
+			? $now
+			: new DateTime( $notice_date_string );
 
-		if ( $this->cancel_notice_value === $users_stage ) {
-			return;
-		}
-		$users_stage = '' == $users_stage ? $this->stages[0] : $users_stage;
-		$datetime_install = $this->get_install_date();
-		$datetime_past    = new DateTime( sprintf('-%s days', $users_stage ) );
-
-		if ( $datetime_past < $datetime_install ) {
+		if ( $notice_date > $now ) {
 			return;
 		}
 		?>

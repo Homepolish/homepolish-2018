@@ -1,4 +1,15 @@
-<?php $custom_type = get_post_type_object( $post_type ); ?>
+<?php
+switch ($post_type){
+	case 'taxonomies':
+		$custom_type = new stdClass();
+		$custom_type->labels = new stdClass();
+		$custom_type->labels->singular_name = __('Taxonomy Term', 'wp_all_import_plugin');
+		break;
+	default:
+		$custom_type = get_post_type_object( $post_type );
+		break;
+}
+?>
 <div class="wpallimport-collapsed closed wpallimport-section ">
 	<div class="wpallimport-content-section ">
 		<div class="wpallimport-collapsed-header">
@@ -9,8 +20,8 @@
 				<table class="form-table" style="max-width:none;">
 					<tr>
 						<td>					
-							<input type="hidden" name="encoding" value="<?php echo ($isWizard) ? PMXI_Plugin::$session->encoding : $post['encoding']; ?>"/>
-							<input type="hidden" name="delimiter" value="<?php echo ($isWizard) ? PMXI_Plugin::$session->is_csv : $post['delimiter']; ?>"/>
+							<input type="hidden" name="encoding" value="<?php echo ($this->isWizard) ? PMXI_Plugin::$session->encoding : $post['encoding']; ?>"/>
+							<input type="hidden" name="delimiter" value="<?php echo ($this->isWizard) ? PMXI_Plugin::$session->is_csv : $post['delimiter']; ?>"/>
 
 							<?php $is_support_post_format = ( current_theme_supports( 'post-formats' ) && post_type_supports( $post_type, 'post-formats' ) ) ? true : false; ?>
 							
@@ -29,7 +40,7 @@
 								<div class="switcher-target-status_xpath">
 									<div class="input">
 										&nbsp;<input type="text" class="smaller-text" name="status_xpath" style="width:190px;" value="<?php echo esc_attr($post['status_xpath']) ?>"/>
-										<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'publish\', \'draft\', \'trash\').', 'wp_all_import_plugin') ?>" style="position:relative; top:13px; float: right;">?</a>
+										<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'publish\', \'draft\', \'trash\', \'private\').', 'wp_all_import_plugin') ?>" style="position:relative; top:13px; float: right;">?</a>
 									</div>
 								</div>
 							</div>								
@@ -155,8 +166,8 @@
 										foreach ($post_formats[0] as $post_format) {
 											?>
 											<div class="input">
-												<input type="radio" id="post_format_<?php echo $post_format . "_" . $entry; ?>" name="post_format" value="<?php echo $post_format; ?>" <?php echo $post_format == $post['post_format'] ? 'checked="checked"' : '' ?> />
-												<label for="post_format_<?php echo $post_format . "_" . $entry; ?>"><?php _e( ucfirst($post_format), 'wp_all_import_plugin') ?></label>
+												<input type="radio" id="post_format_<?php echo $post_format; ?>" name="post_format" value="<?php echo $post_format; ?>" <?php echo $post_format == $post['post_format'] ? 'checked="checked"' : '' ?> />
+												<label for="post_format_<?php echo $post_format; ?>"><?php _e( ucfirst($post_format), 'wp_all_import_plugin') ?></label>
 											</div>
 											<?php
 										}
@@ -176,7 +187,9 @@
 					</tr>
 					<?php endif; ?>		
 
-					<?php if ( 'page' == $post_type ):?>							
+					<?php
+					global $wp_version;
+					if ( 'page' == $post_type || version_compare($wp_version, '4.7.0', '>=') ):?>
 					<tr>
 						<td>
 							<h4><?php _e('Page Template', 'wp_all_import_plugin') ?></h4>
@@ -208,14 +221,14 @@
 						<td>
 							<?php if ( 'page' == $post_type ):?>	
 
-								<h4><?php _e('Page Parent', 'wp_all_import_plugin') ?></h4>
+								<h4><?php _e('Page Parent', 'wp_all_import_plugin') ?><a href="#help" class="wpallimport-help" title="<?php _e('Enter the ID, title, or slug of the desired page parent. If adding the child and parent pages in the same import, set \'Records per Iteration\' to 1, run the import twice, or run separate imports for child and parent pages.', 'wp_all_import_plugin') ?>" style="position:relative; top:-1px;">?</a></h4>
 
 								<div class="input">
 									<input type="radio" id="is_multiple_page_parent_yes" name="is_multiple_page_parent" value="yes" <?php echo 'yes' == $post['is_multiple_page_parent'] ? 'checked="checked"' : '' ?> class="switcher" style="margin-left:0;"/>
 									<label for="is_multiple_page_parent_yes"><?php _e('Select page parent', 'wp_all_import_plugin') ?></label>
 									<div class="switcher-target-is_multiple_page_parent_yes">
 										<div class="input">
-										<?php wp_dropdown_pages(array('post_type' => 'page', 'selected' => $post['parent'], 'name' => 'parent', 'show_option_none' => __('(no parent)', 'wp_all_import_plugin'), 'sort_column'=> 'menu_order, post_title',)) ?>
+										<?php wp_dropdown_pages(array('post_type' => 'page', 'selected' => $post['parent'], 'name' => 'parent', 'show_option_none' => __('(no parent)', 'wp_all_import_plugin'), 'sort_column'=> 'menu_order, post_title', 'number' => 500)); ?>
 										</div>
 									</div>
 								</div>
@@ -234,11 +247,11 @@
 
 							<?php if ( 'page' != $post_type && $custom_type->hierarchical ): ?>
 
-								<h4><?php _e('Post Parent', 'wp_all_import_plugin') ?><a href="#help" class="wpallimport-help" title="<?php _e('Enter the slug of the desired post parent. If adding the child and parent posts in the same import, set \'Records per Iteration\' to 1, run the import twice, or run separate imports for child and parent posts.', 'wp_all_import_plugin') ?>" style="position:relative; top:-1px;">?</a></h4>
+								<h4><?php _e('Post Parent', 'wp_all_import_plugin') ?><a href="#help" class="wpallimport-help" title="<?php _e('Enter the ID, title, or slug of the desired post parent. If adding the child and parent posts in the same import, set \'Records per Iteration\' to 1, run the import twice, or run separate imports for child and parent posts.', 'wp_all_import_plugin') ?>" style="position:relative; top:-1px;">?</a></h4>
 								
 								<div class="input">
 									<input type="radio" id="is_multiple_page_parent_yes" name="is_multiple_page_parent" value="yes" <?php echo 'yes' == $post['is_multiple_page_parent'] ? 'checked="checked"' : '' ?> class="switcher" style="margin-left:0;"/>
-									<label for="is_multiple_page_parent_yes"><?php _e('Select page parent', 'wp_all_import_plugin') ?></label>
+									<label for="is_multiple_page_parent_yes"><?php _e('Set post parent', 'wp_all_import_plugin') ?></label>
 									<div class="switcher-target-is_multiple_page_parent_yes">
 										<div class="input">
 											<input type="text" class="" name="parent" value="<?php echo esc_attr($post['parent']) ?>" />									
@@ -271,17 +284,18 @@
 					<?php if ( ! empty($post['deligate']) and $post['deligate'] == 'wpallexport' ): ?>
 					<tr>
 						<td>
-							<h4><?php _e('Override Post Type', 'wp_all_import_plugin') ?></h4>
+							<h4><?php _e('Dynamic Post Type', 'wp_all_import_plugin') ?></h4>
 							<div class="input">
 								<div style="margin: 11px; float: left;">
 									<input type="hidden" name="is_override_post_type" value="0"/>
 									<input type="checkbox" value="1" class="switcher-horizontal fix_checkbox" name="is_override_post_type" id="is_override_post_type" <?php echo ( ! empty($post['is_override_post_type'])) ? 'checked="checked"' : '' ?>>
-									<label for="is_override_post_type"><?php _e('Override','wp_all_import_plugin');?></label>
+									<label for="is_override_post_type"><?php _e('Slug','wp_all_import_plugin');?></label>
 								</div>
 								<div class="switcher-target-is_override_post_type" style="float: left; overflow: hidden;">
 									<input type="text" name="post_type_xpath" style="vertical-align:middle; line-height: 26px;" value="<?php echo esc_attr($post['post_type_xpath']) ?>" />											
 								</div>	
-								<a href="#help" class="wpallimport-help" title="<?php _e('Slug for the post type.', 'wp_all_import_plugin') ?>" style="position:relative; top:12px;">?</a>
+								<a href="#help" class="wpallimport-help" title="<?php _e('If records in this import have different post types specify the slug of the desired post type here.
+', 'wp_all_import_plugin') ?>" style="position:relative; top:12px;">?</a>
 							</div>
 						</td>
 					</tr>			

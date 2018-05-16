@@ -1,4 +1,16 @@
-<?php $custom_type = get_post_type_object( $post_type ); ?>
+<?php
+switch ($post_type){
+	case 'taxonomies':
+		$custom_type = new stdClass();
+		$custom_type->labels = new stdClass();
+		$custom_type->labels->name = __('Taxonomy Terms', 'wp_all_import_plugin');
+		$custom_type->labels->singular_name = __('Taxonomy Term', 'wp_all_import_plugin');
+		break;
+	default:
+		$custom_type = get_post_type_object( $post_type );
+		break;
+}
+?>
 <div class="wpallimport-collapsed closed wpallimport-section wpallimport-custom-fields">
 	<div class="wpallimport-content-section">
 		<div class="wpallimport-collapsed-header">
@@ -46,7 +58,7 @@
 											<?php $custom_mapping_rules = (!empty($post['custom_mapping_rules'][$i])) ? json_decode($post['custom_mapping_rules'][$i], true) : false; ?>
 											<tr class="form-field">
 												<td style="width: 45%;">
-													<input type="text" name="custom_name[]"  value="<?php echo esc_attr($name) ?>" class="widefat autocomplete" style="margin-bottom:10px;"/>
+													<input type="text" name="custom_name[]"  value="<?php echo esc_attr($name) ?>" class="widefat wp_all_import_autocomplete" style="margin-bottom:10px;"/>
 													<input type="hidden" name="custom_format[]" value="<?php echo ( ! empty($post['custom_format'][$i]) ) ? '1' : '0'; ?>"/>												
 												</td>
 												<td class="action">
@@ -255,7 +267,7 @@
 									<?php else: ?>
 										<tr class="form-field">
 											<td style="width: 45%;">
-												<input type="text" name="custom_name[]"  value="" class="widefat autocomplete" style="margin-bottom:10px;"/>
+												<input type="text" name="custom_name[]"  value="" class="widefat wp_all_import_autocomplete" style="margin-bottom:10px;"/>
 												<input type="hidden" name="custom_format[]" value="0"/>											
 											</td>
 											<td class="action">
@@ -389,7 +401,7 @@
 									<?php endif;?>
 									<tr class="form-field template">
 										<td style="width: 45%;">
-											<input type="text" name="custom_name[]" value="" class="widefat autocomplete" style="margin-bottom:10px;"/>
+											<input type="text" name="custom_name[]" value="" class="widefat wp_all_import_autocomplete" style="margin-bottom:10px;"/>
 											<input type="hidden" name="custom_format[]" value="0"/>										
 										</td>
 										<td class="action">

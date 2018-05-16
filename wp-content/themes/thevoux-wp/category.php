@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <?php get_template_part( 'inc/header/category-title' ); ?>
 <div class="row posts archive-page-container">
-	<div class="small-12 medium-8 columns">
+	<div class="small-12 columns">
 		<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 			<?php get_template_part( 'inc/loop/homepolish/style-hp-list' ); ?>
 		<?php endwhile; ?>

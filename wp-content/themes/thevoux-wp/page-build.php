@@ -54,12 +54,16 @@
 			    foreach( $rows as $key => $value ) {
 
 			    	$row = $value['bsp_portfolio_item'];
-					$row->ID;
 
-					echo get_the_category( $row->ID );
+					$the_category = 'Residential';
+					$categories = get_the_category( $row->ID );
+					foreach ( $categories as $category ) { 
+						if ( $category->name == 'Residential' || $category->name == 'Commercial' ) {
 
-					//var_dump( $row );
-
+							$the_category = $category->name;
+							break;
+						}
+					}
 			    	$image_url = get_the_post_thumbnail_url( $row->ID, 'full' );
 			    	$image_386 = aq_resize( $image_url ,'386');
 			    	$image_414 = aq_resize( $image_url ,'414');
@@ -80,7 +84,7 @@
 							</div>
 							<div class="case-study-overlay">
 								<h5 class="overlay-neighborhood">
-								Residential
+									<?php echo $the_category; ?>
 								</h5>
 								<h4 class="overlay-title">
 								<?php echo $row->post_title; ?>

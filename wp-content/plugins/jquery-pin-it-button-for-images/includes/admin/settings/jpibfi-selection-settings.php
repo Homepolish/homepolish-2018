@@ -19,6 +19,8 @@ class JPIBFI_Selection_Settings extends JPIBFI_Settings_Base {
 	}
 
 	function get_settings_i18n() {
+		$existing_post_types = get_post_types( array( 'public' => true ) );
+
 		$parent                                = parent::get_settings_i18n();
 		$i18n                                  = array();
 		$i18n['title']                         = __( 'Selection settings', 'jquery-pin-it-button-for-images' );
@@ -39,7 +41,8 @@ class JPIBFI_Selection_Settings extends JPIBFI_Settings_Base {
            . __( '[search] - search pages' ) . '<br/>'
            . __( '[category] - category pages' ) . '<br/>'
            . __( '[tag] - tag pages' ) . '<br/>'
-           . __( '[home] - blog page' ) . '</p>';
+		   . __( '[home] - blog page' ) . '<br/>'
+		   . __( '[post_type] where post_type is one of the following: ') . join(', ', $existing_post_types) . '.</p>';
 
 		return array_merge( $parent, $i18n );
 	}

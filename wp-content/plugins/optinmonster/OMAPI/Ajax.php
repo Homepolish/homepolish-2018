@@ -291,9 +291,32 @@ class OMAPI_Ajax {
         );
         $data = apply_filters( 'optin_monster_pre_optin_mailpoet', $data, $_REQUEST, $list, null );
 
-        // Save the subscriber.
-        $userHelper = WYSIJA::get( 'user', 'helper' );
-        $userHelper->addSubscriber( $data );
+		// Save the subscriber. Check for MailPoet 3 first. Default to legacy.
+		if ( class_exists( '\\MailPoet\\Config\\Initializer' ) ) {
+			// Customize the lead data for MailPoet 3.
+			if ( isset( $user['firstname'] ) ) {
+				$user['first_name'] = $user['firstname'];
+				unset( $user['firstname'] );
+			}
+
+			if ( isset( $user['lastname'] ) ) {
+				$user['last_name'] = $user['lastname'];
+				unset( $user['lastname'] );
+			}
+
+			if ( \MailPoet\Models\Subscriber::findOne( $user['email'] ) ) {
+				try {
+					\MailPoet\API\API::MP( 'v1' )->subscribeToList( $user['email'], $list );
+				} catch ( Exception $e ) {}
+			} else {
+				try {
+					\MailPoet\API\API::MP( 'v1' )->addSubscriber( $user, array( $list ) );
+				} catch ( Exception $e ) {}
+			}
+		} else {
+			$userHelper = WYSIJA::get( 'user', 'helper' );
+			$userHelper->addSubscriber( $data );
+		}
 
         // Send back a response.
         die( json_encode( true ) );

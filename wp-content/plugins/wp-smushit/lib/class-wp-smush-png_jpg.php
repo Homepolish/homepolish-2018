@@ -52,13 +52,15 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 		 */
 		function is_transparent( $id = '', $file = '' ) {
 
+			global $wpsmush_helper;
+
 			//No attachment id/ file path, return
 			if ( empty( $id ) && empty( $file ) ) {
 				return false;
 			}
 
 			if ( empty( $file ) ) {
-				$file = get_attached_file( $id );
+				$file = $wpsmush_helper->get_attached_file( $id );
 			}
 
 			//Check if File exists
@@ -125,7 +127,7 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 			$should_convert = false;
 
 			//Get the Transparency conversion settings
-			$convert_png = $wpsmush_settings->get_setting( WP_SMUSH_PREFIX . 'png_to_jpg', false );
+			$convert_png = $wpsmush_settings->settings['png_to_jpg'];
 
 			if ( ! $convert_png ) {
 				return $should_convert;
@@ -140,13 +142,8 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 			$this->is_transparent = $this->is_transparent( $id, $file );
 
 			//If we are suppose to convert transaprent images, skip is transparent check
-			if ( $convert_transparent ) {
+			if ( $convert_transparent || !$this->is_transparent ) {
 				$should_convert = true;
-			} else {
-				if ( ! $this->is_transparent ) {
-					//If image is not transparent
-					$should_convert = true;
-				}
 			}
 
 			return $should_convert;
@@ -157,8 +154,12 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 		 *
 		 * @param string $id Atachment id
 		 *
-		 * @return bool True/False Can be converted or not
+		 * @param string $id
+		 * @param string $size
+		 * @param string $mime
+		 * @param string $file
 		 *
+		 * @return bool True/False Can be converted or not
 		 */
 		function can_be_converted( $id = '', $size = 'full', $mime = '', $file = '' ) {
 
@@ -178,18 +179,18 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 			}
 
 			//If already tried the conversion
-			if ( get_post_meta( $id, WP_SMUSH_PREFIX . 'pngjpg_savings', false ) ) {
+			if ( get_post_meta( $id, WP_SMUSH_PREFIX . 'pngjpg_savings', true ) ) {
 				return false;
 			}
 
 			//Check if registered size is supposed to be converted or not
-			global $wpsmushit_admin;
+			global $wpsmushit_admin, $wpsmush_helper;
 			if ( 'full' != $size && $wpsmushit_admin->skip_image_size( $size ) ) {
 				return false;
 			}
 
 			if ( empty( $file ) ) {
-				$file = get_attached_file( $id );
+				$file = $wpsmush_helper->get_attached_file( $id );
 			}
 
 			/** Whether to convert to jpg or not **/
@@ -290,20 +291,11 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 				$meta['sizes'][ $size_k ]['mime-type'] = $mime;
 			}
 
-			if ( 'full' == $size_k ) {
-				//Get the updated image URL
-				$n_url = wp_get_attachment_url( $id );
-			} else {
-				$n_url = dirname( $o_url ) . '/' . basename( $n_file );
-			}
-
-			//Update In Post Content
-			global $wpdb;
-			$query = $wpdb->prepare( "UPDATE $wpdb->posts SET post_content = REPLACE(post_content, '%s', '%s');", $o_url, $n_url );
-			$wpdb->query( $query );
+			//To be called after the attached file key is updated for the image
+			$this->update_image_url( $id, $size_k, $n_file, $o_url );
 
 			//Delete the Original files if backup not enabled
-			if ( 'conversion' == $o_type && ! $wpsmush_settings->get_setting( WP_SMUSH_PREFIX . 'backup' ) ) {
+			if ( 'conversion' == $o_type && ! $wpsmush_settings->settings['backup'] ) {
 				@unlink( $o_file );
 			}
 
@@ -440,20 +432,28 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 		}
 
 		/**
-		 * Convert a PNG to JPG Lossless conversion, if we have any savings
+		 * Convert a PNG to JPG, Lossless Conversion, if we have any savings
 		 *
-		 * @param $id
+		 * @param string $id
+		 * @param string $meta
 		 *
-		 * @param $meta
+		 * @uses WpSmushBackup::add_to_image_backup_sizes()
+		 *
+		 * @return mixed|string
+		 *
+		 * @todo: Save cummulative savings
 		 */
 		function png_to_jpg( $id = '', $meta = '' ) {
+			global $wpsmush_backup, $WpSmush;
 
-			//If we don't have meta or ID
-			if ( empty( $id ) || empty( $meta ) ) {
+			// If we don't have meta or ID, or if not a premium user.
+			if ( empty( $id ) || empty( $meta ) || ! $WpSmush->validate_install() ) {
 				return $meta;
 			}
 
-			$file = get_attached_file( $id );
+			global $wpsmush_helper;
+
+			$file = $wpsmush_helper->get_attached_file( $id );
 
 			/** Whether to convert to jpg or not **/
 			$should_convert = $this->can_be_converted( $id );
@@ -484,7 +484,7 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 						$should_convert = $this->can_be_converted( $id, $size_k, 'image/png', $s_file );
 
 						//Perform the conversion
-						if ( ! $should_convert = apply_filters( 'wp_smush_convert_to_jpg', $should_convert, $id, $file, $size_k ) ) {
+						if ( ! $should_convert ) {
 							continue;
 						}
 
@@ -502,8 +502,8 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 				}
 
 				//Save the original File URL
-				$o_file = ! empty( $meta['file'] ) ? $meta['file'] : get_post_meta( $id, '_wp_attached_file', true );
-				update_post_meta( $id, WP_SMUSH_PREFIX . 'original_file', $o_file );
+				$o_file = ! empty( $file ) ? $file : get_post_meta( $id, '_wp_attached_file', true );
+				$wpsmush_backup->add_to_image_backup_sizes( $id, $o_file, 'smush_png_path' );
 
 				/**
 				 * Do action, if the PNG to JPG conversion was successful
@@ -689,6 +689,50 @@ if ( ! class_exists( 'WpSmushPngtoJpg' ) ) {
 			}
 
 			return false;
+		}
+
+		/**
+		 * Update Image URL in post content
+		 *
+		 * @param $id
+		 * @param $size_k
+		 * @param $n_file
+		 * @param $o_url
+		 */
+		function update_image_url( $id, $size_k, $n_file, $o_url  ) {
+			if ( 'full' == $size_k ) {
+				//Get the updated image URL
+				$n_url = wp_get_attachment_url( $id );
+			} else {
+				$n_url = trailingslashit( dirname( $o_url ) ) . basename( $n_file );
+			}
+
+			//Update In Post Content, Loop Over a set of posts to avoid the query failure for large sites
+			global $wpdb;
+			//Get existing Images with current URL
+			$query = $wpdb->prepare(
+				"SELECT ID, post_content FROM $wpdb->posts WHERE post_content LIKE '%%%s%%'", $o_url );
+
+			$rows = $wpdb->get_results( $query, ARRAY_A );
+
+			//Iterate over rows to update post content
+			if ( ! empty( $rows ) && is_array( $rows ) ) {
+				foreach ( $rows as $row ) {
+					// replace old URLs with new URLs.
+					$post_content = $row["post_content"];
+					$post_content = str_replace( $o_url, $n_url, $post_content );
+					// Update Post content
+					$wpdb->update(
+						$wpdb->posts,
+						array(
+							'post_content' => $post_content,
+						),
+						array(
+							'ID' => $row['ID'],
+						)
+					);
+				}
+			}
 		}
 	}
 

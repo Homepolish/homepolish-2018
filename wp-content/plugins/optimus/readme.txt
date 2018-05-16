@@ -1,22 +1,22 @@
 === Optimus - WordPress Image Optimizer ===
 Contributors: keycdn
 Tags: images, optimize, compress, progressive, performance, png, jpeg, webp, image optimizer, wordpress image optimizer, optimize image, optimize jpg, optimize jpeg, optimize png, compress image, progressive jpeg, progressive jpg
-Requires at least: 3.8
-Tested up to: 4.7
+Requires at least: 4.6
+Tested up to: 4.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-Effective image compression and optimization during the upload process. Automatic and without loss of quality.
+Effective image compression and optimization during the upload process. Smart, automatic and reliable.
 
 
 
 == Description ==
 
 = WordPress Image Optimizer =
-Optimus reduces the file size of uploaded media files *lossless*. Depending on the image and format, reductions in size of up to 70% are possible. Several kilobytes can be saved per image—these savings contribute positively to the performance of the blog website. What’s most impressive about the compression technology: the quality of the images is maintained—guaranteed.
+Optimus reduces the file size of uploaded media files automatically. Depending on the image and format, reductions in size of up to 70% are possible. Several kilobytes can be saved per image—these savings contribute positively to the performance of the blog website. What’s most impressive about the compression technology: the quality of the images is maintained.
 
 
 > #### There are three different versions of Optimus:
@@ -32,7 +32,7 @@ During the uploading process of images to the media library, the *Optimus* plugi
 
 The optimization of images - *including thumbnails* - is conducted in the background and outside of the view of the user. The image compression gains per file are displayed by Optimus within the media library in form of a percentage value, see [screenshot](https://wordpress.org/plugins/optimus/screenshots/).
 
-Differently from common optimization tools, this WordPress image optimization plugin never alters the quality of images. Instead, superfluous information that is saved by image processing programs and is not even necessary for displaying the image is extracted from image files. This way, the quality of the graphics remains intact while the image size can be reduced significantly. If you wish, Optimus keeps all author, EXIF and copyright information contained within the photos — the compressional gains will be correspondingly lower.
+Superfluous information that is saved by image processing programs and is not even necessary for displaying the image is extracted from image files. This way, the quality of the graphics remains intact while the image size can be reduced significantly. If you wish, Optimus keeps all author, EXIF and copyright information contained within the photos — the compressional gains will be correspondingly lower.
 
 Optimus supports the conversion of images to the new [*WebP* image format](https://www.keycdn.com/blog/convert-to-webp-the-successor-of-jpeg/).
 
@@ -40,7 +40,7 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 
 = Features =
 * [Progressive JPEGs](https://optimus.keycdn.com/support/progressive-jpeg/)
-* Reduction of file size *without loss in quality*
+* Reduction of file size during the upload
 * Optimization of all preview images of a photo
 * No adjustments to code necessary
 * Optional: no removal of EXIF and IPTC metadata
@@ -67,8 +67,8 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 
 
 = System Requirements =
-* PHP >=5.2.4
-* WordPress >=3.8
+* PHP >=5.6
+* WordPress >=4.6
 * Allow outbound connections
 
 
@@ -87,6 +87,16 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 
 
 == Changelog ==
+
+= 1.5.0 =
+* Unsupported image types are now gracefully skipped
+* Renamed setting names and greyed out inapplicable settings to avoid confusion
+* Increased size limit for Optimus HQ to 10MB
+* Licences can now easily be extended
+* Optimize images uploaded through the REST API
+
+= 1.4.9 =
+* Formatting updates
 
 = 1.4.8 =
 * Improved the handling of 204 errors
@@ -129,24 +139,19 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 = 1.3.6 =
 * Neue Option: Keine Optimierung der Originalbilder
 * Korrektur: Löschung der WebP-Bilder im AJAX-Modus
-* [Ausführlich auf Google+](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/hWjiVYht9yF)
 
 = 1.3.5 =
 * Erhöhung des Limits für PNG-Dateien auf 512 KB (Optimus HQ)
-* [Ausführlich auf Google+](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/EUA797D8aYS)
 
 = 1.3.4 =
 * Umstellung des Plugins auf die neue Optimus API (cURL only)
-* [Ausführlich auf Google+](https://plus.google.com/114450218898660299759/posts/GYrUK4YeXvU)
 
 = 1.3.3 =
 * Kompatibilität zu WooCommerce
 * Einführung von Optimus HQ PRO
-* [Ausführlich auf Google+](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/iNDtLhWw4p2)
 
 = 1.3.2 =
 * Anzeige der in WordPress registrierten Bildgrößen (Thumbnails)
-* [Ausführlich auf Google+](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/jZVfeac5eHW)
 
 = 1.3.1 =
 * Anpassung für WordPress 3.9: Sicherstellung der Bildoptimierung im WordPress-Editor
@@ -163,7 +168,6 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 = 1.2.0 =
 * Optimierungen am Plugin-Rechtemanagement
 * Überarbeitung der Plugin-Hinweise
-* [Ausführlich auf Google+](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/2eynLwEsedi)
 
 = 1.1.9 =
 * Optimus HQ: Umbau der Lizenzverifizierung wegen einem [Bug](https://www.google.de/search?q=w3+total+cache+transient) im W3 Total Cache Plugin
@@ -172,7 +176,6 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 = 1.1.8 =
 * Anzeige des Optimus HQ Ablaufdatums
 * Admin-Hinweis bei abgelaufener Optimus HQ Lizenz
-* [Ausführlich auf Google+](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/9UGqj6UPjLv)
 
 = 1.1.7 =
 * Christmas-Edition (Code- & Performance-Optimierungen)
@@ -184,24 +187,23 @@ Optimus supports the conversion of images to the new [*WebP* image format](https
 * Optimus HQ: Eingabe eines neuen Lizenzschlüssels möglich
 * Selbstprüfung auf Erreichbarkeit der Upload-Bilder (Zugriffsschutz, etc.)
 * Performance-Optimierungen
-* [Ausführlich auf Google+](https://plus.google.com/114450218898660299759/posts/6nyJ3kPnFPu)
 
 = 1.1.4 =
 * Optimus HQ: Erhöhung des Limits für PNGs auf 200 KB
-* Optimus HQ: Konvertierung der Bilder ins [WebP-Format](https://plus.google.com/b/114450218898660299759/114450218898660299759/posts/3emb7o4368X)
+* Optimus HQ: Konvertierung der Bilder ins WebP-Format
 
 = 1.1.3 =
-* Unterstützung für WordPress Apps und Windows Live Writer / [Ausführlich auf Google+](https://plus.google.com/114450218898660299759/posts/CDAc5FoDioN)
+* Unterstützung für WordPress Apps und Windows Live Writer
 
 = 1.1.2 =
-* Option: Bild-Metadaten nicht entfernen / [Ausführlich auf Google+](https://plus.google.com/114450218898660299759/posts/Nu8SLUwvNSS)
+* Option: Bild-Metadaten nicht entfernen
 
 = 1.1.1 =
 * Interne Umstellung auf Mime-Type
 * Code-Optimierungen
 
 = 1.1.0 =
-* Umstellung auf Freemium Modell / [Offizielles Statement](https://plus.google.com/110569673423509816572/posts/XEoHhEi5uJw)
+* Umstellung auf Freemium Modell
 * Plugin Website: [optimus.io](https://optimus.io)
 
 = 1.0.0 =

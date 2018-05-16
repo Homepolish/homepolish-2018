@@ -38,7 +38,13 @@
 					<div class="wpallimport-collapsed wpallimport-section">
 						<div class="wpallimport-content-section" style="overflow: hidden; padding-bottom: 0;">
 							<div class="wpallimport-collapsed-header" style="margin-bottom: 15px;">
-								<h3><?php _e('Title & Content', 'wp_all_import_plugin'); ?></h3>
+								<?php if ( $post_type == 'taxonomies' ){ ?>
+									<h3><?php _e('Name & Description', 'wp_all_import_plugin'); ?></h3>
+								<?php } elseif ( $post_type == 'product'){ ?>
+									<h3><?php _e('Title & Description', 'wp_all_import_plugin'); ?></h3>
+								<?php } else { ?>
+									<h3><?php _e('Title & Content', 'wp_all_import_plugin'); ?></h3>
+								<?php } ?>
 							</div>
 							<div class="wpallimport-collapsed-content" style="padding: 0;">				
 								
@@ -53,21 +59,26 @@
 										<div id="<?php echo user_can_richedit() ? 'postdivrich' : 'postdiv'; ?>" class="postarea">
 
 											<?php wp_editor($post['content'], 'content', array(
-													'teeny' => true,	
+													//'teeny' => true,	
 													'editor_class' => 'wpallimport-plugin-editor',
-													'media_buttons' => false,							
+													'media_buttons' => false,
 													'editor_height' => 200)); 
 											?>
 											
 										</div>
 									</div>						
 
-									<?php if ($post_type != 'page'):?>														
+									<?php if ( post_type_supports( $post_type, 'excerpt' ) ):?>														
 									<div class="template_input">
-										<input type="text" name="post_excerpt" style="width:100%; line-height: 25px;" value="<?php echo esc_attr($post['post_excerpt']) ?>" placeholder="<?php echo ($post_type == 'product' and class_exists('PMWI_Plugin')) ? __('WooCommerce Short Description', 'wp_all_import_plugin') : __('Excerpt', 'wp_all_import_plugin'); ?>"/>
+										<?php if ($post_type == 'product' and class_exists('PMWI_Plugin')): ?>
+											<h3><?php _e('Short Description', 'wp_all_import_plugin'); ?></h3>
+											<input type="text" name="post_excerpt" style="width:100%; line-height: 25px;" value="<?php echo esc_attr($post['post_excerpt']) ?>"/>
+										<?php else: ?>
+											<input type="text" name="post_excerpt" style="width:100%; line-height: 25px;" value="<?php echo esc_attr($post['post_excerpt']) ?>" placeholder="<?php _e('Excerpt', 'wp_all_import_plugin'); ?>"/>
+										<?php endif; ?>
 									</div>
-									<?php endif; ?>						
-															
+									<?php endif; ?>
+
 									<a class="preview" href="javascript:void(0);" rel="preview"><?php _e('Preview', 'wp_all_import_plugin'); ?></a>
 								</div>
 
@@ -115,8 +126,13 @@
 						do_action('pmxi_extend_options_featured', $post_type, $post);
 					}
 
-					if ( in_array('cf', $visible_sections) ){ 
-						include( 'template/_custom_fields_template.php' );
+					if ( in_array('cf', $visible_sections) ){
+						if ( $post_type == 'taxonomies' ){
+							include( 'template/_term_meta_template.php' );
+						}
+						else{
+							include( 'template/_custom_fields_template.php' );
+						}
 						do_action('pmxi_extend_options_custom_fields', $post_type, $post);																								
 					}
 
@@ -125,8 +141,13 @@
 						do_action('pmxi_extend_options_taxonomies', $post_type, $post);												
 					}									
 
-					if ( in_array('other', $visible_sections) ){ 
-						include( 'template/_other_template.php' );
+					if ( in_array('other', $visible_sections) ){
+						if ( $post_type == 'taxonomies' ) {
+							include('template/_term_other_template.php');
+						}
+						else{
+							include( 'template/_other_template.php' );
+						}
 						do_action('pmxi_extend_options_other', $post_type, $post);
 					}
 
@@ -135,11 +156,47 @@
 						do_action('pmxi_extend_options_nested', $post_type);
 					}*/
 
-				?>																
+					$uploads = wp_upload_dir();
+					$functions = $uploads['basedir'] . DIRECTORY_SEPARATOR . WP_ALL_IMPORT_UPLOADS_BASE_DIRECTORY . DIRECTORY_SEPARATOR . 'functions.php';
+				    $functions = apply_filters( 'import_functions_file_path', $functions );
+					$functions_content = file_get_contents($functions);
+
+					?>
+					<div class="wpallimport-collapsed closed wpallimport-section">
+						<div class="wpallimport-content-section">
+							<div class="wpallimport-collapsed-header">
+								<h3><?php _e('Function Editor', 'wp_all_import_plugin'); ?></h3>	
+							</div>
+							<div class="wpallimport-collapsed-content" style="padding: 0;">
+								<div class="wpallimport-collapsed-content-inner">									
+
+									<textarea id="wp_all_import_code" name="wp_all_import_code"><?php echo (empty($functions_content)) ? "<?php\n\n?>": esc_textarea($functions_content);?></textarea>						
+
+									<div class="input" style="margin-top: 10px;">
+
+										<div class="input" style="display:inline-block; margin-right: 20px;">
+											<input type="button" class="button-primary wp_all_import_save_functions" value="<?php _e("Save Functions", 'wp_all_import_plugin'); ?>"/>							
+											<a href="#help" class="wpallimport-help" title="<?php printf(__("Add functions here for use during your import. You can access this file at %s", "wp_all_import_plugin"), preg_replace("%.*wp-content%", "wp-content", $functions));?>" style="top: 0;">?</a>
+											<div class="wp_all_import_functions_preloader"></div>
+										</div>						
+										<div class="input wp_all_import_saving_status" style="display:inline-block;">
+
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
 				
 				<hr>
-				
-				<div class="input wpallimport-section" style="padding-bottom: 8px; padding-left: 8px;">
+
+                <div class="input wpallimport-section" style="padding-bottom: 8px; padding-left: 8px;">
+
+					<?php 
+						wp_all_import_template_notifications( $post, 'notice' );							
+					?>					
 										
 					<p style="margin: 11px; float: left;">
 						<input type="hidden" name="save_template_as" value="0" />

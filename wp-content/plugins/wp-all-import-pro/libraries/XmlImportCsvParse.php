@@ -150,7 +150,7 @@ class PMXI_CsvParser
      */
     public function set_settings($array)
     {
-        $this->settings = array_merge($this->settings, $array);
+        $this->settings = apply_filters('wp_all_import_csv_parser_settings', array_merge($this->settings, $array));
     }
 
     /**
@@ -968,30 +968,64 @@ class PMXI_CsvParser
         $xmlWriter->startDocument('1.0', $this->csv_encoding);
         $xmlWriter->startElement('data');
         
+        $import_id = 0;
+
+        if ( ! empty($_GET['id']) ) $import_id = $_GET['id'];
+
+        if ( ! empty($_GET['import_id']) ) $import_id = $_GET['import_id'];        
+
         $create_new_headers = false;
-                
+        $skip_x_rows = apply_filters('wp_all_import_skip_x_csv_rows', false, $import_id);
+        $headers = array();
         while ($keys = fgetcsv($res, $l, $d, $e)) {
+
+            if ($skip_x_rows !== false && $skip_x_rows > $c){
+                $c++;
+                continue;
+            }
+            if ($skip_x_rows !== false && $skip_x_rows <= $c){
+                $skip_x_rows = false;
+                $c = 0;
+            }
+            $empty_columns = 0;
+            foreach ($keys as $key) {
+                if ($key == '') $empty_columns++;
+            }
+            // skip empty lines
+            if ($empty_columns == count($keys)) continue;
 
             if ($c == 0) {
                 $buf_keys = $keys;
-                foreach ($keys as $key => $value) {    
-                    if (!$create_new_headers and (preg_match('%\W(http:|https:|ftp:)$%i', $value) or is_numeric($value))) $create_new_headers = true;                                                                    
-                    $value = trim(strtolower(preg_replace('/^[0-9]{1}/','el_', preg_replace('/[^a-z0-9_]/i', '', $value))));
-                    $keys[$key] = (!empty($value)) ? $value : 'undefined' . $key;
+                foreach ($keys as $key => $value) {
+
+                    if (!$create_new_headers and (preg_match('%\W(http:|https:|ftp:)$%i', $value) or is_numeric($value))) $create_new_headers = true;
+
+                    $value = trim(strtolower(preg_replace('/[^a-z0-9_]/i', '', $value)));
+                    if (preg_match('/^[0-9]{1}/', $value)){
+                        $value = 'el_' . trim(strtolower($value));
+                    }
+                    $value = (!empty($value)) ? $value : 'undefined' . $key;
+
+                    if (empty($headers[$value]))
+                        $headers[$value] = 1;
+                    else
+                        $headers[$value]++;
+
+                    $keys[$key] = ($headers[$value] === 1) ? $value : $value . '_' . $headers[$value];
                 }            
-                $this->headers = $keys;                                
+                $this->headers = $keys;
+                $create_new_headers = apply_filters('wp_all_import_auto_create_csv_headers', $create_new_headers, $import_id);
                 if ($create_new_headers){ 
                     $this->createHeaders('column');      
                     $keys = $buf_keys;
                 }
-            } 
-
+            }
             if ( $c or $create_new_headers ) {
 
                if (!empty($keys)){                                   
 
                     $chunk = array();
-                    
+
                     foreach ($this->headers as $key => $header) $chunk[$header] = $this->fixEncoding( $keys[$key] );
 
                     if ( ! empty($chunk) )
@@ -1003,7 +1037,7 @@ class PMXI_CsvParser
                                 $value = preg_replace('/\]\]>/s', '', preg_replace('/<!\[CDATA\[/s', '', $value ));
                                 if ($fixBrokenSymbols){
                                     // Remove non ASCII symbols and write CDATA
-                                    $xmlWriter->writeCData(preg_replace('/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}]+/u', ' ', $value));                                
+                                    $xmlWriter->writeCData(preg_replace('/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}]+/u', ' ', $value));                                                                                              
                                 }
                                 else{
                                     $xmlWriter->writeCData($value);                                
@@ -1012,11 +1046,18 @@ class PMXI_CsvParser
                         }                            
                         $xmlWriter->endElement();                        
                     }                                        
-                }
+                }                
             }
 
             $c ++;
         }
+
+        if($c === 1)
+        {
+            $xmlWriter->startElement('node');
+            $xmlWriter->endElement();    
+        }
+        
         fclose($res);
         
         $xmlWriter->endElement();
