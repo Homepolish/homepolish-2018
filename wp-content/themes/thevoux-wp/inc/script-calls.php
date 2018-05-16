@@ -15,7 +15,7 @@ function thb_main_styles() {
 
 		$id = get_queried_object_id();
 		// Register
-		wp_register_style('foundation', THB_THEME_ROOT . '/assets/css/foundation.min.css', null, null);
+		wp_register_style('foundation', THB_THEME_ROOT . '/assets/css/foundation.css', null, null);
 		wp_register_style("tooltipster", THB_THEME_ROOT . "/assets/css/tooltipster.bundle.min.css", null, null);
 		wp_register_style("tooltipster-sidetip", THB_THEME_ROOT . "/assets/css/tooltipster-sideTip-light.min.css", null, null);
 		wp_register_style("app", THB_THEME_ROOT . "/assets/css/app.css", null, version_id() );
