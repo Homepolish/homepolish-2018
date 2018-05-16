@@ -77,6 +77,7 @@
 
     <?php 
         $i = 1;
+        $rows = array();
         $rows = get_field('rows'); 
 
         foreach( $rows as $key => $value ) {
@@ -171,8 +172,9 @@
 
         <?php 
             $i=1;
-            $row = get_field( 'bs_styles' );
-            foreach( $row as $key => $value ) {
+            $rows = array();
+            $rows = get_field( 'bs_styles' );
+            foreach( $rows as $key => $value ) {
 
                 $term = get_term( $value );
 

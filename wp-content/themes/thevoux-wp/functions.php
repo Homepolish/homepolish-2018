@@ -87,8 +87,9 @@ function hp_page_meta_tags() {
 	echo '<meta itemprop="image" content="' . get_the_post_thumbnail_url( $post_ID ) . '">';
 
 	// Item Props
+	$row = array();
 	$row = get_field( 'pmv_item_properties', $post_id ); 
-	foreach( $row as $key => $value ) {
+	foreach( (array) $row as $key => $value ) {
 
 		echo '<meta itemprop="' . $value['pmv_ip_name'] . '" content="' . $value['pmv_ip_value']. '">';
 	}
@@ -101,6 +102,7 @@ add_action('wp_head', 'hp_page_meta_tags');
 function hp_enqueue_scripts() {
 
 	wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/styles/header.css' );
+	wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/styles/footer.css' );
 
 	if ( hp_page_type() == '2018' ) {
 

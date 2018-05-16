@@ -41,7 +41,7 @@
 </head>
 <body <?php body_class($class); ?> data-url="<?php echo esc_url(home_url()); ?>" data-themeurl="<?php echo THB_THEME_ROOT; ?>" data-spy="scroll">
 
-<?php include_once("inc/homepolish/hmpl-google-scripts.php") ?>
+<?php include_once("../inc/homepolish/hmpl-google-scripts.php") ?>
 
 <script type="text/javascript" src="https://www.homepolish.com/segment_forwarder.js?no_jquery=true"></script>
 
@@ -61,7 +61,7 @@
 		  $promotionEndTime = strtotime('2017-04-23 23:59:59 America/Los_Angeles');
 
 		  if(($currentTime >= $promotionStartTime) && ($currentTime <= $promotionEndTime)) {
-				get_template_part( 'inc/header/homepolish/promotion_banner' );
+				get_template_part( '../inc/header/homepolish/promotion_banner' );
 			}
 		?>
 

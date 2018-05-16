@@ -35,6 +35,7 @@
 <div class="our-promise">
 
     <?php 
+        $row = array();
         $row = get_field( 'row' ); 
         foreach( $row as $key => $value ) {
         ?>
@@ -79,6 +80,7 @@
 
     <?php
         $i = 1; 
+        $row = array();
         $row = get_field( 'wch_row' ); 
 
         foreach( $row as $value ) { 
@@ -129,6 +131,7 @@
 <div class="ctas">
 
     <?php 
+        $row = array();
         $row = get_field( '2x2_row' ); 
         foreach( $row as $key => $value ) {
         ?>
