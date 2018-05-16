@@ -40,9 +40,64 @@
 
 <!-- </div> --><!-- ./hiw testimonials -->
 
-<!-- mag image grid -->
-<?php the_field( 'free_html' );?>
-<!-- ./mag image grid -->
+<!-- build-services-portfolio -->
+
+<div class="image-grid ">
+	<div class="commercial-case-studies">
+		<h3 class="title"><?php the_field( 'bsp_title' ); ?></h3>
+		<div class="case-studies-grid" data-lightbox-gallery>
+
+			<?php 
+			    $i=1;
+			    $rows = array();
+			    $rows = get_field( 'bsp_portfolio_items' );
+			    foreach( $rows as $key => $value ) {
+
+			    	$row = $value['bsp_portfolio_item'];
+					$row->ID;
+
+					echo get_the_category( $row->ID );
+
+					//var_dump( $row );
+
+			    	$image_url = get_the_post_thumbnail_url( $row->ID, 'full' );
+			    	$image_386 = aq_resize( $image_url ,'386');
+			    	$image_414 = aq_resize( $image_url ,'414');
+
+					?>
+
+					<div class="case-study">
+						<a target="_blank" href="https://www.homepolish.com/mag/a-calming-family-home-in-the-boston-suburbs">
+							<div class="image-container">
+								<div class="hidpi">
+									<div class="case-study-image desktop-only" style="background-image: url(<?php echo $image_386; ?>);"></div>
+									<div class="case-study-image mobile-only" style="background-image: url(<?php echo $image_414; ?>);"></div>
+								</div>
+								<div class="lodpi">
+									<div class="case-study-image desktop-only" style="background-image: url(<?php echo $image_386; ?>);"></div>
+									<div class="case-study-image mobile-only" style="background-image: url(<?php echo $image_414; ?>);"></div>
+								</div>
+							</div>
+							<div class="case-study-overlay">
+								<h5 class="overlay-neighborhood">
+								Residential
+								</h5>
+								<h4 class="overlay-title">
+								<?php echo $row->post_title; ?>
+								</h4>
+								<h6 class="overlay-expand">
+									<a href="/mag/<?php echo $row->post_name; ?>">See More</a>
+								<span class="v1-icon-caret-right"></span>
+								</h6>
+							</div>
+						</a>
+					</div>
+
+			<?php } ?>
+			<!-- case study -->
+		</div>
+	</div>
+</div><!-- build-services-portfolio -->
 
 <!-- what we offer -->
 

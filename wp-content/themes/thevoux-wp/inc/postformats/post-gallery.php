@@ -93,7 +93,7 @@
 						<?php hmpl_get_category_aside(); ?>
 
 						<header class="post-title entry-header">
-							<h3 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php echo the_title(); ?></a></h3>
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php echo the_title(); ?></a></h3>
 						</header>
 
 						<p class="excerpt">
