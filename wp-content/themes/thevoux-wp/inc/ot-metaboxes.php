@@ -80,7 +80,7 @@ function _custom_meta_boxes() {
           ),
           array(
             'label'       => '2018 Article',
-            'value'       => 'article'
+            'value'       => 'article-2018'
           ),
 
           // array(
