@@ -54,6 +54,17 @@
 </div>
 
 
+<!-- single-column-text -->
+
+<div class="row collapse">
+    <div class="large-centered large-6 columns">
+        <div class="row post-content-body">
+            <?php echo the_content(); ?>
+        </div>
+    </div>
+</div>
+
+
 <!-- 2x -->
     
 <div class="row two-x">
@@ -156,12 +167,13 @@
 
 <!-- single-column-text -->
 
-<div class="row collapse">
-  <div class="large-centered large-6 columns">
-    <p>The collapse class lets you remove column gutters (padding).</p>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.The collapse class lets you remove column gutters (padding).</p>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.</p>
-  </div>
+<div class="row collapse single-column-text">
+    <!-- <div class="large-centered large-6 columns"> -->
+        <div class="small-12 columns">
+            <div class="row post-content-body">
+            <?php echo the_content(); ?>
+        </div>
+    </div>
 </div>
 
 <!-- swipe-image -->

@@ -43,7 +43,7 @@
     </div>
 
     <div class="row full-width-row no-padding header-separator">
-      <div class="medium-12 small-12 columns">
+      <div class="small-12 columns">
         <aside class="styled_dividers style-full-width-header no-margin"></aside>
       </div>
     </div>
