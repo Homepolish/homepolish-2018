@@ -1,4 +1,4 @@
-<?php 
+<!-- single-style1 --><?php 
 	$fixed = ot_get_option('article_fixed_sidebar', 'on'); 
 	$fullwidth = ot_get_option('article_fullwidth', 'off');
 	$dropcap = ot_get_option('article_dropcap', 'on');

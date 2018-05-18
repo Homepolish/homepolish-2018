@@ -1,3 +1,4 @@
+<!-- style1.php -->
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style1'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<div class="row" data-equal=">.columns">
 		<div class="small-12 medium-5 large-6 columns">

@@ -1,4 +1,4 @@
-<?php
+<!-- hmpl-misc  --><?php
 /* Environemnt settings */
 if( preg_match("/localhost/", $_SERVER['SERVER_NAME'], $matches) ) {
   define("HMPL_ENV", "dev");

@@ -1,4 +1,4 @@
-<?php 
+<!-- single-style2--><?php 
 	$id = get_the_id();
 	$post_image = get_post_meta($id, 'post-top-image', true) ? get_post_meta($id, 'post-top-image', true) : '';
 ?>

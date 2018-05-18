@@ -1,3 +1,4 @@
+<!-- style7.php -->
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style7'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<?php if ( has_post_thumbnail() ) { ?>
 	<figure class="post-gallery <?php do_action('thb_is_gallery'); ?>">

@@ -44,7 +44,7 @@
 
 		<?php //get_template_part( 'inc/header/homepolish/header_container' ); ?>
 
-<!-- foundation nav -->
+
 
 
 <div class="row full-width">
@@ -85,11 +85,6 @@
 		</nav>
 	</div>
 </div>
-
-
-<!-- /foundation-nav -->
-
-
 
 		
 
