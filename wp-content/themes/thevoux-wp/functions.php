@@ -14,7 +14,9 @@ function hp_page_type() {
 
 	if ( $path[1] == 'author' || $path[1] == 'designer' || $path[1] == 'mag' || $path[1] == 'wp-search' ) {
 
-		$page_type = 'mag';
+		//$page_type = 'mag';
+		$page_type = 'mag-2018';
+
 	}
 	return $page_type;
 }

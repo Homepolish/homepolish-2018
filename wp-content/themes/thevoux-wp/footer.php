@@ -552,6 +552,13 @@
 
 <?php wp_footer(); ?>
 
+<script src="<?php echo get_template_directory_uri(); ?>/assets/foundation/js/vendor/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/foundation/js/foundation.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/foundation/js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+
 <!-- Google Tag Manager (javascript disabled) -->
 <noscript>
 	<iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MKH9LX" style="display:none;visibility:hidden" width="0"></iframe>

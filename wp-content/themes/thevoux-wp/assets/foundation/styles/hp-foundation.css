@@ -1,0 +1,57 @@
+body {
+  line-height: normal; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+.full-width {
+  max-width: 100%;
+  width: 100%; }
+
+.table {
+  display: table;
+  height: 100%; }
+  .table .table-cell {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle; }
+
+nav .title-area img {
+  height: auto;
+  width: 100px; }
+
+.row-container > .row {
+  margin-bottom: 100px; }
+
+@media only screen and (min-width: 1024px) {
+  .hero {
+    position: relative; }
+    .hero .content {
+      z-index: 1; }
+    .hero .img-container {
+      left: 0;
+      position: absolute;
+      top: 0; } }
+
+@media only screen and (min-width: 1024px) {
+  .blockquote-row {
+    position: relative; }
+    .blockquote-row blockquote {
+      float: left;
+      font-size: 30px;
+      margin-left: -25%;
+      width: 62.5%; } }
+
+@media only screen and (min-width: 1024px) {
+  .lg-img-overlap-quote {
+    position: relative; }
+    .lg-img-overlap-quote img {
+      margin-bottom: 12.5%; }
+    .lg-img-overlap-quote .quote {
+      bottom: 0;
+      font-size: 40px;
+      left: 0;
+      position: absolute; } }
+
+/*# sourceMappingURL=hp-foundation.css.map */
