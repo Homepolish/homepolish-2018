@@ -225,7 +225,21 @@ nav {
 	position: relative;
 }
 
+.transparent {
+
+	display: none;
+}
+
 .hp-header--transparent {
+
+	.transparent {
+
+		display: block;
+	}
+	.opaque {
+
+		display: none;
+	}
 
 	background: transparent !important;
 	background-color: transparent !important;
@@ -253,5 +267,18 @@ nav {
 	&.full-width-nav {
 
 		border-bottom: 1px solid transparent;
+	}
+
+	.top-bar-section .has-dropdown > a:after {
+	    /* Caret? */
+        border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+	}
 	
+	.left-border {
+
+		@media only screen and (min-width: 1024px) {
+
+			border-left: 1px solid white !important;
+		}
+	}
 }

@@ -1,40 +1,137 @@
-/*
-Error: Invalid CSS after "}": expected "}", was ""
-        on line 257 of scss/hp-foundation.scss
+body {
+  line-height: normal; }
 
-252: 
-253: 	&.full-width-nav {
-254: 
-255: 		border-bottom: 1px solid transparent;
-256: 	
-257: }
+img {
+  width: 100%;
+  height: auto; }
 
-Backtrace:
-scss/hp-foundation.scss:257
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:658:in `block'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:649:in `ruleset'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 257 of scss/hp-foundation.scss\A \A 252: \A 253: 	&.full-width-nav {\A 254: \A 255: 		border-bottom: 1px solid transparent;\A 256: 	\A 257: }"; }
+.full-width {
+  max-width: 100%;
+  width: 100%; }
+
+.full-width-nav {
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+  position: absolute; }
+
+.table {
+  display: table;
+  height: 100%; }
+  .table .table-cell {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle; }
+
+nav.top-bar {
+  padding-top: 30px; }
+  nav.top-bar .top-bar-section ul li > a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 0 0 10px; }
+  nav.top-bar .top-bar-section ul {
+    margin: 30px 0 30px; }
+    @media only screen and (min-width: 1024px) {
+      nav.top-bar .top-bar-section ul {
+        margin: 0; } }
+    nav.top-bar .top-bar-section ul li {
+      margin: 0; }
+  @media only screen and (min-width: 1024px) {
+    nav.top-bar .top-bar-section .left-border {
+      border-left: 1px solid black;
+      padding-left: 5px;
+      margin: 0 10px 0 10px; } }
+  @media only screen and (min-width: 1024px) {
+    nav.top-bar .top-bar-section .has-dropdown:hover {
+      border-bottom: 3px solid black; }
+    nav.top-bar .top-bar-section .has-dropdown > a {
+      height: 67px; } }
+  nav.top-bar .top-bar-section .has-dropdown ul.dropdown {
+    border-top: 1px solid black;
+    left: 0;
+    right: auto;
+    margin-top: 3px; }
+    nav.top-bar .top-bar-section .has-dropdown ul.dropdown li {
+      margin-right: 10px; }
+      nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a {
+        border: 1px solid black;
+        border-top: none;
+        line-height: 40px;
+        text-transform: capitalize; }
+        nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a:hover {
+          background: !important;
+          background-color: #ccc !important;
+          text-decoration: none; }
+nav .title-area {
+  padding-left: 0; }
+  nav .title-area h1 a {
+    padding: 0; }
+  nav .title-area img {
+    height: 20px;
+    width: auto; }
+
+.row-container > .row {
+  margin-bottom: 100px; }
+
+@media only screen and (min-width: 1024px) {
+  .hero {
+    position: relative; }
+    .hero .content {
+      z-index: 1; }
+    .hero .img-container {
+      left: 0;
+      position: absolute;
+      top: 0; } }
+
+@media only screen and (min-width: 1024px) {
+  .blockquote-row {
+    position: relative; }
+    .blockquote-row blockquote {
+      float: left;
+      font-size: 30px;
+      margin-left: -25%;
+      width: 62.5%; } }
+
+@media only screen and (min-width: 1024px) {
+  .lg-img-overlap-quote {
+    position: relative; }
+    .lg-img-overlap-quote img {
+      margin-bottom: 12.5%; }
+    .lg-img-overlap-quote .quote {
+      bottom: 0;
+      font-size: 40px;
+      left: 0;
+      position: absolute; } }
+
+/* Colors */
+.main-container {
+  position: relative; }
+
+.transparent {
+  display: none; }
+
+.hp-header--transparent {
+  background: transparent !important;
+  background-color: transparent !important; }
+  .hp-header--transparent .transparent {
+    display: block; }
+  .hp-header--transparent .opaque {
+    display: none; }
+  .hp-header--transparent a, .hp-header--transparent a:hover {
+    color: white !important; }
+  .hp-header--transparent .top-bar {
+    background: transparent; }
+  .hp-header--transparent nav.top-bar .top-bar-section .has-dropdown > a {
+    background: transparent; }
+  .hp-header--transparent .top-bar-section ul li > a {
+    color: white; }
+  .hp-header--transparent.full-width-nav {
+    border-bottom: 1px solid transparent; }
+  .hp-header--transparent .top-bar-section .has-dropdown > a:after {
+    /* Caret? */
+    border-color: white transparent transparent transparent; }
+  @media only screen and (min-width: 1024px) {
+    .hp-header--transparent .left-border {
+      border-left: 1px solid white !important; } }
+
+/*# sourceMappingURL=hp-foundation.css.map */

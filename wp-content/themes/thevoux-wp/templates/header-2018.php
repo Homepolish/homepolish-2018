@@ -21,7 +21,12 @@
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
 				<li class="name">
-					<h1><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/homepolish-logo.png" alt="Homepolish"></a></h1>
+					<h1>
+						<a href="/">
+							<img class="opaque" src="<?php echo get_template_directory_uri(); ?>/assets/img/homepolish-wordmark.png" alt="Homepolish">
+							<img class="transparent" src="<?php echo get_template_directory_uri(); ?>/assets/img/homepolish-wordmark-white.png" alt="Homepolish">
+						</a>
+					</h1>
 				</li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 				<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
