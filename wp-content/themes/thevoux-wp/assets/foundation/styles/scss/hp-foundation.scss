@@ -19,7 +19,7 @@ img {
 
 	border-bottom: 1px solid black;
 	margin-bottom: 30px;
-	position: relative;
+	position: absolute;
 }
 
 .table {
@@ -87,6 +87,7 @@ nav {
 
 					& > a {
 						
+
 						height: 67px;	
 					}
 
@@ -228,12 +229,29 @@ nav {
 
 	background: transparent !important;
 	background-color: transparent !important;
-	color: white !important;
+	a, a:hover {
+
+		color: white !important;
+	}
 
 
 	.top-bar {
 
 		background: transparent;
 	}
+
+	nav.top-bar .top-bar-section .has-dropdown > a {
+
+		background: transparent;
+	}
+
+	.top-bar-section ul li > a {
+
+		color: white;
+	}
+
+	&.full-width-nav {
+
+		border-bottom: 1px solid transparent;
 	
 }

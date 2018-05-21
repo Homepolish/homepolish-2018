@@ -15,8 +15,8 @@
 
 <!-- hp-header-container -->
 
-<div class="full-width full-width-nav">
-	<div class="row collapse <?php echo hp_page_meta()['transparency']; ?>">
+<div class="full-width full-width-nav <?php echo hp_page_meta()['transparency']; ?>">
+	<div class="row collapse">
 	<div class="small-12 columns">
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
