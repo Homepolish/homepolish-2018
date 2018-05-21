@@ -18,6 +18,7 @@ img {
 .full-width-nav {
 
 	border-bottom: 1px solid black;
+	margin-bottom: 30px;
 }
 
 .table {
@@ -46,23 +47,41 @@ nav {
 		}	
 		.top-bar-section {
 
+			ul {
+
+				margin: 30px 0 30px;
+
+				@media only screen and (min-width: 1024px) {
+
+					margin: 0;
+				}
+			}
+
 			.left-border {
 
-				border-left: 1px solid black;
-				padding-left: 5px;
-    			margin-left: 10px;
+				@media only screen and (min-width: 1024px) {
+
+					border-left: 1px solid black;
+					padding-left: 5px;
+	    			margin-left: 10px;
+				}
 			}
 
 			.has-dropdown { 
 
-				&:hover {
+				@media only screen and (min-width: 1024px) {
 
-					border-bottom: 3px solid black;
-				}
+					&:hover {
 
-				& > a {
-					
-					height: 67px;	
+						border-bottom: 3px solid black;
+					}
+
+
+					& > a {
+						
+						height: 67px;	
+					}
+
 				}
 				
 				ul.dropdown {

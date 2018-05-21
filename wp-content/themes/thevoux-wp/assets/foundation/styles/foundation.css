@@ -1966,11 +1966,11 @@ meta.foundation-mq-topbar {
       color: black;
       background: white; }
     .top-bar-section ul li.active > a {
-      background: #008CBA;
-      color: #FFFFFF; }
+      background: black;
+      color: white; }
       .top-bar-section ul li.active > a:hover {
-        background: #0078a0;
-        color: #FFFFFF; }
+        background: black;
+        color: white; }
   .top-bar-section .has-form {
     padding: 0.9375rem; }
   .top-bar-section .has-dropdown {
