@@ -1,3 +1,7 @@
+@import "nav";
+@import "nav-colors";
+@import "rows";
+
 body {
 
 	line-height: normal;
@@ -9,221 +13,34 @@ img {
 	height: auto;
 }
 
+.main-container {
+
+	position: relative;
+}
+
 .full-width {
 
   max-width: 100%;
   width: 100%;
 }
 
+/* Full Width Nav */
+
 .full-width-nav {
 
-	border-bottom: 1px solid black;
 	margin-bottom: 30px;
 	position: absolute;
+	z-index: 1;
 }
+.mag-page {
 
-.table {
+	.full-width-nav{
 
-	display: table;
-	height: 100%;
-
-	.table-cell {
-		display: table-cell;
-		height: 100%;
-		vertical-align: middle;
-	}
-}
-
-nav {
-
-	&.top-bar {
-
-		padding-top: 30px;
-
-		.top-bar-section ul li > a {
-
-			font-size: 12px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			padding: 0 0 0 10px;
-		}	
-		.top-bar-section {
-
-			ul {
-
-				margin: 30px 0 30px;
-
-				@media only screen and (min-width: 1024px) {
-
-					margin: 0;
-				}
-
-				li {
-
-					margin: 0;
-				}
-
-			}
-
-			.left-border {
-
-				@media only screen and (min-width: 1024px) {
-
-					border-left: 1px solid black;
-					padding-left: 5px;
-	    			margin: 0 10px 0 10px;
-				}
-			}
-
-			.has-dropdown { 
-
-				@media only screen and (min-width: 1024px) {
-
-					&:hover {
-
-						border-bottom: 3px solid black;
-					}
-
-
-					& > a {
-						
-
-						height: 67px;	
-					}
-
-				}
-				
-				ul.dropdown {
-
-					border-top: 1px solid black;
-					left: 0;
-    				right: auto;
-    				margin-top: 3px;
-
-
-					li {
-
-						margin-right: 10px;
-
-						a {
-
-						
-							border: 1px solid black;
-							border-top: none;
-							line-height: 40px;
-							text-transform: capitalize;
-
-							&:hover {
-
-								background: !important;
-								background-color: #ccc !important;
-								text-decoration: none;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	.title-area {
-
-		padding-left: 0;
-
-		h1 {
-
-			a {
-
-				padding: 0;
-			}
-		}
-
-		img {
-
-			height: 20px;
-			width: auto;
-		}
+		position: relative;
 	}	
 }
 
-.row-container > .row {
-
-	margin-bottom: 100px;
-}
-
-.hero {
-
-
-	@media only screen and (min-width: 1024px) {
-
-		position: relative;
-
-		.content {
-
-			 z-index: 1;
-		}
-
-		.img-container {
-
-			left: 0;
-			position: absolute;
-			top: 0;
-		}
-	}
-
-}
-
-.blockquote-row {
-
-	@media only screen and (min-width: 1024px) {
-
-		position: relative;
-
-		p {
-
-
-		}
-		blockquote {
-
-			float: left;
-			font-size: 30px;
-			margin-left: -25%;
-			width: 62.5%;
-		}
-	}
-}
-
-.lg-img-overlap-quote {
-
-	@media only screen and (min-width: 1024px) {
-
-		position: relative;
-
-		img {
-
-			margin-bottom: 12.5%;
-		}
-
-		.quote {
-
-			bottom: 0;
-			font-size: 40px;
-			left: 0;
-			position: absolute;
-		}
-	}
-}
-
-
-
-
-
-/* Colors */
-
-.main-container {
-
-	position: relative;
-}
+/* Logo */
 
 .transparent {
 
@@ -239,64 +56,5 @@ nav {
 	.opaque {
 
 		display: none;
-	}
-
-	background: transparent !important;
-	background-color: transparent !important;
-	a, a:hover {
-
-		color: white !important;
-	}
-
-
-	.top-bar {
-
-		background: transparent;
-	}
-
-	nav.top-bar .top-bar-section ul li, 
-	nav.top-bar .top-bar-section ul li > a 
-	{
-
-		background: transparent !important;
-	}
-
-	.top-bar-section ul li > a {
-
-		color: white;
-	}
-
-	&.full-width-nav {
-
-		border-bottom: 1px solid transparent;
-	}
-
-	.top-bar-section .has-dropdown > a:after {
-	    /* Caret? */
-        border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
-	}
-	
-	.left-border {
-
-		@media only screen and (min-width: 1024px) {
-
-			border-left: 1px solid white !important;
-		}
-	}
-
-	.has-dropdown { 
-
-		@media only screen and (min-width: 1024px) {
-
-			&:hover {
-
-				border-bottom: 3px solid white;
-			}
-		}
-	}
-
-	.top-bar .toggle-topbar.menu-icon a span::after {
-
-		box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
 	}
 }

@@ -1,0 +1,79 @@
+.table {
+
+	display: table;
+	height: 100%;
+
+	.table-cell {
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+.row-container > .row {
+
+	margin-bottom: 100px;
+}
+
+.hero {
+
+
+	@media only screen and (min-width: 1024px) {
+
+		position: relative;
+
+		.content {
+
+			 z-index: 1;
+		}
+
+		.img-container {
+
+			left: 0;
+			position: absolute;
+			top: 0;
+		}
+	}
+
+}
+
+.blockquote-row {
+
+	@media only screen and (min-width: 1024px) {
+
+		position: relative;
+
+		p {
+
+
+		}
+		blockquote {
+
+			float: left;
+			font-size: 30px;
+			margin-left: -25%;
+			width: 62.5%;
+		}
+	}
+}
+
+.lg-img-overlap-quote {
+
+	@media only screen and (min-width: 1024px) {
+
+		position: relative;
+
+		img {
+
+			margin-bottom: 12.5%;
+		}
+
+		.quote {
+
+			bottom: 0;
+			font-size: 40px;
+			left: 0;
+			position: absolute;
+		}
+	}
+}
