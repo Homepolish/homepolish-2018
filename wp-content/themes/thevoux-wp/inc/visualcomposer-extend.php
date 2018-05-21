@@ -1339,3 +1339,23 @@ vc_map( array(
 	),
 	"description" => "Add a subscription form"
 ) );
+
+// Article 2018 Text
+vc_map( array(
+	"name" => __("Copy 2018", THB_THEME_NAME),
+	"base" => "hp_copy_2018_test",
+	"icon" => "thb_vc_ico_contentbox",
+	"class" => "hp_vc_sc_copy_2018",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+			"type" => "textarea_html",
+			"class" => "",
+			"heading" => "Content",
+			"param_name" => "content",
+			"value" => "",
+			"description" => "Add this text"
+		),
+	),
+	"description" => "Article 2018 Copy"
+) );

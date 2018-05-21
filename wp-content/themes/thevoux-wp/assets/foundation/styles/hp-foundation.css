@@ -9,6 +9,9 @@ img {
   max-width: 100%;
   width: 100%; }
 
+.full-width-nav {
+  border-bottom: 1px solid black; }
+
 .table {
   display: table;
   height: 100%; }
@@ -17,9 +20,17 @@ img {
     height: 100%;
     vertical-align: middle; }
 
+nav.top-bar {
+  padding-top: 30px; }
+  nav.top-bar .top-bar-section ul li > a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  nav.top-bar .top-bar-section .left-border {
+    border-left: 1px solid black; }
 nav .title-area img {
-  height: auto;
-  width: 100px; }
+  height: 20px;
+  width: auto; }
 
 .row-container > .row {
   margin-bottom: 100px; }

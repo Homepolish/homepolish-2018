@@ -47,12 +47,13 @@
 
 
 
-<div class="row full-width">
+<div class="full-width full-width-nav">
+	<div class="row">
 	<div class="small-12 columns">
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
 				<li class="name">
-					<h1><a href="#"><img src="assets/img/homepolish-logo.png" alt="Homepolish"></a></h1>
+					<h1><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/homepolish-logo.png" alt="Homepolish"></a></h1>
 				</li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 				<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -75,14 +76,16 @@
 					<li class="has-dropdown">
 						<a href="#">The Magazine</a>
 						<ul class="dropdown">
-							<li><a href="#">First link in dropdown</a></li>
+							<li><a href="#">Byour </a></li>
 							<li class="active"><a href="#">Active link in dropdown</a></li>
 						</ul>
 					</li>
-					<li class="active"><a href="#">Right Button Active</a></li>
+					<li class="left-border"><a href="#">Log in</a></li>
+					<li class="active"><a href="#">Book your design team</a></li>
 				</ul>
 			</section>
 		</nav>
+	</div>
 	</div>
 </div>
 

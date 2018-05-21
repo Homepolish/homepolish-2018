@@ -107,7 +107,7 @@ function thb_TheShortcodesForVC() {
 	      $w = "medium-10";
 	      break;    
 	    case "1/1" :
-	      $w = "medium-12";
+	      $w = "medium-12 testing";
 	      break;
 	    case "1/12" :
 	      $w = "medium-1";
