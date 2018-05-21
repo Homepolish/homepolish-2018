@@ -121,8 +121,9 @@ nav .title-area {
     color: white !important; }
   .hp-header--transparent .top-bar {
     background: transparent; }
-  .hp-header--transparent nav.top-bar .top-bar-section .has-dropdown > a {
-    background: transparent; }
+  .hp-header--transparent nav.top-bar .top-bar-section ul li,
+  .hp-header--transparent nav.top-bar .top-bar-section ul li > a {
+    background: transparent !important; }
   .hp-header--transparent .top-bar-section ul li > a {
     color: white; }
   .hp-header--transparent.full-width-nav {
@@ -133,5 +134,10 @@ nav .title-area {
   @media only screen and (min-width: 1024px) {
     .hp-header--transparent .left-border {
       border-left: 1px solid white !important; } }
+  @media only screen and (min-width: 1024px) {
+    .hp-header--transparent .has-dropdown:hover {
+      border-bottom: 3px solid white; } }
+  .hp-header--transparent .top-bar .toggle-topbar.menu-icon a span::after {
+    box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff; }
 
 /*# sourceMappingURL=hp-foundation.css.map */

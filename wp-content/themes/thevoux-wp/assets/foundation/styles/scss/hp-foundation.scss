@@ -254,9 +254,11 @@ nav {
 		background: transparent;
 	}
 
-	nav.top-bar .top-bar-section .has-dropdown > a {
+	nav.top-bar .top-bar-section ul li, 
+	nav.top-bar .top-bar-section ul li > a 
+	{
 
-		background: transparent;
+		background: transparent !important;
 	}
 
 	.top-bar-section ul li > a {
@@ -280,5 +282,21 @@ nav {
 
 			border-left: 1px solid white !important;
 		}
+	}
+
+	.has-dropdown { 
+
+		@media only screen and (min-width: 1024px) {
+
+			&:hover {
+
+				border-bottom: 3px solid white;
+			}
+		}
+	}
+
+	.top-bar .toggle-topbar.menu-icon a span::after {
+
+		box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
 	}
 }
