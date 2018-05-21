@@ -212,3 +212,28 @@ nav {
 		}
 	}
 }
+
+
+
+
+
+/* Colors */
+
+.main-container {
+
+	position: relative;
+}
+
+.hp-header--transparent {
+
+	background: transparent !important;
+	background-color: transparent !important;
+	color: white !important;
+
+
+	.top-bar {
+
+		background: transparent;
+	}
+	
+}

@@ -103,4 +103,15 @@ nav .title-area {
       left: 0;
       position: absolute; } }
 
+/* Colors */
+.main-container {
+  position: relative; }
+
+.hp-header--transparent {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: white !important; }
+  .hp-header--transparent .top-bar {
+    background: transparent; }
+
 /*# sourceMappingURL=hp-foundation.css.map */
