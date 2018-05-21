@@ -50,6 +50,44 @@ nav {
 
 				border-left: 1px solid black;
 			}
+
+			.has-dropdown { 
+
+				&:hover {
+
+					border-bottom: 3px solid black;
+				}
+
+				& > a {
+					
+					height: 67px;	
+				}
+				
+				ul.dropdown {
+
+					border-top: 1px solid black;
+					left: 0;
+    				right: auto;
+    				margin-top: 3px;
+
+					li a {
+
+						
+						border: 1px solid black;
+						border-top: none;
+						line-height: 40px;
+						text-transform: capitalize;
+
+						&:hover {
+
+							background: !important;
+							background-color: #ccc !important;
+							text-decoration: none;
+						}
+					}
+				}
+
+			}
 		}
 	}
 

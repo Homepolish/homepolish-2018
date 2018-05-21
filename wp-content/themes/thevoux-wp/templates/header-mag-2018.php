@@ -18,7 +18,7 @@
 </head>
 <body <?php body_class($class); ?> data-url="<?php echo esc_url(home_url()); ?>" data-themeurl="<?php echo THB_THEME_ROOT; ?>" data-spy="scroll">
 
-<?php include_once("../inc/homepolish/hmpl-google-scripts.php") ?>
+<?php //include_once("../inc/homepolish/hmpl-google-scripts.php") ?>
 
 <script type="text/javascript" src="https://www.homepolish.com/segment_forwarder.js?no_jquery=true"></script>
 
@@ -67,7 +67,7 @@
 						<a href="#">Design</a>
 						<ul class="dropdown">
 							<li><a href="#">First link in dropdown</a></li>
-							<li class="active"><a href="#">Active link in dropdown</a></li>
+							<li class=""><!-- active --><a href="#">Active link in dropdown</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Build Services</a></li>
@@ -77,7 +77,7 @@
 						<a href="#">The Magazine</a>
 						<ul class="dropdown">
 							<li><a href="#">Byour </a></li>
-							<li class="active"><a href="#">Active link in dropdown</a></li>
+							<li class=""><!-- active --><a href="#">Active link in dropdown</a></li>
 						</ul>
 					</li>
 					<li class="left-border"><a href="#">Log in</a></li>

@@ -28,6 +28,24 @@ nav.top-bar {
     text-transform: uppercase; }
   nav.top-bar .top-bar-section .left-border {
     border-left: 1px solid black; }
+  nav.top-bar .top-bar-section .has-dropdown:hover {
+    border-bottom: 3px solid black; }
+  nav.top-bar .top-bar-section .has-dropdown > a {
+    height: 67px; }
+  nav.top-bar .top-bar-section .has-dropdown ul.dropdown {
+    border-top: 1px solid black;
+    left: 0;
+    right: auto;
+    margin-top: 3px; }
+    nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a {
+      border: 1px solid black;
+      border-top: none;
+      line-height: 40px;
+      text-transform: capitalize; }
+      nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a:hover {
+        background: !important;
+        background-color: #ccc !important;
+        text-decoration: none; }
 nav .title-area img {
   height: 20px;
   width: auto; }

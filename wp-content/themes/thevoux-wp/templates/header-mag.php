@@ -18,8 +18,6 @@
 </head>
 <body <?php body_class($class); ?> data-url="<?php echo esc_url(home_url()); ?>" data-themeurl="<?php echo THB_THEME_ROOT; ?>" data-spy="scroll">
 
-<?php include_once("../inc/homepolish/hmpl-google-scripts.php") ?>
-
 <script type="text/javascript" src="https://www.homepolish.com/segment_forwarder.js?no_jquery=true"></script>
 
 <div id="wrapper">

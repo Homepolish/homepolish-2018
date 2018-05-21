@@ -1962,9 +1962,9 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li > button.info:hover, .top-bar-section ul li > button.info:focus {
           color: #FFFFFF; }
     .top-bar-section ul li:hover:not(.has-form) > a {
-      background-color: #555555;
-      color: #FFFFFF;
-      background: #222222; }
+      background-color: white;
+      color: black;
+      background: white; }
     .top-bar-section ul li.active > a {
       background: #008CBA;
       color: #FFFFFF; }
@@ -2111,15 +2111,15 @@ meta.foundation-mq-topbar {
         background-color: white;
         background: white; 
         color: black;
-        text-decoration: underline;}
+        text-decoration: none;}
     .top-bar-section li.active:not(.has-form) a:not(.button) {
-      background: #008CBA;
+      background: black;
       color: #FFFFFF;
       line-height: 2.8125rem;
       padding: 0 0.9375rem; }
       .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-        background: #0078a0;
-        color: black; }
+        background: black;
+        color: white; }
     .top-bar-section .has-dropdown > a {
       padding-right: 2.1875rem !important; }
       .top-bar-section .has-dropdown > a:after {
@@ -2128,7 +2128,8 @@ meta.foundation-mq-topbar {
         display: block;
         height: 0;
         width: 0;
-        border-color: rgba(255, 255, 255, 0.4) transparent transparent transparent;
+        /* Caret? */
+        border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
         border-top-style: solid;
         margin-top: -2.5px;
         top: 1.40625rem; }
@@ -2177,9 +2178,9 @@ meta.foundation-mq-topbar {
         background: white;
         color: black; }
       .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
-        background-color: #555555;
-        color: #FFFFFF;
-        background: #222222; }
+        background-color: white;
+        color: black;
+        background: white; }
       .top-bar-section .dropdown li label {
         background: #333333;
         white-space: nowrap; }
