@@ -124,7 +124,7 @@ select {
   margin: 0 auto;
   /* max-width: 62.5rem; */
   max-width: 1400px;
-  width: 86%; }
+  width: 86% !important; }
   .row:before, .row:after {
     content: " ";
     display: table; }
@@ -2106,7 +2106,7 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       background: white;
       line-height: 2.8125rem;
-      padding: 0 0.9375rem; }
+      /* hp - padding: 0 0.9375rem; */}
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: white;
         background: white; 

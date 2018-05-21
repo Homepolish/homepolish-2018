@@ -11,7 +11,8 @@ img {
 
 .full-width-nav {
   border-bottom: 1px solid black;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  position: relative; }
 
 .table {
   display: table;
@@ -26,17 +27,20 @@ nav.top-bar {
   nav.top-bar .top-bar-section ul li > a {
     font-size: 12px;
     letter-spacing: 1px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding: 0 0 0 10px; }
   nav.top-bar .top-bar-section ul {
     margin: 30px 0 30px; }
     @media only screen and (min-width: 1024px) {
       nav.top-bar .top-bar-section ul {
         margin: 0; } }
+    nav.top-bar .top-bar-section ul li {
+      margin: 0; }
   @media only screen and (min-width: 1024px) {
     nav.top-bar .top-bar-section .left-border {
       border-left: 1px solid black;
       padding-left: 5px;
-      margin-left: 10px; } }
+      margin: 0 10px 0 10px; } }
   @media only screen and (min-width: 1024px) {
     nav.top-bar .top-bar-section .has-dropdown:hover {
       border-bottom: 3px solid black; }
@@ -47,18 +51,24 @@ nav.top-bar {
     left: 0;
     right: auto;
     margin-top: 3px; }
-    nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a {
-      border: 1px solid black;
-      border-top: none;
-      line-height: 40px;
-      text-transform: capitalize; }
-      nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a:hover {
-        background: !important;
-        background-color: #ccc !important;
-        text-decoration: none; }
-nav .title-area img {
-  height: 20px;
-  width: auto; }
+    nav.top-bar .top-bar-section .has-dropdown ul.dropdown li {
+      margin-right: 10px; }
+      nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a {
+        border: 1px solid black;
+        border-top: none;
+        line-height: 40px;
+        text-transform: capitalize; }
+        nav.top-bar .top-bar-section .has-dropdown ul.dropdown li a:hover {
+          background: !important;
+          background-color: #ccc !important;
+          text-decoration: none; }
+nav .title-area {
+  padding-left: 0; }
+  nav .title-area h1 a {
+    padding: 0; }
+  nav .title-area img {
+    height: 20px;
+    width: auto; }
 
 .row-container > .row {
   margin-bottom: 100px; }
