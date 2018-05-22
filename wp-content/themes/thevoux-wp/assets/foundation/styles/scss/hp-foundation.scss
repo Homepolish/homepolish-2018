@@ -1,3 +1,4 @@
+@import "mobile";
 @import "nav";
 @import "nav-colors";
 @import "rows";
@@ -31,6 +32,14 @@ img {
 	margin-bottom: 30px;
 	position: absolute;
 	z-index: 1;
+
+	&.hp-header--transparent {
+
+		h1 {
+
+			padding-top: 11px;
+		}
+	}
 }
 .mag-page {
 
@@ -57,4 +66,23 @@ img {
 
 		display: none;
 	}
+
+	//for mobile 
+	nav.top-bar.expanded {
+
+		h1 {
+
+			margin-left: 20px;
+		}
+
+		.opaque {
+
+			display: block;
+		}
+	}
+}
+
+/* Hamburger */
+.top-bar .toggle-topbar.menu-icon a span::after {
+	box-shadow: 0 0 0 1px #ccc, 0 7px 0 1px #ccc, 0 14px 0 1px #ccc;
 }

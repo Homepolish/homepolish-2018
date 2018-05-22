@@ -1,10 +1,13 @@
 .full-width-nav {
 
-	border-bottom: 1px solid black;
+	@media only screen and (min-width: 1024px) {
 
-	&.hp-header--transparent {
+		border-bottom: 1px solid black;
 
-		border-bottom: 1px solid #ccc;
+		&.hp-header--transparent {
+
+			border-bottom: 1px solid #ccc;
+		}
 	}
 }
 
@@ -71,7 +74,3 @@
     
 }
 
-/* Hamburger */
-.top-bar .toggle-topbar.menu-icon a span::after {
-	box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
-}
