@@ -16,14 +16,28 @@
 			</ul>
 
 			<section class="top-bar-section">
+
+				<?php
+
+					echo str_replace('sub-menu', 'dropdown', wp_nav_menu( array(
+						'echo' => false,
+						'menu' 		=> 'Header 2018', 
+						'menu_class' => 'right'
+						) )
+					);
+
+				?>
+
+				<?php //echo hp_header_2018(); ?>
+
 				<!-- Right Nav Section -->
+				<!-- 
 				<ul class="right">
-					
 					<li class="has-dropdown">
 						<a href="#">Design</a>
 						<ul class="dropdown">
 							<li><a href="#">First link in dropdown</a></li>
-							<li class=""><!-- active --><a href="#">Active link in dropdown</a></li>
+							<li class=""><a href="#">Active link in dropdown</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Build Services</a></li>
@@ -33,12 +47,13 @@
 						<a href="#">The Magazine</a>
 						<ul class="dropdown">
 							<li><a href="#">Category 1</a></li>
-							<li class=""><!-- active --><a href="#">Active link in dropdown</a></li>
+							<li class=""><a href="#">Active link in dropdown</a></li>
 						</ul>
 					</li>
 					<li class="left-border"><a href="#">Log in</a></li>
 					<li class="active"><a href="#">Book your design team</a></li>
 				</ul>
+				-->
 			</section>
 		</nav>
 	</div>
