@@ -39,15 +39,27 @@ nav {
 
 					margin: 0;
 
-					 a {
+					a {
 
 						font-size: 12px;
 						letter-spacing: 1px;
 						text-transform: uppercase;
 						padding: 0 0 0 10px;
-					 }
-				}
+					}
 
+
+					@media only screen and (min-width: 1024px) {
+
+						&:hover {
+
+							border-bottom: 3px solid black;
+						}
+						& > a {						
+
+							height: 67px;	
+						}
+					}
+				}
 			}
 
 			.left-border {
@@ -67,13 +79,6 @@ nav {
 					&:hover {
 
 						border-bottom: 3px solid black;
-					}
-
-
-					& > a {
-						
-
-						height: 67px;	
 					}
 
 				}

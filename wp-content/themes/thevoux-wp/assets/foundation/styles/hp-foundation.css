@@ -31,6 +31,11 @@ nav.top-bar {
         letter-spacing: 1px;
         text-transform: uppercase;
         padding: 0 0 0 10px; }
+      @media only screen and (min-width: 1024px) {
+        nav.top-bar .top-bar-section ul li:hover {
+          border-bottom: 3px solid black; }
+        nav.top-bar .top-bar-section ul li > a {
+          height: 67px; } }
   @media only screen and (min-width: 1024px) {
     nav.top-bar .top-bar-section .left-border {
       border-left: 1px solid black;
@@ -38,9 +43,7 @@ nav.top-bar {
       margin: 0 10px 0 10px; } }
   @media only screen and (min-width: 1024px) {
     nav.top-bar .top-bar-section .has-dropdown:hover {
-      border-bottom: 3px solid black; }
-    nav.top-bar .top-bar-section .has-dropdown > a {
-      height: 67px; } }
+      border-bottom: 3px solid black; } }
   nav.top-bar .top-bar-section .has-dropdown ul.dropdown {
     border-top: 1px solid black;
     left: 0;
@@ -57,30 +60,34 @@ nav.top-bar {
           background: rgba(200, 200, 200, 0.75) !important;
           text-decoration: none; }
 
-@media only screen and (min-width: 1024px) {
-  .full-width-nav {
-    border-bottom: 1px solid black; }
-    .full-width-nav.hp-header--transparent {
-      border-bottom: 1px solid #ccc; } }
-
-.hp-header--transparent nav {
-  background: transparent;
-  background-color: transparent; }
-  .hp-header--transparent nav.top-bar .top-bar-section ul li {
-    background-color: transparent; }
-    .hp-header--transparent nav.top-bar .top-bar-section ul li > a {
-      background-color: transparent;
-      color: #ccc; }
-      .hp-header--transparent nav.top-bar .top-bar-section ul li > a:after {
-        border-color: #c8c8c8 transparent transparent transparent; }
-      .hp-header--transparent nav.top-bar .top-bar-section ul li > a:hover {
-        background-color: transparent;
-        color: white; }
-        .hp-header--transparent nav.top-bar .top-bar-section ul li > a:hover:after {
-          border-color: white transparent transparent transparent; }
+.full-width-nav {
+  background: white; }
   @media only screen and (min-width: 1024px) {
-    .hp-header--transparent nav.top-bar .top-bar-section ul .left-border {
-      border-left: 1px solid #ccc; } }
+    .full-width-nav {
+      border-bottom: 1px solid black; }
+      .full-width-nav.hp-header--transparent {
+        border-bottom: 1px solid #ccc; } }
+
+.hp-header--transparent {
+  background: transparent; }
+  .hp-header--transparent nav {
+    background: transparent;
+    background-color: transparent; }
+    .hp-header--transparent nav.top-bar .top-bar-section ul li {
+      background-color: transparent; }
+      .hp-header--transparent nav.top-bar .top-bar-section ul li > a {
+        background-color: transparent;
+        color: #ccc; }
+        .hp-header--transparent nav.top-bar .top-bar-section ul li > a:after {
+          border-color: #c8c8c8 transparent transparent transparent; }
+        .hp-header--transparent nav.top-bar .top-bar-section ul li > a:hover {
+          background-color: transparent;
+          color: white; }
+          .hp-header--transparent nav.top-bar .top-bar-section ul li > a:hover:after {
+            border-color: white transparent transparent transparent; }
+    @media only screen and (min-width: 1024px) {
+      .hp-header--transparent nav.top-bar .top-bar-section ul .left-border {
+        border-left: 1px solid #ccc; } }
 
 /* Caret */
 .table {

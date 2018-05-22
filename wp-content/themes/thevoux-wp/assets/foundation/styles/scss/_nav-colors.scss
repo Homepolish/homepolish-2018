@@ -1,5 +1,7 @@
 .full-width-nav {
 
+	background: white;
+
 	@media only screen and (min-width: 1024px) {
 
 		border-bottom: 1px solid black;
@@ -12,6 +14,8 @@
 }
 
 .hp-header--transparent {
+
+	background: transparent;
 
 	nav {
 
