@@ -39,6 +39,11 @@ nav {
 
 					margin: 0;
 
+					&.active > a {
+
+						height: auto;
+					}
+
 					a {
 
 						font-size: 12px;
@@ -48,29 +53,34 @@ nav {
 					}
 
 
+
+
 					@media only screen and (min-width: 1024px) {
 
-						&:hover {
+						> &:hover {
 
 							border-bottom: 3px solid black;
 						}
-						& > a {						
+						> a {						
 
-							height: 67px;	
+							height: 67px;
 						}
 					}
 				}
 			}
 
-			.left-border {
+			/* .left-border {
 
 				@media only screen and (min-width: 1024px) {
 
-					border-left: 1px solid black;
-					padding-left: 5px;
-	    			margin: 0 10px 0 10px;
+					a {
+						border-left: 1px solid black;
+						padding-left: 5px;
+	    				margin: 0 10px 0 10px;
+	    			}
 				}
 			}
+			*/
 
 			.has-dropdown { 
 
@@ -97,9 +107,9 @@ nav {
 
 						a {
 
-						
 							border: 1px solid black;
 							border-top: none;
+							height: auto;
 							line-height: 40px;
 							text-transform: capitalize;
 
