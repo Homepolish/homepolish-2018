@@ -129,20 +129,20 @@ nav.top-bar {
       top: 0; } }
 
 @media only screen and (min-width: 1024px) {
-  .blockquote-row {
+  .hp_2018_copy_blockquote {
     position: relative; }
-    .blockquote-row blockquote {
+    .hp_2018_copy_blockquote blockquote {
       float: left;
       font-size: 30px;
       margin-left: -25%;
       width: 62.5%; } }
 
 @media only screen and (min-width: 1024px) {
-  .lg-img-overlap-quote {
+  .hp_2018_lg_overlap_quote {
     position: relative; }
-    .lg-img-overlap-quote img {
+    .hp_2018_lg_overlap_quote img {
       margin-bottom: 12.5%; }
-    .lg-img-overlap-quote .quote {
+    .hp_2018_lg_overlap_quote .quote {
       bottom: 0;
       font-size: 40px;
       left: 0;

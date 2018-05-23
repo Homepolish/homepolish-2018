@@ -1,4 +1,4 @@
-<!-- single-test -->
+<!-- single-article-2018 -->
 <?php
   $fixed = ot_get_option('article_fixed_sidebar', 'on');
   $fullwidth = ot_get_option('article_fullwidth', 'off');
@@ -80,64 +80,6 @@
   </div>
 </div>
 
-<!-- block quote styling -->
-
-<div class="row blockquote-row">
-  <div class="large-offset-3 large-6 large-centered columns">
-    <p>The collapse class lets you remove column gutters (padding).</p>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.The collapse class lets you remove column gutters (padding).</p>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.</p>
-    <blockquote>
-      The collapse class lets you remove column gutters (padding).
-    </blockquote>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.</p>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.</p>
-    <blockquote>
-      The collapse class lets you remove column gutters (padding).
-    </blockquote>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.</p>
-    <p>There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example removes the gutter at the large breakpoint and then adds the gutter to columns at medium and small.</p>
-  </div>
-</div>
-
-<!-- lg-img-caption -->
-
-<div class="row lg-img-caption collapse">
-  <div class="small-12 columns">
-    <img src="http://via.placeholder.com/1600x600">
-  </div>
-  <div class="small-12 columns">
-    <p>Caption</p>
-  </div>
-</div>
-
-<!-- split-image-quote -->
-
-<div class="row collapse" data-equalizer>
-  <div class="large-6 columns" data-equalizer-watch>
-    <img src="http://via.placeholder.com/650x1400">
-  </div>
-  <div class="large-offset-1 large-5 columns" data-equalizer-watch>
-    <div class="table">
-      <div class="table-cell">
-        <p>Happy Little Post Title Goes Here: 10 Tips for Stuff</p>
-        <p>- Name</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- single-column-text -->
-
-<div class="row collapse single-column-text">
-    <!-- <div class="large-centered large-6 columns"> -->
-        <div class="small-12 columns">
-            <div class="row post-content-body">
-            <?php echo the_content(); ?>
-        </div>
-    </div>
-</div>
-
 <!-- swipe-image -->
 
 <div class="row swipe-image collapse">
@@ -149,18 +91,5 @@
   </div>
 </div>
 
-<!-- lg-img-overlap-quote -->
-
-<div class="row lg-img-overlap-quote collapse">
-  <div class="small-12 columns">
-    <div class="row collapse">
-      <div class="large-centered large-10 columns">
-        <img src="http://via.placeholder.com/1400x1000">
-      </div>
-      <div class="large-3 columns quote">
-      This is an overlapping quote that you need to read.
-    </div>
-  </div>
-</div>
 
 </div><!-- row container -->

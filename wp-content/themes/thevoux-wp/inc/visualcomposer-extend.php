@@ -36,6 +36,26 @@ vc_map( array(
 ) );
 
 vc_map( array(
+	"name" => __("HP 2018 Copy Blockquote", THB_THEME_NAME),
+	"base" => "hp_2018_copy_blockquote",
+	"icon" => "hp_2018_copy_blockquote",
+	"class" => "hp_2018_copy_blockquote",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Content",
+				"admin_label" => true,
+				"param_name" => "content",
+				"value" => "",
+				"description" => ""
+		),	
+	),
+	"description" => "HP 2018 Copy Blockquote"
+) );
+
+vc_map( array(
 	"name" => __("HP 2018 2X Image", THB_THEME_NAME),
 	"base" => "hp_2018_2x_image",
 	"icon" => "hp_2018_2x_image",
@@ -98,6 +118,92 @@ vc_map( array(
 	),
 	"description" => "HP 2018 2X Image"
 ) );
+
+vc_map( array(
+	"name" => __("HP 2018 Lg Img Caption", THB_THEME_NAME),
+	"base" => "hp_2018_lg_img_caption",
+	"icon" => "hp_2018_lg_img_caption",
+	"class" => "hp_2018_lg_img_caption",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+			"type" => "attach_image", //attach_images
+			"class" => "",
+			"heading" => "Select Left Image",
+			"param_name" => "hp_2018_lg_img",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Title",
+			"param_name" => "hp_2018_lg_img_caption",
+			"description" => ""
+		),
+	),
+	"description" => "HP 2018 Lg Img Caption"
+) );
+
+vc_map( array(
+	"name" => __("HP 2018 Split Img Quote", THB_THEME_NAME),
+	"base" => "hp_2018_split_img_quote",
+	"icon" => "hp_2018_split_img_quote",
+	"class" => "hp_2018_split_img_quote",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+			"type" => "attach_image", //attach_images
+			"class" => "",
+			"heading" => "Select Left Image",
+			"param_name" => "hp_2018_split_img",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Quote",
+			"param_name" => "hp_2018_split_img_quote",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Name",
+			"param_name" => "hp_2018_split_img_name",
+			"description" => ""
+		),
+	),
+	"description" => "HP 2018 Split Img Quote"
+) );
+
+vc_map( array(
+	"name" => __("HP 2018 Lg Overlap Quote", THB_THEME_NAME),
+	"base" => "hp_2018_lg_overlap_quote",
+	"icon" => "hp_2018_lg_overlap_quote",
+	"class" => "hp_2018_lg_overlap_quote",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+			"type" => "attach_image", //attach_images
+			"class" => "",
+			"heading" => "Select Left Image",
+			"param_name" => "hp_2018_lg_overlap_img",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Quote",
+			"param_name" => "hp_2018_lg_overlap_quote",
+			"description" => ""
+		),
+	),
+	"description" => "HP 2018 Lg Overlap Quote"
+) );
+
+
+
+
+
+
+
+
 
 
 
