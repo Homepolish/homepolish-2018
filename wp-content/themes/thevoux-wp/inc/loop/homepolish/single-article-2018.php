@@ -25,7 +25,7 @@
       <div class="large-5 columns content" data-equalizer-watch>
         <div class="table">
           <div class="table-cell">
-            <h2><?php //hmpl_header_title($ajax); ?></h2>
+            <h2><?php hmpl_header_title($ajax); ?></h2>
             <p><a href="">Tours</a> | <a href="">New York</a></p>
           </div>
         </div>
@@ -66,8 +66,8 @@
       <div class="large-5 columns content" data-equalizer-watch>
         <div class="table">
           <div class="table-cell">
-            <h3><?php //hmpl_get_category_aside(); ?>get_category_aside</h3>
-            <h2><?php //hmpl_header_title($ajax); ?></h2>
+            <h3><?php hmpl_get_category_aside(); ?>get_category_aside</h3>
+            <h2><?php hmpl_header_title($ajax); ?></h2>
             <p>Designer: <a href="">Bob Ross</a></p>
             <p>City: <a href="">New York</a></p>
           </div>

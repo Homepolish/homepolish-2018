@@ -1,6 +1,14 @@
 <?php
 
 
+//This should go away ER
+function hmpl_header_title($ajax) {
+  if ( $ajax == '0' ) {
+    the_title('<h1 class="entry-title" itemprop="headline">', '</h1>');
+  } else {
+    the_title('<h1 class="entry-title" itemprop="headline"><a href="'.get_permalink().'" class="tertiary" title="'.the_title_attribute("echo=0").'">', '</a></h1>');
+  }
+}
 
 // Get the proper category header
 function hmpl_get_category_aside($id=null) {

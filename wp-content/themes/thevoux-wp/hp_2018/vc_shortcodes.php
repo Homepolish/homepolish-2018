@@ -43,7 +43,7 @@ function hp_2018_2x_image( $atts, $content = null ) {
 	      <div class="large-6 columns">
 	        <div class="row collapse">
 	          <div class="large-11 columns">';
-	$output .= '<img src="' . $hp_2018_2x_image_left . '">';
+	$output .= '<img src="' . wp_get_attachment_url( $hp_2018_2x_image_left ) . '">';
 	
 	$output .= '</div>
 	          <div class="large-centered large-10 columns">';         
@@ -58,7 +58,7 @@ function hp_2018_2x_image( $atts, $content = null ) {
 	      <div class="large-6 columns">
 	        <div class="row collapse">
 	          <div class="large-offset-1 large-11 columns">';
-	$output .= '<img src="' . $hp_2018_2x_image_right . '">';
+	$output .= '<img src="' . wp_get_attachment_url( $hp_2018_2x_image_right ) . '">';
 	$output .= '</div>
 	          <div class="large-centered large-10 columns">' ;          
 	$output .= '<h3>' . $hp_2018_2x_image_right_title . '</h3>';
@@ -109,7 +109,7 @@ function hp_2018_lg_img_caption( $atts, $content = null ) {
     <!-- hp_2018_lg_img_caption -->
     <div class="row collapse hp_2018_lg_img_caption">
     	<div class="small-12 columns">';
-    $output.= '<img src="' . $hp_2018_lg_img . '">';
+    $output.= '<img src="' . wp_get_attachment_url( $hp_2018_lg_img ) . '">';
 	$output.= '
 		</div>
 		<div class="small-12 columns">';
@@ -137,7 +137,7 @@ function hp_2018_split_img_quote( $atts, $content = null ) {
     <!-- hp_2018_split_img_quote -->
     <div class="row collapse hp_2018_split_img_quote" data-equalizer>
     	<div class="large-6 columns" data-equalizer-watch>';
-    $output.= '<img src="' . $hp_2018_split_img . '">';
+    $output.= '<img src="' . wp_get_attachment_url( $hp_2018_split_img ) . '">';
 	$output.= '
 		</div>
 		<div class="large-offset-1 large-5 columns" data-equalizer-watch>
@@ -170,7 +170,7 @@ function hp_2018_lg_overlap_quote( $atts, $content = null ) {
   		<div class="small-12 columns">
     		<div class="row collapse">
       			<div class="large-centered large-10 columns">';
-    $output.= '<img src="' . $hp_2018_lg_overlap_img . '">';
+    $output.= '<img src="' . wp_get_attachment_url( $hp_2018_lg_overlap_img ) . '">';
 	$output.= '
 			</div>
       		<div class="large-3 columns quote">';

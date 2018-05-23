@@ -25,7 +25,7 @@
       <div class="large-5 columns content" data-equalizer-watch>
         <div class="table">
           <div class="table-cell">
-            <h2><?php //hmpl_header_title($ajax); ?></h2>
+            <h2><?php hmpl_header_title($ajax); ?></h2>
             <p><a href="">Tours</a> | <a href="">New York</a></p>
           </div>
         </div>
