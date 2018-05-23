@@ -50,13 +50,13 @@ function hmpl_get_image_dim($image, $device = "desktop") {
     'desktop_dim' => $desktop_dim
     );
 }
-add_action( 'hmpl_get_image_dim', 'hmpl_get_image_dim', 3 );
+//add_action( 'hmpl_get_image_dim', 'hmpl_get_image_dim', 3 );
 
 function hmpl_featured_image_thumbnail($params=array()) {
   $id = isset($params['id']) ? $params['id'] : get_post_thumbnail_id();
   hmpl_image_thumbnail($id, $params['dimensions'], get_the_permalink());
 }
-add_action( 'hmpl_featured_image_thumbnail', 'hmpl_featured_image_thumbnail');
+//add_action( 'hmpl_featured_image_thumbnail', 'hmpl_featured_image_thumbnail');
 
 // Returns the ID of the custom "Homepage Image" set on the post, if present
 // Otherwise, falls back to the post's featured image
@@ -106,7 +106,7 @@ function hmpl_image_thumbnail($id, $dimensions, $link) {
   </a>
   <?php
 }
-add_action( 'hmpl_image_thumbnail', 'hmpl_image_thumbnail');
+//add_action( 'hmpl_image_thumbnail', 'hmpl_image_thumbnail');
 
 // Gets the talking points of a post, if present, or the excerpt
 // (Optionally) truncates with an ellipsis
@@ -233,7 +233,7 @@ function hmpl_get_attachment_image($image, $photo_caption="", $lazy_load=false) 
 
   return "<img class='attachment-img' src='" . esc_url($html_src) . "' width='" . esc_attr($image[1]) . "' height='" . esc_attr($image[2]) . "' alt='" . esc_attr($photo_caption) . "' data-src='" . $img_src . "' />";
 }
-add_action( 'hmpl_get_attachment_image', 'hmpl_get_attachment_image', 3);
+//add_action( 'hmpl_get_attachment_image', 'hmpl_get_attachment_image', 3);
 
 function hmpl_login_link() {
   ?>
@@ -469,7 +469,7 @@ function hmpl_image_upload_rename($file) {
   }
   return $file;
 }
-add_filter('wp_handle_upload_prefilter','hmpl_image_upload_rename');
+//add_filter('wp_handle_upload_prefilter','hmpl_image_upload_rename');
 
 // URL Rewrite Rules
 function rewrite_rules() {

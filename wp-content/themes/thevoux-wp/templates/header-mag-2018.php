@@ -1,4 +1,4 @@
-<?php hmpl_js_analytics(); ?>
+<?php //hmpl_js_analytics(); ?>
 <?php do_action( 'thb_handhelded_devices' ); ?>
 <?php
 	$id = get_queried_object_id();
