@@ -20,9 +20,9 @@
 		</div>
 	</div>	
 <?php } ?>
-<div class="row collapse">
+<div class="row">
 	<!-- <section class="blog-section small-12 medium-8 columns"> -->
-	<section class="blog-section small-12 large-6 columns">
+	<section class="blog-section">
 		<!-- <div class="row" data-equal=">.columns"> -->
 			<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 				<?php get_template_part( 'inc/loop/blog-list' ); ?>

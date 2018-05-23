@@ -58,14 +58,14 @@
 						}
 					}
 
-					.left-border {
+					@media only screen and (min-width: 1024px) {
 
-						@media only screen and (min-width: 1024px) {
-
+						.left-border {
+							
 							span {
 
 								border-left: 1px solid #ccc;
-								padding-right: 10px;
+								padding: 5px 10px 5px 10px;
 							}
 						}
 					}
