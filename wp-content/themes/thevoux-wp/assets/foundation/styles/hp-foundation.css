@@ -103,8 +103,9 @@ nav.top-bar {
           .hp-header--transparent nav.top-bar .top-bar-section ul li > a:hover:after {
             border-color: white transparent transparent transparent; }
     @media only screen and (min-width: 1024px) {
-      .hp-header--transparent nav.top-bar .top-bar-section ul .left-border {
-        border-left: 1px solid #ccc; } }
+      .hp-header--transparent nav.top-bar .top-bar-section ul .left-border span {
+        border-left: 1px solid #ccc;
+        padding-right: 10px; } }
 
 /* Caret */
 .table {
@@ -143,10 +144,11 @@ nav.top-bar {
     .hp_2018_lg_overlap_quote img {
       margin-bottom: 12.5%; }
     .hp_2018_lg_overlap_quote .quote {
-      bottom: 0;
-      font-size: 40px;
+      bottom: -6.25%;
       left: 0;
-      position: absolute; } }
+      position: absolute; }
+      .hp_2018_lg_overlap_quote .quote p {
+        font-size: 40px; } }
 
 body {
   line-height: normal; }

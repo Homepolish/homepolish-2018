@@ -70,10 +70,14 @@
 
 		.quote {
 
-			bottom: 0;
-			font-size: 40px;
+			bottom: -6.25%;
 			left: 0;
 			position: absolute;
+
+			p {
+
+				font-size: 40px;
+			}
 		}
 	}
 }

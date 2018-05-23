@@ -1,5 +1,19 @@
 <?php
 
+function hmpl_get_talking_points($params=array()) {
+  $id = isset($params['id']) ? $params['id'] : get_the_ID();
+  $cutoff = isset($params['cutoff']) ? $params['cutoff'] : null;
+
+  $talking_points = get_field('talking_points', $id);
+  $text = $talking_points ? $talking_points : get_the_excerpt($id);
+  // Remove [] brackets around … (result of WP auto-truncation)
+  $formatted = preg_replace('/\s\[\&hellip;]$/u', '&hellip;', $text);
+  if ($cutoff && strlen($text) > $cutoff) {
+    $formatted = truncate($formatted, $cutoff, array('ending' => '&hellip;', 'exact' => false, 'html' => true));
+  }
+  return $formatted;
+}
+add_action('hmpl_get_talking_points', 'hmpl_get_talking_points');
 
 //This should go away ER
 function hmpl_header_title($ajax) {

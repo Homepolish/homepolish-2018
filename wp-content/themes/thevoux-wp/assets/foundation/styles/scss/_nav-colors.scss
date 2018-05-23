@@ -62,7 +62,11 @@
 
 						@media only screen and (min-width: 1024px) {
 
-							border-left: 1px solid #ccc;
+							span {
+
+								border-left: 1px solid #ccc;
+								padding-right: 10px;
+							}
 						}
 					}
 				}
