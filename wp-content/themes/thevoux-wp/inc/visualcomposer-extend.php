@@ -13,6 +13,96 @@ foreach ($files as $filename)
 
 /* Visual Composer Mappings */
 
+/* HP 2018 Mappings */
+
+vc_map( array(
+	"name" => __("HP 2018 Copy", THB_THEME_NAME),
+	"base" => "hp_2018_copy",
+	"icon" => "hp_2018_copy",
+	"class" => "hp_2018_copy",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Content",
+				"admin_label" => true,
+				"param_name" => "content",
+				"value" => "",
+				"description" => ""
+		),	
+	),
+	"description" => "HP 2018 Copy"
+) );
+
+vc_map( array(
+	"name" => __("HP 2018 2X Image", THB_THEME_NAME),
+	"base" => "hp_2018_2x_image",
+	"icon" => "hp_2018_2x_image",
+	"class" => "hp_2018_2x_image",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+			"type" => "attach_image", //attach_images
+			"class" => "",
+			"heading" => "Select Left Image",
+			"param_name" => "hp_2018_2x_image_left",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Title",
+			"param_name" => "hp_2018_2x_image_left_title",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Category",
+			"param_name" => "hp_2018_2x_image_left_category",
+			"description" => "Description goes here"
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "City",
+			"param_name" => "hp_2018_2x_image_left_city",
+			"description" => "Description goes here"
+		),
+		
+		// right
+
+		array(
+			"type" => "attach_image", //attach_images
+			"class" => "",
+			"heading" => "Select Right Image",
+			"param_name" => "hp_2018_2x_image_right",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Title",
+			"param_name" => "hp_2018_2x_image_right_title",
+			"description" => ""
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "Category",
+			"param_name" => "hp_2018_2x_image_right_category",
+			"description" => "Description goes here"
+		),
+		array(
+			"type" => "textfield",
+			"heading" => "City",
+			"param_name" => "hp_2018_2x_image_right_city",
+			"description" => "Description goes here"
+		),
+	),
+	"description" => "HP 2018 2X Image"
+) );
+
+
+
+/* Pre 2018 Older Mappings */
+
 // Adding animation to columns
 vc_add_param("vc_column", array(
 	"type" => "checkbox",
@@ -1338,24 +1428,4 @@ vc_map( array(
 		)
 	),
 	"description" => "Add a subscription form"
-) );
-
-// Article 2018 Text
-vc_map( array(
-	"name" => __("Copy 2018", THB_THEME_NAME),
-	"base" => "hp_copy_2018_test",
-	"icon" => "thb_vc_ico_contentbox",
-	"class" => "hp_vc_sc_copy_2018",
-	"category" => "by Homepolish",
-	"params" => array(
-		array(
-			"type" => "textarea_html",
-			"class" => "",
-			"heading" => "Content",
-			"param_name" => "content",
-			"value" => "",
-			"description" => "Add this text"
-		),
-	),
-	"description" => "Article 2018 Copy"
 ) );

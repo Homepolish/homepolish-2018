@@ -53,48 +53,10 @@
   </div>
 </div>
 
-
-<!-- single-column-text -->
-
-<div class="row collapse">
-    <div class="large-centered large-6 columns">
-        <div class="row post-content-body">
-            <?php echo the_content(); ?>
-        </div>
-    </div>
+<div class="the_content single-article-2018">
+  <?php echo the_content(); ?>
 </div>
 
-
-<!-- 2x -->
-    
-<div class="row two-x">
-  <div class="large-centered large-10 columns">
-    <div class="row">
-      <div class="large-6 columns">
-        <div class="row collapse">
-          <div class="large-11 columns">
-            <img src="http://via.placeholder.com/600x400">
-          </div>
-          <div class="large-centered large-10 columns">
-            <h3>Happy Little Post Title Goes Here: 10 Tips for Stuff</h3>
-            <p><a href="">Tours</a> | <a href="">New York</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="large-6 columns">
-        <div class="row collapse">
-          <div class="large-offset-1 large-11 columns">
-            <img src="http://via.placeholder.com/600x400">
-          </div>
-          <div class="large-offset-2 large-centered large-9 columns">
-            <h3>Happy Little Post Title Goes Here: 10 Tips for Stuff</h3>
-            <p><a href="">Tours</a> | <a href="">New York</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- featured hero -->
 

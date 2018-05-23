@@ -1,3 +1,9 @@
+#article-wrapper .row {
+  width: 100% !important; }
+#article-wrapper .post-content-body {
+  font-size: 1.8rem;
+  line-height: 2.5rem; }
+
 @media only screen and (max-width: 1024px) {
   nav.top-bar.expanded {
     background: white; }
