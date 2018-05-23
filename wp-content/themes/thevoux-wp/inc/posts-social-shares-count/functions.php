@@ -28,7 +28,7 @@ function pssc_get_count( $function, $post_id = 0 ) {
 		$url = get_permalink( $post_id );
 
 		if ( ! empty( $url ) ) {
-			require_once 'classes/share.count.php';
+			//require_once 'classes/share.count.php';
 			$share_counter = new PsscShareCount( $url );
 			$count = call_user_func( array( $share_counter, $function ) );
 		}

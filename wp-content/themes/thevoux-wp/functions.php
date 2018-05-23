@@ -353,7 +353,7 @@ if ( is_admin() ) {
 require_once('inc/homepolish/hmpl-custom-taxonomy.php');
 
 // Misc methods
-//require_once('inc/homepolish/hmpl-misc.php');
+require_once('inc/homepolish/hmpl-misc.php');
 
 // Import functions * can be removed once imported
 require_once('inc/homepolish/hmpl-post-prep.php');
