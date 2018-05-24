@@ -1,5 +1,60 @@
 <?php
 
+function hmpl_get_post_display_terms() {
+  $post = get_post( get_the_ID() );
+  $post_type = $post->post_type;
+
+  $vibes = hmpl_get_ordered_post_terms($post, 'vibe', 3);
+  $rooms = hmpl_get_ordered_post_terms($post, 'room', 2);
+  $terms = array_merge($vibes, $rooms);
+
+  usort($terms, function($t1, $t2) {
+    return $t1->count < $t2->count;
+  });
+  $featured_term = array_shift($terms);
+
+  return array('featured_term' => $featured_term, 'list_terms' => $terms);
+}
+
+// Gets the terms on a post for a given taxonomy, ordered by total # of posts w/ term
+// Also attaches the proper url
+function hmpl_get_ordered_post_terms($post, $taxonomy_slug, $limit=5) {
+  $terms = get_the_terms( $post->ID, $taxonomy_slug );
+  if ($terms && ! empty($terms)) {
+    usort($terms, function($t1, $t2) {
+      return $t1->count < $t2->count;
+    });
+    $terms = hmpl_attach_term_urls($terms, $taxonomy_slug);
+    return array_slice($terms, 0, $limit);
+  } else {
+    return array();
+  }
+}
+
+function hmpl_header_date_author() {
+  $author = get_the_author();
+  $author_url = get_author_posts_url(get_the_author_id());
+  ?>
+    <span class="post-date-author">
+      <time class="time" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+        <h6><?php echo thb_human_time_diff_enhanced(); ?></h6>
+      </time>
+
+      <?php if ($author_url) { ?>
+        <span class="extra-small show-for-medium-up">|</span>
+
+        <span class="extra-small italic">written by&nbsp;</span>
+
+        <h6>
+          <a class="tertiary" href="<?php echo $author_url ?>">
+            <?php echo $author ?>
+          </a>
+        </h6>
+      <?php } ?>
+    </span>
+  <?php
+}
+
 function hmpl_get_talking_points($params=array()) {
   $id = isset($params['id']) ? $params['id'] : get_the_ID();
   $cutoff = isset($params['cutoff']) ? $params['cutoff'] : null;

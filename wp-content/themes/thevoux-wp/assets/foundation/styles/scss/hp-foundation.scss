@@ -30,24 +30,19 @@ img {
 
 .full-width-nav {
 
-	margin-bottom: 30px;
-	position: absolute;
-	z-index: 1;
+	position: relative;
 
 	&.hp-header--transparent {
+
+		margin-bottom: 30px;
+		position: absolute;
+		z-index: 1;
 
 		h1 {
 
 			padding-top: 11px;
 		}
 	}
-}
-.mag-page {
-
-	.full-width-nav{
-
-		position: relative;
-	}	
 }
 
 /* Logo */
