@@ -17,24 +17,30 @@
 
 .hero {
 
+	&.hero-article {
 
-	@media only screen and (min-width: 1024px) {
 
-		position: relative;
-
-		.content {
-
-			 z-index: 1;
-		}
-
-		.img-container {
-
-			left: 0;
-			position: absolute;
-			top: 0;
-		}
 	}
 
+	&.hero-featured {
+
+		@media only screen and (min-width: 1024px) {
+
+			position: relative;
+
+			.content {
+
+				 z-index: 1;
+			}
+
+			.img-container {
+
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
 }
 
 .hp_2018_copy_blockquote {

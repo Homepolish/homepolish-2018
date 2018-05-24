@@ -31,6 +31,7 @@ function hmpl_get_ordered_post_terms($post, $taxonomy_slug, $limit=5) {
   }
 }
 
+// Soon to be deprecated
 function hmpl_header_date_author() {
   $author = get_the_author();
   $author_url = get_author_posts_url(get_the_author_id());
@@ -54,6 +55,18 @@ function hmpl_header_date_author() {
     </span>
   <?php
 }
+
+function hp_2018_header_date_author() {
+    $datetime = esc_attr( get_the_date( 'c' ) );
+    $date = date_create( $datetime );
+    ?>
+    <span class="post-date-author">
+        <span ="meta-key">Posted: </span>
+            <time class="time" datetime="<?php echo $datetime; ?>">
+                <?php echo date_format( $date, 'n.d.y' ); ?>
+            </time>
+    </span>
+<?php }
 
 function hmpl_get_talking_points($params=array()) {
   $id = isset($params['id']) ? $params['id'] : get_the_ID();
@@ -79,7 +92,7 @@ function hmpl_header_title($ajax) {
   }
 }
 
-// Get the proper category header
+// Soon to be deprecated Get the proper category header
 function hmpl_get_category_aside($id=null) {
   $id = $id ? $id : get_the_ID();
 
@@ -114,6 +127,42 @@ function hmpl_get_category_aside($id=null) {
   }
 }
 add_action( 'hmpl_get_category_aside', 'hmpl_get_category_aside', 3);
+
+function hp_2018_get_category_aside($id=null) {
+  $id = $id ? $id : get_the_ID();
+
+  if( has_category() ) {
+    $cat_mag_slug = get_category_by_slug( 'mag' );
+    $service_mag_slug = get_category_by_slug( 'service' );
+    $featured_post_slug = get_category_by_slug( 'featured-post' )->slug;
+
+    // Grab the location
+    $locations = get_the_terms( $id, 'location' );
+    if ( !$locations || is_wp_error( $locations ) ) {
+      $locations = get_term_by( 'name', 'new-york-city', 'location' );
+    }
+
+    $location_obj = $locations[0];
+    $location_name = $location_obj->name;
+
+    foreach( (get_the_category()) as $childcat) {
+      if ($childcat->slug == $featured_post_slug) {
+        continue;
+      }
+      if ( cat_is_ancestor_of($cat_mag_slug, $childcat) || cat_is_ancestor_of($service_mag_slug, $childcat) ) {
+        echo '<aside class="post-meta cf"><h6>';
+        echo '<a class="tertiary post-meta-category" href="'.get_category_link($childcat->cat_ID).'">'. $childcat->cat_name . '</a>';
+        /*if( !cat_is_ancestor_of($service_mag_slug, $childcat) && isset($location_obj) ) {
+          echo '<span class="post-meta-divider"> | </span>';
+          echo '<a class="tertiary post-meta-location" href="'.get_term_link($location_obj->slug, 'location').'">'. $location_name . '</a>';
+        }
+        */
+        echo '</h6></aside>';
+      }
+    }
+  }
+}
+add_action( 'hmpl_get_category_aside', 'hp_2018_get_category_aside', 3);
 
 // Get the image mode
 function hmpl_get_image_dim($image, $device = "desktop") {
