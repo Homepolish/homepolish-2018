@@ -80,7 +80,9 @@
     </div>
 </div>
 
-<?php the_content(); ?>
+<div class="the-content single-article-2018">
+  <?php echo the_content(); ?>
+</div>
 
 
 </div><!-- row container -->
