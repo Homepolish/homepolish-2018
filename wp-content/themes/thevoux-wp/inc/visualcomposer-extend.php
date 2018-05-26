@@ -23,13 +23,13 @@ vc_map( array(
 	"category" => "by Homepolish",
 	"params" => array(
 		array(
-				"type" => "textarea_html",
-				"class" => "",
-				"heading" => "Content",
-				"admin_label" => true,
-				"param_name" => "content",
-				"value" => "",
-				"description" => ""
+			"type" => "textarea_html",
+			"class" => "",
+			"heading" => "Content",
+			"admin_label" => true,
+			"param_name" => "content",
+			"value" => "",
+			"description" => ""
 		),	
 	),
 	"description" => "HP 2018 Copy"
@@ -75,22 +75,19 @@ vc_map( array(
 		),
 		array(
 			"type" => "textfield",
-			"heading" => "Title",
-			"param_name" => "hp_2018_2x_image_left_title",
+			"heading" => "Caption",
+			"param_name" => "hp_2018_2x_image_left_caption",
 			"description" => ""
 		),
 		array(
-			"type" => "textfield",
-			"heading" => "Category",
-			"param_name" => "hp_2018_2x_image_left_category",
-			"description" => "Description goes here"
-		),
-		array(
-			"type" => "textfield",
-			"heading" => "City",
-			"param_name" => "hp_2018_2x_image_left_city",
-			"description" => "Description goes here"
-		),
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Attribution",
+				"admin_label" => true,
+				"param_name" => "hp_2018_2x_image_left_att",
+				"value" => "",
+				"description" => ""
+		),	
 		
 		// right
 
@@ -103,22 +100,20 @@ vc_map( array(
 		),
 		array(
 			"type" => "textfield",
-			"heading" => "Title",
-			"param_name" => "hp_2018_2x_image_right_title",
+			"heading" => "Caption",
+			"param_name" => "hp_2018_2x_image_right_caption",
 			"description" => ""
 		),
 		array(
-			"type" => "textfield",
-			"heading" => "Category",
-			"param_name" => "hp_2018_2x_image_right_category",
-			"description" => "Description goes here"
-		),
-		array(
-			"type" => "textfield",
-			"heading" => "City",
-			"param_name" => "hp_2018_2x_image_right_city",
-			"description" => "Description goes here"
-		),
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Attribution",
+				"admin_label" => true,
+				"param_name" => "hp_2018_2x_image_right_att",
+				"value" => "",
+				"description" => ""
+		),	
+		
 	),
 	"description" => "HP 2018 2X Image"
 ) );

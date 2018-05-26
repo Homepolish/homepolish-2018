@@ -43,7 +43,7 @@
 	}
 }
 
-.hp_2018_copy_blockquote {
+.hp_2018_copy {
 
 	@media only screen and (min-width: 1024px) {
 
@@ -56,13 +56,18 @@
 		blockquote {
 
 			border: none;
-			color: black;
 			float: left;
-			font-size: 24px;
 			margin-left: -25%;
-			padding-right: 17.5%;
+			padding-right: 12.5%;
 			text-align: left;
 			width: 62.5%;
+
+			p {
+
+				color: black;
+				font-size: 48px;
+			}
+
 		}
 	}
 }
@@ -75,7 +80,7 @@
 
 		img {
 
-			margin-bottom: 12.5%;
+			//margin-bottom: 12.5%;
 		}
 
 		.quote {
@@ -86,7 +91,8 @@
 
 			p {
 
-				font-size: 40px;
+				font-size: 48px;
+				line-height: 1;
 			}
 		}
 	}

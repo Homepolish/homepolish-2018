@@ -124,29 +124,29 @@ nav.top-bar {
       top: 0; } }
 
 @media only screen and (min-width: 1024px) {
-  .hp_2018_copy_blockquote {
+  .hp_2018_copy {
     position: relative; }
-    .hp_2018_copy_blockquote blockquote {
+    .hp_2018_copy blockquote {
       border: none;
-      color: black;
       float: left;
-      font-size: 24px;
       margin-left: -25%;
-      padding-right: 17.5%;
+      padding-right: 12.5%;
       text-align: left;
-      width: 62.5%; } }
+      width: 62.5%; }
+      .hp_2018_copy blockquote p {
+        color: black;
+        font-size: 48px; } }
 
 @media only screen and (min-width: 1024px) {
   .hp_2018_lg_overlap_quote {
     position: relative; }
-    .hp_2018_lg_overlap_quote img {
-      margin-bottom: 12.5%; }
     .hp_2018_lg_overlap_quote .quote {
       bottom: -6.25%;
       left: 0;
       position: absolute; }
       .hp_2018_lg_overlap_quote .quote p {
-        font-size: 40px; } }
+        font-size: 48px;
+        line-height: 1; } }
 
 body {
   line-height: normal; }

@@ -28,25 +28,6 @@
             <div class="small-12 text-center">
                 <h2><?php hmpl_header_title($ajax); ?></h2>
             </div>
-            <div class="small-12">
-
-                <figure class="post-gallery">
-                <?php
-                $image_id = get_post_thumbnail_id();
-                $image_link = wp_get_attachment_image_src($image_id,'full');
-                $image = aq_resize( $image_link[0], 800, 500, true, false, true);  // Blog
-                $permalink = get_permalink($id);
-                ?>
-
-                <aside class="hp-share-icon">
-                <a href="<?php echo 'http://pinterest.com/pin/create/link/?url=' . esc_url( $permalink ) . '&amp;media=' . ( ! empty( $image_link[0] ) ? $image_link[0] : '' ) . '&amp;description=' . urlencode($social_description) . ''; ?>" class="circle-icon pinterest social" nopin="nopin" data-pin-no-hover="true"><span class="v1-icon-pinterest"></span></a>
-                </aside>
-
-                <img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php the_title_attribute(); ?>" />
-
-                <?php get_template_part( 'inc/postformats/post-gallery' ); ?>
-                </figure>
-            </div>
             <div class="small-12 text-center post-meta">
 
                 <?php 
@@ -75,6 +56,25 @@
                         <span ="meta-key">City: </span><a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
                     <?php }   
                 ?>
+            </div>
+            <div class="small-12">
+
+                <figure class="post-gallery">
+                <?php
+                $image_id = get_post_thumbnail_id();
+                $image_link = wp_get_attachment_image_src($image_id,'full');
+                $image = aq_resize( $image_link[0], 800, 500, true, false, true);  // Blog
+                $permalink = get_permalink($id);
+                ?>
+
+                <aside class="hp-share-icon">
+                <a href="<?php echo 'http://pinterest.com/pin/create/link/?url=' . esc_url( $permalink ) . '&amp;media=' . ( ! empty( $image_link[0] ) ? $image_link[0] : '' ) . '&amp;description=' . urlencode($social_description) . ''; ?>" class="circle-icon pinterest social" nopin="nopin" data-pin-no-hover="true"><span class="v1-icon-pinterest"></span></a>
+                </aside>
+
+                <img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php the_title_attribute(); ?>" />
+
+                <?php get_template_part( 'inc/postformats/post-gallery' ); ?>
+                </figure>
             </div>
         </div>
     </div>

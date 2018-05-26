@@ -26,13 +26,11 @@ function hp_2018_2x_image( $atts, $content = null ) {
 
 	extract(shortcode_atts(array(
        	'hp_2018_2x_image_left' => '',
-		'hp_2018_2x_image_left_title'      => '',
-		'hp_2018_2x_image_left_category'      => '',
-		'hp_2018_2x_image_left_city'      => '',
+		'hp_2018_2x_image_left_caption'      => '',
+		'hp_2018_2x_image_left_att'      => '',
 		'hp_2018_2x_image_right' => '',
-		'hp_2018_2x_image_right_title'      => '',
-		'hp_2018_2x_image_right_category'      => '',
-		'hp_2018_2x_image_right_city'      => '',
+		'hp_2018_2x_image_right_caption'      => '',
+		'hp_2018_2x_image_right_att'      => '',
 
     ), $atts));
     
@@ -48,9 +46,9 @@ function hp_2018_2x_image( $atts, $content = null ) {
 	$output .= '</div>
 	          <div class="large-centered large-10 columns">';         
 	
-	$output .= '<h3>' . $hp_2018_2x_image_left_title . '</h3>';
+	$output .= '<h3>' . $hp_2018_2x_image_left_caption . '</h3>';
 	
-	$output .= '<p><a href="' . $hp_2018_2x_image_left_category . '">' . $hp_2018_2x_image_left_category . '</a> | <a href="' . $hp_2018_2x_image_left_city . '">' . $hp_2018_2x_image_left_city . '</a></p>';
+	$output .= $hp_2018_2x_image_right_att;
 	
 	$output .= '</div>
 	        </div>
@@ -61,9 +59,9 @@ function hp_2018_2x_image( $atts, $content = null ) {
 	$output .= '<img src="' . wp_get_attachment_url( $hp_2018_2x_image_right ) . '">';
 	$output .= '</div>
 	          <div class="large-centered large-10 columns">' ;          
-	$output .= '<h3>' . $hp_2018_2x_image_right_title . '</h3>';
+	$output .= '<h3>' . $hp_2018_2x_image_right_caption . '</h3>';
 	
-	$output .= '<p><a href="' . $hp_2018_2x_image_right_category . '">' . $hp_2018_2x_image_right_category . '</a> | <a href="' . $hp_2018_2x_image_right_city . '">' . $hp_2018_2x_image_right_city . '</a></p>';
+	$output .= $hp_2018_2x_image_right_att;
 	$output .= '</div>
 	        </div>
 	      </div>
@@ -177,7 +175,7 @@ function hp_2018_lg_overlap_quote( $atts, $content = null ) {
     $output.= '<img src="' . wp_get_attachment_url( $hp_2018_lg_overlap_img ) . '">';
 	$output.= '
 				</div>
-      			<div class="large-3 columns quote">';
+      			<div class="large-5 columns quote">';
     $output.= '<p>' . $hp_2018_lg_overlap_quote. '</p>';
     $output .= '
     			</div>
