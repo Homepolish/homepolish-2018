@@ -197,8 +197,9 @@ img {
 
 /* Full Width Nav */
 .full-width-nav {
-  position: relative;
   margin-bottom: 30px; }
+  .mag-page .full-width-nav {
+    margin-bottom: 30px; }
   .full-width-nav.hp-header--transparent {
     position: absolute;
     z-index: 1; }

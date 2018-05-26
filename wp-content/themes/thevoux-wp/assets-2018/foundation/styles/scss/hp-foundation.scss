@@ -30,8 +30,12 @@ img {
 
 .full-width-nav {
 
-	position: relative;
 	margin-bottom: 30px;
+
+	.mag-page & {
+
+		margin-bottom: 30px;	
+	}
 
 	&.hp-header--transparent {
 
