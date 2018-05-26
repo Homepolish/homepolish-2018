@@ -11,19 +11,19 @@
 	<div class="small-12 large-8 large-offset-3 columns featured-post-meta">
 
 		<?php if ( has_post_thumbnail() ) { ?>
-		<figure class="post-gallery">
-		
-			<?php
-			    $image_id = get_post_thumbnail_id();
-			    $image_link = wp_get_attachment_image_src($image_id,'full');
-			    $image_title = esc_attr( get_the_title($post->ID) );
-		
-				$image = aq_resize( $image_link[0], 1170, 1000, true, false, true);  // Blog
-		
-			?>
-			<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
-		</figure>
-
+			<figure class="post-gallery">
+			
+				<?php
+				    $image_id = get_post_thumbnail_id();
+				    $image_link = wp_get_attachment_image_src($image_id,'full');
+				    $image_title = esc_attr( get_the_title($post->ID) );
+			
+					$image = aq_resize( $image_link[0], 1170, 1000, true, false, true);  // Blog
+			
+				?>
+				<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
+			</figure>
+		<?php } ?>
 	</div>
 </div>
 
