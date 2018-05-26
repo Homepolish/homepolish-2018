@@ -2,7 +2,7 @@
 
 /* Custom GRAvatar */
 function thb_gravatar ($avatar_defaults) {
-	$myavatar = THB_THEME_ROOT . '/assets/img/avatar.png';
+	$myavatar = THB_THEME_ROOT . '/assets-2018/img/avatar.png';
 	$avatar_defaults[$myavatar] = 'THB Gravatar';
 	return $avatar_defaults;
 }

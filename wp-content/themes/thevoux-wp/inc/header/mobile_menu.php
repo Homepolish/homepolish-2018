@@ -1,5 +1,5 @@
 <?php 
-	$logo = THB_THEME_ROOT. '/assets/img/homepolish-logo.png';
+	$logo = THB_THEME_ROOT. '/assets-2018/img/homepolish-logo.png';
 	$menu_footer = ot_get_option('menu_footer');
 ?>
 <!-- Start Mobile Menu -->

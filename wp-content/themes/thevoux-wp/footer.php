@@ -552,9 +552,9 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?php echo get_template_directory_uri(); ?>/assets/foundation/js/vendor/jquery.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/foundation/js/foundation.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/foundation/js/foundation.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets-2018/foundation/js/vendor/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets-2018/foundation/js/foundation.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets-2018/foundation/js/foundation.min.js"></script>
 <script>
 $(document).foundation();
 </script>

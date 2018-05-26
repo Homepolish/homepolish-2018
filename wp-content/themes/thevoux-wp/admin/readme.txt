@@ -102,7 +102,7 @@ add_filter( 'ot_theme_mode', '__return_true' );
  */
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );`
 
-For a list of all the OptionTree UI display filters refer to the `demo-functions.php` file found in the `/assets/theme-mode/` directory of this plugin. This file is the starting point for developing themes with Theme Mode.
+For a list of all the OptionTree UI display filters refer to the `demo-functions.php` file found in the `/assets-2018/theme-mode/` directory of this plugin. This file is the starting point for developing themes with Theme Mode.
 
 == Frequently Asked Questions ==
 

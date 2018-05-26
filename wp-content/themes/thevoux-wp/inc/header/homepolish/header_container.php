@@ -1,7 +1,7 @@
 <?php
   $id = get_queried_object_id();
-  # if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets/img/logo.png'; }
-  $logo = THB_THEME_ROOT. '/assets/img/homepolish-logo.png';
+  # if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets-2018/img/logo.png'; }
+  $logo = THB_THEME_ROOT. '/assets-2018/img/homepolish-logo.png';
 ?>
 
 <!-- Start Header -->

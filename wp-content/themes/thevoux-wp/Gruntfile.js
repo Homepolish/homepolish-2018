@@ -43,9 +43,9 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'assets/js/plugins/app.js',
-                'assets/js/plugins/hmpl-auth.js',
-                'assets/js/plugins/admin-meta.js'
+                'assets-2018/js/plugins/app.js',
+                'assets-2018/js/plugins/hmpl-auth.js',
+                'assets-2018/js/plugins/admin-meta.js'
             ]
         },
 
@@ -57,11 +57,11 @@ module.exports = function(grunt) {
                     mangle: false
                 },
                 files: {
-					'assets/js/admin-meta.min.js': [
-						'assets/js/plugins/admin-meta.js'
+					'assets-2018/js/admin-meta.min.js': [
+						'assets-2018/js/plugins/admin-meta.js'
 					],
-					'assets/js/vendor.min.js': [
-						'assets/js/vendor/*.js'
+					'assets-2018/js/vendor.min.js': [
+						'assets-2018/js/vendor/*.js'
 					]
                 }
             },
@@ -71,9 +71,9 @@ module.exports = function(grunt) {
 					mangle: false
 				},
 				files: {
-					'assets/js/app.min.js': [
-						'assets/js/plugins/app.js',
-                        'assets/js/plugins/hmpl-auth.js'
+					'assets-2018/js/app.min.js': [
+						'assets-2018/js/plugins/app.js',
+                        'assets-2018/js/plugins/hmpl-auth.js'
 					]
 				}
             }
@@ -85,8 +85,8 @@ module.exports = function(grunt) {
 				stripBanners: true
 			},
 			dist: {
-				src: 'assets/js/vendor/*.js',
-				dest: 'assets/js/vendor.min.js',
+				src: 'assets-2018/js/vendor/*.js',
+				dest: 'assets-2018/js/vendor.min.js',
 			},
 		},
 
@@ -94,15 +94,15 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    sassDir: 'assets/sass',
-                    cssDir: 'assets/css',
+                    sassDir: 'assets-2018/sass',
+                    cssDir: 'assets-2018/css',
 					noLineComments: true
                 }
             },
 			dev: {
 				options: {
-					sassDir: 'assets/sass',
-					cssDir: 'assets/css',
+					sassDir: 'assets-2018/sass',
+					cssDir: 'assets-2018/css',
 					noLineComments: true
 				}
 			}
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
         watch: {
             compass: {
                 files: [
-                    'assets/sass/**/*'
+                    'assets-2018/sass/**/*'
                 ],
                 tasks: ['compass']
             },

@@ -36,7 +36,7 @@ class widget_latestimages extends WP_Widget {
 								<?php if ( has_post_thumbnail() ) {
 										the_post_thumbnail();
 								} else { ?>
-										<img src="<?php echo THB_THEME_ROOT; ?>/assets/img/nothumb.jpg" alt="No Post Image for <?php the_title(); ?>" width="40" height="40" />
+										<img src="<?php echo THB_THEME_ROOT; ?>/assets-2018/img/nothumb.jpg" alt="No Post Image for <?php the_title(); ?>" width="40" height="40" />
 								<?php } ?>
 								</a>
 							</figure>

@@ -1120,7 +1120,7 @@
 		promotionBanner: {
 			selector: '.promotion-banner',
 			init: function() {
-				// copied from hive-api: app/assets/javascripts/static_elements/promotion_banner.js.es6
+				// copied from hive-api: app/assets-2018/javascripts/static_elements/promotion_banner.js.es6
 
 				var base = this,
 				    isMobile = window.matchMedia ? window.matchMedia("only screen and (max-width: 760px)") : false;

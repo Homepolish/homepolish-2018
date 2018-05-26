@@ -6,8 +6,8 @@
 				<li class="name">
 					<h1>
 						<a href="/">
-							<img class="opaque" src="<?php echo get_template_directory_uri(); ?>/assets/img/homepolish-wordmark.png" alt="Homepolish">
-							<img class="transparent" src="<?php echo get_template_directory_uri(); ?>/assets/img/homepolish-wordmark-white.png" alt="Homepolish">
+							<img class="opaque" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark.png" alt="Homepolish">
+							<img class="transparent" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark-white.png" alt="Homepolish">
 						</a>
 					</h1>
 				</li>
