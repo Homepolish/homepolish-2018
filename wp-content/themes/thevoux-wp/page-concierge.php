@@ -102,9 +102,7 @@
 
 <!-- testimonials block -->
 
-<?php get_template_part('templates/block', 'testimonials'); ?>
-
-<!-- testimonials block -->
+<?php get_template_part('templates/block', 'testimonials'); ?><!-- testimonials block -->
 
 <!-- brands -->
 

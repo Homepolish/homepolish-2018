@@ -197,7 +197,7 @@ img {
 
 /* Full Width Nav */
 .full-width-nav {
-  margin-bottom: 30px; }
+  position: relative; }
   .mag-page .full-width-nav {
     margin-bottom: 30px; }
   .full-width-nav.hp-header--transparent {

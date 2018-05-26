@@ -32,13 +32,9 @@
 		</p>
 	</div>
 
-<!-- testamonials how it works/concierge SAME AS CONSIERGE  -->
+<!-- testimonials block -->
 
-<!-- <div class="testimonials"> -->
-
-<?php get_template_part('templates/block', 'testimonials'); ?>
-
-<!-- </div> --><!-- ./hiw testimonials -->
+<?php get_template_part('templates/block', 'testimonials'); ?><!-- testimonials block -->
 
 <!-- build-services-portfolio -->
 
