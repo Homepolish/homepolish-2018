@@ -77,6 +77,8 @@ add_shortcode('hp_2018_2x_image', 'hp_2018_2x_image');
 
 // With blockquote hp_2018_copy_blockquote
 
+/*
+
 function hp_2018_copy_blockquote( $atts, $content = null ) {
     
     $output = '';
@@ -94,6 +96,8 @@ function hp_2018_copy_blockquote( $atts, $content = null ) {
  	return $output;
 }
 add_shortcode('hp_2018_copy_blockquote', 'hp_2018_copy_blockquote');
+
+*/
 
 // hp_2018_lg_img_caption
 
@@ -172,12 +176,13 @@ function hp_2018_lg_overlap_quote( $atts, $content = null ) {
       			<div class="large-centered large-10 columns">';
     $output.= '<img src="' . wp_get_attachment_url( $hp_2018_lg_overlap_img ) . '">';
 	$output.= '
-			</div>
-      		<div class="large-3 columns quote">';
+				</div>
+      			<div class="large-3 columns quote">';
     $output.= '<p>' . $hp_2018_lg_overlap_quote. '</p>';
     $output .= '
-    		</div>
-	    </div>
+    			</div>
+	    	</div>
+		</div>
 	</div>';
  	return $output;
 }

@@ -35,6 +35,8 @@ vc_map( array(
 	"description" => "HP 2018 Copy"
 ) );
 
+/*
+
 vc_map( array(
 	"name" => __("HP 2018 Copy Blockquote", THB_THEME_NAME),
 	"base" => "hp_2018_copy_blockquote",
@@ -54,6 +56,8 @@ vc_map( array(
 	),
 	"description" => "HP 2018 Copy Blockquote"
 ) );
+
+*/
 
 vc_map( array(
 	"name" => __("HP 2018 2X Image", THB_THEME_NAME),

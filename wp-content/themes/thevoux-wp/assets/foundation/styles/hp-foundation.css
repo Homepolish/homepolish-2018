@@ -127,9 +127,13 @@ nav.top-bar {
   .hp_2018_copy_blockquote {
     position: relative; }
     .hp_2018_copy_blockquote blockquote {
+      border: none;
+      color: black;
       float: left;
-      font-size: 30px;
+      font-size: 24px;
       margin-left: -25%;
+      padding-right: 17.5%;
+      text-align: left;
       width: 62.5%; } }
 
 @media only screen and (min-width: 1024px) {
