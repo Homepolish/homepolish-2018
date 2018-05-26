@@ -29,7 +29,7 @@
                 <h2><?php hmpl_header_title($ajax); ?></h2>
             </div>
             <div class="small-12 text-center post-meta">
-
+                <p>
                 <?php 
                     //Posted
                     hp_2018_header_date_author(); 
@@ -56,6 +56,7 @@
                         <span ="meta-key">City: </span><a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
                     <?php }   
                 ?>
+              </p>
             </div>
         </div>
     </div>

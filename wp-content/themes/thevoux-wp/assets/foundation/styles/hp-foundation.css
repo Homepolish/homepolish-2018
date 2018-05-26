@@ -170,9 +170,9 @@ img {
 
 /* Full Width Nav */
 .full-width-nav {
-  position: relative; }
+  position: relative;
+  margin-bottom: 30px; }
   .full-width-nav.hp-header--transparent {
-    margin-bottom: 30px;
     position: absolute;
     z-index: 1; }
     .full-width-nav.hp-header--transparent h1 {
