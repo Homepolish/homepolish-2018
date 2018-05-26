@@ -8,7 +8,7 @@ show_admin_bar( 0 );
 * Not sure how those vc_templates get included so they're going here.
 */
 
-include_once( 'hp_2018/vc_shortcodes.php' );
+include_once( 'hp-2018/vc-shortcodes.php' );
 
 /**
 @ Set Page Type; Mag||2018
