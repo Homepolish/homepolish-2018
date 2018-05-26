@@ -84,7 +84,7 @@ vc_map( array(
 				"class" => "",
 				"heading" => "Attribution",
 				"admin_label" => true,
-				"param_name" => "hp_2018_2x_image_left_att",
+				"param_name" => "content",
 				"value" => "",
 				"description" => ""
 		),	

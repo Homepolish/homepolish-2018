@@ -135,7 +135,8 @@ nav.top-bar {
       width: 62.5%; }
       .hp_2018_copy blockquote p {
         color: black;
-        font-size: 48px; } }
+        font-size: 24px;
+        line-height: 1; } }
 
 @media only screen and (min-width: 1024px) {
   .hp_2018_lg_overlap_quote {
@@ -145,8 +146,13 @@ nav.top-bar {
       left: 0;
       position: absolute; }
       .hp_2018_lg_overlap_quote .quote p {
-        font-size: 48px;
+        color: black;
+        font-size: 24px;
         line-height: 1; } }
+
+.hp_2018_2x_image, .hp_2018_2x_image p {
+  font-size: 1.8rem;
+  line-height: 2.5rem; }
 
 body {
   line-height: normal; }

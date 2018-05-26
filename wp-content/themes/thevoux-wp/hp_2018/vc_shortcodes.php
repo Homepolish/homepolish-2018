@@ -35,7 +35,7 @@ function hp_2018_2x_image( $atts, $content = null ) {
     ), $atts));
     
     $output = '';
-	$output .= '<div class="row two-x collapse">
+	$output .= '<div class="row hp_2018_2x_image collapse">
 	  <div class="large-centered large-10 columns">
 	    <div class="row">
 	      <div class="large-6 columns">
@@ -48,7 +48,7 @@ function hp_2018_2x_image( $atts, $content = null ) {
 	
 	$output .= '<h3>' . $hp_2018_2x_image_left_caption . '</h3>';
 	
-	$output .= $hp_2018_2x_image_right_att;
+	$output .= do_shortcode($content);;
 	
 	$output .= '</div>
 	        </div>
