@@ -1,7 +1,7 @@
 <!-- category-mag.php -->
 <?php get_header(); ?>
 <?php 
-	$blog_featured = }('blog_featured');
+	//$blog_featured = get_ot_option_do_a_search_for_this('blog_featured');
 ?>
 <?php /*
 	if ($blog_featured) { ?>
@@ -26,10 +26,12 @@
 <div class="row">
 	<div class="small-12 columns">
 
-			<?php $i = 1; ?>
+			
 
 			<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
+				<?php $i = 1; ?>
 				<?php get_template_part( 'inc/loop/blog-list' ); ?>
+				<?php $i++; ?>
 			<?php endwhile; else : ?>
 			  	<?php get_template_part( 'inc/loop/notfound' ); ?>
 			<?php endif; ?>

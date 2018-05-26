@@ -61,5 +61,3 @@
 		</div>
 	</article>
 </div>
-
-<?php $i++; ?>
