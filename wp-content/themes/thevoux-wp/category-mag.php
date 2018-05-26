@@ -1,9 +1,10 @@
 <!-- category-mag.php -->
 <?php get_header(); ?>
 <?php 
-	$blog_featured = ot_get_option('blog_featured');
+	$blog_featured = }('blog_featured');
 ?>
-<?php if ($blog_featured) { ?>
+<?php /*
+	if ($blog_featured) { ?>
 	<div class="row header_content">
 		<div class="small-12 columns">
 			<?php 
@@ -19,11 +20,14 @@
 			<?php endwhile; else : endif; ?>
 		</div>
 	</div>	
-<?php } ?>
+<?php } 
+*/
+?>
 <div class="row">
-	<!-- <section class="blog-section small-12 medium-8 columns"> -->
-	<section class="blog-section">
-		<!-- <div class="row" data-equal=">.columns"> -->
+	<div class="small-12 columns">
+
+			<?php $i = 1; ?>
+
 			<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 				<?php get_template_part( 'inc/loop/blog-list' ); ?>
 			<?php endwhile; else : ?>
@@ -41,7 +45,7 @@
 			<?php endif; ?>
 		</div>
 		<?php } ?>
-	</section>
+	</div>
 	<?php //get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

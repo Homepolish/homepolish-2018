@@ -11,7 +11,7 @@
 <div class="post-detail-row">
 	<div class="row"<?php if ($fixed == 'on') { ?> data-equal=">.columns"<?php } ?>>
 		<div class="small-12 medium-12 <?php echo ($fullwidth == 'on' ? 'large-12' : 'large-8'); ?>  columns">
-			<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post post-detail'); ?> id="post-<?php the_ID(); ?>" role="article" data-id="<?php the_ID(); ?>" data-url="<?php the_permalink(); ?>">
+			<article itemscope <?php post_class('post post-detail'); ?> id="post-<?php the_ID(); ?>" role="article" data-id="<?php the_ID(); ?>" data-url="<?php the_permalink(); ?>">
 				<?php do_action( 'thb_fb_information' ); ?>
 
 				<?php if(has_category()) { ?>

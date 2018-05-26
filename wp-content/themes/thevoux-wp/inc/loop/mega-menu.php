@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post mega-menu-post'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope <?php post_class('post mega-menu-post'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<figure class="post-gallery">
 	
 		<?php

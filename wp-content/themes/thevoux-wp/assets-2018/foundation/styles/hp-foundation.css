@@ -31,6 +31,13 @@
   font-size: 1.8rem;
   line-height: 2.5rem; }
 
+.featured-post {
+  position: relative; }
+  .featured-post .featured-post-meta {
+    position: absolute;
+    left: 12.5%;
+    top: 25%; }
+
 @media only screen and (max-width: 1024px) {
   nav.top-bar.expanded {
     background: white; }

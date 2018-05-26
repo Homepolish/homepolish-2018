@@ -1,4 +1,4 @@
-<!--blog-featured --><article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post blog-featured text-center'); ?> id="post-<?php the_ID(); ?>" role="article">
+<!--blog-featured --><article itemscope <?php post_class('post blog-featured text-center'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<?php if ( has_post_thumbnail() ) { ?>
 	<figure class="post-gallery <?php do_action('thb_is_gallery'); ?>">
 		<?php

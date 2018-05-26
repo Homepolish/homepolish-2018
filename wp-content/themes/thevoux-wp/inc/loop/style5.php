@@ -1,5 +1,5 @@
 <?php $extend = $excerpt ? ' extend' : ''; ?>
-<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style5' . $extend); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope <?php post_class('post style5' . $extend); ?> id="post-<?php the_ID(); ?>" role="article">
 	<?php if ( has_post_thumbnail() ) { ?>
 	<figure class="post-gallery">
 		<?php

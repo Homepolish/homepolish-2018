@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post related-post'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope <?php post_class('post related-post'); ?> id="post-<?php the_ID(); ?>" role="article">
   <figure class="post-gallery small-6 medium-12 large-12 columns">
     <?php
       $image_id = get_post_thumbnail_id();

@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style-hp-single-cat-sq'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope <?php post_class('post style-hp-single-cat-sq'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<div class="row" data-equal=">.columns">
 		<div class="small-6 medium-3 large-3 columns">
 			<?php if ( has_post_thumbnail() ) { ?>
