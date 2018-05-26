@@ -21,7 +21,7 @@
 			<time class="time" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo thb_human_time_diff_enhanced(); ?></time>
 		</aside>
 		<header class="post-title">
-			<h2 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 		</header>
 		<div class="post-content">
 			<?php echo thb_excerpt(140, '&hellip;'); ?>

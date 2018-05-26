@@ -86,9 +86,9 @@ add_action('hmpl_get_talking_points', 'hmpl_get_talking_points');
 //This should go away ER
 function hmpl_header_title($ajax) {
   if ( $ajax == '0' ) {
-    the_title('<h1 class="entry-title" itemprop="headline">', '</h1>');
+    the_title('<h1 class="entry-title">', '</h1>');
   } else {
-    the_title('<h1 class="entry-title" itemprop="headline"><a href="'.get_permalink().'" class="tertiary" title="'.the_title_attribute("echo=0").'">', '</a></h1>');
+    the_title('<h1 class="entry-title"><a href="'.get_permalink().'" class="tertiary" title="'.the_title_attribute("echo=0").'">', '</a></h1>');
   }
 }
 
@@ -188,3 +188,23 @@ function hmpl_get_attachment_image($image, $photo_caption="", $lazy_load=false) 
   return "<img class='attachment-img' src='" . esc_url($html_src) . "' width='" . esc_attr($image[1]) . "' height='" . esc_attr($image[2]) . "' alt='" . esc_attr($photo_caption) . "' data-src='" . $img_src . "' />";
 }
 add_action( 'hmpl_get_attachment_image', 'hmpl_get_attachment_image', 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Images */
+
+function hmpl_gallery_button($id) {
+  echo do_shortcode('[hmpl_gallery_button post_id='.$id.']View Gallery[/hmpl_gallery_button]');
+}

@@ -40,21 +40,34 @@ function hp_page_meta() {
 	$post_slug = $post->post_name;	
 
 	// Default Meta Values
-	$hp_page_meta['body_class']		= $post_slug;
+	$hp_page_meta['body_class']			= $post_slug;
 	$hp_page_meta['data_action']		= $post_slug;
 	$hp_page_meta['data_controller']	= 'landing_pages';
-	$hp_page_meta['page_type']			= 'WebSite';
 
-	// Transparency
-	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
+	// Default Page Types
+	if ( is_category() ) {
 
-		$hp_page_meta['transparency'] = 'hp-header--transparent';
+		$hp_page_meta['page_type'] = 'Blog';
+	}
+	elseif ( is_single() ) {
+
+		$hp_page_meta['page_type'] = 'BlogPosting';
+	}
+	else {
+
+		$hp_page_meta['page_type'] = 'WebSite';
 	}
 
 	// Page Type
 	if ( get_field( 'pmv_page_type', $post_id ) ) {
 
 		$hp_page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
+	}
+
+	// Transparency
+	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
+
+		$hp_page_meta['transparency'] = 'hp-header--transparent';
 	}
 
 	// Body Class
@@ -90,6 +103,8 @@ function hp_page_meta() {
 function hp_page_meta_tags() {
 
 	global $post; 
+	//var_dump( $post );
+	//exit;
 	$post_id = $post_ID;
 
 	// Itemprop Image
@@ -102,6 +117,24 @@ function hp_page_meta_tags() {
 	foreach( (array) $row as $key => $value ) {
 
 		echo '<meta itemprop="' . $value['pmv_ip_name'] . '" content="' . $value['pmv_ip_value']. '">';
+	}
+
+	// Blog Item Props
+	if ( is_category() ) { ?>
+
+		<meta itemprop="provider" content="Homepolish">
+		
+		<?php 
+	}
+	if ( is_single() ) { ?>
+
+		<meta itemprop="publisher" content="Homepolish">
+		<meta content="<?php echo $post->post_title; ?>">
+		<meta itemprop="author" content="<?php echo get_the_author_meta( 'display_name', $post->post_author ); ?>">
+		<meta itemprop="datePublished" content="<?php echo $post->post_date; ?>">
+		<meta itemprop="dateModified" content="<?php echo $post->post_modified; ?>">
+		
+		<?php 
 	}
 }
 add_action('wp_head', 'hp_page_meta_tags');

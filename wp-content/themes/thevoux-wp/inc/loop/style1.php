@@ -31,7 +31,7 @@
 					*/
 				?>
 				<header class="post-title entry-header">
-					<h3 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h3>
+					<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h3>
 				</header>
 				<div class="post-content small">
 					<?php echo thb_excerpt(275, '&hellip;'); ?>

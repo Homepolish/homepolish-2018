@@ -19,7 +19,7 @@
 		<div class="small-6 medium-9 large-9 columns">
 			<div class="summary">
 				<header class="post-title entry-header">
-					<h4 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php echo thb_ShortenTitle(get_the_title(), 70); ?></a></h4>
+					<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php echo thb_ShortenTitle(get_the_title(), 70); ?></a></h4>
 				</header>
 				<div class="post-content small">
 					<?php echo thb_excerpt(140, '&hellip;'); ?>

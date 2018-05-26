@@ -24,9 +24,9 @@
 					<aside class="post-meta cf"><?php the_category(', '); ?></aside>
 					<?php } ?>
 					<?php if ( $ajax == '0' ) { ?>
-						<?php the_title('<h1 class="entry-title" itemprop="headline">', '</h1>'); ?>
+						<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 					<?php } else { ?>
-						<?php the_title('<h1 class="entry-title" itemprop="headline"><a href="'.get_permalink().'" title="'.the_title_attribute("echo=0").'">', '</a></h1>'); ?>
+						<?php the_title('<h1 class="entry-title"><a href="'.get_permalink().'" title="'.the_title_attribute("echo=0").'">', '</a></h1>'); ?>
 					<?php } ?>
 					<aside class="post-author">
 						<time class="time" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo thb_human_time_diff_enhanced(); ?></time> <em><?php _e('by', THB_THEME_NAME); ?></em> <?php the_author_posts_link(); ?>

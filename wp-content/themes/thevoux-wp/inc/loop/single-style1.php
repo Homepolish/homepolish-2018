@@ -20,9 +20,9 @@
 
 				<header class="post-title entry-header">
 					<?php if ( $ajax == '0' ) { ?>
-						<?php the_title('<h1 class="entry-title" itemprop="headline">', '</h1>'); ?>
+						<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 					<?php } else { ?>
-						<?php the_title('<h1 class="entry-title" itemprop="headline"><a href="'.get_permalink().'" title="'.the_title_attribute("echo=0").'">', '</a></h1>'); ?>
+						<?php the_title('<h1 class="entry-title"><a href="'.get_permalink().'" title="'.the_title_attribute("echo=0").'">', '</a></h1>'); ?>
 					<?php } ?>
 				</header>
 				<?php

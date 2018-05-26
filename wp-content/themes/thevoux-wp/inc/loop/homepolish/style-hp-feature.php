@@ -23,7 +23,7 @@
 		<aside class="post-author cf">
 		</aside>
 		<header class="post-title entry-header">
-			<h2 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h2>
+			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h2>
 		</header>
 	</div>
 </article>
