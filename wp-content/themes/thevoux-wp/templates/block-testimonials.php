@@ -1,3 +1,4 @@
+<div class="testimonials">
 <div class="hiw-step pop-the-champagne">
 	<div class="hiw-step-head">
 		<h6 class="step-number">
@@ -57,4 +58,5 @@
 			?>
 		</div>
 	</div>
+</div>
 </div>
