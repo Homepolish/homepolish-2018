@@ -1,64 +1,137 @@
+.our-mission__body {
+  width: 50%; }
+
+@media only screen and (min-width: 768px) {
+  .landing-pages--about-us .why-homepolish {
+    margin: 0; } }
+.our-promise {
+  padding: 0; }
+  @media only screen and (min-width: 768px) {
+    .our-promise div {
+      width: 50%; }
+      .our-promise div:first-child {
+        padding: 0 25px 0 0; }
+      .our-promise div:last-child {
+        padding: 0 0 0 25px; } }
+
+.ctas {
+  text-align: center; }
+  @media only screen and (max-width: 768px) {
+    .ctas .formatted-copy--mobile-tablet {
+      display: inline-block;
+      width: 50%; } }
+
+@media only screen and (max-width: 767px) {
+  .targeted-page-show .seo-text .seo-text-body {
+    font-size: 1.75rem;
+    line-height: 2.25rem; } }
+.targeted-page-show .list-section li {
+  text-align: left; }
+
+.center-text .formatted-copy--desktop {
+  width: 80%; }
+  @media (min-width: 768px) {
+    .center-text .formatted-copy--desktop {
+      max-width: 1080px; } }
+
+.landing-pages--concierge .partners-header {
+  width: 75%; }
+  .landing-pages--concierge .partners-header .formatted-copy--mobile {
+    display: inline-block;
+    width: 50%; }
+.landing-pages--concierge .about-us .item-body {
+  width: 75%;
+  display: inline-block; }
+  @media only screen and (min-width: 768px) {
+    .landing-pages--concierge .about-us .item-body {
+      width: 100%; } }
+
+.about-blurb__content {
+  width: 75%; }
+
 /*
-Error: It's not clear which file to import for '@import "testimonials"'.
-       Candidates:
-         _testimonials.scss
-         testimonials.scss
-       Please delete or rename all but one of these files.
-        on line 9 of scss/styles.scss
 
-4: @import "concierge";
-5: @import "homepage";
-6: @import "footer";
-7: @import "page-template";
-8: @import "saks";
-9: @import "testimonials";
-10: 
-11: 
-12: 
-13: /* 
-14: 	@media (min-width: 768px) {
+.bottom-links-partial-container {
 
-Backtrace:
-scss/styles.scss:9
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:37:in `css_import?'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/usr/local/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+	ul {
+
+		li {
+
+			display: inline-block;
+			float: left;
+			margin: 0;	
+			//padding: 0;
+		}
+	}
+}
+
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: It's not clear which file to import for '@import \"testimonials\"'.\A        Candidates:\A          _testimonials.scss\A          testimonials.scss\A        Please delete or rename all but one of these files.\A         on line 9 of scss/styles.scss\A \A 4: @import \"concierge\";\A 5: @import \"homepage\";\A 6: @import \"footer\";\A 7: @import \"page-template\";\A 8: @import \"saks\";\A 9: @import \"testimonials\";\A 10: \A 11: \A 12: \A 13: /* \A 14: 	@media (min-width: 768px) {"; }
+#page-template {
+  margin-right: 2.5%;
+  width: 75%;
+  margin-left: 13%; }
+  @media (min-width: 768px) {
+    #page-template {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      max-width: 960px; } }
+  #page-template h2, #page-template .page-title {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-align: center; }
+  #page-template h3 {
+    margin: 0 0 20px; }
+  #page-template p {
+    margin: 0 0 20px; }
+  #page-template ul {
+    padding-top: 20px; }
+  #page-template li {
+    margin: 0 0 20px; }
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%; }
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px; }
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer; }
+
+#myBtn:hover {
+  background: #ddd;
+  color: black; }
+
+.testimonials .owl-carousel {
+  display: block; }
+
+/* 
+	@media (min-width: 768px) {
+
+		a {
+			width: 75%;
+		}
+	}
+*/
+
+/*# sourceMappingURL=styles.css.map */
