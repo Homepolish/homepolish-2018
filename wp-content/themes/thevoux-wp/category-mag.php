@@ -98,6 +98,8 @@ wp_reset_postdata(); ?>
 
 <!-- posts -->
 
+<div class="row">
+
 <?php
 $args = array(
 	'post_type' => array('post'),
@@ -108,17 +110,13 @@ $query = new WP_query ( $args );
 if ( $query->have_posts() ) {
 while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
-<div class="row">
-	<div class="small-12 columns">
-
 		<?php get_template_part( 'inc/loop/blog-list' ); ?>
-
-	</div>
-</div>
 
 <?php endwhile;
 }
 wp_reset_postdata(); ?>
+
+</div>
 
 <?php //exit; ?>
 
