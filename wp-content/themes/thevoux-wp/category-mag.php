@@ -43,6 +43,8 @@ wp_reset_postdata(); ?>
 
 <!-- 2/3 -->
 
+<div class="row collapsed">
+
 <?php
 $args = array(
 	'post_type' => array('post'),
@@ -91,6 +93,8 @@ while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 <?php endwhile;
 }
 wp_reset_postdata(); ?>
+
+</div>
 
 <!-- posts -->
 
