@@ -15,19 +15,20 @@ if( $query->have_posts() ) { ?>
 		<div class="small-12 large-4 large-offset-1 columns featured-post-meta">
 
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-			<?php if(has_category()) { ?>
-				<aside class="post-meta cf"><?php hp_2018_get_category_aside(); ?></aside> 
-			<?php } ?> |
-			<?php 
-                //City
-                $location_hash = wp_get_post_terms($post->ID, 'location'); // Grab just the first location
-                $location_name = $location_hash ? $location_hash[0]->name : null;
-                $location_slug = $location_hash ? $location_hash[0]->slug : null;
+			<aside class="entry-meta">
+				<?php if(has_category()) { ?>
+				<?php hp_2018_get_category_aside(); ?>
+				<?php } ?> |
+				<?php 
+	                //City
+	                $location_hash = wp_get_post_terms($post->ID, 'location'); // Grab just the first location
+	                $location_name = $location_hash ? $location_hash[0]->name : null;
+	                $location_slug = $location_hash ? $location_hash[0]->slug : null;
 
-                if( $location_name && $location_slug ) { ?>
-                    <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
-                <?php }   
-            ?>
+	                if( $location_name && $location_slug ) { ?>
+	                    <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
+	                <?php }   
+            	?></aside>
 		</div>
 		<div class="small-12 large-8 large-offset-3 columns">
 
@@ -53,7 +54,7 @@ wp_reset_postdata(); ?>
 
 <!-- 2/3 -->
 
-<div class="row collapsed">
+<div class="row collapsed cat-2x">
 
 <?php
 $args = array(
@@ -74,7 +75,7 @@ while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 					    $image_link = wp_get_attachment_image_src($image_id,'full');
 					    $image_title = esc_attr( get_the_title($post->ID) );
 				
-						$image = aq_resize( $image_link[0], 1170, 1000, true, false, true);  // Blog
+						$image = aq_resize( $image_link[0], 740, 380, true, false, true);  // Blog
 				
 					?>
 					<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>

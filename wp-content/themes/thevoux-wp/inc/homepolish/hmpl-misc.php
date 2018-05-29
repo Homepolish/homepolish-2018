@@ -150,14 +150,14 @@ function hp_2018_get_category_aside($id=null) {
         continue;
       }
       if ( cat_is_ancestor_of($cat_mag_slug, $childcat) || cat_is_ancestor_of($service_mag_slug, $childcat) ) {
-        echo '<aside class="post-meta cf"><h6>';
+        //echo '<aside class="post-meta cf"><h6>';
         echo '<a class="tertiary post-meta-category" href="'.get_category_link($childcat->cat_ID).'">'. $childcat->cat_name . '</a>';
         /*if( !cat_is_ancestor_of($service_mag_slug, $childcat) && isset($location_obj) ) {
           echo '<span class="post-meta-divider"> | </span>';
           echo '<a class="tertiary post-meta-location" href="'.get_term_link($location_obj->slug, 'location').'">'. $location_name . '</a>';
         }
         */
-        echo '</h6></aside>';
+        //echo '</h6></aside>';
       }
     }
   }
