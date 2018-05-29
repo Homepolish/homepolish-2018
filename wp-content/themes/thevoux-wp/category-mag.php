@@ -12,14 +12,14 @@ $query = new WP_query ( $args );
 if( $query->have_posts() ) { ?>
 
 	<div class="row featured-post">
-		<div class="small-12 large-3 large-offset-1 columns featured-post-meta">
+		<div class="small-12 large-4 large-offset-1 columns featured-post-meta">
 
-			<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 			<?php if(has_category()) { ?>
 				<aside class="post-meta cf"><?php hp_2018_get_category_aside(); ?></aside>
 			<?php } ?>
 		</div>
-		<div class="small-12 large-8 large-offset-3 columns featured-post-meta">
+		<div class="small-12 large-8 large-offset-3 columns">
 
 			<?php if ( has_post_thumbnail() ) { ?>
 				<figure class="post-gallery">
