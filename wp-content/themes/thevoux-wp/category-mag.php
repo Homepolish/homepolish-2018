@@ -66,7 +66,7 @@ $query = new WP_query ( $args );
 if( $query->have_posts() ) {
 while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
-	<div class="large-5 large-offset-1 columns">
+	<div class="large-6 columns">
 		<div class="row collapse">
 			<div class="large-11 large-centered columns">
 				<?php if ( has_post_thumbnail() ) { ?>
