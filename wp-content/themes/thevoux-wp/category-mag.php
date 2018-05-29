@@ -109,7 +109,7 @@ wp_reset_postdata(); ?>
 
 <!-- posts -->
 
-<div class="row row-outer">
+<div class="row row-outer" data-equalizer>
 
 <?php
 $args = array(

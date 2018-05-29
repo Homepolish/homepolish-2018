@@ -1,4 +1,4 @@
-<div class="large-6 columns">
+<div class="large-6 columns"  data-equalizer-watch>
 	<div class="row collapse">
 		<div class="large-11 large-centered columns">
 			<?php if ( has_post_thumbnail() ) { ?>

@@ -71,6 +71,9 @@
 .cat-2x {
   margin-bottom: 100px; }
 
+.blog-list > div {
+  margin-bottom: 50px; }
+
 @media only screen and (max-width: 1024px) {
   nav.top-bar.expanded {
     background: white; }
