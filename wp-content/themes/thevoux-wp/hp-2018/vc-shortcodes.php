@@ -73,30 +73,6 @@ function hp_2018_2x_image( $atts, $content = null ) {
 }
 add_shortcode('hp_2018_2x_image', 'hp_2018_2x_image');
 
-// With blockquote hp_2018_copy_blockquote
-
-/*
-
-function hp_2018_copy_blockquote( $atts, $content = null ) {
-    
-    $output = '';
-    $output .= '
-    <!-- hp_2018_copy_blockquote -->
-    <div class="row collapse hp_2018_copy_blockquote">
-    	<div class="large-offset-3 large-6 large-centered columns">
-        	<div class="post-content-body">';
-    $output .= do_shortcode($content);
-    $output .= '
-	    	</div>
-	    </div>
-	</div>';
-
- 	return $output;
-}
-add_shortcode('hp_2018_copy_blockquote', 'hp_2018_copy_blockquote');
-
-*/
-
 // hp_2018_lg_img_caption
 
 function hp_2018_lg_img_caption( $atts, $content = null ) {
@@ -185,4 +161,34 @@ function hp_2018_lg_overlap_quote( $atts, $content = null ) {
  	return $output;
 }
 add_shortcode('hp_2018_lg_overlap_quote', 'hp_2018_lg_overlap_quote');
+
+
+
+
+function hp_2018_parallax( $atts, $content = null ) {
+
+	extract(shortcode_atts(array(
+       	'hp_2018_img' => '',
+    ), $atts));
+    
+    $output = '<style></style>';
+    $output .= '
+    <!-- hp_2018_parallax -->
+    <div class="full-width hp_2018_parallax">
+
+    	<div class="ParallaxContainer" style="background: url(' . wp_get_attachment_url( $hp_2018_img ) . ');">
+		<p>
+      		&nbsp;
+    	</p>
+  		</div>
+  		<div class="row collapse ContentContainer">
+  		<div class="small-12 large-6 large-centered columns Content">';
+  	$output .= do_shortcode($content);
+    $output .= '</div>
+	</div>';
+ 	return $output;
+}
+add_shortcode('hp_2018_parallax', 'hp_2018_parallax');
+
+
 

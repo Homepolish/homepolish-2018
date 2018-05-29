@@ -133,6 +133,15 @@ vc_map( array(
 			"description" => ""
 		),
 		array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Attribution",
+				"admin_label" => true,
+				"param_name" => "content",
+				"value" => "",
+				"description" => ""
+		),	
+		array(
 			"type" => "textfield",
 			"heading" => "Title",
 			"param_name" => "hp_2018_lg_img_caption",
@@ -156,6 +165,15 @@ vc_map( array(
 			"param_name" => "hp_2018_split_img",
 			"description" => ""
 		),
+		array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Attribution",
+				"admin_label" => true,
+				"param_name" => "content",
+				"value" => "",
+				"description" => ""
+		),	
 		array(
 			"type" => "textfield",
 			"heading" => "Quote",
@@ -187,6 +205,15 @@ vc_map( array(
 			"description" => ""
 		),
 		array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Attribution",
+				"admin_label" => true,
+				"param_name" => "content",
+				"value" => "",
+				"description" => ""
+		),	
+		array(
 			"type" => "textfield",
 			"heading" => "Quote",
 			"param_name" => "hp_2018_lg_overlap_quote",
@@ -195,6 +222,37 @@ vc_map( array(
 	),
 	"description" => "HP 2018 Lg Overlap Quote"
 ) );
+
+
+
+vc_map( array(
+	"name" => __("HP 2018 Parallax", THB_THEME_NAME),
+	"base" => "hp_2018_parallax",
+	"icon" => "hp_2018_parallax",
+	"class" => "hp_2018_parallax",
+	"category" => "by Homepolish",
+	"params" => array(
+		array(
+			"type" => "attach_image", //attach_images
+			"class" => "",
+			"heading" => "Select Image",
+			"param_name" => "hp_2018_img",
+			"description" => ""
+		),
+		array(
+				"type" => "textarea_html",
+				"class" => "",
+				"heading" => "Parallax additional content",
+				"admin_label" => true,
+				"param_name" => "content",
+				"value" => "",
+				"description" => ""
+		),	
+	),
+	"description" => "HP 2018 Parallax"
+) );
+
+
 
 
 
