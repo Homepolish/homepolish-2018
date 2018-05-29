@@ -59,6 +59,8 @@
     font-size: 4rem;
     line-height: 5.5rem;
     margin-bottom: 20px; }
+    .featured-post .entry-title a {
+      color: black; }
   .featured-post .entry-meta {
     font-family: "avenir-next-demi-bold", Helvetica, Arial, sans-serif;
     letter-spacing: 0.1rem;
@@ -265,6 +267,9 @@ img {
 .full-width {
   max-width: 100%;
   width: 100%; }
+
+.row-outer {
+  width: 86% !important; }
 
 /* Full Width Nav */
 .full-width-nav {

@@ -1,5 +1,5 @@
 <div class="full-width full-width-nav <?php echo hp_page_meta()['transparency']; ?>">
-	<div class="row collapse">
+	<div class="row row-outer collapse">
 	<div class="small-12 columns">
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">

@@ -11,7 +11,7 @@ $args = array(
 $query = new WP_query ( $args );
 if( $query->have_posts() ) { ?>
 
-	<div class="row featured-post">
+	<div class="row row-outer featured-post">
 		<div class="small-12 large-4 large-offset-1 columns featured-post-meta">
 
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -26,7 +26,7 @@ if( $query->have_posts() ) { ?>
 	                $location_slug = $location_hash ? $location_hash[0]->slug : null;
 
 	                if( $location_name && $location_slug ) { ?>
-	                    <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
+	                    <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="tertiary"><?php echo $location_name; ?></a>
 	                <?php }   
             	?></aside>
 		</div>
@@ -54,7 +54,7 @@ wp_reset_postdata(); ?>
 
 <!-- 2/3 -->
 
-<div class="row collapsed cat-2x">
+<div class="row row-outer collapsed cat-2x">
 
 <?php
 $args = array(
@@ -109,7 +109,7 @@ wp_reset_postdata(); ?>
 
 <!-- posts -->
 
-<div class="row">
+<div class="row row-outer">
 
 <?php
 $args = array(
