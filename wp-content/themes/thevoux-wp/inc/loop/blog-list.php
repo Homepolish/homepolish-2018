@@ -1,4 +1,4 @@
-<div class="small-12 medium-6 columns">
+<div class="[large-5 large-offset-1 columns">
 	<article itemscope <?php post_class('post blog-list'); ?> id="post-<?php the_ID(); ?>" role="article">
 		<?php if ( has_post_thumbnail() ) { ?>
 		<figure class="post-gallery">
@@ -8,7 +8,7 @@
 			    $image_link = wp_get_attachment_image_src($image_id,'full');
 			    $image_title = esc_attr( get_the_title($post->ID) );
 		
-				$image = aq_resize( $image_link[0], 370, 190, true, false, true);  // Blog
+				$image = aq_resize( $image_link[0], 740, 380, true, false, true);  // Blog
 		
 			?>
 			<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>

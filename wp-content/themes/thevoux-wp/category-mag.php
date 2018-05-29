@@ -66,9 +66,9 @@ $query = new WP_query ( $args );
 if( $query->have_posts() ) {
 while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
-	<div class="large-6 columns">
+	<div class="large-5 large-offset-1 columns">
 		<div class="row collapse">
-			<div class="large-12 columns">
+			<div class="large-11 large-centered columns">
 				<?php if ( has_post_thumbnail() ) { ?>
 				<?php
 					    $image_id = get_post_thumbnail_id();
@@ -81,7 +81,7 @@ while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 					<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
 				<?php } ?>
 			</div>
-			<div class="large-centered large-10 columns">';         
+			<div class="large-10 large-centered columns">';         
 				<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 				<?php if(has_category()) { ?>
 					<?php hp_2018_get_category_aside(); ?>
