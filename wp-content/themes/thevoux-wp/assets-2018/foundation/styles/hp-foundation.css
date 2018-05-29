@@ -1,6 +1,7 @@
 #article-wrapper .static_link {
   border: 1px solid black;
   display: inline-block;
+  font-family: 'avenir-next-medium', sans-serif;
   margin: 0;
   position: fixed;
   text-transform: uppercase;
@@ -30,6 +31,22 @@
 #article-wrapper .post-content-body {
   font-size: 1.8rem;
   line-height: 2.5rem; }
+#article-wrapper .post-cat {
+  margin-bottom: 30px; }
+#article-wrapper .post-title {
+  margin-bottom: 30px; }
+#article-wrapper .post-meta {
+  font-size: 12px;
+  margin-bottom: 30px; }
+  #article-wrapper .post-meta a {
+    text-decoration: none; }
+  #article-wrapper .post-meta .meta-container {
+    margin-right: 20px; }
+  #article-wrapper .post-meta:last-child {
+    margin-right: 0; }
+  #article-wrapper .post-meta .meta-key {
+    font-family: 'avenir-next-medium', sans-serif;
+    text-transform: uppercase; }
 
 .featured-post {
   position: relative; }
@@ -206,7 +223,7 @@ img {
 .full-width-nav {
   position: relative; }
   .mag-page .full-width-nav {
-    margin-bottom: 30px; }
+    margin-bottom: 50px; }
   .full-width-nav.hp-header--transparent {
     position: absolute;
     z-index: 1; }

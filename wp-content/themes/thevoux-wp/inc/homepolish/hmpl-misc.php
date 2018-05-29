@@ -61,7 +61,7 @@ function hp_2018_header_date_author() {
     $date = date_create( $datetime );
     ?>
     <span class="post-date-author">
-        <span ="meta-key">Posted: </span>
+        <span class="meta-key">Posted: </span>
             <time class="time" datetime="<?php echo $datetime; ?>">
                 <?php echo date_format( $date, 'n.d.y' ); ?>
             </time>
