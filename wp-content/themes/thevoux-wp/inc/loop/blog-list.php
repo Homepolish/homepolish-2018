@@ -10,11 +10,11 @@
 					$image = aq_resize( $image_link[0], 740, 380, true, false, true);  // Blog
 			
 				?>
-				<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
+				<a href="<?php the_permalink(); ?>"><img itemprop="image" src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
 			<?php } ?>
 		</div>
 		<div class="large-10 large-centered columns">';         
-			<h3 itemprop="headline" class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+			<h3 itemprop="headline" class="entry-title"><a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 			<?php if(has_category()) { ?>
 				<?php hp_2018_get_category_aside(); ?>
 			<?php } ?> | 
@@ -30,6 +30,16 @@
                 ?>
             </span>
 		</div>
+
+		<span class="blogposting-itemprops" style="display:none">
+			<span class="author" itemprop="author"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
+			<span class="datePublished" itemprop="datePublished"><?php echo $post->post_date; ?></span>
+			<span class="publisher" itemprop="publisher">Homepolish</span>
+		</span>
+
+
+
+
 	</div>
 	<!-- 
 	<aside class="post-author">
