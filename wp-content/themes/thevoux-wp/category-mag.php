@@ -43,7 +43,7 @@ if( $query->have_posts() ) { ?>
 						$image = aq_resize( $image_link[0], 1170, 1000, true, false, true);  // Blog
 				
 					?>
-					<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
+					<a href="<?php the_permalink(); ?>"><img itemprop="image" src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
 				</figure>
 			<?php } ?>
 		</div>
@@ -83,7 +83,7 @@ while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 						$image = aq_resize( $image_link[0], 740, 380, true, false, true);  // Blog
 				
 					?>
-					<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
+					<a href="<?php the_permalink(); ?>"><img itemprop="image" src="<?php echo esc_url($image[0]); ?>" width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" alt="<?php echo esc_attr($image_title); ?>" /></a>
 				<?php } ?>
 			</div>
 			<div class="large-10 large-centered columns">';         
