@@ -119,7 +119,7 @@ wp_reset_postdata(); ?>
 
 <!-- posts -->
 
-<div class="row row-outer" data-equalizer>
+<div class="row row-outer blog-list" data-equalizer>
 
 <?php
 $args = array(
