@@ -34,6 +34,7 @@
 		<span class="blogposting-itemprops" style="display:none">
 			<span class="author" itemprop="author"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
 			<span class="datePublished" itemprop="datePublished"><?php echo $post->post_date; ?></span>
+			<span class="dateModified" itemprop="dateModified"><?php echo $post->post_modified; ?></span>
 			<span class="publisher" itemprop="publisher">Homepolish</span>
 		</span>
 
