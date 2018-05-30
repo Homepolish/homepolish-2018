@@ -1,5 +1,5 @@
 <div class="hp-header-container">
-    <header id="header" class="hp-header hp-header--transparent">
+    <header id="header" class="hp-header <?php echo hp_page_meta()['transparency']; ?>">
         <div class="hp-header__main">
         <button class="mobile-nav-menu-toggle" data-mobile-nav-menu-toggle="true">
         <span class="toggle-bar"></span>
