@@ -287,6 +287,13 @@ img {
 /* Full Width Nav */
 .full-width-nav {
   position: relative; }
+  @media only screen and (max-width: 640px) {
+    .full-width-nav .top-bar .top-bar-section {
+      display: none; }
+    .full-width-nav .top-bar.expanded .top-bar-section {
+      display: block; }
+      .full-width-nav .top-bar.expanded .top-bar-section ul {
+        padding-top: 20px; } }
   .mag-page .full-width-nav {
     margin-bottom: 50px; }
   .full-width-nav.hp-header--transparent {

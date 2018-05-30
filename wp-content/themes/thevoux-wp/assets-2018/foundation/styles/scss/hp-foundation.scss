@@ -36,6 +36,30 @@ img {
 
 .full-width-nav {
 
+	//display: none;
+
+	@media only screen and (max-width: 640px) {
+
+		.top-bar {
+
+			.top-bar-section {
+
+				display: none;
+			}
+
+			&.expanded .top-bar-section {
+
+				display: block;
+
+				ul {
+
+					padding-top: 20px;
+				}
+			}
+		}
+
+	}
+
 	position: relative;
 
 	.mag-page & {

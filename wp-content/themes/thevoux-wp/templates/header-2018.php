@@ -11,4 +11,7 @@
 <div class="fixed-banner"></div>
 <div class="main-container">
 
-<?php include( 'foundation-nav.php' ); ?>
+<?php //include( 'foundation-nav.php' ); ?>
+
+<?php include( 'hp-2018-nav.php' ); ?>
+
