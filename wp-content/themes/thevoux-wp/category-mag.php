@@ -47,6 +47,11 @@ if( $query->have_posts() ) { ?>
 				</figure>
 			<?php } ?>
 		</div>
+		<span class="blogposting-itemprops" style="display:none">
+			<span class="author" itemprop="author"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
+			<span class="datePublished" itemprop="datePublished"><?php echo $post->post_date; ?></span>
+			<span class="publisher" itemprop="publisher">Homepolish</span>
+		</span>
 	</div>
 
 <?php } 
@@ -99,6 +104,11 @@ while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
                 </span>
 			</div>
 		</div>
+		<span class="blogposting-itemprops" style="display:none">
+			<span class="author" itemprop="author"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
+			<span class="datePublished" itemprop="datePublished"><?php echo $post->post_date; ?></span>
+			<span class="publisher" itemprop="publisher">Homepolish</span>
+		</span>
 	</div>
 
 <?php endwhile;
