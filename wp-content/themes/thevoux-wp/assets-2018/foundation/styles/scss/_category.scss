@@ -1,3 +1,24 @@
+.entry-meta {
+
+	font-family: "avenir-next-demi-bold", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-size: 1rem;
+	line-height: 1.2rem;   
+}
+
+.entry-title {
+
+		font-size: 2rem;
+		line-height: 3rem;
+		margin-bottom: 15px;
+
+		a {
+
+			color: black;
+		}
+	}
+
 .featured-post {
 
 	margin-bottom: 100px;
@@ -15,22 +36,12 @@
 		font-size: 4rem;
 		line-height: 5.5rem;
 		margin-bottom: 20px;
-
-		a {
-
-			color: black;
-		}
 	}
 
 	.entry-meta {
 
-		font-family: "avenir-next-demi-bold", Helvetica, Arial, sans-serif;
-		letter-spacing: 0.1rem;
-		text-transform: uppercase;
 		font-size: 1.2rem;
 		line-height: 1.7rem;   
-
-
 	}
 }
 
@@ -44,7 +55,3 @@
 	margin-bottom: 50px;
 }
 
-article {
-
-
-}

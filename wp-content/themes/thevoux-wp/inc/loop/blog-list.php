@@ -15,9 +15,9 @@
 		</div>
 		<div class="large-10 large-centered columns">';         
 			<h3 itemprop="headline" class="entry-title"><a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-			<?php if(has_category()) { ?>
+			<aside class="entry-meta"><?php if(has_category()) { ?>
 				<?php hp_2018_get_category_aside(); ?>
-			<?php } ?> | 
+			<?php } ?>
 			<?php 
                 //City
                 $location_hash = wp_get_post_terms($post->ID, 'location'); // Grab just the first location
@@ -25,10 +25,10 @@
                 $location_slug = $location_hash ? $location_hash[0]->slug : null;
 
                 if( $location_name && $location_slug ) { ?>
-                    <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
+                    | <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="secondary"><?php echo $location_name; ?></a>
                 <?php }   
                 ?>
-            </span>
+            </aside>
 		</div>
 
 		<span class="blogposting-itemprops" style="display:none">
