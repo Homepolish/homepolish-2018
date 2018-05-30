@@ -6,7 +6,8 @@
 // Get first post
 $args = array(
 	'post_type' => array('post'),
-	'posts_per_page' => 1
+	'posts_per_page' => 1,
+	'category_name' => 'featured-post'
 );
 $query = new WP_query ( $args );
 if( $query->have_posts() ) { ?>
@@ -65,7 +66,8 @@ wp_reset_postdata(); ?>
 $args = array(
 	'post_type' => array('post'),
 	'offset' => 1,
-	'posts_per_page' => 2
+	'posts_per_page' => 2,
+	'category_name' => 'featured-post'
 );
 $query = new WP_query ( $args );
 if( $query->have_posts() ) {
