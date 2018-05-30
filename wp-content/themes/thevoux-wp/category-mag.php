@@ -13,24 +13,6 @@ $query = new WP_query ( $args );
 if( $query->have_posts() ) { ?>
 
 	<div class="row row-outer featured-post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<div class="small-12 large-4 large-offset-1 columns featured-post-meta">
-
-			<h2 itemprop="headline" class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-			<aside class="entry-meta">
-				<?php if(has_category()) { ?>
-				<?php hp_2018_get_category_aside(); ?>
-				<?php } ?>
-				<?php 
-	                //City
-	                $location_hash = wp_get_post_terms($post->ID, 'location'); // Grab just the first location
-	                $location_name = $location_hash ? $location_hash[0]->name : null;
-	                $location_slug = $location_hash ? $location_hash[0]->slug : null;
-
-	                if( $location_name && $location_slug ) { ?>
-	                    | <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="tertiary"><?php echo $location_name; ?></a>
-	                <?php }   
-            	?></aside>
-		</div>
 		<div class="small-12 large-8 large-offset-3 columns">
 
 			<?php if ( has_post_thumbnail() ) { ?>
@@ -53,6 +35,24 @@ if( $query->have_posts() ) { ?>
 			<span class="datePublished" itemprop="datePublished"><?php echo $post->post_date; ?></span>
 			<span class="publisher" itemprop="publisher">Homepolish</span>
 		</span>
+		<div class="small-12 large-4 large-offset-1 columns featured-post-meta">
+
+			<h2 itemprop="headline" class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			<aside class="entry-meta">
+				<?php if(has_category()) { ?>
+				<?php hp_2018_get_category_aside(); ?>
+				<?php } ?>
+				<?php 
+	                //City
+	                $location_hash = wp_get_post_terms($post->ID, 'location'); // Grab just the first location
+	                $location_name = $location_hash ? $location_hash[0]->name : null;
+	                $location_slug = $location_hash ? $location_hash[0]->slug : null;
+
+	                if( $location_name && $location_slug ) { ?>
+	                    | <a href="<?php echo get_term_link($location_slug, 'location') ?>" class="tertiary"><?php echo $location_name; ?></a>
+	                <?php }   
+            	?></aside>
+		</div>
 	</div>
 
 <?php } 
@@ -141,7 +141,7 @@ wp_reset_postdata(); ?>
 
 </div>
 
-<?php //exit; ?>
+<?php /*//exit; ?>
 
 <?php if ( get_next_posts_link() || get_previous_posts_link()) { ?>
 	<div class="blog_nav">
@@ -154,5 +154,7 @@ wp_reset_postdata(); ?>
 		<?php endif; ?>
 	</div>
 <?php } ?>
+
+<?php */ ?>
 
 <?php get_footer(); ?>
