@@ -95,25 +95,26 @@ nav.top-bar {
     nav.top-bar .title-area img {
       height: 20px;
       width: auto; }
-  nav.top-bar .top-bar-section ul {
-    margin: 30px 0 30px; }
+  @media only screen and (min-width: 1024px) {
+    nav.top-bar .top-bar-section ul {
+      margin: 30px 0 30px; } }
+  @media only screen and (min-width: 1024px) {
+    nav.top-bar .top-bar-section ul {
+      margin: 0; } }
+  nav.top-bar .top-bar-section ul li {
+    margin: 0; }
+    nav.top-bar .top-bar-section ul li.active > a {
+      height: auto; }
+    nav.top-bar .top-bar-section ul li a {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0 0 0 10px; }
     @media only screen and (min-width: 1024px) {
-      nav.top-bar .top-bar-section ul {
-        margin: 0; } }
-    nav.top-bar .top-bar-section ul li {
-      margin: 0; }
-      nav.top-bar .top-bar-section ul li.active > a {
-        height: auto; }
-      nav.top-bar .top-bar-section ul li a {
-        font-size: 12px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding: 0 0 0 10px; }
-      @media only screen and (min-width: 1024px) {
-        > nav.top-bar .top-bar-section ul li:hover {
-          border-bottom: 3px solid black; }
-        nav.top-bar .top-bar-section ul li > a {
-          height: 67px; } }
+      > nav.top-bar .top-bar-section ul li:hover {
+        border-bottom: 3px solid black; }
+      nav.top-bar .top-bar-section ul li > a {
+        height: 67px; } }
   @media only screen and (min-width: 1024px) {
     nav.top-bar .top-bar-section .left-border span {
       border-left: 1px solid black;

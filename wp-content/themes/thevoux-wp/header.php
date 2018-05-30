@@ -10,6 +10,16 @@
 	<meta content="127512634049491" property="fb:app_id">
 	<meta content="width=device-width,initial-scale=1" name="viewport">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+
+
+<style>
+.hide {
+
+	display: none !important;
+}
+</style>
+
+
 	<?php include_once("inc/homepolish/hmpl-google-scripts.php") ?>
 	<?php get_template_part( 'templates/header', hp_page_type() );
 	//exit;

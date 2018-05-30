@@ -48,7 +48,7 @@ function hp_2018_2x_image( $atts, $content = null ) {
 	
 	$output .= '<h3>' . $hp_2018_2x_image_left_caption . '</h3>';
 	
-	$output .= do_shortcode($content);;
+	$output .= do_shortcode($content);
 	
 	$output .= '</div>
 	        </div>
@@ -92,6 +92,7 @@ function hp_2018_lg_img_caption( $atts, $content = null ) {
 		</div>
 		<div class="small-12 columns">';
     $output.= '<p>' . $hp_2018_lg_img_caption . '</p>';
+    $output .= do_shortcode( $content );
     $output .= '
 	    </div>
 	</div>';
@@ -116,6 +117,7 @@ function hp_2018_split_img_quote( $atts, $content = null ) {
     <div class="row collapse hp_2018_split_img_quote" data-equalizer>
     	<div class="large-6 columns" data-equalizer-watch>';
     $output.= '<img src="' . wp_get_attachment_url( $hp_2018_split_img ) . '">';
+    $output .= do_shortcode( $content );
 	$output.= '
 		</div>
 		<div class="large-offset-1 large-5 columns" data-equalizer-watch>
@@ -149,6 +151,7 @@ function hp_2018_lg_overlap_quote( $atts, $content = null ) {
     		<div class="row collapse">
       			<div class="large-centered large-10 columns">';
     $output.= '<img src="' . wp_get_attachment_url( $hp_2018_lg_overlap_img ) . '">';
+    $output .= do_shortcode( $content );
 	$output.= '
 				</div>
       			<div class="large-5 columns quote">';

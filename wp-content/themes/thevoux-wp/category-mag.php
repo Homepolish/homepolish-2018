@@ -11,10 +11,10 @@ $args = array(
 $query = new WP_query ( $args );
 if( $query->have_posts() ) { ?>
 
-	<div class="row row-outer featured-post">
+	<div class="row row-outer featured-post" itemscope itemtype="http://schema.org/BlogPosting">
 		<div class="small-12 large-4 large-offset-1 columns featured-post-meta">
 
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			<h2 itemprop="headline" class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 			<aside class="entry-meta">
 				<?php if(has_category()) { ?>
 				<?php hp_2018_get_category_aside(); ?>
@@ -66,7 +66,7 @@ $query = new WP_query ( $args );
 if( $query->have_posts() ) {
 while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 
-	<div class="large-6 columns">
+	<div class="large-6 columns" itemscope itemtype="http://schema.org/BlogPosting">
 		<div class="row collapse">
 			<div class="large-11 large-centered columns">
 				<?php if ( has_post_thumbnail() ) { ?>
@@ -82,7 +82,7 @@ while ( $query->have_posts() ) : $query->the_post(); /* start the loop */ ?>
 				<?php } ?>
 			</div>
 			<div class="large-10 large-centered columns">';         
-				<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+				<h3 itemprop="headline" class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 				<?php if(has_category()) { ?>
 					<?php hp_2018_get_category_aside(); ?>
 				<?php } ?> | 
