@@ -112,7 +112,10 @@
     .hero video.is-playing {
       opacity: 1; }
   .landing-pages--homepage .hero {
-    padding-top: 250px; }
+    padding-top: 150px; }
+    @media only screen and (min-width: 768px) {
+      .landing-pages--homepage .hero {
+        padding-top: 250px; } }
     .landing-pages--homepage .hero .hero__tagline {
       font-size: 3em; }
       @media only screen and (min-width: 768px) {
@@ -121,16 +124,16 @@
   .hero .hero__signup {
     position: relative;
     z-index: 1; }
-    @media only screen and (min-width: 768px) {
-      .hero .hero__signup {
-        background-color: transparent !important; } }
-    .hero .hero__signup .signup-subheader {
-      color: white; }
-    .hero .hero__signup .existing-account-link a {
-      color: white; }
     .hero .hero__signup .book-now-signup .form-field {
       border-bottom: none;
       padding-left: 30px; }
+    @media only screen and (min-width: 768px) {
+      .hero .hero__signup {
+        background-color: transparent !important; }
+        .hero .hero__signup .signup-subheader {
+          color: white; }
+        .hero .hero__signup .existing-account-link a {
+          color: white; } }
 
 /* 
 	@media (min-width: 768px) {
