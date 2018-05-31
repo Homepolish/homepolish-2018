@@ -2,8 +2,14 @@
     
     position: relative;
     overflow: hidden;
-    height: 56.25vw;
+    height: 375px;
     max-height: 1080px;
+
+        @media only screen and (min-width: 768px) {
+
+            height: 56.25vw;
+
+        }
 
     > img, picture img, video {
 
@@ -31,11 +37,11 @@
 
     .landing-pages--homepage & {
 
-        padding-top: 200px;
+        padding-top: 150px;
 
         @media only screen and (min-width: 768px) {
 
-            padding-top: 200px;
+            padding-top: 225px;
 
         }
 
@@ -48,9 +54,12 @@
         .hero__tagline {
 
             font-size: 3em;
+            white-space: normal;
+            width: 90%;
 
             @media only screen and (min-width: 768px) {
 
+                display: block !important;
                 font-size: 4em;
             }
         }
@@ -60,27 +69,23 @@
 
         position: relative;
         z-index: 1;
+        background-color: transparent !important;
+        
 
-
-        @media only screen and (min-width: 768px) {
-
-            background-color: transparent !important;
-
-            .signup-subheader {
+        .signup-subheader {
 
                 color: white;
-            }
+        }
 
-            .existing-account-link a {
+        .existing-account-link a {
 
-                color: white;
-            } 
+            color: white;
+        } 
 
-            .book-now-signup .form-field {
+        .book-now-signup .form-field {
 
-                border-bottom: none;
-                padding-left: 30px;
-            }
+            border-bottom: none;
+            padding-left: 30px;
         }
     }
 }
