@@ -24,14 +24,25 @@
         max-height: 56.25vw;
     }
 
+    img {
+
+        transition: opacity .6s cubic-bezier(.39,.575,.565,1);
+    }
+
     video {
-        
-        opacity: 0;
-        transition: opacity .4s;
 
-        &.is-playing {
+        display: none;
 
-            opacity: 1;
+        @media only screen and (min-width: 768px) {
+
+            display: block;
+            opacity: 0;
+            transition: opacity .4s;
+
+            &.is-playing {
+
+                opacity: 1;
+            }
         }
     }
 
