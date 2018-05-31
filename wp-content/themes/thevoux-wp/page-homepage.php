@@ -6,6 +6,7 @@
     <img src="<?php the_field( 'vh_image' ); ?>" alt="" class="">
     <video muted="" playsinline="" webkit-playsinline="" autoplay="true" loop="true" src="<?php the_field( 'vh_video_path' ); ?>" class="is-playing"></video>
     <h1 class="hero__tagline formatted-copy--desktop"><?php the_field( 'vh_heading' ); ?></h1>
+    <h1 class="hero__tagline formatted-copy--mobile"><?php the_field( 'vh_heading' ); ?></h1>
     <div class="hero__signup" data-hero-content>
         <div class="book-now-signup book-now-signup-start-email">
             <p class="signup-subheader">

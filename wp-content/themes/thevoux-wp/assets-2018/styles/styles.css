@@ -112,8 +112,11 @@
     .hero video.is-playing {
       opacity: 1; }
   .landing-pages--homepage .hero {
-    padding-top: 150px; }
+    padding-top: 200px; }
     @media only screen and (min-width: 768px) {
+      .landing-pages--homepage .hero {
+        padding-top: 200px; } }
+    @media only screen and (min-width: 1024px) {
       .landing-pages--homepage .hero {
         padding-top: 250px; } }
     .landing-pages--homepage .hero .hero__tagline {
@@ -124,16 +127,16 @@
   .hero .hero__signup {
     position: relative;
     z-index: 1; }
-    .hero .hero__signup .book-now-signup .form-field {
-      border-bottom: none;
-      padding-left: 30px; }
     @media only screen and (min-width: 768px) {
       .hero .hero__signup {
         background-color: transparent !important; }
         .hero .hero__signup .signup-subheader {
           color: white; }
         .hero .hero__signup .existing-account-link a {
-          color: white; } }
+          color: white; }
+        .hero .hero__signup .book-now-signup .form-field {
+          border-bottom: none;
+          padding-left: 30px; } }
 
 /* 
 	@media (min-width: 768px) {
