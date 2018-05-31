@@ -67,7 +67,7 @@
 					?>
 
 					<div class="case-study">
-						<a target="_blank" href="https://www.homepolish.com/mag/a-calming-family-home-in-the-boston-suburbs">
+						<a target="_blank" href="<?php echo get_the_permalink( $row->ID ); ?>">
 							<div class="image-container">
 								<div class="hidpi">
 									<div class="case-study-image desktop-only" style="background-image: url(<?php echo $image_386; ?>);"></div>
