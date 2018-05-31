@@ -37,14 +37,14 @@
 						</a>
 						<ul class="submenu">
 							<li class="links-column-link-li">
-								<a class="links-column-link" href="https://homepolish.com/cities">
+								<a class="links-column-link" href="/cities">
 									<p class="links-column-link-text">
 										Locations
 									</p>
 								</a>
 							</li>
 							<li class="links-column-link-li">
-								<a class="links-column-link" href="https://homepolish.com/start">
+								<a class="links-column-link" href="/start">
 								<p class="links-column-link-text">
 								Book a Designer
 								</p>
@@ -58,14 +58,14 @@
 							</a>
 							</li>
 							<li class="links-column-link-li">
-							<a class="links-column-link" href="https://homepolish.com/portfolio">
+							<a class="links-column-link" href="/portfolio">
 							<p class="links-column-link-text">
 							Portfolio
 							</p>
 							</a>
 							</li>
 							<li class="links-column-link-li">
-							<a class="links-column-link" href="https://homepolish.com/commercial">
+							<a class="links-column-link" href="/commercial">
 							<p class="links-column-link-text">
 							Commercial Design
 							</p>
@@ -79,7 +79,7 @@
 							</a>
 							</li>
 							<li class="links-column-link-li">
-							<a class="links-column-link" href="https://homepolish.com/careers">
+							<a class="links-column-link" href="/careers">
 							<p class="links-column-link-text">
 							Design Careers
 							</p>
@@ -93,21 +93,21 @@
 							</a>
 							</li>
 							<li class="links-column-link-li">
-							<a class="links-column-link" href="https://homepolish.com/guarantee">
+							<a class="links-column-link" href="/guarantee">
 							<p class="links-column-link-text">
 							Guarantee
 							</p>
 							</a>
 							</li>
 							<li class="links-column-link-li">
-							<a class="links-column-link" href="https://homepolish.com/press">
+							<a class="links-column-link" href="/press">
 							<p class="links-column-link-text">
 							Press
 							</p>
 							</a>
 							</li>
 							<li class="links-column-link-li">
-							<a class="links-column-link" href="https://homepolish.com/client-testimonials">
+							<a class="links-column-link" href="/client-testimonials">
 							<p class="links-column-link-text">
 							Reviews
 							</p>
@@ -218,7 +218,7 @@
 
 
 				<div class="bottom-links-partial-container">
-					<a class="bottom-link" href="https://homepolish.com/jobs">
+					<a class="bottom-link" href="/jobs">
 					<h6 class="bottom-link-text">Jobs</h6>
 					</a>
 					<a class="bottom-link" href="/faq">
@@ -367,7 +367,7 @@
 
 
 				<div class="bottom-links-partial-container">
-				<a class="bottom-link" href="https://homepolish.com/jobs">
+				<a class="bottom-link" href="/jobs">
 				<h6 class="bottom-link-text">Jobs</h6>
 				</a>
 				<a class="bottom-link" href="/faq">
@@ -397,14 +397,14 @@
 					</a>
 					<ul class="submenu">
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/cities">
+					<a class="links-column-link" href="/cities">
 					<p class="links-column-link-text">
 					Locations
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/start">
+					<a class="links-column-link" href="/start">
 					<p class="links-column-link-text">
 					Book a Designer
 					</p>
@@ -418,7 +418,7 @@
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/portfolio">
+					<a class="links-column-link" href="/portfolio">
 					<p class="links-column-link-text">
 					Portfolio
 					</p>
@@ -439,7 +439,7 @@
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/careers">
+					<a class="links-column-link" href="/careers">
 					<p class="links-column-link-text">
 					Design Careers
 					</p>
@@ -453,21 +453,21 @@
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/guarantee">
+					<a class="links-column-link" href="/guarantee">
 					<p class="links-column-link-text">
 					Guarantee
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/press">
+					<a class="links-column-link" href="/press">
 					<p class="links-column-link-text">
 					Press
 					</p>
 					</a>
 					</li>
 					<li class="links-column-link-li">
-					<a class="links-column-link" href="https://homepolish.com/client-testimonials">
+					<a class="links-column-link" href="/client-testimonials">
 					<p class="links-column-link-text">
 					Reviews
 					</p>
