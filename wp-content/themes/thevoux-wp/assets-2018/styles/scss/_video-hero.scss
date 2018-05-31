@@ -1,0 +1,86 @@
+﻿.hero {
+position: relative;
+overflow: hidden;
+height: 56.25vw;
+max-height: 1080px;
+}
+
+.hero>img, .hero>picture img, .hero video {
+position: absolute;
+left: 50%;
+top: 50%;
+-webkit-transform: translate(-50%,-50%);
+transform: translate(-50%,-50%);
+min-width: 100%;
+min-height: 100%;
+max-width: 177.77778vh;
+max-height: 56.25vw;
+}
+
+.hero video.is-playing {
+opacity: 1;
+}
+
+.hero video {
+opacity: 0;
+transition: opacity .4s;
+}
+
+.hero__content--white {
+    color: #fff;
+}
+.hero__content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+.js-scroll--fade {
+    /* opacity: 0; */
+    transition: opacity .8s cubic-bezier(.39,.575,.565,1) .2s;
+}
+
+
+/* edit existing styles */
+
+.landing-pages--homepage .hero {
+
+padding-top: 250px; /* top of cta */
+}
+
+.landing-pages--homepage .hero .hero__tagline /* h1 */ {
+
+font-size: 4em;
+}
+
+.hero__signup {
+
+background-color: transparent !important;
+position: relative;
+z-index: 1;
+}
+
+.signup-subheader {
+
+color: white;
+}
+
+.existing-account-link a {
+
+color: white;
+}
+
+.book-now-signup .form-field {
+
+border-bottom: none;
+padding-left: 30px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+
+}

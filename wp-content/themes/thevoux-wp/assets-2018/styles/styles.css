@@ -91,39 +91,69 @@
   #page-template li {
     margin: 0 0 20px; }
 
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 56.25vw;
+  max-height: 1080px; }
+
+.hero > img, .hero > picture img, .hero video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   min-width: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+  max-width: 177.77778vh;
+  max-height: 56.25vw; }
 
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px; }
+.hero video.is-playing {
+  opacity: 1; }
 
-/* Style the button used to pause/play the video */
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer; }
+.hero video {
+  opacity: 0;
+  transition: opacity .4s; }
 
-#myBtn:hover {
-  background: #ddd;
-  color: black; }
+.hero__content--white {
+  color: #fff; }
 
-.testimonials .owl-carousel {
-  display: block; }
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center; }
+
+.js-scroll--fade {
+  /* opacity: 0; */
+  transition: opacity 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s; }
+
+/* edit existing styles */
+.landing-pages--homepage .hero {
+  padding-top: 250px;
+  /* top of cta */ }
+
+.landing-pages--homepage .hero .hero__tagline {
+  font-size: 4em; }
+
+.hero__signup {
+  background-color: transparent !important;
+  position: relative;
+  z-index: 1; }
+
+.signup-subheader {
+  color: white; }
+
+.existing-account-link a {
+  color: white; }
+
+.book-now-signup .form-field {
+  border-bottom: none;
+  padding-left: 30px; }
 
 /* 
 	@media (min-width: 768px) {
