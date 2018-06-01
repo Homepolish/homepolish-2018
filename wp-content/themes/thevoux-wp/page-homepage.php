@@ -379,7 +379,7 @@
     </h5>
 </div><!-- ./our-designers -->
 
-<!-- press -->
+<!-- press 
 
 <div class="press">
 <div class="press__slides">
@@ -417,7 +417,8 @@
 
 </div>
 </div>
-</div><!-- ./press -->
+</div>
+--><!-- ./press -->
 
 <!-- book-now -->
 
