@@ -147,6 +147,24 @@
     .hero .hero__signup .book-now-signup .form-field {
       border-bottom: none;
       padding-left: 30px; }
+    .hero .hero__signup .v1-icon-caret-right {
+      color: white; }
+
+.transparent {
+  display: none; }
+
+.hp-header--transparent .transparent {
+  display: block; }
+.hp-header--transparent .opaque {
+  display: none; }
+.hp-header--transparent nav.top-bar.expanded h1 {
+  margin-left: 20px; }
+.hp-header--transparent nav.top-bar.expanded .opaque {
+  display: block; }
+
+/* Hamburger */
+.top-bar .toggle-topbar.menu-icon a span::after {
+  box-shadow: 0 0 0 1px #ccc, 0 7px 0 1px #ccc, 0 14px 0 1px #ccc; }
 
 /* 
 	@media (min-width: 768px) {
