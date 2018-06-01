@@ -9,9 +9,6 @@
         </button>
 
         <a href="/" class="hp-header__logo-link hp-header__logo-link--mobile-tablet">
-          <img class="opaque" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark.png" alt="Homepolish">
-          <img class="transparent" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark-white.png" alt="Homepolish">
-            
         <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark.png" />
         <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark-white.png" />
         </a>
@@ -30,7 +27,6 @@
 
           <a href="/" class="hp-header__logo-link hp-header__logo-link--desktop">
           <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark-white.png" />
-
           <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark.png" />
           </a>
 
