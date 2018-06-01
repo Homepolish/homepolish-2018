@@ -1,4 +1,4 @@
-﻿@import "about-us";
+@import "about-us";
 @import "build";
 @import "center-text";
 @import "concierge";
@@ -9,7 +9,41 @@
 @import "testimonials";
 @import "video-hero";
 
+.transparent {
 
+	display: none;
+}
+
+.hp-header--transparent {
+
+	.transparent {
+
+		display: block;
+	}
+	.opaque {
+
+		display: none;
+	}
+
+	//for mobile 
+	nav.top-bar.expanded {
+
+		h1 {
+
+			margin-left: 20px;
+		}
+
+		.opaque {
+
+			display: block;
+		}
+	}
+}
+
+/* Hamburger */
+.top-bar .toggle-topbar.menu-icon a span::after {
+	box-shadow: 0 0 0 1px #ccc, 0 7px 0 1px #ccc, 0 14px 0 1px #ccc;
+}
 
 /* 
 	@media (min-width: 768px) {
