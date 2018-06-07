@@ -1,4 +1,4 @@
-<div class="promotion-banner">
+<!-- header-container --><div class="promotion-banner">
  <p>
    <section>Now until April 23, take 10% off design</section>
    services with code

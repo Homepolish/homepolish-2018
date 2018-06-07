@@ -78,19 +78,6 @@ function _custom_meta_boxes() {
             'label'       => 'Homepolish Story (Default)',
             'value'       => 'story'
           ),
-          array(
-            'label'       => '2018 Article',
-            'value'       => 'article-2018'
-          ),
-          array(
-            'label'       => '2018 Featured Article',
-            'value'       => 'featured-2018'
-          ),
-          array(
-            'label'       => '2018 Tour',
-            'value'       => 'tour-2018'
-          ),
-
           // array(
           //   'label'       => 'Homepolish Interview',
           //   'value'       => 'interview'

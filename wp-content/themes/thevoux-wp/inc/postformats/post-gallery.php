@@ -1,5 +1,5 @@
 <?php
-	if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets-2018/img/homepolish-logo.png'; }
+	if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets/img/homepolish-logo.png'; }
 	$post_gallery_photos = get_post_meta($id, 'post-gallery-photos', true);
 	$adv_gallery_header = ot_get_option('adv_gallery_header');
     if ($post_gallery_photos) {
@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="row full-width-row no-padding header-separator">
-				<div class="small-12 columns test">
+				<div class="medium-12 small-12 columns">
 					<aside class="styled_dividers style-full-width-header no-margin"></aside>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 						<?php hmpl_get_category_aside(); ?>
 
 						<header class="post-title entry-header">
-							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php echo the_title(); ?></a></h3>
+							<h3 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php echo the_title(); ?></a></h3>
 						</header>
 
 						<p class="excerpt">

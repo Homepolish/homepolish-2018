@@ -1,4 +1,4 @@
-<article itemscope <?php post_class('post style-hp-taxonomy-post'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style-hp-taxonomy-post'); ?> id="post-<?php the_ID(); ?>" role="article">
   <div class="row" data-equal=">.columns">
     <div class="small-12 medium-3 columns">
       <?php hmpl_get_category_aside(); ?>

@@ -1,4 +1,4 @@
-<!--blog-featured --><article itemscope <?php post_class('post blog-featured text-center'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post blog-featured text-center'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<?php if ( has_post_thumbnail() ) { ?>
 	<figure class="post-gallery <?php do_action('thb_is_gallery'); ?>">
 		<?php
@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="small-12 medium-10 large-8 columns medium-centered">
 			<header class="post-title entry-header">
-				<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h2>
+				<h2 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h2>
 			</header>
 			<div class="post-content">
 				<?php echo thb_excerpt(150, '&hellip;'); ?>

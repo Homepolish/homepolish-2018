@@ -1,4 +1,4 @@
-<!-- single-style2--><?php 
+<?php 
 	$id = get_the_id();
 	$post_image = get_post_meta($id, 'post-top-image', true) ? get_post_meta($id, 'post-top-image', true) : '';
 ?>
@@ -17,16 +17,16 @@
 
 	<div class="row post-detail-style2"<?php if ($fixed == 'on') { ?> data-equal=">.columns"<?php } ?>>
 		<div class="small-12 medium-12 <?php echo ($fullwidth == 'on' ? 'large-12' : 'large-8'); ?> columns">
-			<article itemscope <?php post_class('post post-detail'); ?> id="post-<?php the_ID(); ?>" role="article" data-id="<?php the_ID(); ?>" data-url="<?php the_permalink(); ?>">
+			<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post post-detail'); ?> id="post-<?php the_ID(); ?>" role="article" data-id="<?php the_ID(); ?>" data-url="<?php the_permalink(); ?>">
 				<?php do_action( 'thb_fb_information' ); ?>
 				<header class="post-title entry-header">
 					<?php if(has_category()) { ?>
 					<aside class="post-meta cf"><?php the_category(', '); ?></aside>
 					<?php } ?>
 					<?php if ( $ajax == '0' ) { ?>
-						<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+						<?php the_title('<h1 class="entry-title" itemprop="headline">', '</h1>'); ?>
 					<?php } else { ?>
-						<?php the_title('<h1 class="entry-title"><a href="'.get_permalink().'" title="'.the_title_attribute("echo=0").'">', '</a></h1>'); ?>
+						<?php the_title('<h1 class="entry-title" itemprop="headline"><a href="'.get_permalink().'" title="'.the_title_attribute("echo=0").'">', '</a></h1>'); ?>
 					<?php } ?>
 					<aside class="post-author">
 						<time class="time" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo thb_human_time_diff_enhanced(); ?></time> <em><?php _e('by', THB_THEME_NAME); ?></em> <?php the_author_posts_link(); ?>

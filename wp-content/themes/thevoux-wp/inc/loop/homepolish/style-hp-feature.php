@@ -1,4 +1,4 @@
-<article itemscope <?php post_class('post style-hp-feature'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style-hp-feature'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<?php if ( has_post_thumbnail() ) { ?>
 	<figure class="post-gallery <?php do_action('thb_is_gallery'); ?>">
 		<?php
@@ -23,7 +23,7 @@
 		<aside class="post-author cf">
 		</aside>
 		<header class="post-title entry-header">
-			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h2>
+			<h2 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h2>
 		</header>
 	</div>
 </article>

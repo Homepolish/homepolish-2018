@@ -1,8 +1,8 @@
-<!-- archive.php -->
+<!-- archive -->
 <?php get_header(); ?>
 <?php get_template_part( 'inc/header/archive-title' ); ?>
 <div class="row archive-page-container">
-	<div class="small-12 columns">
+	<div class="small-12 medium-8 columns">
 		<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 			<?php get_template_part( 'inc/loop/homepolish/style-hp-list' ); ?>
 		<?php endwhile; ?>
@@ -20,6 +20,6 @@
 		  <?php get_template_part( 'inc/loop/notfound' ); ?>
 		<?php endif; ?>
 	</div>
-	<?php //get_sidebar('archive'); ?>
+	<?php get_sidebar('archive'); ?>
 </div>
 <?php get_footer(); ?>

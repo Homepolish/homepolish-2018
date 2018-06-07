@@ -1,4 +1,4 @@
-<article itemscope <?php post_class('post mega-menu-post'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post mega-menu-post'); ?> id="post-<?php the_ID(); ?>" role="article">
 	<figure class="post-gallery">
 	
 		<?php
@@ -13,6 +13,6 @@
 	</figure>
 	<?php hmpl_get_category_aside(); ?>
 	<header class="post-title entry-header">
-		<p class="small"><a href="<?php the_permalink(); ?>" class="tertiary" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+		<p class="small" itemprop="headline"><a href="<?php the_permalink(); ?>" class="tertiary" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
 	</header>
 </article>

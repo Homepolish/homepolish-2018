@@ -107,7 +107,7 @@ function thb_TheShortcodesForVC() {
 	      $w = "medium-10";
 	      break;    
 	    case "1/1" :
-	      $w = "small-12 visualcomposer.php";
+	      $w = "medium-12";
 	      break;
 	    case "1/12" :
 	      $w = "medium-1";

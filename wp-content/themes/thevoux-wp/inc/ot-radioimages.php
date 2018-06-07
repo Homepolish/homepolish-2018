@@ -8,12 +8,12 @@ function thb_filter_radio_images( $array, $field_id ) {
       array(
         'value'   => 'left-sidebar',
         'label'   => __( 'Left Sidebar', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/left-sidebar.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/left-sidebar.png'
       ),
       array(
         'value'   => 'right-sidebar',
         'label'   => __( 'Right Sidebar', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/right-sidebar.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/right-sidebar.png'
       )
     );
   }
@@ -22,12 +22,12 @@ function thb_filter_radio_images( $array, $field_id ) {
       array(
         'value'   => 'slider-left',
         'label'   => __( 'Left Aligned Slider', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/slider-left.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/slider-left.png'
       ),
       array(
         'value'   => 'slider-right',
         'label'   => __( 'Right Aligned Slider', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/slider-right.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/slider-right.png'
       )
     );
   }
@@ -36,32 +36,32 @@ function thb_filter_radio_images( $array, $field_id ) {
       array(
         'value'   => 'fourcolumns',
         'label'   => __( 'Four Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/four-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/four-columns.png'
       ),
       array(
         'value'   => 'threecolumns',
         'label'   => __( 'Three Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/three-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/three-columns.png'
       ),
       array(
         'value'   => 'twocolumns',
         'label'   => __( 'Two Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/two-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/two-columns.png'
       ),
       array(
         'value'   => 'doubleleft',
         'label'   => __( 'Double Left Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/doubleleft-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/doubleleft-columns.png'
       ),
       array(
         'value'   => 'doubleright',
         'label'   => __( 'Double Right Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/doubleright-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/doubleright-columns.png'
       ),
       array(
         'value'   => 'fivecolumns',
         'label'   => __( 'Five Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/five-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/five-columns.png'
       )
       
     );
@@ -72,17 +72,17 @@ function thb_filter_radio_images( $array, $field_id ) {
       array(
         'value'   => 'three',
         'label'   => __( 'Four Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/four-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/four-columns.png'
       ),
       array(
         'value'   => 'four',
         'label'   => __( 'Three Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/three-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/three-columns.png'
       ),
       array(
         'value'   => 'six',
         'label'   => __( 'Two Columns', 'option-tree' ),
-        'src'     => THB_THEME_ROOT . '/assets-2018/img/admin/two-columns.png'
+        'src'     => THB_THEME_ROOT . '/assets/img/admin/two-columns.png'
       )
       
     );

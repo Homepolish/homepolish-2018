@@ -15,7 +15,7 @@
 	<div class="post-detail-row attachment-page">
 		<div class="row"<?php if ($fixed == 'on') { ?> data-equal=">.columns"<?php } ?>>
 			<div class="small-12 medium-12 large-8 columns">
-				<article itemscope <?php post_class('post post-detail'); ?> id="post-<?php the_ID(); ?>" role="article" data-id="<?php the_ID(); ?>" data-url="<?php the_permalink(); ?>">
+				<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post post-detail'); ?> id="post-<?php the_ID(); ?>" role="article" data-id="<?php the_ID(); ?>" data-url="<?php the_permalink(); ?>">
 					<div class="notification no-x">
 						<p>This is a snap from <span class="bold"><?php echo $parent_title; ?></span>.</p>
 						<p>Want to see more from Homepolish? We thought so. <a href="<?php echo $parent_url; ?>" class="secondary">Read the full article</a><span class="v1-icon-caret-right"></span></p>

@@ -1,0 +1,102 @@
+// copied from hive-api: app/assets/stylesheets/static_elements/_promotion_banner.scss
+
+.promotion-banner {
+  background-color: $accent;
+  color: white;
+  font-family: $sans-font-family-medium;
+  font-size: 1.4rem;
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  section {
+    display: inline;
+  }
+
+  p {
+    line-height: 1.75rem;
+    // tweaked from hive-api version for more consistent result
+    // padding: 5px;
+    padding: 5px 5px 6px 5px;
+  }
+}
+
+.promotion-banner__code {
+  font-family: $sans-font-family-demi;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
+}
+
+#promotion-banner__tooltip-content {
+  font-family: $serif-font-family;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+
+  @media only screen and (max-width: $break-medium - 1) {
+    padding: 14px 30px 30px 30px;
+  }
+}
+
+.promotion-banner__tooltip-templates {
+  background-color: white;
+  border-bottom: 1px solid $grey-fourth;
+  color: black;
+  display: none;
+
+  span {
+    display: block;
+    font-size: 1.25rem;
+    padding: 1em;
+    text-align: left;
+  }
+
+  a {
+    color: $grey-second;
+    display: block;
+    font-family: $sans-font-family-demi;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    padding: 10px 10px 0 0;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: $break-medium - 1) {
+  .promotion-banner {
+    .promotion-banner__tooltip {
+      display: block;
+      // tweaked from hive-api version for more consistent result
+      // margin-top: 3px;
+      margin-top: 5px;
+    }
+
+    section {
+      display: block;
+      // added for more consistent result
+      line-height: 1.7rem;
+    }
+  }
+}
+
+.tooltipster-sidetip.tooltipster-light.tooltipster-bottom {
+  .tooltipster-arrow-background {
+    border-bottom-color: white;
+    top: 1px;
+  }
+
+  .tooltipster-box {
+    border-radius: 0;
+    background-color: white;
+    padding: 20px 20px 20px;
+  }
+
+  .tooltipster-content {
+    color: #222;
+    font-family: $serif-font-family;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
+}

@@ -1,7 +1,7 @@
-<?php
+<!-- header-container --><?php
   $id = get_queried_object_id();
-  # if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets-2018/img/logo.png'; }
-  $logo = THB_THEME_ROOT. '/assets-2018/img/homepolish-logo.png';
+  # if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets/img/logo.png'; }
+  $logo = THB_THEME_ROOT. '/assets/img/homepolish-logo.png';
 ?>
 
 <!-- Start Header -->
@@ -43,7 +43,7 @@
     </div>
 
     <div class="row full-width-row no-padding header-separator">
-      <div class="small-12 columns">
+      <div class="medium-12 small-12 columns">
         <aside class="styled_dividers style-full-width-header no-margin"></aside>
       </div>
     </div>

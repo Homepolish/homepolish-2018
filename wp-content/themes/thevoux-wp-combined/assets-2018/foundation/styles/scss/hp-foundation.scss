@@ -1,0 +1,119 @@
+@import "article";
+@import "category";
+@import "mobile";
+@import "nav";
+@import "nav-colors";
+@import "rows";
+@import "test";
+
+body {
+
+	line-height: normal;
+}
+
+img {
+
+	width: 100%;
+	height: auto;
+}
+
+.main-container {
+
+	position: relative;
+}
+
+.full-width {
+
+  max-width: 100%;
+  width: 100%;
+}
+
+.row-outer {
+
+	width: 86% !important;
+}
+
+/* Full Width Nav */
+
+.full-width-nav {
+
+	//display: none;
+
+	@media only screen and (max-width: 640px) {
+
+		.top-bar {
+
+			.top-bar-section {
+
+				display: none;
+			}
+
+			&.expanded .top-bar-section {
+
+				display: block;
+
+				ul {
+
+					padding-top: 20px;
+				}
+			}
+		}
+
+	}
+
+	position: relative;
+
+	.mag-page & {
+
+		margin-bottom: 50px;	
+	}
+
+	&.hp-header--transparent {
+
+		position: absolute;
+		z-index: 1;
+
+		h1 {
+
+			padding-top: 11px;
+		}
+	}
+}
+
+/* Logo */
+
+.transparent {
+
+	display: none;
+}
+
+.hp-header--transparent {
+
+	.transparent {
+
+		display: block;
+	}
+	.opaque {
+
+		display: none;
+	}
+
+	//for mobile 
+	nav.top-bar.expanded {
+
+		h1 {
+
+			margin-left: 20px;
+		}
+
+		.opaque {
+
+			display: block;
+		}
+	}
+}
+
+/* Hamburger */
+.top-bar .toggle-topbar.menu-icon a span::after {
+	box-shadow: 0 0 0 1px #ccc, 0 7px 0 1px #ccc, 0 14px 0 1px #ccc;
+}

@@ -1,0 +1,46 @@
+$hp-patterns-sass-asset-helper: false !default;
+
+/**
+ * Font utilities to allow usage w/ Sprockets
+ * Taken from Twitter's bootstrap-sass project: https://github.com/twbs/bootstrap-sass
+ */
+
+// File name for all font files.
+$icon-font-name:          "v1-hp-icons" !default;
+// Element ID within SVG icon file.
+$icon-font-svg-id:        "v1-hp-icons" !default;
+
+$font-path: "../fonts/" !default;
+$icon-font-path: if($hp-patterns-sass-asset-helper, "hp-icons/v1/", "../fonts/hp-icons/v1/") !default;
+
+/* Media Breakpoints */
+
+$break-small:  641px !default;
+$break-medium: 768px !default;
+$break-large:  1200px !default;
+$break-xlarge: 1441px !default;
+
+/* Homepolish Brand Colors */
+
+$black:       #222222;
+$white:       #ffffff;
+$grey_first:  #666666;
+$grey_second: #888888;
+$grey_third:  #AAAAAA;
+$grey_fourth: #CCCCCC;
+$grey_fifth:  #E5E5E5;
+$grey_sixth:  #F5F5F5;
+
+$accent:      #EB937C;
+$red:         #E90000;
+$pink:        #F9BABA;
+$light-blue:  #E5F0FD;
+
+// Font Families
+$icon-font-family: "v1-hp-icons";
+$serif-font-family: "sabon-next-display", "Times New Roman", Times, serif;
+$serif-font-family-italic: "sabon-next-display-italic", "Times New Roman", Times, serif;
+$sans-font-family-demi: "avenir-next-demi-bold", Helvetica, Arial, sans-serif;
+$sans-font-family-medium: "avenir-next-medium", Helvetica, Arial, sans-serif;
+$sans-font-family: $sans-font-family-demi;  // [deprecated]
+$miller-display-font-family: "miller-display", "Times New Roman", Times, serif;

@@ -1,6 +1,6 @@
 <?php 
 	$id = get_queried_object_id();
-	if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets-2018/img/logo.png'; }
+	if (ot_get_option('logo')) { $logo = ot_get_option('logo'); } else { $logo = THB_THEME_ROOT. '/assets/img/logo.png'; }
 ?>
 
 <!-- Start Header -->
@@ -36,7 +36,7 @@
 		</div>
 		<nav id="full-menu" role="navigation">
 			<?php if(has_nav_menu('nav-menu')) { ?>
-			  <?php wp_nav_menu( array( 'theme_location' => 'nav-menu', 'depth' => 3, 'container' => false, 'menu_class' => 'full-menu nav', 'walker' => new thb_MegaMenu_tagandcat_Walker ) ); ?>
+			  <?php wp_nav_menu( array( 'menu' => 'header', 'theme_location' => 'nav-menu', 'depth' => 3, 'container' => false, 'menu_class' => 'full-menu nav', 'walker' => new thb_MegaMenu_tagandcat_Walker ) ); ?>
 			<?php } else { ?>
 				<ul class="full-menu">
 					<li><a href="<?php echo get_admin_url().'nav-menus.php'; ?>">Please assign a menu from Appearance -> Menus</a></li>

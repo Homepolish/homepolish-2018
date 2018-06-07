@@ -755,7 +755,7 @@ if ( ! function_exists( 'ot_admin_styles' ) ) {
     wp_enqueue_style( 'wp-color-picker' );
     
     /* load admin styles */
-    wp_enqueue_style( 'ot-admin-css', OT_URL . 'assets-2018/css/ot-admin.css', false, OT_VERSION );
+    wp_enqueue_style( 'ot-admin-css', OT_URL . 'assets/css/ot-admin.css', false, OT_VERSION );
     
     /* load the RTL stylesheet */
     $wp_styles->add_data( 'ot-admin-css','rtl', true );
@@ -830,15 +830,15 @@ if ( ! function_exists( 'ot_admin_scripts' ) ) {
     wp_enqueue_script( 'ace-editor', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js', null, '1.1.3' );   
 
     /* load jQuery UI timepicker addon */
-    wp_enqueue_script( 'jquery-ui-timepicker', OT_URL . 'assets-2018/js/vendor/jquery/jquery-ui-timepicker.js', array( 'jquery', 'jquery-ui-slider', 'jquery-ui-datepicker' ), '1.4.3' );
+    wp_enqueue_script( 'jquery-ui-timepicker', OT_URL . 'assets/js/vendor/jquery/jquery-ui-timepicker.js', array( 'jquery', 'jquery-ui-slider', 'jquery-ui-datepicker' ), '1.4.3' );
 
     /* load the post formats */
     if ( OT_META_BOXES == true && OT_POST_FORMATS == true ) {
-      wp_enqueue_script( 'ot-postformats', OT_URL . 'assets-2018/js/ot-postformats.js', array( 'jquery' ), '1.0.1' );
+      wp_enqueue_script( 'ot-postformats', OT_URL . 'assets/js/ot-postformats.js', array( 'jquery' ), '1.0.1' );
     }
 
     /* load all the required scripts */
-    wp_enqueue_script( 'ot-admin-js', OT_URL . 'assets-2018/js/ot-admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-sortable', 'jquery-ui-slider', 'wp-color-picker', 'ace-editor', 'jquery-ui-datepicker', 'jquery-ui-timepicker' ), OT_VERSION );
+    wp_enqueue_script( 'ot-admin-js', OT_URL . 'assets/js/ot-admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-sortable', 'jquery-ui-slider', 'wp-color-picker', 'ace-editor', 'jquery-ui-datepicker', 'jquery-ui-timepicker' ), OT_VERSION );
 
     /* create localized JS array */
     $localized_array = array( 
@@ -3193,32 +3193,32 @@ if ( ! function_exists( 'ot_radio_images' ) ) {
       array(
         'value'   => 'left-sidebar',
         'label'   => __( 'Left Sidebar', 'option-tree' ),
-        'src'     => OT_URL . 'assets-2018/images/layout/left-sidebar.png'
+        'src'     => OT_URL . 'assets/images/layout/left-sidebar.png'
       ),
       array(
         'value'   => 'right-sidebar',
         'label'   => __( 'Right Sidebar', 'option-tree' ),
-        'src'     => OT_URL . 'assets-2018/images/layout/right-sidebar.png'
+        'src'     => OT_URL . 'assets/images/layout/right-sidebar.png'
       ),
       array(
         'value'   => 'full-width',
         'label'   => __( 'Full Width (no sidebar)', 'option-tree' ),
-        'src'     => OT_URL . 'assets-2018/images/layout/full-width.png'
+        'src'     => OT_URL . 'assets/images/layout/full-width.png'
       ),
       array(
         'value'   => 'dual-sidebar',
         'label'   => __( 'Dual Sidebar', 'option-tree' ),
-        'src'     => OT_URL . 'assets-2018/images/layout/dual-sidebar.png'
+        'src'     => OT_URL . 'assets/images/layout/dual-sidebar.png'
       ),
       array(
         'value'   => 'left-dual-sidebar',
         'label'   => __( 'Left Dual Sidebar', 'option-tree' ),
-        'src'     => OT_URL . 'assets-2018/images/layout/left-dual-sidebar.png'
+        'src'     => OT_URL . 'assets/images/layout/left-dual-sidebar.png'
       ),
       array(
         'value'   => 'right-dual-sidebar',
         'label'   => __( 'Right Dual Sidebar', 'option-tree' ),
-        'src'     => OT_URL . 'assets-2018/images/layout/right-dual-sidebar.png'
+        'src'     => OT_URL . 'assets/images/layout/right-dual-sidebar.png'
       )
     ), $field_id );
     

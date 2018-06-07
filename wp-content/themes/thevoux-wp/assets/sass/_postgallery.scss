@@ -1,0 +1,326 @@
+.mfp-wrap {
+  -webkit-overflow-scrolling: touch;
+}
+
+.mfp-bg { background: $white !important; }
+.post-gallery-lightbox {
+	.post-gallery-content,
+	.lightbox-body, {
+		height: 100%;
+	}
+
+	.columns, .image-container {
+		@media only screen and (min-width: $break-small) {
+			height: 100%;
+		}
+	}
+
+	.mfp-content {
+		height: 100%;
+		max-height: 100%;
+		@extend .admin-style;
+	}
+	.mfp-arrow {
+		display: none;
+	}
+}
+
+$mobile-header-height: 60px;
+$desktop-header-height: 125px;
+
+.post-gallery-content {
+	padding-top: $mobile-header-height;
+
+	@media only screen and (min-width: $break-small) {
+		padding-top: $desktop-header-height;
+	}
+
+	.lightbox-header {
+		position: absolute;
+		height: $mobile-header-height;
+		max-width: $row-max-width;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		padding: 20px;
+
+		@media only screen and (min-width: $break-small) {
+			height: $desktop-header-height;
+			padding: 40px 0 25px 0;
+		}
+
+		.logolink {
+			.logoimg {
+				display: inline-block;
+				max-height: 40px;
+				width: 80%;
+
+				@media only screen and (min-width: $break-small) {
+					width: 320px;
+				}
+			}
+
+			h6 {
+				@include mobile-hidden();
+
+				margin-top: 15px;
+
+				font-size: 1.1rem;
+				letter-spacing: 0.15rem;
+			}
+		}
+
+		.lightbox-close {
+			@include mobile-hidden();
+
+			position: absolute;
+
+			top: 0;
+			right: 0;
+
+			cursor: pointer;
+
+			&:before {
+				margin: 0;
+				font-size: 2.0rem;
+
+				@media only screen and (min-width: $break-small) {
+					font-size: 3.0rem;
+				}
+			}
+		}
+	}
+
+	.header-separator {
+		border-color: $grey_fourth;
+
+		@media only screen and (min-width: $break-small) {
+			border-color: inherit;
+		}
+	}
+
+	.gallery-nav {
+		display: inline-block;
+
+		.arrow {
+			display: inline-block;
+
+			vertical-align: bottom;
+			line-height: 1.8rem;
+			font-size: 1.8rem;
+
+			> span {
+				position: relative;
+				display: inline-block;
+				height: 32px;
+				width: 32px;
+				padding: 5px;
+				border: 2px solid $black;
+				border-radius: 50%;
+
+				&:before {
+					position: absolute;
+					top: 5px;
+					margin: 0;
+
+					font-size: 1.8rem;
+					color: $black;
+				}
+			}
+
+			&.next {
+				>span:before { right: 4px; }
+			}
+
+			&.prev {
+				> span:before {
+					right: 6px;
+
+					-webkit-transform: rotate(180deg);
+					-ms-transform: rotate(180deg);
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.small {
+			display: inline-block;
+			min-width: 56px;
+			margin: 5px 15px;
+
+			font-family: $sans-font-family-medium;
+			white-space: nowrap;
+			text-align: center;
+		}
+	}
+
+	.gallery-nav-mobile {
+		@include desktop-hidden();
+
+		.gallery-nav {
+			display: block;
+			margin: 20px;
+
+			.v1-icon-close {
+				position: absolute;
+				top: 28px;
+				right: 20px;
+
+				&:before {
+					margin: 0;
+					font-size: 2.0rem;
+				}
+			}
+		}
+
+		&.fixed {
+			position: fixed;
+			top: 0;
+			z-index: 1;
+
+			background-color: $white;
+			opacity: .95;
+		}
+	}
+
+	.gallery-left {
+		height: auto;
+
+		@media only screen and (min-width: $break-small) {
+			height: 100%;
+		}
+
+		.image-container {
+			position: relative;
+
+			@media only screen and (min-width: $break-small) {
+				padding-right: 0.9375em;
+			}
+
+			[class^="attachment"] {
+				@media only screen and (min-width: $break-small) {
+					max-height: 100%;
+					width: auto;
+				}
+			}
+
+			.arrow { display: none; }
+
+			// Pinterest & image combinations
+			.hp-share-icon {
+			  position: absolute;
+			  top: 2.6%;
+			  left: 2%;
+
+			  > .circle-icon {
+			    margin: 0;
+			  }
+			}
+		}
+	}
+
+	.gallery-right {
+		.image-info {
+			padding: 0 0.9375em;
+
+			@media only screen and (min-width: $break-small) {
+				padding-right: 0;
+			}
+
+			// Extra bottom on mobile to account for the stuck sharing icons
+			margin: 20px 0 40px 0;
+
+			@media only screen and (min-width: $break-small) {
+				margin: 30px 0 30px 0;
+			}
+
+			.gallery-nav-desktop {
+				@include mobile-hidden();
+
+				padding-bottom: 25px;
+				margin-bottom: 25px;
+				border-bottom: 1px solid $grey_fifth;
+
+				.gallery-back-to-article {
+					display: inline-block;
+					padding-top: 10px;
+
+					cursor: pointer;
+
+					> * { font-size: 1.0rem; }
+
+					> span { font-family: Arial, Helvetica, sans-serif; }
+
+					> h6 {
+						display: inline-block;
+						padding-left: 4px;
+					}
+				}
+
+				.gallery-nav { float: right; }
+			}
+
+			.post-meta { margin: 0 0 10px 0; }
+
+			.post-title {
+				margin-bottom: 10px;
+
+				h3 {
+					@media only screen and (min-width: $break-small) {
+						font-size: 2.4rem;
+					}
+				}
+			}
+
+			.excerpt {
+				margin-bottom: 15px;
+
+				font-size: 2.0rem;
+
+				@media only screen and (min-width: $break-small) {
+					margin-bottom: 20px;
+
+					font-size: 1.8rem;
+				}
+			}
+
+			.attribution {
+				margin: 0;
+
+				color: $grey_second;
+
+				@media only screen and (min-width: $break-small) {
+					font-size: 1.4rem;
+				}
+
+				a {
+					@extend .secondary;
+
+					color: $grey_second;
+				}
+			}
+
+			.gallery-image-share {
+				@include mobile-hidden();
+
+				margin-top: 25px;
+				padding-top: 25px;
+				border-top: 1px solid $grey_fifth;
+
+				.share-article {
+					text-align: center;
+
+				  .circle-icon {
+						margin: 0 5% 0 0;
+					}
+
+				  .square-icon {
+						vertical-align: bottom;
+						margin: 0 2% 0 0;
+					}
+				}
+			}
+		}
+	}
+}

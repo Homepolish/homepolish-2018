@@ -1,276 +1,6 @@
 <?php
 
-show_admin_bar( 0 );
-
-/**
-@ Visual Compser Shortcodes
-* VC elements in wp-admin are set up in inc/visual-composer-extend.php
-* Not sure how those vc_templates get included so they're going here.
-*/
-
-include_once( 'hp-2018/vc-shortcodes.php' );
-
-/**
-@ Set Page Type; Mag||2018
-*/
-
-function hp_page_type() {
-
-	$page_type 	= '2018';
-	$req_uri 	= explode('?', $_SERVER["REQUEST_URI"], 2)[0];
-	$path 		= explode( '/', $req_uri );
-
-	if ( $path[1] == 'author' || $path[1] == 'designer' || $path[1] == 'mag' || $path[1] == 'wp-search' ) {
-
-		//$page_type = 'mag';
-		$page_type = 'mag-2018';
-
-	}
-	return $page_type;
-}
-
-/**
-@ Page Meta Values
-*/
-
-function hp_page_meta() {
-
-	global $post; 
-	$post_id = $post_ID;
-	$post_slug = $post->post_name;	
-
-	// Default Meta Values
-	$hp_page_meta['body_class']			= $post_slug;
-	$hp_page_meta['data_action']		= $post_slug;
-	$hp_page_meta['data_controller']	= 'landing_pages';
-
-	// Default Page Types
-	if ( is_category() ) {
-
-		$hp_page_meta['page_type'] = 'Blog';
-	}
-	elseif ( is_single() ) {
-
-		$hp_page_meta['page_type'] = 'BlogPosting';
-	}
-	else {
-
-		$hp_page_meta['page_type'] = 'WebSite';
-	}
-
-	// Page Type
-	if ( get_field( 'pmv_page_type', $post_id ) ) {
-
-		$hp_page_meta['page_type'] = get_field( 'pmv_page_type', $post_id );
-	}
-
-	// Transparency
-	if ( get_field( 'pmv_transparent_header', $post_id )[0] == 'Yes' ) {
-
-		$hp_page_meta['transparency'] = 'hp-header--transparent';
-	}
-
-	// Body Class
-	if ( get_field( 'pmv_body_action', $post_id ) ) {
-
-		$hp_page_meta['body_class'] = get_field( 'pmv_body_class', $post_id );
-	}
-
-	// Data Action
-	if ( get_field( 'pmv_data_action', $post_id ) ) {
-
-		$hp_page_meta['data_action'] = get_field( 'pmv_data_action', $post_id );
-	}
-
-	// Data Controller
-	if ( get_field( 'pmv_data_controller', $post_id ) ) {
-
-		$hp_page_meta['data_controller'] = get_field( 'pmv_data_controller', $post_id );
-	}
-
-	if ( is_404() ) {
-
-		$hp_page_meta['body_class'] = 'about-us';
-	}
-
-	return $hp_page_meta;
-}
-
-/** 
-@ Itemprop Meta Tags
-*/
-
-function hp_page_meta_tags() {
-
-	global $post; 
-	//var_dump( $post );
-	//exit;
-	$post_id = $post_ID;
-
-	// Itemprop Image
-
-	echo '<meta itemprop="image" content="' . get_the_post_thumbnail_url( $post_ID ) . '">';
-
-	// Item Props
-	$row = array();
-	$row = get_field( 'pmv_item_properties', $post_id ); 
-	foreach( (array) $row as $key => $value ) {
-
-		echo '<meta itemprop="' . $value['pmv_ip_name'] . '" content="' . $value['pmv_ip_value']. '">';
-	}
-
-	// Blog Item Props
-	if ( is_category() ) { ?>
-
-		<meta itemprop="provider" content="Homepolish">
-		
-		<?php 
-	}
-	if ( is_single() ) { ?>
-
-		<meta itemprop="publisher" content="Homepolish">
-		<meta content="<?php echo $post->post_title; ?>">
-		<meta itemprop="author" content="<?php echo get_the_author_meta( 'display_name', $post->post_author ); ?>">
-		<meta itemprop="datePublished" content="<?php echo $post->post_date; ?>">
-		<meta itemprop="dateModified" content="<?php echo $post->post_modified; ?>">
-		
-		<?php 
-	}
-}
-add_action('wp_head', 'hp_page_meta_tags');
-
-/**
-@ Enqueue Scripts and Styles
-*/
-function hp_enqueue_scripts() {
-
-	wp_enqueue_style( 'header', get_template_directory_uri() . '/assets-2018/styles/header.css' );
-	//wp_enqueue_style( 'foundation', get_template_directory_uri() . '/assets-2018/foundation/styles/foundation.css', null, null );
-	//wp_enqueue_style( 'hp-foundation', get_template_directory_uri() . '/assets-2018/foundation/styles/hp-foundation.css', null, null );
-	wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets-2018/styles/footer.css' );
-
-	if ( hp_page_type() == '2018' ) {
-
-		global $post; 
-		$post_slug = $post->post_name;
-		
-		// Header
-		wp_enqueue_style( 'svelte', get_template_directory_uri() . '/assets-2018/styles/svelte.css' );
-		wp_enqueue_style( 'styles', get_template_directory_uri() . '/assets-2018/styles/styles.css' );
-		
-		// Footer
-		wp_enqueue_script( 'vwo_smart_code', get_template_directory_uri() . '/assets-2018/js/vwo_smart_code.js', 0, 0, 0 );
-		wp_enqueue_script( 'rollbar', get_template_directory_uri() . '/assets-2018/js/rollbar.js', 0, 0, 0 );
-		wp_enqueue_script( 'analytics', get_template_directory_uri() . '/assets-2018/js/analytics.js', 0, 0, 0 );
-		wp_enqueue_script( 'vendor', get_template_directory_uri() . '/assets-2018/js/vendor.js', 0, 0, 1 );
-		wp_enqueue_script( 'svelte', get_template_directory_uri() . '/assets-2018/js/svelte.js', 0, 0, 1 );
-
-		if ( file_exists( get_stylesheet_directory() . '/assets-2018/js/' . $post_slug . '.js' ) ) {
-
-			wp_enqueue_script( 'page-slug', get_template_directory_uri() . '/assets-2018/js/' . $post_slug . '.js', 0, 0, 1 );
-		}
-	}
-}
-add_action( 'wp_enqueue_scripts', 'hp_enqueue_scripts' );
-
-/**
-@ Print Mobile and Desktop Styles for Images 
-*/
-
-function hp_image_styles( $mobile_desktop_array ) {
-
-	$mobile = $mobile_desktop_array[0];
-	$desktop = $mobile_desktop_array[1];
-	$selector = $mobile_desktop_array[2];
-
-	$styles = '<style>
-			' . $selector . ' {
-				background-image: url(
-					' . $desktop . '
-				);
-			}
-			@media screen and (min-width: 768px) {
-				' . $selector . ' {
-					background-image: url(
-						' . $desktop . '
-					);
-				}
-			}
-
-		</style>';
-
-	return $styles;	
-}
-
-function hp_image_styles_deprecated( $mobile_desktop_array ) {
-
-	$mobile = $mobile_desktop_array[0];
-	$desktop = $mobile_desktop_array[1];
-	$selector = $mobile_desktop_array[2];
-
-	$styles = '<style>
-			' . $selector . ' {
-				background-image: url(
-					' . $mobile . '
-				);
-			}
-			@media only screen and (-webkit-min-device-pixel-ratio: 1.3), 
-			not all, only screen and (-webkit-min-device-pixel-ratio: 1.30208), 
-			only screen and (min-resolution: 125dpi), 
-			only screen and (min-resolution: 1.3dppx) {
-				' . $selector . ' {
-					background-image: url(
-						' . $desktop . ');
-				}
-			}
-		</style>';
-
-	return $styles;	
-}
-
-/**
-@ Remove WordPress Emoji Code and Extraneous Source
-*/
-
-remove_action( 'wp_head', 'rsd_link' );
-remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
-/** 
-@ Remove Yoast SEO JSON schema
-*/
-
-function hp_remove_yoast_json( $data ) {
-    
-    $data = array();
-    return $data;
-  }
-  add_filter( 'wpseo_json_ld_output', 'hp_remove_yoast_json', 10, 1 );
-
-/** 
-@ Fix Post List Header in wp-admin
-*/
-
-function hp_admin_css() {
-	
-	wp_enqueue_style( 'hp_admin_css' , get_template_directory_uri() . '/assets-2018/styles/admin.css' );
-}
-add_action('admin_head', 'hp_admin_css');  
-
-/**
-@ Mag Functions
-*/
-
 /*-----------------------------------------------------------------------------------
-
-	MAG FUNCTIONS
 
 	Here we have all the custom functions for the theme
 	Please be extremely cautious editing this file.
@@ -390,3 +120,437 @@ require_once('inc/homepolish/hmpl-misc.php');
 
 // Import functions * can be removed once imported
 require_once('inc/homepolish/hmpl-post-prep.php');
+
+/* add more repeatable metabox for boutique*/
+//add_action( 'admin_init', 'homepolish_addevent_metabox' );
+function homepolish_addevent_metabox(){
+		 
+ //global $post;
+     //if(!empty($post))
+   // {
+       //echo $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+
+       // if($pageTemplate == 'tmp_homepolish.php' )
+       // {
+   
+add_meta_box('html_myid_61_section', 'Events', 'homepolish_addevent_output', 'page', 'normal' ,'high');
+//}
+
+//}
+
+
+}
+
+//call back function
+function homepolish_addevent_output($post) { ?>
+		<?php
+   global $post;
+   $author_data = get_post_meta($post->ID, 'team_member_info', true);
+   //echo '<pre>'; print_r($author_data); echo count($author_data['authorMeta']);die;
+   if(!empty($author_data) && count($author_data['authorMeta']) >0 ){
+    
+   	echo '<div class="authorBoxwrap">';
+   	foreach($author_data['authorMeta'] as $ky =>$val)
+    {
+   	$output ='<table id="authorBox-'.$ky.'" class="form-table">';
+      $output .='<tr><th><label for="Name">Date</label></th><td>';
+    $output .='<input type="text" name="_my_meta[authorMeta]['.$ky.'][date]" id="" value="'.$val['date'].'" size="50" /> 
+     <br /><span class="description">Put date here.</span>'; 
+  $output .='</td></tr>';
+   $output .='<tr><th><label for="Name">Event Title</label></th><td>';
+    $output .='<input type="text" name="_my_meta[authorMeta]['.$ky.'][title]" id="" value="'.$val['title'].'" size="50" /> 
+     <br /><span class="description">Put event title here.</span>'; 
+  $output .='</td></tr>';
+  $output .='<tr><th><label for="Name">Event Time</label></th><td>';
+    $output .='<input type="text" name="_my_meta[authorMeta]['.$ky.'][time]" id="" value="'.$val['time'].'" size="50" /> 
+     <br /><span class="description">Put event time here.</span>'; 
+  $output .='</td></tr>';
+   	$output .='<tr><th><label for="Title">Event Description</label></th><td>';
+    $output .='<textarea name="_my_meta[authorMeta]['.$ky.'][description]" rows="10" cols="60">'.$val['description'].'</textarea><br />
+    <span class="description">Put event description here.</span>';
+    $output .='</td></tr>';
+	$output .='<tr><th><label for="description">Event Link</label></th><td>';
+    $output .='<input type="text" name="_my_meta[authorMeta]['.$ky.'][link]" id="" value="'.$val['link'].'" size="50" /> '; 
+    $output .='<br/><span class="description">Put event link here.</span>';
+	$output .='</td></tr>';
+	$output .='<tr><td><input type="button" onClick="authorDelete(this)" class="authorDelete button-primary" value="X"></td></tr>';
+   	$output .='</table>';
+    $output .='<hr>';
+    echo $output;
+    }
+   	echo '</div>';
+
+   }
+   else
+   {
+    echo '<div class="authorBoxwrap">';
+    echo '<table id="authorBox-1" class="form-table">';
+    echo '<tr><th><label for="name">Date</label></th><td>';
+    echo '<input type="text" name="_my_meta[authorMeta][1][date]" id="" value="" size="50" /> 
+		  <br /><span class="description">Put date here.</span>'; 
+	echo '</td></tr>';
+	echo '<tr><th><label for="name">Event Title</label></th><td>';
+    echo '<input type="text" name="_my_meta[authorMeta][1][title]" id="" value="" size="50" /> 
+		  <br /><span class="description">Put event title here.</span>'; 
+	echo '</td></tr>';
+	echo '<tr><th><label for="name">Event Time</label></th><td>';
+    echo '<input type="text" name="_my_meta[authorMeta][1][time]" id="" value="" size="50" /> 
+		  <br /><span class="description">Put event time here.</span>'; 
+	echo '</td></tr>';
+    echo '<tr><th><label for="title">Event Description</label></th><td>';
+  	echo '<textarea name="_my_meta[authorMeta][1][description]" rows="10" cols="60"></textarea>
+  	<br /><span class="description">Put event description here.</span> ';
+    echo '</td></tr>';
+	echo '<tr><th><label for="description">Event Link</label></th><td>';
+    echo '<input type="text" name="_my_meta[authorMeta][1][link]" id="" value="" size="50" />'; 
+    echo '<br/><span class="description">Put the event link here.</span>';
+	echo '</td></tr>';
+	echo '<tr><td><input type="button" onClick="authorDelete(this)" class="authorDelete button-primary" value="X"></td></tr>';
+    echo '</table>';
+    echo '<hr>';
+    echo '</div>';
+    } // else end
+ echo '<button id="authorBoxAdd" class="button-primary">Add More</button>';
+ ?>
+  <script type="text/javascript">
+             jQuery("button#authorBoxAdd").live('click', function(e) {
+             	//e.preventdefault();
+      var ingrLastID = parseInt(jQuery(".authorBoxwrap table").last().attr("id").replace("authorBox-", ""));
+      var ingrNewID = parseInt(ingrLastID+1);
+      //alert(ingrNewID);
+      var newTable =  '\
+      <table id="authorBox-'+ ingrNewID +'" class="form-table">\
+       <tr>\
+        <th><label for="Name">Date</label></th>\
+          <td class="colIngrAmount">\
+            <input type="text" name="_my_meta[authorMeta][' + ingrNewID + '][date]" value="" size="50">\
+            <br /><span class="description">Put date here.</span>\
+          </td>\
+          </tr>\
+           <tr>\
+        <th><label for="Name">Event Title</label></th>\
+          <td class="colIngrAmount">\
+            <input type="text" name="_my_meta[authorMeta][' + ingrNewID + '][title]" value="" size="50">\
+            <br /><span class="description">Put event title here.</span>\
+          </td>\
+          </tr>\
+             <tr>\
+        <th><label for="Name">Event Time</label></th>\
+          <td class="colIngrAmount">\
+            <input type="text" name="_my_meta[authorMeta][' + ingrNewID + '][time]" value="" size="50">\
+            <br /><span class="description">Put event time here.</span>\
+          </td>\
+          </tr>\
+        <tr>\
+        <th><label for="Title">Event Description</label></th>\
+          <td class="colIngrAmount">\
+          <textarea name="_my_meta[authorMeta]['+ ingrNewID +'][description]" id="desc' + ingrNewID + '" rows="10" cols="60"></textarea>\
+          <br /><span class="description">Put event description here.</span>\
+          </td>\
+          </tr>\
+          <tr><th><label for="description">Event Link</label></th><td>\
+          <input type="text" name="_my_meta[authorMeta][' + ingrNewID + '][link]" value="" size="50">\
+          <br /><span class="description">Put event link here.</span>\
+         </td></tr>\
+         <tr><td>\
+          <input type="button" onClick="authorDelete(this)" class="authorDelete button-primary" value="X">\
+          </td>\
+          </tr>\
+          </table>';
+         
+          jQuery(".authorBoxwrap").append(newTable);
+       return false;
+    });
+     /*
+      * Remove fields
+      */
+     function authorDelete (obj){
+          if (jQuery(".authorBoxwrap table").length < 2) {
+        alert("At least one is needed!");
+      }
+      else {
+          var delID= jQuery(obj).closest('.authorBoxwrap table').attr('id');
+          //alert(delID);
+          jQuery('#'+delID).remove();
+
+     }
+    } //authorDelete        
+ </script>
+<?php }
+function save_custom_meta_data_author($post_id){
+	global $wpdb;
+	$old = get_post_meta($post_id, 'team_member_info', true);
+	
+	$wp_upload_dir = wp_upload_dir();
+    $wp_upload_dir['baseurl'];
+    $insrtArray= $_POST['_my_meta'];
+
+	$new = $insrtArray;
+	    if ($new && $new != $old) {  
+		update_post_meta($post_id, 'team_member_info', $new); 
+	    } elseif ('' == $new && $old) {  
+		delete_post_meta($post_id, 'team_member_info', $old);  
+	    }
+
+}
+
+
+//add_action( 'save_post', 'save_custom_meta_data_author', 10 , 2);
+
+
+add_action( 'add_meta_boxes', 'adding_new_metaabox' );              
+function adding_new_metaabox() {
+    global $post;
+   // echo $post->ID;
+     if(!empty($post))
+    {
+      $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+
+        if($pageTemplate == 'tmp_homepolish.php')
+        {
+   
+
+
+        add_meta_box('html_myid_6111_section', 'Manage Top Section Content', 'my_output_function', 'page', 'normal', 'high');
+}
+
+}
+}
+function my_output_function( $post ) 
+    {
+
+ global $post;
+     if(!empty($post))
+    {
+
+    $top_date_text=get_post_meta (  $post->ID,'top_date_text' ,true);
+    $top_subtitle_text=get_post_meta (  $post->ID,'top_subtitle_text' ,true);
+    $welldesign_title_text=get_post_meta (  $post->ID,'welldesign_title_text' ,true);
+   // $valueeee2=  get_post_meta($post->ID, 'SMTH_METANAME_VALUE' , true ) ;
+    $welldesign_rightvertical_text=get_post_meta (  $post->ID,'welldesign_rightvertical_text' ,true);
+    $welldesign_whentitle_text=get_post_meta (  $post->ID,'welldesign_whentitle_text' ,true);
+    $welldesign_whencontent_text=get_post_meta (  $post->ID,'welldesign_whencontent_text' ,true);
+    $welldesign_wheretitle_text=get_post_meta (  $post->ID,'welldesign_wheretitle_text' ,true);
+    $welldesign_wherecontent_text=get_post_meta (  $post->ID,'welldesign_wherecontent_text' ,true);
+
+    $event_title_text=get_post_meta (  $post->ID,'event_title_text' ,true);
+    $signup_title_text=get_post_meta (  $post->ID,'signup_title_text' ,true);
+     $signup_subtitle_text=get_post_meta (  $post->ID,'signup_subtitle_text' ,true);
+       $signup_link_text=get_post_meta (  $post->ID,'signup_link_text' ,true);
+    ?>
+
+
+    <h3>Top Section Date</h3>
+   <input type="text" size="90" name="top_date_text" id="top_date_text" value="<?php echo $top_date_text; ?>" />
+    <h3>Top Section Subtitle</h3>
+   <input type="text" size="90" name="top_subtitle_text" id="top_subtitle_text" value="<?php echo $top_subtitle_text; ?>" />
+   <h3>Well Design Title</h3>
+   <input type="text" size="90" name="welldesign_title_text" id="welldesign_title_text" value="<?php echo $welldesign_title_text; ?>" />
+    <h3>Well Design Content</h3>
+    <?php
+    $abtprofilecontntval=  get_post_meta($post->ID, 'about_profile_content_meta' , true ) ;
+    wp_editor( htmlspecialchars_decode($abtprofilecontntval), 'mettaabox_ID_stylee2', $settings = array('textarea_name'=>'MyInputNAME2') ); ?>
+   <h3>Well Design Where Title</h3>
+   <input type="text" size="90" name="welldesign_wheretitle_text" id="welldesign_wheretitle_text" value="<?php echo $welldesign_wheretitle_text; ?>" />
+   <h3>Well Design Where content</h3>
+   <input type="text" size="90" name="welldesign_wherecontent_text" id="welldesign_wherecontent_text" value="<?php echo $welldesign_wherecontent_text; ?>" />
+    <h3>Well Design When Title</h3>
+   <input type="text" size="90" name="welldesign_whentitle_text" id="welldesign_whentitle_text" value="<?php echo $welldesign_whentitle_text; ?>" />
+   <h3>Well Design When content</h3>
+   <input type="text" size="90" name="welldesign_whencontent_text" id="welldesign_whencontent_text" value="<?php echo $welldesign_whencontent_text; ?>" />
+    <h3>Well Design Right Vertical Text</h3>
+   <input type="text" size="90" name="welldesign_rightvertical_text" id="welldesign_rightvertical_text" value="<?php echo $welldesign_rightvertical_text; ?>" />
+   <h3>Event Right Vertical Title</h3>
+   <input type="text" size="90" name="event_title_text" id="event_title_text" value="<?php echo $event_title_text; ?>" />
+   <h3>Sign Up Title</h3>
+   <input type="text" size="90" name="signup_title_text" id="signup_title_text" value="<?php echo $signup_title_text; ?>" />
+   <h3>Sign Up Subtitle</h3>
+   <input type="text" size="90" name="signup_subtitle_text" id="signup_subtitle_text" value="<?php echo $signup_subtitle_text; ?>" />
+      <h3>Sign Up Link</h3>
+   <input type="text" size="90" name="signup_link_text" id="signup_link_text" value="<?php echo $signup_link_text; ?>" />
+<?php    }
+}
+function save_my_postdata( $post_id ) 
+{                   
+    if (!empty($_POST['MyInputNAME2']))
+        {
+        $datta2=htmlspecialchars($_POST['MyInputNAME2']);
+        update_post_meta($post_id, 'about_profile_content_meta', $datta2 );
+        }
+          elseif(empty($_POST['MyInputNAME2'])){
+                delete_post_meta( $post_id, 'about_profile_content_meta','');
+        }
+
+        ////////////////////////////////////////
+
+          $top_date_text_old=get_post_meta (  $post_id,'top_date_text' ,true);
+     $top_date_text = $_POST['top_date_text'];
+     
+    if( $top_date_text || $top_date_text_old != $top_date_text  )  {
+        update_post_meta( $post_id, 'top_date_text', $top_date_text);
+    }
+    elseif( empty($top_date_text) || empty($top_date_text_old)){
+
+      delete_post_meta( $post_id, 'top_date_text','');
+    } 
+
+    /////////////////////////////////////////////
+
+    $top_subtitle_text_old=get_post_meta (  $post_id,'top_subtitle_text' ,true);
+     $top_subtitle_text = $_POST['top_subtitle_text'];
+     
+    if( $top_subtitle_text || $top_subtitle_text_old != $top_subtitle_text  )  {
+        update_post_meta( $post_id, 'top_subtitle_text', $top_subtitle_text);
+    }
+    elseif( empty($top_subtitle_text) || empty($top_subtitle_text_old)){
+
+      delete_post_meta( $post_id, 'top_subtitle_text','');
+    } 
+
+    ////////////////////////////////////////
+
+      $welldesign_title_text_old=get_post_meta (  $post_id,'welldesign_title_text' ,true);
+     $welldesign_title_text = $_POST['welldesign_title_text'];
+     
+    if( $welldesign_title_text || $welldesign_title_text_old != $welldesign_title_text  )  {
+        update_post_meta( $post_id, 'welldesign_title_text', $welldesign_title_text);
+    }
+    elseif( empty($welldesign_title_text) || empty($welldesign_title_text_old)){
+
+      delete_post_meta( $post_id, 'welldesign_title_text','');
+    } 
+
+    ////////////////////////////////////////
+
+      $welldesign_rightvertical_text_old=get_post_meta (  $post_id,'welldesign_rightvertical_text' ,true);
+     $welldesign_rightvertical_text = $_POST['welldesign_rightvertical_text'];
+     
+    if( $welldesign_rightvertical_text || $welldesign_rightvertical_text_old != $welldesign_rightvertical_text  )  {
+        update_post_meta( $post_id, 'welldesign_rightvertical_text', $welldesign_rightvertical_text);
+    }
+    elseif( empty($welldesign_rightvertical_text) || empty($welldesign_rightvertical_text_old)){
+
+      delete_post_meta( $post_id, 'welldesign_rightvertical_text','');
+    } 
+
+    ////////////////////////////////////////
+
+      $event_title_text_old=get_post_meta (  $post_id,'event_title_text' ,true);
+     $event_title_text = $_POST['event_title_text'];
+     
+    if( $event_title_text || $event_title_text_old != $event_title_text  )  {
+        update_post_meta( $post_id, 'event_title_text', $event_title_text);
+    }
+    elseif( empty($event_title_text) || empty($event_title_text_old)){
+
+      delete_post_meta( $post_id, 'event_title_text','');
+    } 
+
+    ////////////////////////////////////////
+
+      $signup_title_text_old=get_post_meta (  $post_id,'signup_title_text' ,true);
+     $signup_title_text = $_POST['signup_title_text'];
+     
+    if( $signup_title_text || $signup_title_text_old != $signup_title_text  )  {
+        update_post_meta( $post_id, 'signup_title_text', $signup_title_text);
+    }
+    elseif( empty($signup_title_text) || empty($signup_title_text_old)){
+
+      delete_post_meta( $post_id, 'signup_title_text','');
+    } 
+
+    ////////////////////////////////////////
+
+      $signup_subtitle_text_old=get_post_meta (  $post_id,'signup_subtitle_text' ,true);
+     $signup_subtitle_text = $_POST['signup_subtitle_text'];
+     
+    if( $signup_subtitle_text || $signup_subtitle_text_old != $signup_subtitle_text  )  {
+        update_post_meta( $post_id, 'signup_subtitle_text', $signup_subtitle_text);
+    }
+    elseif( empty($signup_subtitle_text) || empty($signup_subtitle_text_old)){
+
+      delete_post_meta( $post_id, 'signup_subtitle_text','');
+    } 
+
+    ////////////////////////////////////////
+
+      $welldesign_whentitle_text_old=get_post_meta (  $post_id,'welldesign_whentitle_text' ,true);
+     $welldesign_whentitle_text = $_POST['welldesign_whentitle_text'];
+     
+    if( $welldesign_whentitle_text || $welldesign_whentitle_text_old != $welldesign_whentitle_text  )  {
+        update_post_meta( $post_id, 'welldesign_whentitle_text', $welldesign_whentitle_text);
+    }
+    elseif( empty($welldesign_whentitle_text) || empty($welldesign_whentitle_text_old)){
+
+      delete_post_meta( $post_id, 'welldesign_whentitle_text','');
+    } 
+
+
+    ////////////////////////////////////////
+
+      $welldesign_whencontent_text_old=get_post_meta (  $post_id,'welldesign_whencontent_text' ,true);
+     $welldesign_whencontent_text = $_POST['welldesign_whencontent_text'];
+     
+    if( $welldesign_whencontent_text || $welldesign_whentitle_text_old != $welldesign_whencontent_text  )  {
+        update_post_meta( $post_id, 'welldesign_whencontent_text', $welldesign_whencontent_text);
+    }
+    elseif( empty($welldesign_whencontent_text) || empty($welldesign_whencontent_text_old)){
+
+      delete_post_meta( $post_id, 'welldesign_whencontent_text','');
+    }
+
+
+    ////////////////////////////////////////
+
+      $welldesign_wheretitle_text_old=get_post_meta (  $post_id,'welldesign_wheretitle_text' ,true);
+     $welldesign_wheretitle_text = $_POST['welldesign_wheretitle_text'];
+     
+    if( $welldesign_wheretitle_text || $welldesign_wheretitle_text_old != $welldesign_wheretitle_text  )  {
+        update_post_meta( $post_id, 'welldesign_wheretitle_text', $welldesign_wheretitle_text);
+    }
+    elseif( empty($welldesign_wheretitle_text) || empty($welldesign_wheretitle_text_old)){
+
+      delete_post_meta( $post_id, 'welldesign_wheretitle_text','');
+    } 
+
+    
+    ////////////////////////////////////////
+
+      $welldesign_wherecontent_text_old=get_post_meta (  $post_id,'welldesign_wherecontent_text' ,true);
+     $welldesign_wherecontent_text = $_POST['welldesign_wherecontent_text'];
+     
+    if( $welldesign_wherecontent_text || $welldesign_wherecontent_text_old != $welldesign_wherecontent_text  )  {
+        update_post_meta( $post_id, 'welldesign_wherecontent_text', $welldesign_wherecontent_text);
+    }
+    elseif( empty($welldesign_wherecontent_text) || empty($welldesign_wherecontent_text_old)){
+
+      delete_post_meta( $post_id, 'welldesign_wherecontent_text','');
+    }
+
+    ////////////////////////////////////////
+
+      $signup_link_text_old=get_post_meta (  $post_id,'signup_link_text' ,true);
+     $signup_link_text = $_POST['signup_link_text'];
+     
+    if( $signup_link_text || $signup_link_text_old != $signup_link_text  )  {
+        update_post_meta( $post_id, 'signup_link_text', $signup_link_text);
+    }
+    elseif( empty($signup_link_text) || empty($signup_link_text_old)){
+
+      delete_post_meta( $post_id, 'signup_link_text','');
+    }
+}
+add_action( 'save_post', 'save_my_postdata' ); 
+
+ function my_enqueue1() {
+  global $post;
+  $_GET['post'];
+        $pageTemplate = get_post_meta($_GET['post'], '_wp_page_template', true);
+        if($pageTemplate == 'tmp_homepolish.php')
+        	{
+        	wp_register_style( 'hadmin_css', get_template_directory_uri() . '/css/hadmin.css', false, '1.0.0' );
+       wp_enqueue_style( 'hadmin_css' );
+        }
+       }
+add_action( 'admin_enqueue_scripts', 'my_enqueue1' );
+?>

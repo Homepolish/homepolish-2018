@@ -1,0 +1,65 @@
+.hp-input-container {
+  display: block;
+  margin-bottom: 18px; // when an error message is hidden, add "placeholder" margin equal to what its line-height would be
+
+  label {
+    @include block-label;
+  }
+
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    border: 1px solid $grey-fourth;
+    box-shadow: none;
+    color: $black;
+    display: block;
+    height: 43px;
+    padding: 0 10px;
+    width: 100%;
+
+    &:focus,
+    &.focus {
+      border: 1px solid $black;
+      outline: none;
+    }
+  }
+
+  textarea { height: auto; }
+
+  &.hp-input-container--invalid {
+    margin-bottom: 0; // remove the "placeholder" margin to accommodate the error message
+
+    > label {
+      color: $red;
+    }
+
+    input,
+    textarea {
+      background-color: $pink;
+      border: 1px solid $red;
+    }
+  }
+}
+
+.hp-input-container-error {
+  color: $red;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.hp-input-container,
+.hp-checkbox-container {
+  font-size: 1.8rem;
+}

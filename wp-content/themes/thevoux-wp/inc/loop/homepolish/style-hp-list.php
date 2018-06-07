@@ -1,4 +1,4 @@
-<article itemscope <?php post_class('post style-hp-list'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post style-hp-list'); ?> id="post-<?php the_ID(); ?>" role="article">
   <div class="row" data-equal=">.columns">
     <div class="small-12 medium-7 large-7 columns">
       <?php if ( has_post_thumbnail() ) { ?>
@@ -36,7 +36,7 @@
           */
         ?>
         <header class="post-title entry-header">
-          <h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h3>
+          <h3 itemprop="headline"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="tertiary"><?php the_title(); ?></a></h3>
         </header>
         <div class="post-content">
           <p>

@@ -1,4 +1,4 @@
-<article itemscope <?php post_class('post related-post'); ?> id="post-<?php the_ID(); ?>" role="article">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post related-post'); ?> id="post-<?php the_ID(); ?>" role="article">
   <figure class="post-gallery small-6 medium-12 large-12 columns">
     <?php
       $image_id = get_post_thumbnail_id();
@@ -17,7 +17,7 @@
     <?php hmpl_get_category_aside(); ?>
 
     <header class="post-title entry-header">
-      <p class="small"><a href="<?php the_permalink(); ?>" class="tertiary" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+      <p itemprop="headline" class="small"><a href="<?php the_permalink(); ?>" class="tertiary" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
     </header>
   </div>
 </article>

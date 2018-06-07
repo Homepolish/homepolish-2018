@@ -575,11 +575,11 @@ if ( ! class_exists( 'OT_Loader' ) ) {
       <style>
         @font-face {
           font-family: "option-tree-font";
-          src:url("' . OT_URL . 'assets-2018/fonts/option-tree-font.eot");
-          src:url("' . OT_URL . 'assets-2018/fonts/option-tree-font.eot?#iefix") format("embedded-opentype"),
-            url("' . OT_URL . 'assets-2018/fonts/option-tree-font.woff") format("woff"),
-            url("' . OT_URL . 'assets-2018/fonts/option-tree-font.ttf") format("truetype"),
-            url("' . OT_URL . 'assets-2018/fonts/option-tree-font.svg#option-tree-font") format("svg");
+          src:url("' . OT_URL . 'assets/fonts/option-tree-font.eot");
+          src:url("' . OT_URL . 'assets/fonts/option-tree-font.eot?#iefix") format("embedded-opentype"),
+            url("' . OT_URL . 'assets/fonts/option-tree-font.woff") format("woff"),
+            url("' . OT_URL . 'assets/fonts/option-tree-font.ttf") format("truetype"),
+            url("' . OT_URL . 'assets/fonts/option-tree-font.svg#option-tree-font") format("svg");
           font-weight: normal;
           font-style: normal;
         }

@@ -1,0 +1,133 @@
+#taxonomy-title {
+  position: relative;
+  padding: 30px 0px 40px 0px;
+  text-align: center;
+
+  .taxonomy-description {
+    margin-top: 5px;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    content: '';
+    height: 1px;
+    width: 100px;
+    background-color: $grey_fifth;
+  }
+}
+
+// If we decide to use this style of nav in other places, should be renamed + extracted
+.taxonomy-nav {
+  float: right;
+  margin-top: 10px;
+
+  > a {
+    @extend h6;
+    display: inline-block;
+
+    &.prev {
+      margin-right: 40px;
+    }
+
+    &.inactive {
+      pointer-events: none;
+      cursor: default;
+      color: $grey_second;
+    }
+
+    [class*="v1-icon"]:before { font-size: 1.2rem; }
+  }
+}
+
+.style-hp-taxonomy-post {
+  > .row {
+    padding: 40px 0;
+    border-bottom: 1px solid $grey_fifth;
+  }
+
+  > .row > .medium-3 {
+    padding: 30px 20px 40px 20px;
+
+    background-color: $grey_sixth;
+
+    .post-title,
+    .post-featured-thumbnail,
+    .post-excerpt {
+      margin-bottom: 15px;
+    }
+
+    .post-link {
+      a.secondary {
+        h6 {
+          display: inline-block;
+          text-decoration: underline;
+        }
+
+        .v1-icon-caret-right:before {font-size: 1.2rem; }
+
+        &:hover, &:focus, &:active, &:visited {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .attachments-grid {
+    // Sorry.  Will try to re-layout this section w/o table
+    table {
+      margin: 0;
+      width: 100%;
+      border-collapse: collapse;
+
+      tr {
+        background-color: $white;
+
+        // The headers only exist to enforce a set 25% width, regardless of actual
+        // number of attachments
+        > th {
+          height: 0;
+          padding: 0;
+          margin: 0;
+        }
+
+        > td {
+          width: 25%;
+          vertical-align: top;
+          padding: 0 0 40px 15px;
+
+          h6 + p {
+            margin-top: 4px;
+          }
+
+          img {
+            margin-bottom: 10px;
+          }
+
+          @media only screen and (max-width: $break-small) {
+            // Split the row in half
+            width: 50%;
+            display: inline-block;
+            padding: 0 0 40px 0;
+
+            &:nth-of-type(odd) {
+              padding-right: .46875em; // 1/2 the default grid gutter width
+            }
+
+            &:nth-of-type(even) {
+              padding-left: .46875em;
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: $break-small) {
+        margin-top: 40px;
+      }
+    }
+  }
+}

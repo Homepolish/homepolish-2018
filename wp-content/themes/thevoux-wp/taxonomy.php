@@ -1,5 +1,4 @@
-<!-- taxonomy.php -->
-<?php
+<!-- tax --><?php
   $taxonomy_term = get_queried_object();
   if (have_posts()) {
   	$child_attachments = hmpl_tax_child_attachments($posts, $taxonomy_term);

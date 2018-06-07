@@ -8,7 +8,7 @@ add_action( 'after_setup_theme', 'thb_theme_slug_setup' );
 /* Editor Style */
 function thb_add_editor_styles() {
     // $font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Lora:300,400,400italic,500,600,700' );
-    // add_editor_style( array($font_url, 'assets-2018/css/editor-style.css') );
+    // add_editor_style( array($font_url, 'assets/css/editor-style.css') );
 }
 add_action( 'after_setup_theme', 'thb_add_editor_styles' );
 
@@ -700,7 +700,7 @@ function thb_fbLikeCount($pageID) {
 	}
 
 	// EAR 4/16/18 a fake number
-	echo thb_numberAbbreviation(50000);
+	echo thb_numberAbbreviation(47000);
 
 	//echo thb_numberAbbreviation($likes);
 }
