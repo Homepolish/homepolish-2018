@@ -1,1 +1,0 @@
-<?php wp_nav_menu( array( 'menu' => 'header', 'theme_location' => 'nav-menu', 'depth' => 3, 'container' => false, 'menu_class' => 'full-menu nav', 'walker' => new thb_MegaMenu_tagandcat_Walker ) ); ?>

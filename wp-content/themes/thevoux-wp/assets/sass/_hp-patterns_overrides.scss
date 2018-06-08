@@ -1,6 +1,0 @@
-.v1-icon-loading:before { @include animation(spin 2s infinite linear); }
-
-// Temporary, this will become the default in patterns-v2
-[class^="v1-icon-"]:before, [class*=" v1-icon-"]:before {
-  font-size: inherit;
-}
