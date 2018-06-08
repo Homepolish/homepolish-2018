@@ -14,7 +14,7 @@
                     <?php the_field( 'sign_up_copy' ); ?>
                 </p>
                 <?php the_field( 'sign_up_email_form' ); ?>
-                <h6 class="existing-account-link"><?php the_field( 'sign_up_link' ); ?></h6>
+                <h6 class="existing-account-link"><?php the_field( 'sign_up_link_text' ); ?></h6>
             </div>
         </div>
     </div>

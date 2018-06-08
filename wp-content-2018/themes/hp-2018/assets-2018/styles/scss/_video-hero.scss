@@ -98,10 +98,14 @@
                 color: white;
         }
 
-        .existing-account-link a {
+        .existing-account-link {
 
             color: white;
-            text-decoration: underline;
+            
+            a {
+                color: white;
+                text-decoration: underline;
+            
         } 
 
         .book-now-signup .form-field {
