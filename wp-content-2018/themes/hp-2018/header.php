@@ -3,10 +3,10 @@
 	// This is a stopgap as we change the URL scheme. Once we go live with /mag, remove 6/8/18 EAR
 	if( ! strpos( site_url(), 'staging' ) ) {
 
-		echo 'prod or dev';
+		echo '<!-- prod or dev -->';
 	}
 	else {
-		echo 'staging!';
+		echo '<!-- staging! -->';
 	}
 ?>
 
