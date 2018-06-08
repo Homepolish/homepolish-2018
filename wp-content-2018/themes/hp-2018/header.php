@@ -1,3 +1,12 @@
+<?php
+
+	// This is a stopgap as we change the URL scheme. Once we go live with /mag, remove 6/8/18 EAR
+	if( ! strpos( site_url(), 'staging' ) ) {
+
+		echo '<!-- staging -->';
+	}
+?>
+
 <!-- homepolishwp --><!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/<?php echo hp_page_meta()['page_type']; ?>" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
