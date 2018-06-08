@@ -91,15 +91,19 @@
   #page-template li {
     margin: 0 0 20px; }
 
-.hero {
+.hero.video-hero {
+  display: table;
   position: relative;
   overflow: hidden;
   height: 375px;
-  max-height: 1080px; }
+  max-height: 1080px;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important; }
   @media only screen and (min-width: 768px) {
-    .hero {
+    .hero.video-hero {
       height: 56.25vw; } }
-  .hero > img, .hero picture img, .hero video {
+  .hero.video-hero > img, .hero.video-hero picture img, .hero.video-hero video {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -109,45 +113,46 @@
     min-height: 100%;
     max-width: 177.77778vh;
     max-height: 56.25vw; }
-  .hero img {
+  .hero.video-hero img {
     transition: opacity 0.6s cubic-bezier(0.39, 0.575, 0.565, 1); }
-  .hero video {
+  .hero.video-hero video {
     display: none; }
     @media only screen and (min-width: 768px) {
-      .hero video {
+      .hero.video-hero video {
         display: block;
         opacity: 0;
         transition: opacity .4s; }
-        .hero video.is-playing {
+        .hero.video-hero video.is-playing {
           opacity: 1; } }
-  .landing-pages--homepage .hero {
-    padding-top: 150px; }
-    @media only screen and (min-width: 768px) {
-      .landing-pages--homepage .hero {
-        padding-top: 225px; } }
-    @media only screen and (min-width: 1024px) {
-      .landing-pages--homepage .hero {
-        padding-top: 250px; } }
-    .landing-pages--homepage .hero .hero__tagline {
-      font-size: 3em;
-      white-space: normal;
-      width: 90%; }
-      @media only screen and (min-width: 768px) {
-        .landing-pages--homepage .hero .hero__tagline {
-          display: block !important;
-          font-size: 4em; } }
-  .hero .hero__signup {
+  .hero.video-hero .hero-content-container {
+    display: table-cell;
+    vertical-align: middle;
     position: relative;
-    z-index: 1;
-    background-color: transparent !important; }
-    .hero .hero__signup .signup-subheader {
+    z-index: 1; }
+  .landing-pages--homepage .hero.video-hero .hero__tagline {
+    font-size: 3em;
+    text-align: center;
+    top: auto;
+    margin-bottom: 25px;
+    position: relative;
+    white-space: normal;
+    width: 90%; }
+    @media only screen and (min-width: 1024px) {
+      .landing-pages--homepage .hero.video-hero .hero__tagline {
+        display: block !important;
+        font-size: 4em;
+        margin-bottom: 50px; } }
+  .hero.video-hero .hero__signup {
+    background-color: transparent !important;
+    padding: 0; }
+    .hero.video-hero .hero__signup .signup-subheader {
       color: white; }
-    .hero .hero__signup .existing-account-link a {
+    .hero.video-hero .hero__signup .existing-account-link a {
       color: white; }
-    .hero .hero__signup .book-now-signup .form-field {
+    .hero.video-hero .hero__signup .book-now-signup .form-field {
       border-bottom: none;
       padding-left: 30px; }
-    .hero .hero__signup .v1-icon-caret-right {
+    .hero.video-hero .hero__signup .v1-icon-caret-right {
       color: white; }
 
 .transparent {

@@ -1,9 +1,13 @@
-﻿.hero {
+﻿.hero.video-hero {
     
+    display: table;
     position: relative;
     overflow: hidden;
     height: 375px;
     max-height: 1080px;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
 
         @media only screen and (min-width: 768px) {
 
@@ -46,42 +50,47 @@
         }
     }
 
+    .hero-content-container {
+
+        display: table-cell;   
+        vertical-align: middle;
+        position: relative;
+        z-index: 1;
+    }
+
     .landing-pages--homepage & {
 
-        padding-top: 150px;
-
         @media only screen and (min-width: 768px) {
-
-            padding-top: 225px;
 
         }
 
          @media only screen and (min-width: 1024px) {
-
-            padding-top: 250px;
 
         }
 
         .hero__tagline {
 
             font-size: 3em;
+            text-align: center;
+            top: auto;
+            margin-bottom: 25px;
+            position: relative;
             white-space: normal;
             width: 90%;
 
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: 1024px) {
 
                 display: block !important;
                 font-size: 4em;
+                margin-bottom: 50px;
             }
         }
     }
 
     .hero__signup {
 
-        position: relative;
-        z-index: 1;
         background-color: transparent !important;
-        
+        padding: 0;
 
         .signup-subheader {
 

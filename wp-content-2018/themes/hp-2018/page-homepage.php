@@ -1,34 +1,32 @@
 <?php get_header(); ?>
 
-<!-- /.video hero -->
+<!-- video hero -->
 
 <div class="hero video-hero">
     <img src="<?php the_field( 'vh_image' ); ?>" alt="" class="">
     <video muted="" playsinline="" webkit-playsinline="" autoplay="true" loop="true" src="<?php the_field( 'vh_video_path' ); ?>" class="is-playing"></video>
-    <h1 class="hero__tagline formatted-copy--desktop"><?php the_field( 'vh_heading' ); ?></h1>
-    <h1 class="hero__tagline formatted-copy--mobile"><?php the_field( 'vh_heading' ); ?></h1>
-    <div class="hero__signup" data-hero-content>
-        <div class="book-now-signup book-now-signup-start-email">
-            <p class="signup-subheader">
-                <?php the_field( 'sign_up_copy' ); ?>
-            </p>
-            <?php the_field( 'sign_up_email_form' ); ?>
-            <h6 class="existing-account-link">
+    
+    <div class="hero-content-container">
+        <h1 class="hero__tagline"><?php the_field( 'vh_heading' ); ?></h1>
+        <div class="hero__signup" data-hero-content>
+            <div class="book-now-signup book-now-signup-start-email">
+                <p class="signup-subheader">
+                    <?php the_field( 'sign_up_copy' ); ?>
+                </p>
+                <?php the_field( 'sign_up_email_form' ); ?>
+                <h6 class="existing-account-link">
 
-                <?php 
-                    $sign_up_link = get_field( 'sign_up_link' );
-                    echo '<a href="' . $sign_up_link['url'] . '">' . $sign_up_link['title'] . '</a>';
-                ?> <span class="v1-icon-caret-right"></span>
-            </h6>
+                    <?php 
+                        $sign_up_link = get_field( 'sign_up_link' );
+                        echo '<a href="' . $sign_up_link['url'] . '">' . $sign_up_link['title'] . '</a>';
+                    ?> <span class="v1-icon-caret-right"></span>
+                </h6>
+            </div>
         </div>
     </div>
-</div>
+</div><!-- /.video hero -->
 
-<!-- /.video-hero -->
-
-<!-- slideshow hero -->
-
-<!-- 
+<!-- slideshow hero 
 
 <div class="hero">
     <div class="hero__slideshow" data-slideshow>
