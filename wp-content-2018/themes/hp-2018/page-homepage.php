@@ -14,13 +14,7 @@
                     <?php the_field( 'sign_up_copy' ); ?>
                 </p>
                 <?php the_field( 'sign_up_email_form' ); ?>
-                <h6 class="existing-account-link">
-
-                    <?php 
-                        $sign_up_link = get_field( 'sign_up_link' );
-                        echo '<a href="' . $sign_up_link['url'] . '">' . $sign_up_link['title'] . '</a>';
-                    ?> <span class="v1-icon-caret-right"></span>
-                </h6>
+                <h6 class="existing-account-link"><?php the_field( 'sign_up_link' ); ?></h6>
             </div>
         </div>
     </div>
@@ -67,13 +61,7 @@
                 <?php the_field( 'sign_up_copy' ); ?>
             </p>
             <?php the_field( 'sign_up_email_form' ); ?>
-            <h6 class="existing-account-link">
-
-                <?php 
-                    $sign_up_link = get_field( 'sign_up_link' );
-                    echo '<a href="' . $sign_up_link['url'] . '">' . $sign_up_link['title'] . '</a>';
-                ?> <span class="v1-icon-caret-right"></span>
-            </h6>
+            <h6 class="existing-account-link"><?php the_field( 'sign_up_link' ); ?></h6>
         </div>
     </div>
 </div> --><!-- ./slideshow hero -->
