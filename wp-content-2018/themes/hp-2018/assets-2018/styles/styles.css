@@ -136,7 +136,7 @@
     margin-bottom: 25px;
     position: relative;
     white-space: normal;
-    width: 90%; }
+    padding: 0 5% 0 5%; }
     @media only screen and (min-width: 1024px) {
       .landing-pages--homepage .hero.video-hero .hero__tagline {
         display: block !important;
