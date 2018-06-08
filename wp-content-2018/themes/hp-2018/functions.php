@@ -145,8 +145,8 @@ add_action('wp_head', 'hp_page_meta_tags');
 function hp_enqueue_scripts() {
 
 	wp_enqueue_style( 'header', get_template_directory_uri() . '/assets-2018/styles/header.css' );
-	wp_enqueue_style( 'foundation', get_template_directory_uri() . '/assets-2018/foundation/styles/foundation.css', null, null );
-	wp_enqueue_style( 'hp-foundation', get_template_directory_uri() . '/assets-2018/foundation/styles/hp-foundation.css', null, null );
+	//wp_enqueue_style( 'foundation', get_template_directory_uri() . '/assets-2018/foundation/styles/foundation.css', null, null );
+	//wp_enqueue_style( 'hp-foundation', get_template_directory_uri() . '/assets-2018/foundation/styles/hp-foundation.css', null, null );
 	wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets-2018/styles/footer.css' );
 
 	if ( hp_page_type() == '2018' ) {
@@ -170,8 +170,8 @@ function hp_enqueue_scripts() {
 			wp_enqueue_script( 'page-slug', get_template_directory_uri() . '/assets-2018/js/' . $post_slug . '.js', 0, 0, 1 );
 		}
 
-		wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets-2018/foundation/js/foundation.min.js', 0, 0, 1 );
-		wp_enqueue_script( 'foundation-app', get_template_directory_uri() . '/assets-2018/foundation/js/foundation-app.js', 0, 0, 1 );
+		//wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets-2018/foundation/js/foundation.min.js', 0, 0, 1 );
+		//wp_enqueue_script( 'foundation-app', get_template_directory_uri() . '/assets-2018/foundation/js/foundation-app.js', 0, 0, 1 );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'hp_enqueue_scripts' );
