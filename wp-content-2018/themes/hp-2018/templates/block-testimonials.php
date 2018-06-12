@@ -38,7 +38,10 @@
 						“<?php the_field( 'quote', $testimonial->ID ); ?>“
 						</p>
 						<div class="client-review-attribution">
-						<h6 class="client-name"><?php the_field( 'testimonial_name', $testimonial->ID ); ?><?php //echo get_the_title( $testimonial->ID ); ?></h6>
+
+							<?php $testimonial_type = wp_get_post_terms( $testimonial->ID, 'testimonial_type' ); ?>
+
+						<h6 class="client-name"><?php the_field( 'testimonial_name', $testimonial->ID ); ?>, <?php echo $testimonial_type[0]->name; ?> Client</h6>
 						</div>
 					</div>
 
