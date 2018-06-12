@@ -147,8 +147,7 @@
 			<h5 class="intro"><?php the_field( 'pb_subtitle' ); ?></h5>
 		</div>
 		<div class="logos-desktop">
-			<?php $image = get_field( 'pb_image' ); ?>
-			<img class="logos-desktop-img" src="<?php echo $image['url']; ?>">
+			<img class="logos-desktop-img" src="<?php the_field( 'pb_image_path' ); ?>">
 		</div>
 	</div>
 </div><!-- ./brands -->
