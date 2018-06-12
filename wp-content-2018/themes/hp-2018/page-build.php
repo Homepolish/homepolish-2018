@@ -36,7 +36,13 @@
 
 <?php get_template_part('templates/block', 'testimonials'); ?><!-- testimonials block -->
 
+
+
 <!-- build-services-portfolio -->
+
+<?php the_field( 'free2_html' ); ?>
+
+<!--
 
 <div class="image-grid ">
 	<div class="commercial-case-studies">
@@ -92,9 +98,7 @@
 							</div>
 						</a>
 					</div>
-
 			<?php } ?>
-			<!-- case study -->
 		</div>
 	</div>
 </div><!-- build-services-portfolio -->
