@@ -372,7 +372,7 @@
 <div class="owl-carousel" data-owl-carousel>
 
     <?php
-        $i = 1;
+        $i = 0;
         $press_items = get_field( 'pss_slides' );
 
         foreach( $press_items as $key => $press ) { 
