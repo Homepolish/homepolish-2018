@@ -10,6 +10,21 @@ show_admin_bar( 0 );
 
 include_once( 'hp-2018/vc-shortcodes.php' );
 
+/** 
+@ Set Header Nav Active Link
+*/
+
+function hp_nav_is_active( $current_post ) {
+
+	global $post; 
+	$post_slug = $post->post_name;
+	
+	if ( $post_slug == $current_post ) {
+
+		echo 'active';
+	}
+}
+
 /**
 @ Set Page Type; Mag||2018
 */
@@ -40,6 +55,7 @@ function hp_page_meta() {
 	$post_slug = $post->post_name;	
 
 	// Default Meta Values
+	$hp_page_meta['post_slug']			= $post_slug;
 	$hp_page_meta['body_class']			= $post_slug;
 	$hp_page_meta['data_action']		= $post_slug;
 	$hp_page_meta['data_controller']	= 'landing_pages';

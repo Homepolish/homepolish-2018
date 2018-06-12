@@ -19,23 +19,24 @@
         </div>
 
           <nav class="hp-header__nav">
-          <a class="tertiary nav__link " href="/about-us">About Us</a>
 
-          <a class="tertiary nav__link " href="/portfolio">Portfolio</a>
+          <a class="tertiary nav__link <?php hp_nav_is_active( 'about-us' ); ?>" href="/about-us">About Us</a>
 
-          <a class="tertiary nav__link " href="/commercial">Commercial</a>
+          <a class="tertiary nav__link <?php hp_nav_is_active( 'portfolio' ); ?>" href="/portfolio">Portfolio</a>
+
+          <a class="tertiary nav__link <?php hp_nav_is_active( 'commercial' ); ?>" href="/commercial">Commercial</a>
 
           <a href="/" class="hp-header__logo-link hp-header__logo-link--desktop">
           <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--white" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark-white.png" />
           <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark.png" />
           </a>
 
-          <a class="tertiary nav__link " href="/concierge">Concierge</a>
+          <a class="tertiary nav__link <?php hp_nav_is_active( 'concierge' ); ?>" href="/concierge">Concierge</a>
 
-          <a class="tertiary nav__link" href="/build">Build</a>
+          <a class="tertiary nav__link <?php hp_nav_is_active( 'build' ); ?>" href="/build">Build</a>
           </h6>
 
-          <a class="tertiary nav__link" href="/mag">The Magazine</a>
+          <a class="tertiary nav__link <?php hp_nav_is_active( 'mag' ); ?>" href="/mag">The Magazine</a>
           </nav>
     </header>
 </div>
