@@ -381,7 +381,7 @@
                 '.landing-pages--homepage .press .slide.slide--' . $i
             );
             echo hp_image_styles( $args  );
-<?php } ?>
+} ?>
 
 <div class="press"><div class="press__slides"><div class="owl-carousel" data-owl-carousel><?php
         $i = 1;
