@@ -367,9 +367,7 @@
 
 <!-- press -->
 
-<div class="press">
-<div class="press__slides">
-<div class="owl-carousel" data-owl-carousel><?php
+<div class="press"><div class="press__slides"><div class="owl-carousel" data-owl-carousel><?php
         $i = 0;
         $press_items = get_field( 'pss_slides' );
 
