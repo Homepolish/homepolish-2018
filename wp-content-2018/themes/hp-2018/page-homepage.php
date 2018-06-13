@@ -392,12 +392,13 @@
                 <h2 class="slide__quote slide__quote--<?php echo $i; ?>">
                     “<?php the_field( 'quote', $press_id ); ?>”
                 </h2>
-
+<!--
                 <div class="slide__attribution">
                 —
                 <img src="<?php echo $press_logo['url']; ?>" class="slide__logo" />
                 </div>
             </div>
+-->
 
     <?php $i++; } ?>
 
