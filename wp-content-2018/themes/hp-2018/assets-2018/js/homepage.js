@@ -181,11 +181,11 @@ function(e) {
                 n = t.find("[data-owl-carousel]"),
                 o = {
                     center: !0,
-                    loop: !0,
+                    loop: 0,
                     autoplay: !0,
                     autoplayTimeout: 7e3,
                     mouseDrag: !1,
-                    //items: 1,
+                    items: 1,
                     dots: !0
                 };
             n.owlCarousel(o), t.on("mouseenter", function() {
