@@ -5,8 +5,6 @@
 	$page_ID = $page->ID;
 ?>
 
-<!-- our-mission -->
-
 <?php
 	$args = array( 
 		get_the_post_thumbnail_url( $page_ID ), 

@@ -1,4 +1,3 @@
-<!-- archive.php -->
 <?php get_header(); ?>
 <?php get_template_part( 'inc/header/archive-title' ); ?>
 <div class="row archive-page-container">

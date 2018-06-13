@@ -1,16 +1,5 @@
-<?php
-
-	// This is a stopgap as we change the URL scheme. Once we go live with /mag, remove 6/8/18 EAR
-	if( ! strpos( site_url(), 'staging' ) ) {
-
-		echo '<!-- prod or dev -->';
-	}
-	else {
-		echo '<!-- staging! -->';
-	}
-?>
-
-<!-- homepolishwp --><!DOCTYPE html>
+<?php echo '<!-- ' . basename( get_page_template() ) . ' -->'; ?>
+<!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/<?php echo hp_page_meta()['page_type']; ?>" lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
 	<link href="<?php echo get_template_directory_uri(); ?>/assets-2018/favicon.ico" rel="shortcut icon" type="image/x-icon" />

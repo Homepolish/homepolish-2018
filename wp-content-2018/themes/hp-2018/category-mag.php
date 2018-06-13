@@ -1,4 +1,3 @@
-<!-- category-mag.php -->
 <?php get_header(); ?>
 <?php //$blog_featured = get_ot_option_do_a_search_for_this('blog_featured'); ?>
 

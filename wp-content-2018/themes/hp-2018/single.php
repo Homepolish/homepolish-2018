@@ -1,4 +1,3 @@
-<!-- single.php -->
 <?php get_header(); ?>
 <?php 
 	$id = $wp_query->get_queried_object_id();

@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- Fix this ID-->
-
 <div id="page-template">
 
 	<?php 
