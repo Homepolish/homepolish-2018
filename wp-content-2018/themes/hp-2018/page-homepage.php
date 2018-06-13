@@ -367,20 +367,21 @@
 
 <!-- press -->
 
-<?php $i = 1;
-        $press_items = get_field( 'pss_slides' );
+<?php 
+	$i = 1;
+    $press_items = get_field( 'pss_slides' );
 
-        foreach( $press_items as $key => $press ) { 
+    foreach( $press_items as $key => $press ) { 
 
-            $press_id       = $press['pss_slide']->ID; 
-            $press_logo     = get_field( 'logo', $press_id );
+        $press_id       = $press['pss_slide']->ID; 
+        $press_logo     = get_field( 'logo', $press_id );
 
-            $args = array( 
-                get_the_post_thumbnail_url( $press_id ),  
-                get_the_post_thumbnail_url( $press_id ),  
-                '.landing-pages--homepage .press .slide.slide--' . $i
-            );
-            echo hp_image_styles( $args  );
+        $args = array( 
+            get_the_post_thumbnail_url( $press_id ),  
+            get_the_post_thumbnail_url( $press_id ),  
+            '.landing-pages--homepage .press .slide.slide--' . $i
+        );
+        echo hp_image_styles( $args  );
 } ?>
 
 <div class="press"><div class="press__slides"><div class="owl-carousel" data-owl-carousel><?php
