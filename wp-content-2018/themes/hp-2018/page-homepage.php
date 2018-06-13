@@ -369,9 +369,7 @@
 
 <div class="press">
 <div class="press__slides">
-<div class="owl-carousel" data-owl-carousel>
-
-    <?php
+<div class="owl-carousel" data-owl-carousel><?php
         $i = 0;
         $press_items = get_field( 'pss_slides' );
 
@@ -386,25 +384,7 @@
                 '.landing-pages--homepage .press .slide.slide--' . $i
             );
             echo hp_image_styles( $args  );
-            ?>
-
-            <div class="slide slide--<?php echo $i; ?>">
-                <h2 class="slide__quote slide__quote--<?php echo $i; ?>">
-                    “<?php the_field( 'quote', $press_id ); ?>”
-                </h2>
-<!--
-                <div class="slide__attribution">
-                —
-                <img src="<?php echo $press_logo['url']; ?>" class="slide__logo" />
-                </div>
-            </div>
--->
-
-    <?php $i++; } ?>
-
-</div>
-</div>
-</div>
+            ?><div class="slide slide--<?php echo $i; ?>"><h2 class="slide__quote slide__quote--<?php echo $i; ?>">“<?php the_field( 'quote', $press_id ); ?>”</h2><div class="slide__attribution"> — <img src="<?php echo $press_logo['url']; ?>" class="slide__logo" /></div></div><?php $i++; } ?></div></div></div>
 <!-- ./press -->
 
 <!-- book-now -->
