@@ -1,0 +1,478 @@
+.posts {}
+.post {
+	.single-story-share {
+		text-align: center;
+
+		> h6 {
+			margin: 5px 0 10px 0;
+		}
+	}
+	.post-meta {
+		position: relative;
+		h6 { margin: 0px; }
+		margin: 0 0 5px;
+		span { line-height: 1; vertical-align: text-top; }
+	}
+	.article-tags {
+		display: block;
+		margin: 30px 0;
+		font-size: 11px;
+		color: $color1;
+		font-weight: 400;
+		text-transform: uppercase;
+		a {
+			color: $color3;	
+		}
+	}
+	.post-author {
+		font-size: 12px;
+		color: #767676;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin: 10px 0 35px;
+		em {
+			text-transform: none;
+			color: #545353;
+			@extend .mont;
+		}
+		a {
+			
+			font-weight: 600;	
+		}
+	}
+	.post-gallery {
+		display: block;
+		position: relative;
+		margin: 0px;
+		padding: 0;
+		overflow: hidden;
+		@extend .cf;
+		img {
+			width: 100%;
+			
+			@extend .transition;
+		}
+		// Pinterest & image combinations
+		> .hp-share-icon {
+			position: absolute;
+			top: 2.6%;
+			left: 2%;
+
+			> .circle-icon {
+				margin: 0;
+			}
+
+			@media only screen and (max-width: $break-small) {
+				display: none;
+			}
+		}
+		&>a {
+			display: block;	
+		}
+		.gallery-link {
+			position: absolute;
+			top: 80px;
+			right: 0;
+			background: $color3;
+			color: #fff;
+		}
+	}
+	.post-content {
+		float: none;
+		position: relative;
+		.post-content-body {
+			a { @extend .secondary; }
+		}
+	}
+	.post-title {
+		margin-bottom: 5px;
+	}
+	.featured-title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 0 auto;
+		text-align: center;
+		
+		.post-meta {
+			text-transform: uppercase;
+			margin-bottom: 5px;
+		}
+		
+	}
+	&.sticky {
+		.post-title a {
+		  text-decoration: underline;
+		}
+	}
+	&.mega-menu-post {
+		.post-meta { h6 { @extend .micro; } }
+	}
+
+	// Feed posts
+	&.style-hp-feature {
+		text-align: center;
+		margin-bottom: 0px !important;
+		figure { margin-bottom: 0px; max-height: 420px; } // Make sure the featured image doesn't take up too much real estate
+
+		.style-hp-feature-container {
+			display: inline-block;
+			background-color: #fff;
+			padding: 20px 50px;
+			position: relative;
+			margin: -58px 0px 0px 0px;
+			max-width: 550px;
+
+			.post-meta,
+			.post-author {
+				display: inline-block;
+				margin: 0 0 10px;
+			}
+			.post-gallery {
+				margin: 0 0 25px;
+			}
+			.post-title.entry-header {
+				margin-bottom: 0px;
+			}
+			.post-content p {
+				color: #545353;
+				margin: 0;
+			}
+			.post-links {
+				margin-top: 20px;
+			}
+
+			@media only screen and (max-width: $break-small) {
+				margin-top: 0;
+				padding: 25px 0px 25px 0px;
+			}
+		}
+	}
+	&.style-hp-list {
+		padding-bottom: 29px;
+		border-bottom: 1px solid $color4;
+		margin-bottom: 30px;
+		.summary {
+			vertical-align: top;
+			padding-top: 4%;
+			.post-meta,
+			.post-author {
+				display: inline-block;
+			}
+
+			@media only screen and (max-width: $break-small) {
+				padding-top: 0px;
+			}
+		}
+		.post-gallery {
+			margin-bottom: 25px;
+			
+			@media only screen and (min-width: $break-small) {
+				margin-bottom: 0;
+			}
+		}
+		&:last-of-type {
+			border: 0;
+			margin: 0;
+			padding: 0;	
+		}
+	}
+	&.style-hp-multi-cat-sq, &.style-hp-single-cat-sq {
+		overflow: hidden;  // In order to allow for uniform heights
+
+		.summary {
+			margin-top: 0px;
+
+			.post-content p {
+				@extend .small;
+				margin-bottom: 0px;
+			}
+		}
+
+		@media only screen and (min-width: $break-medium) {
+			height: 150px;
+		}
+	}
+
+	// Post Detail Styles
+	&.single-story {
+		.post-title,
+		.post-subtitle {
+			margin-bottom: 15px;
+		}
+
+		.post-subtitle {
+			.list-terms-container {
+				height: 22px;
+				line-height: 22px;
+
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					line-height: normal;
+				}
+
+				.small {
+					margin-right: 8px;
+				}
+
+				.post-term {
+					padding: 4px 10px;
+					background: $grey_sixth;
+
+					h6 {
+						color: $grey_first;
+					}
+
+					&:hover {
+						background: $grey_fifth;
+					}
+				}
+
+				@media only screen and (max-width: $break-small) {
+					display: none;
+				}
+			}
+
+			.gallery-link-container {
+				padding-top: 4px;
+				white-space: nowrap;
+				text-align: right;
+
+				.gallery-link {
+					display: inline-block;
+					position: relative;
+					margin-right: 29px;
+
+					> .v1-icon-gallery {
+						position: absolute;
+						bottom: -6px;
+						right: -30px;
+
+						&:before {
+							font-size: 29px;
+							margin: 0;
+						}
+					}
+				}
+
+				@media only screen and (max-width: $break-small) {
+					text-align: left;
+				}
+			}
+		}
+ 		.post-gallery {
+ 			margin: 0 0 30px;
+
+			// Featured image, clicking opens the gallery
+			> img { cursor: pointer; }
+ 		}
+
+		@mixin post-section-bottom-border {
+			border-top: none;
+			border-bottom: 1px solid $grey_fifth;
+			margin-bottom: 25px;
+			padding-bottom: 25px;
+		}
+
+		.data-grid {
+			@include post-section-bottom-border;
+
+			text-align: center;
+
+			@media only screen and (max-width: $break-small) {
+				border-top: 1px solid $grey_third;
+				border-bottom: 1px solid $grey_third;
+				padding-bottom: 15px;
+			}
+
+			& > div { // the data grid row
+				@media only screen and (max-width: $break-small) {
+					border-bottom: 1px solid $grey_fifth;
+					padding: 15px 0px;
+					&:last-child {
+						border-bottom: none;
+						padding-bottom: 0;
+					}
+				}
+
+				& > div { // the data grid components
+					margin-top: 5px; // separation between <h6> and <p>
+					@media only screen and (max-width: $break-small) {
+						margin-top: 0px;
+						text-align: right;
+						&:first-child { text-align: left; }
+						h6 { display: inline; }
+					}
+				}
+			}
+		}
+
+		.excerpt {
+			@include post-section-bottom-border;
+		}
+
+		.post-content-body {
+			@include post-section-bottom-border;
+
+			> * {
+				margin-top: 0;
+				margin-bottom: 20px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			// Make blockquotes in body flow w/ the spacing of the other post content
+			> blockquote,
+			> .blockquotes-container {
+				&:first-child {
+					border-top: none;
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+			> blockquote:first-child,
+			> .blockquotes-container:first-child > blockquote:first-child {
+				padding-top: 10px; // Accounts for the "" characters
+			}
+
+			> blockquote:last-child,
+			> .blockquotes-container:last-child > blockquote:last-child {
+				padding-bottom: 0;
+			}
+
+			.btn-container {
+				text-align: center;
+
+			  >.btn {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.post-featured-term-container {
+			background: #FDF5F2;
+
+			h5 {
+				padding: 20px 10px;
+				text-align: center;
+			}
+
+			.featured-term {
+				display: inline-block;
+				padding: 2px 6px;
+				background: #F1D0C5;
+			}
+		}			
+		// Q&A
+		.question {
+			@extend .bold;
+		}
+	}
+
+	.attribution {
+		a { @extend .secondary; color: $grey_second; }
+	}
+
+	.post-content-container {
+		padding-left: 0;
+		min-height: 220px;
+		@media only screen and (min-width: $break-small) {
+			// padding-left: 100px;
+		}
+		& + .share-article {
+			width: auto;
+			max-width: 100%;
+			margin: 0 0 50px;
+			float: none;
+			text-align: center;
+		}
+	}
+	.post-header {
+		height: 300px;
+		background: $color1;
+	}
+	.header_content {
+		margin-top: 30px;
+	}
+}
+
+.related-posts-container {
+	margin-top: 60px;
+	h5 { text-align: center; }
+	.post {
+		.post-meta { margin-top: 20px; }
+		.post-title { margin-bottom: 0px; }
+	}
+
+	@media only screen and (max-width: $break-small) {
+		.post-row {
+			& + .post-row { margin-top: 20px; }
+			.post {
+				.post-meta { margin-top: 0px; }
+			}
+		}
+	}
+}
+
+#article-wrapper {
+	position: relative;
+	
+	&>.post-detail-row {
+		padding: 30px 0;
+		
+		&.style2 {
+			padding: 0 0 60px 0;
+		}
+
+		& + .post-detail-row {
+			padding: 30px 0;
+		}
+		
+	}
+}
+
+.attachment-page {
+	padding-top: 30px;
+
+	.post-detail.attachment {
+		.notification {
+			margin-bottom: 15px;
+			text-align: center;
+
+			p + p { margin: 0; }
+		}
+
+		.post-gallery {
+			margin: 0 0 30px;
+		}
+	}
+}
+
+.thb-loading:after {
+	content: '';
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	margin-left: -16px;
+	background: #fff url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMjIyMjIyIj4KICA8cGF0aCBvcGFjaXR5PSIuMjUiIGQ9Ik0xNiAwIEExNiAxNiAwIDAgMCAxNiAzMiBBMTYgMTYgMCAwIDAgMTYgMCBNMTYgNCBBMTIgMTIgMCAwIDEgMTYgMjggQTEyIDEyIDAgMCAxIDE2IDQiLz4KICA8cGF0aCBkPSJNMTYgMCBBMTYgMTYgMCAwIDEgMzIgMTYgTDI4IDE2IEExMiAxMiAwIDAgMCAxNiA0eiI+CiAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgZnJvbT0iMCAxNiAxNiIgdG89IjM2MCAxNiAxNiIgZHVyPSIwLjhzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L3BhdGg+Cjwvc3ZnPgo=') center center no-repeat;
+}
+/* Non VC Page */
+.non-VC-page {
+	padding: 60px 0;
+	.post .post-title {
+		margin-bottom: 20px;
+	}
+}
+
+/* Disqux */
+#comments {
+	margin-top: 75px;
+}
