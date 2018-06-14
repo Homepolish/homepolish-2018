@@ -25,8 +25,9 @@
 				        $testimonial_link   = get_field( 'link', $testimonial->ID );
 
 				    	$args = array( 
-				        	get_field( 'testimonial_mobile_image', $testimonial->ID ),
-				        	get_the_post_thumbnail_url( $testimonial->ID ), 
+				        	//get_field( 'testimonial_mobile_image', $testimonial->ID ),
+				        	get_the_post_thumbnail_url( $testimonial->ID, 'full' ), 
+				        	get_the_post_thumbnail_url( $testimonial->ID, 'full' ), 
 							'.svelte .client-reviews .client-review-image.client-review-image-' . $i
 							//
 					    );
