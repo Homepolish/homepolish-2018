@@ -207,7 +207,7 @@ function hp_image_styles( $mobile_desktop_array ) {
 	$styles = '<style>
 			' . $selector . ' {
 				background-image: url(
-					' . $desktop . '
+					' . $mobile . '
 				);
 			}
 			@media screen and (min-width: 768px) {

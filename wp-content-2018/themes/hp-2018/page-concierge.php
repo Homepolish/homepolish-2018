@@ -7,7 +7,8 @@
 <?php 
 
 	$args = array( 
-        get_field( 'mobile_image' ), 
+        //get_field( 'mobile_image' ), 
+        get_field( 'image' ), 
         get_field( 'image' ), 
         '.svelte.landing-pages--concierge .concierge-hero .hero-image'
     );
@@ -53,8 +54,9 @@
 
 <?php 
 	$args = array( 
+		//get_field( 'hiw_mobile_image' ),
         get_field( 'hiw_image' ), 
-        get_field( 'hiw_image' ), //get_field( 'hiw_mobile_image' ),
+        get_field( 'hiw_image' ),
         '.svelte.landing-pages--concierge .hiw-desktop'
     );
     echo hp_image_styles( $args );

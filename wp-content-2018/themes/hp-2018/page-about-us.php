@@ -5,7 +5,8 @@
 <?php 
 
     $args = array( 
-        get_field( 'th_mobile_image' ), 
+        //get_field( 'th_mobile_image' ), 
+        get_field( 'th_image' ), 
         get_field( 'th_image' ), 
         '.landing-pages--about-us .our-mission'
     );
@@ -91,7 +92,8 @@
             <?php 
 
                 $args = array( 
-                    $value['wchr_mobile_image'], 
+                    //$value['wchr_mobile_image'], 
+                    $value['wchr_image'], 
                     $value['wchr_image'], 
                     '.landing-pages--about-us .why-homepolish .section__image.section__image--' . $i
                 );

@@ -97,7 +97,8 @@
         foreach( $rows as $key => $value ) {
 
             $args = array( 
-                $value['mobile_image']['url'], 
+                //$value['mobile_image']['url'], 
+                $value['image']['url'], 
                 $value['image']['url'], 
                 '.landing-pages--homepage .how-it-works .step.step--' . $i . ' .step__image'
             );
@@ -204,7 +205,8 @@
 
                 <?php 
                     $args = array( 
-                        $mobile_image,  
+                        //$mobile_image,  
+                        $image,  
                         $image,  
                         '.landing-pages--homepage .portfolio .category__image.category__image--' . $i
                     );
@@ -241,7 +243,8 @@
                 $image          = get_field( 'style_tax_image', 'term_' . $term->term_id );
                 $mobile_image   = get_field( 'style_tax_mobile_image', 'term_' . $term->term_id );
                 $args = array( 
-                    $mobile_image,  
+                    //$mobile_image,  
+                    $image,  
                     $image,  
                     '.landing-pages--homepage .portfolio .category__image.category__image--' . $i
                 );
