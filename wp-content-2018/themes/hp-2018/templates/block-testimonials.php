@@ -36,7 +36,7 @@
 
 					<div class="client-review-card-content" data-slide-index="<?php echo $i; ?>">
 						<p class="client-review-body">
-						“<?php the_field( 'quote', $testimonial->ID ); ?>“
+						&ldquo;<?php the_field( 'quote', $testimonial->ID ); ?>&rdquo;
 						</p>
 						<div class="client-review-attribution">
 

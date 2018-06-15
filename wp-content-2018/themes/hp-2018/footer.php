@@ -300,8 +300,7 @@
 				<div class="info-line">
 				<span>27 W 24th Street Fl. 2</span>
 
-				<span>New York</span>
-				, 
+				<span>New York</span>,  
 				<span>NY</span>
 
 				<span>10010</span>

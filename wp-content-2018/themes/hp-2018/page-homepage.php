@@ -380,8 +380,8 @@
         $press_logo     = get_field( 'logo', $press_id );
 
         $args = array( 
-            get_the_post_thumbnail_url( $press_id ),  
-            get_the_post_thumbnail_url( $press_id ),  
+            get_the_post_thumbnail_url( $press_id, 'full' ),  
+            get_the_post_thumbnail_url( $press_id, 'full' ),  
             '.landing-pages--homepage .press .slide.slide--' . $i
         );
         echo hp_image_styles( $args  );
