@@ -5,8 +5,7 @@
 <?php 
 
     $args = array( 
-        //get_field( 'th_mobile_image' ), 
-        get_field( 'th_image' ), 
+        get_field( 'th_mobile_image' ), 
         get_field( 'th_image' ), 
         '.landing-pages--about-us .our-mission'
     );
