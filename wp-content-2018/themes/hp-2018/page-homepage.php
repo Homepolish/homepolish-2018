@@ -160,6 +160,11 @@
                 }
             }
 
+            if( $value['italicized_copy'] ) {
+
+                echo '<p class="step__italics">' . $value['italicized_copy'] . '</p>'; 
+            }
+
             if( $value['link'] ) {
 
                 echo '<h5 class="step__link">
