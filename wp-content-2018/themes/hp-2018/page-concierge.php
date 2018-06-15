@@ -118,7 +118,21 @@
 
 	$i = 1;
 	$brands = get_field( 'pb_brand_images' );
-	foreach( $brands as $value ) { ?><?php $brand = $value['pb_brand_image']; ?><div class="logo-img-container"><img alt="The logo of Homepolish partner <?php echo get_the_title( $brand->ID ); ?>" class="logo-img" src="<?php echo get_the_post_thumbnail_url( $brand->ID ); ?>"></div><?php if ( $i % 3 == 0 ) { ?></div><div class="logos-card"><?php } 
+	$num_items = count( $brands );
+	foreach( $brands as $value ) { ?>
+	<?php $brand = $value['pb_brand_image']; ?>
+		<div class="logo-img-container">
+			<img alt="The logo of Homepolish partner <?php echo get_the_title( $brand->ID ); ?>" class="logo-img" src="<?php echo get_the_post_thumbnail_url( $brand->ID ); ?>">
+		</div>
+
+		<?php if ( $i % 3 == 0 ) { ?>
+			</div>
+			<?php
+				// Don't print next one if 12? 
+				if ( $i % 3 == 0 && $i == $num_items - 1 ) { ?>
+				<div class="logos-card">
+			<?php } ?>
+		<?php } 
 
 		$i++;
 	} 
