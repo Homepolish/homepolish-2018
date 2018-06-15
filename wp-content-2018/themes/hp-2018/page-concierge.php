@@ -115,30 +115,26 @@
 			<p class="description formatted-copy--mobile"><?php the_field( 'pb_copy' ); ?></p>
 			<h5 class="intro"><?php the_field( 'pb_subtitle' ); ?></h5>
 		</div>
-		<div class="owl-carousel" data-owl-carousel>
-			<div class="logos-card">
-				<?php 
+<div class="owl-carousel" data-owl-carousel><div class="logos-card"><?php 
 
-					$i = 1;
-					$brands = get_field( 'pb_brand_images' );
-					foreach( $brands as $value ) { ?>
+	$i = 1;
+	$brands = get_field( 'pb_brand_images' );
+	foreach( $brands as $value ) { ?>
 
-						<?php $brand = $value['pb_brand_image']; ?>
+		<?php $brand = $value['pb_brand_image']; ?>
 
-						<div class="logo-img-container">
-							<img alt="The logo of Homepolish partner <?php echo get_the_title( $brand->ID ); ?>" class="logo-img" src="<?php echo get_the_post_thumbnail_url( $brand->ID ); ?>">
-						</div>
-
-						<?php if ( $i % 3 == 0 ) { ?>
-							</div>
-							<div class="logos-card">
-						<?php } 
-
-						$i++;
-					} 
-				?>
-			</div>
+		<div class="logo-img-container">
+			<img alt="The logo of Homepolish partner <?php echo get_the_title( $brand->ID ); ?>" class="logo-img" src="<?php echo get_the_post_thumbnail_url( $brand->ID ); ?>">
 		</div>
+
+		<?php if ( $i % 3 == 0 ) { ?>
+			</div>
+			<div class="logos-card">
+		<?php } 
+
+		$i++;
+	} 
+?></div></div>
 	</div>
 </div>
 <div class="concierge-desktop">
