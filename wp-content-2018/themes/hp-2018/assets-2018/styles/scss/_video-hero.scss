@@ -71,13 +71,19 @@
 
         .hero__tagline {
 
-            font-size: 3em;
+            font-size: 2em;
             text-align: center;
             top: auto;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
             white-space: normal;
             padding: 0 5% 0 5%;
+
+            @media only screen and (min-width: 768px) {
+
+                font-size: 3em;
+                margin-bottom: 25px;
+            }
 
             @media only screen and (min-width: 1024px) {
 
