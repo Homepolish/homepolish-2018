@@ -195,7 +195,8 @@
 
 @media only screen and (max-width: 767px) {
     #footer.hp-footer.cross-site-footer {
-        border-top: none
+        border-top: none;
+        margin-bottom: 46px;
     }
     #footer.hp-footer.cross-site-footer #cross-site-footer-desktop {
         display: none
