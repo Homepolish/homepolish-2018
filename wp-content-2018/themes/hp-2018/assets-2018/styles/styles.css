@@ -165,6 +165,11 @@
     .hero.video-hero .hero__signup .book-now-signup .form-field {
       border-bottom: none;
       padding-left: 30px; }
+    @media only screen and (max-width: 767px) {
+      .hero.video-hero .hero__signup .book-now-signup .form-field {
+        flex-basis: 60%; }
+      .hero.video-hero .hero__signup .book-now-signup .form-submit {
+        flex-basis: 30%; } }
     .hero.video-hero .hero__signup .v1-icon-caret-right {
       color: white; }
 

@@ -14,7 +14,7 @@
         </a>
 
         <div class="hp-header__auth">
-        <a class="auth__link" href="/log_in">Log In</a>
+        <a class="auth__link" href="/app/login">Log In</a>
         </div>
         </div>
 
