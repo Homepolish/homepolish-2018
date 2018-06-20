@@ -544,9 +544,21 @@
 	</div>
 </footer>
 
+<style>
+	.btn.bottom-bar {
+
+		bottom: 0;
+		display: none;
+		position: absolute;
+		width: 100%;
+
+	}
+
+</style>
+
 <div class="hp-mobile-tab-bars" id="mobile-tab-bars">
-	<span class="login-link logged-out" data-logged-out="true"><a class="btn" data-track-book-now="true" data-button-id="mobile_nav" href="/start"  data-logged-out="true">Book Now</a></span>
-	<span class="other-link logout-link logged-in" data-logged-in="true"><a class="btn" data-track-book-now="true" data-button-id="mobile_nav" href="/dashboard"  data-logged-in="true">Dashboard</a><a href="/dashboard" class="mobile-nav-button" data-dashboard-link="true" data-logged-in="true">Dashboard</a></span>
+	<a class="btn bottom-bar" data-track-book-now="true" data-button-id="mobile_nav" data-logged-in="true" href="/app">Dashboard</a>
+	<a class="btn bottom-bar" data-track-book-now="true" data-button-id="mobile_nav" data-logged-out="true" href="/start">Book Now</a>
 </div>
 </div>
 
