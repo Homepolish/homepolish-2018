@@ -178,12 +178,11 @@ function hp_enqueue_scripts() {
 		wp_enqueue_script( 'vwo_smart_code', get_template_directory_uri() . '/assets-2018/js/vwo_smart_code.js', 0, 0, 0 );
 		wp_enqueue_script( 'rollbar', get_template_directory_uri() . '/assets-2018/js/rollbar.js', 0, 0, 0 );
 		wp_enqueue_script( 'analytics', get_template_directory_uri() . '/assets-2018/js/analytics.js', 0, 0, 0 );
-		wp_enqueue_script( 'auth', get_template_directory_uri() . '/assets-2018/js/plugins/hmpl-auth.js', 0, 0, 1 );
 		wp_enqueue_script( 'google-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', 0, 0, 1 );
 		wp_enqueue_script( 'jquery-migrate', 'https://code.jquery.com/jquery-migrate-3.0.1.min.js', 0, 0, 1 );
 		wp_enqueue_script( 'vendor', get_template_directory_uri() . '/assets-2018/js/vendor.js', 0, 0, 1 );
 		wp_enqueue_script( 'svelte', get_template_directory_uri() . '/assets-2018/js/svelte.js', 0, 0, 1 );
-
+		wp_enqueue_script( 'auth', get_template_directory_uri() . '/assets-2018/js/plugins/hmpl-auth.js', 0, 0, 1 );
 
 		if ( file_exists( get_stylesheet_directory() . '/assets-2018/js/' . $post_slug . '.js' ) ) {
 
