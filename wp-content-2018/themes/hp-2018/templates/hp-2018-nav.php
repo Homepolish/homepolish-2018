@@ -16,15 +16,22 @@
 
         <div class="hp-header__auth">
 
+            <style>
+            .logged-out, .logged-in {
+
+                visibility: hidden;
+            }
+            </style>
+
             <!-- out -->
             
-            <span class="login-link logged-in" data-logged-out="true">
+            <span class="login-link logged-out" data-logged-out="true">
                 <a class="auth__link tertiary auth-link" data-logout-link="true" href="/log_in">Log In</a>
             </span>
 
             <!-- in -->
             
-            <span class="other-link logout-link" data-logged-in="true">
+            <span class="other-link logout-link logged-out" data-logged-in="true">
                 <a class="auth__link tertiary dashboard-link" href="https://www.homepolish.com/dashboard" data-dashboard-link="true">My Dashboard</a> 
                 <a class="auth__link tertiary auth-link" href="/app/logout" data-logout-link="true">Log Out</a>
             </span>
