@@ -70,21 +70,20 @@
     <a class="tertiary" href="/mag">The Magazine</a>
     </h5>
     </div>
-    <div class="other-links">
+    <div class="other-links hp-header__auth">
 
-    <!-- out -->
-    
-    <h5 class="other-link login-link">
-    <a class="tertiary" href="/log_in">Log In</a>
-    </h5>
-    </div>
+        <!-- out -->
+        
+        <h5 class="other-link login-link logged-in" data-logged-out="true">
+        <a class="tertiary auth-link" href="/log_in">Log In</a>
+        </h5>
 
-    <!-- in -->
-    
-    <div class="other-links">
-    <h5 class="other-link logout-link">
-    <form class="button_to" method="post" action="/sign_out"><input type="hidden" name="_method" value="delete"><input type="submit" value="Log Out"><input type="hidden" name="authenticity_token" value="X7UMZRoM6l4Zl6rq+Qdc/eKUOyih+I6uu57P97ItvRP8mWLnkM/i4LfcdPHdYWuolKfAgqKcXeVe05NSVMjIeA=="></form>
-    </h5>
+        <!-- in -->
+        
+        
+        <h5 class="other-link logout-link" data-logged-in="true">
+        <a href="/app/logout" class="tertiary auth-link" data-logout-link="true">Log Out</a>
+        </h5>
     </div>
     
 
