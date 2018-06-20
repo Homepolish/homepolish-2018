@@ -13,15 +13,23 @@
         <img alt="Homepolish Interior Design NYC LA SF BOS CHI DC" class="hp-header__logo hp-header__logo--black" src="<?php echo get_template_directory_uri(); ?>/assets-2018/img/homepolish-wordmark.png" />
         </a>
 
-        <div class="hp-header__auth">
-        <a class="auth__link" href="/app/login">Log In</a>
-        </div>
 
         <div class="hp-header__auth">
-            <a class="auth__link" data-bypass="true" href="/app">My Dashboard</a>
 
-            <form class="button_to" method="post" action="/sign_out"><input type="hidden" name="_method" value="delete"><input class="auth__link auth__link--button-to" type="submit" value="Log Out"><input type="hidden" name="authenticity_token" value="X7UMZRoM6l4Zl6rq+Qdc/eKUOyih+I6uu57P97ItvRP8mWLnkM/i4LfcdPHdYWuolKfAgqKcXeVe05NSVMjIeA=="></form>
+            <!-- out -->
+            
+            <span class="login-link logged-in" data-logged-out="true">
+                <a class="auth__link tertiary auth-link" data-logout-link="true" href="/log_in">Log In</a>
+            </span>
+
+            <!-- in -->
+            
+            <span class="other-link logout-link" data-logged-in="true">
+                <a class="auth__link tertiary dashboard-link" href="https://www.homepolish.com/dashboard" data-dashboard-link="true">My Dashboard</a> 
+                <a class="auth__link tertiary auth-link" href="/app/logout" data-logout-link="true">Log Out</a>
+            </span>
         </div>
+        
 
         </div>
 

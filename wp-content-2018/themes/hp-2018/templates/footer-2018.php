@@ -545,8 +545,10 @@
 	</div>
 </footer>
 
+
 <div class="hp-mobile-tab-bars" id="mobile-tab-bars">
-	<a class="btn" data-track-book-now="true" data-button-id="mobile_nav" href="/start">Book Now</a>
+	<a class="btn" data-track-book-now="true" data-button-id="mobile_nav" href="/start"  data-logged-out="true">Book Now</a>
+	<a class="btn" data-track-book-now="true" data-button-id="mobile_nav" href="/dashboard"  data-logged-in="true">Dashboard</a><a href="/dashboard" class="mobile-nav-button" data-dashboard-link="true" data-logged-in="true">Dashboard</a>
 </div>
 </div>
 
