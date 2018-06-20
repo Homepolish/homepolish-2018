@@ -16,6 +16,13 @@
         <div class="hp-header__auth">
         <a class="auth__link" href="/app/login">Log In</a>
         </div>
+
+        <div class="hp-header__auth">
+            <a class="auth__link" data-bypass="true" href="/app">My Dashboard</a>
+
+            <form class="button_to" method="post" action="/sign_out"><input type="hidden" name="_method" value="delete"><input class="auth__link auth__link--button-to" type="submit" value="Log Out"><input type="hidden" name="authenticity_token" value="X7UMZRoM6l4Zl6rq+Qdc/eKUOyih+I6uu57P97ItvRP8mWLnkM/i4LfcdPHdYWuolKfAgqKcXeVe05NSVMjIeA=="></form>
+        </div>
+
         </div>
 
           <nav class="hp-header__nav">
@@ -64,10 +71,23 @@
     </h5>
     </div>
     <div class="other-links">
+
+    <!-- out -->
+    
     <h5 class="other-link login-link">
     <a class="tertiary" href="/log_in">Log In</a>
     </h5>
     </div>
+
+    <!-- in -->
+    
+    <div class="other-links">
+    <h5 class="other-link logout-link">
+    <form class="button_to" method="post" action="/sign_out"><input type="hidden" name="_method" value="delete"><input type="submit" value="Log Out"><input type="hidden" name="authenticity_token" value="X7UMZRoM6l4Zl6rq+Qdc/eKUOyih+I6uu57P97ItvRP8mWLnkM/i4LfcdPHdYWuolKfAgqKcXeVe05NSVMjIeA=="></form>
+    </h5>
+    </div>
+    
+
     </div>
 </div>
 <div class="mobile-nav-buttons" id="mobile-nav-buttons">

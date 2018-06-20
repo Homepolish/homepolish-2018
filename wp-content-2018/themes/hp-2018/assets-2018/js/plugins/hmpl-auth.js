@@ -70,7 +70,7 @@
   // Reference to the user info returned from backend
   var USER;
 
-  var rootUrl = 'https://www.homepolish.com';
+  var rootUrl = 'https://stage.homepolish.com';
   var wildcardDomain = '.homepolish.com';
 
   function authEmail() {
