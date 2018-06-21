@@ -45,10 +45,17 @@
 
 		padding: 20px;
 
-		li ul {
+		li 
 
-			padding-bottom: 0;
-		}
+			&:last-child {
+
+				padding-bottom: 0;
+			}
+
+			ul, ol {
+
+				padding-bottom: 0;
+			}
 	}
 
 	li {
