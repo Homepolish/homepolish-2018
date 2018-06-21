@@ -96,6 +96,8 @@
     margin: 0 0 20px; }
   #page-template ul {
     padding: 20px; }
+    #page-template ul li ul {
+      padding-bottom: 0; }
   #page-template li {
     margin: 0 0 20px; }
 

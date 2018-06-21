@@ -44,6 +44,11 @@
 	ul {
 
 		padding: 20px;
+
+		li ul {
+
+			padding-bottom: 0;
+		}
 	}
 
 	li {
