@@ -283,7 +283,7 @@ remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windo
 // Set canonical
 function hp_canonical_url() {
 
-	return bloginfo( 'wpurl' ) . wp_make_link_relative( get_the_permalink() );
+	return $canonical_url = bloginfo( 'wpurl' ) . wp_make_link_relative( get_the_permalink() );
 }
 
 // Filter Yoast og:url
