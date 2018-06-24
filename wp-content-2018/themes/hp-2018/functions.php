@@ -277,8 +277,17 @@ remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windo
 
 
 /** 
-@ Remove WordPress Feeds
+@ Set canonical url and change Yoast og:url
 */
+
+// Set canonical
+function hp_canonical_url() {
+
+	return bloginfo( 'wpurl' ) . wp_make_link_relative( get_the_permalink() );
+}
+
+// Filter Yoast og:url
+add_filter( 'wpseo_opengraph_url', 'hp_opengraph_url' );
 
 /** 
 @ Remove Yoast SEO JSON schema
