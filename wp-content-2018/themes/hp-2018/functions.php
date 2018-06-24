@@ -281,7 +281,7 @@ remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windo
 */
 
 // Set canonical
-function hp_canonical_url() {
+function hp_opengraph_url() {
 
 	return bloginfo( 'wpurl' ) . wp_make_link_relative( get_the_permalink() );
 }
