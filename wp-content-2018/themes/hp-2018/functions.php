@@ -281,13 +281,13 @@ remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windo
 */
 
 // Set canonical
-function hp_opengraph_url() {
+function hp_canonical_url() {
 
 	return bloginfo( 'wpurl' ) . wp_make_link_relative( get_the_permalink() );
 }
 
 // Filter Yoast og:url
-add_filter( 'wpseo_opengraph_url', 'hp_opengraph_url' );
+add_filter( 'wpseo_opengraph_url', 'hp_canonical_url' );
 
 /** 
 @ Remove Yoast SEO JSON schema
