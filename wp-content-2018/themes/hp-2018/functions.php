@@ -285,7 +285,8 @@ function hp_canonical_url() {
 
 	$domain 	= bloginfo( 'wpurl' );
 	$permalink 	= wp_make_link_relative( get_the_permalink() );
-	return $canonical 	= $domain . $permalink;
+	echo  $canonical 	= $domain . $permalink;
+	exit;
 }
 
 // Filter Yoast og:url
