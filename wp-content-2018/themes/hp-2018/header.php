@@ -7,7 +7,7 @@
 	<meta name="csrf-param" content="authenticity_token" />
 	<meta name="csrf-token" content="CSRF-TOKEN?" />
 	<meta content="<?php echo get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true ); ?>" itemprop="description">
-	<meta content="<?php echo hp_canonical_url(); ?>" itemprop="url">
+	<meta content="<?php //echo hp_canonical_url(); ?>" itemprop="url">
 	<meta content="127512634049491" property="fb:app_id">
 	<meta content="width=device-width,initial-scale=1" name="viewport">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
