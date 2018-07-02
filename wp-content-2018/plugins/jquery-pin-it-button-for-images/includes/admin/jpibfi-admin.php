@@ -157,11 +157,10 @@ class JPIBFI_Admin {
 
 	public function print_admin_page() {
 		?>
-        <div id="jpibfi-container" class="wrap">
+        <div ng-app="app" class="wrap">
             <h2><?php _e( 'jQuery Pin It Button For Images Options', 'jquery-pin-it-button-for-images' ); ?></h2>
             <div id="icon-plugins" class="icon32"></div>
-            <jpibfi settings-name="jpibfi_settings"></jpibfi>
-            <h3 id="jpibfi-error"><?php printf(__('If you cannot see the settings page, <a href="%s" target="_blank">click here</a>', 'jquery-pin-it-button-for-images'), 'https://highfiveplugins.com/jpibfi/jquery-pin-it-button-for-images-documentation/#Empty_settings_page'); ?></h3>
+            <app settings-name="jpibfi_settings"></app>
         </div>
 		<?php
 	}
@@ -177,32 +176,21 @@ class JPIBFI_Admin {
 		$module->save_settings( $_POST );
 	}
 
-
 	public function show_ad() {
 		global $hook_suffix;
-		if ( $hook_suffix !== $this->admin_screen_hook ) {
-		    return;
+		if ( $hook_suffix === $this->admin_screen_hook ) {
+			?>
+            <div class="notice notice-success">
+                <p>
+					<?php printf(
+						__( 'jQuery Pin It Button for Images Pro is available. <a class="button button-primary" href="%1$s" target="_blank">Check it out &rarr;</a>', 'jquery-pin-it-button-for-images' ),
+						'https://highfiveplugins.com/downloads/jquery-pin-it-button-for-images-pro/'
+					);
+					?>
+                </p>
+            </div>
+			<?php
 		}
-        ?>
-        <div class="notice notice-success">
-            <p>
-                <?php printf(
-                    __( '<strong>jQuery Pin It Button for Images Pro</strong> is available. <a class="button button-primary" href="%1$s" target="_blank">Check it out &rarr;</a>', 'jquery-pin-it-button-for-images' ),
-                    'https://highfiveplugins.com/downloads/jquery-pin-it-button-for-images-pro/'
-                );
-                ?>
-            </p>
-        </div>
-		<div class="notice notice-success">
-            <p>
-                <?php printf(
-                    __( '<strong>Image Auto Poster</strong>, plugin that allows you to pin your images directly from the post editor to your Pinterest account, is available on the WordPress.org repository. <a class="button button-primary" href="%1$s" target="_blank">Check it out &rarr;</a>', 'jquery-pin-it-button-for-images' ),
-                    'https://wordpress.org/plugins/iaposter/'
-                );
-                ?>
-            </p>
-        </div>
-        <?php
 	}
 
 	function show_nags() {

@@ -1,0 +1,489 @@
+@font-face {
+    font-family: 'Sabon';
+    src: url('../fonts/Sabon-Roman.eot');
+    src: url('../fonts/Sabon-Roman.eot?#iefix') format('embedded-opentype'), url('../fonts/Sabon-Roman.woff2') format('woff2'), url('../fonts/Sabon-Roman.woff') format('woff'), url('../fonts/Sabon-Roman.ttf') format('truetype'), url('../fonts/Sabon-Roman.svg#Sabon-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miller';
+    src: url('../fonts/Miller-Display.eot');
+    src: url('../fonts/Miller-Display.eot?#iefix') format('embedded-opentype'), url('../fonts/Miller-Display.woff2') format('woff2'), url('../fonts/Miller-Display.woff') format('woff'), url('../fonts/Miller-Display.ttf') format('truetype'), url('../fonts/Miller-Display.svg#Miller-Display') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Medium.eot');
+    src: local('../fonts/Avenir Next Medium'), local('../fonts/AvenirNext-Medium'), url('../fonts/AvenirNext-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirNext-Medium.woff2') format('woff2'), url('../fonts/AvenirNext-Medium.woff') format('woff'), url('../fonts/AvenirNext-Medium.ttf') format('truetype'), url('../fonts/AvenirNext-Medium.svg#AvenirNext-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Medium_1.eot');
+    src: local('../fonts/Avenir Next Medium'), local('../fonts/AvenirNext-Medium'), url('../fonts/AvenirNext-Medium_1.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirNext-Medium_1.woff2') format('woff2'), url('../fonts/AvenirNext-Medium_1.woff') format('woff'), url('../fonts/AvenirNext-Medium_1.ttf') format('truetype'), url('../fonts/AvenirNext-Medium_1.svg#AvenirNext-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Medium_2.eot');
+    src: local('../fonts/Avenir Next Medium'), local('../fonts/AvenirNext-Medium'), url('../fonts/AvenirNext-Medium_2.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirNext-Medium_2.woff2') format('woff2'), url('../fonts/AvenirNext-Medium_2.woff') format('woff'), url('../fonts/AvenirNext-Medium_2.ttf') format('truetype'), url('../fonts/AvenirNext-Medium_2.svg#AvenirNext-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miller';
+    src: url('Miller-DisplayItalic.eot');
+    src: local('../fonts/Miller-DisplayItalic'), url('../fonts/Miller-DisplayItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/Miller-DisplayItalic.woff2') format('woff2'), url('../fonts/Miller-DisplayItalic.woff') format('woff'), url('../fonts/Miller-DisplayItalic.ttf') format('truetype'), url('../fonts/Miller-DisplayItalic.svg#Miller-DisplayItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+html,
+body {
+    /*overflow-x: hidden;*/
+}
+
+/*Hero Wrap css Start*/
+
+.hero-wrap {
+    position: relative;
+}
+
+.hero-wrap:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3d423d;
+    z-index: -1;
+}
+
+.slide-content {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide-cont-inn {
+    position: absolute;
+    z-index: 9999;
+    bottom: 130px;
+	left: 0;
+	right: 0;
+}
+
+.heading {
+    font-size: 193.26px;
+    color: #fff;
+    line-height: 237.68px;
+    font-family: 'Miller';
+    padding-bottom: 50px;
+}
+.h-polish-logo { display: block; width: 740px; max-width: 100%}
+.h-polish-logo img { width: 100%}
+.at {
+    font-size: 38px;
+    letter-spacing: .8px;
+    color: #fff;
+    line-height: 50px;
+    padding: 30px 35px 0;
+    font-family: 'Miller';
+    vertical-align: bottom;
+	display: block;
+}
+.slide-date-anim {
+    position: absolute;
+    left: -66px;
+    top: 155px;
+    height: 100%;
+}
+
+.slide-date {
+    font-size: 24px;
+    color: #fff;
+    line-height: 34px;
+    letter-spacing: .2px;
+    font-family: 'Miller';
+    display: inline-block;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+}
+
+.slide-date::before {
+    content: "";
+    display: inline-block;
+    width: 290px;
+    height: 1px;
+    background: #fff;
+    vertical-align: super;
+    margin-right: 36px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+}
+
+/*Hero Wrap css End*/
+
+/*well Design Css Start*/
+
+.well-design-wrap {
+    position: relative;
+    z-index: 1;
+    padding-top: 115px;
+}
+
+.well-design-wrap .container {
+    position: relative;
+}
+
+.heding-well {
+    font-size: 115px;
+    color: #3d423d;
+    font-family: 'Miller';
+    line-height: normal;
+}
+
+.heding-well span {
+    display: block;
+}
+
+.image-wll {
+    position: absolute;
+    left: -17%;
+    bottom: -125px;
+    max-width: 667px;
+}
+
+.well-descrp {
+    padding: 126px 100px 10px 100px;
+}
+
+.well-descrp p {
+    font-family: 'Sabon';
+    font-size: 27px;
+    line-height: 35px;
+    margin: 0;
+    letter-spacing: .10px;
+}
+
+.whr-whn-wrp {
+    padding: 0px 100px 330px 100px;
+}
+
+.whr-whn-wrp>div {
+    display: inline-block;
+	margin-top: 40px;
+    
+}
+.whr-wrap { padding-right: 70px;}
+.whr-whn-wrp>div label {
+    letter-spacing: .20px;
+    color: #484d3d;
+    font-size: 32px;
+    line-height: 42px;
+    font-family: 'Miller';
+    font-weight: normal;
+    display: block;
+    margin: 0;
+    margin-bottom: 15px;
+    text-transform: none;
+}
+
+.whr-whn-wrp>div  {
+    font-size: 18px;
+    line-height: 40px;
+    color: #484d3d;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-family: 'Avenir Next';
+    letter-spacing: 0.5px;
+}
+
+.whr-whn-wrp small {
+    font-size: 14px;
+    position: relative;
+    top: -10px;
+    left: -3px;
+}
+
+.image-wll .img-responsive {
+    height: 912px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.wts-hpn-anim {
+    position: absolute;
+    right: -116px;
+    top: calc(100% - 40px);
+    height: 100%;
+}
+
+.wts-hpn {
+    font-size: 24px;
+    color: #484d3d;
+    line-height: 34px;
+    letter-spacing: .2px;
+    font-family: 'Miller';
+    display: inline-block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+}
+
+.wts-hpn:before {
+    content: "";
+    width: 290px;
+    height: 1px;
+    background: #484d3d;
+    margin-right: 40px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+}
+
+/*well Design Css End*/
+
+/*Events Wrap Css Start*/
+
+.events-wrap {
+    position: relative;
+    background: #e6ded7;
+    padding: 300px 0 150px;
+    z-index: 0;
+	overflow: hidden
+}
+
+.events-wrap .container {
+    position: relative;
+}
+
+.head-cnt-anim {
+    left: -450px;
+    top: 440px;
+    position: absolute;
+}
+
+.head-cnt {
+    font-size: 136px;
+    color: #af9991;
+    font-family: 'Miller';
+    line-height: 75px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+    letter-spacing: 0.2px;
+}
+
+.event-desc-lft {
+    width: 29.333%;
+	width: 35.333%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.event-desc-right {
+    width: 69.333%;
+	width: 63.333%;
+    display: inline-block;
+    padding-left: 60px;
+    font-family: 'Sabon';
+    vertical-align: top;
+    font-size: 22px;
+	font-size: 18px;
+}
+
+.evt-date {
+    font-size: 40px;
+    font-family: 'Miller';
+    letter-spacing: .20px;
+    color: #3d423d;
+    position: relative;
+    border-bottom: 1px solid;
+    line-height: normal;
+    margin: 40px 0 60px;
+    padding-bottom: 38px;
+}
+
+.title-event {
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #3d423d;
+    margin-bottom: 27px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.time-event {
+    font-family: 'Miller';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 27px;
+    color: #3d423d;
+}
+
+.event-desc-right p,
+.event-desc-right .event-feat>span,
+.event-desc-right .event-feat ul {
+    margin-bottom: 17px;
+    display: block;
+}
+
+.event-desc-right .event-feat a {
+    font-size: 20px;
+    color: #3d423d;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'Avenir Next';
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.event-row {
+    margin-bottom: 100px;
+}
+
+.event-row:last-child {
+    margin-bottom: 20px;
+}
+
+.d-mob {
+    display: none;
+}
+
+/*Events Wrap Css End*/
+
+/*Signup Wrap Css Start*/
+
+.sign-up-wrap {
+    /*background: url(../images/sign-up.png);*/
+    padding: 300px 0;
+	padding: 150px 0;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.sign-box {
+    max-width: 870px;
+	max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 100px 60px 90px;
+	padding: 60px;
+    text-align: center;
+}
+
+.sign-box h1 {
+    font-family: 'Miller';
+    font-size: 32px;
+    line-height: 42px;
+	line-height: 1;
+    margin: 0 0 30px 0;
+}
+
+.sign-box p {
+    font-size: 20px;
+    line-height: 24px;
+    font-family: 'Sabon';
+    letter-spacing: .5px;
+    margin: 0 0 55px 0;
+}
+
+.sign-box .btn-sgnup {
+    max-width: 160px;
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    padding: 0;
+    border: none;
+    color: #fff;
+    background: #484d3d;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 3px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+/*Signup Wrap Css End*/
+
+.event-desc-right .event-feat ul {
+    margin-left: 17px;
+}
+
+.event-desc-right .event-feat ul {
+    list-style: none;
+}
+
+.event-desc-right .event-feat ul {
+    margin-left: 13px;
+}
+
+.feat-list li {
+    position: relative;
+}
+
+.feat-list li:before {
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    background: #3d423d;
+    content: "";
+    left: -12px;
+    top: 14px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+		border-radius: 50%;
+}
+.main-wrap,
+.well-design-wrap .col-md-8 { overflow: hidden}
+.event-desc-right .event-feat a:hover { color:#696d5f}
+.sign-box .btn-sgnup:hover { background: #696d5f; color: #fff}
+
+.main-wrap a, .main-wrap .btn { -webkit-transition: all 300ms; -moz-transition: all 300ms; transition: all 300ms;}
+.main-wrap .row{
+    max-width: none !important;
+    width: auto !important;
+    margin-right: -15px;
+margin-left: -15px;
+}
+.row {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+footer p{
+font-family: "sabon-next-display", "Times New Roman", Times, serif;
+}
+/*#wrapper {
+    margin-bottom: -10px;
+}*/
+nav h6{
+margin-top: auto;
+font-family: "avenir-next-demi-bold", Helvetica, Arial, sans-serif;
+}
+.main-wrap{
+   margin-top: 40px;
+}
+.thb_mega_menu_holder .entry-header a{
+	font-family: "sabon-next-display", "Times New Roman", Times, serif;
+	font-size: 1.6rem;
+}

@@ -94,7 +94,7 @@ class OMAPI_Welcome {
 		// Make sure welcome page is always first page to view.
 		if ( 'toplevel_page_optin-monster-api-settings' === $screen->id ) {
 			$welcome = get_option( 'optin_monster_viewed_welcome', false );
-			if ( ! $welcome && ! $this->base->get_api_credentials() && ! is_network_admin() ) {
+			if ( ! $welcome && ! $this->base->get_api_credentials() ) {
 				die( wp_redirect( 'admin.php?page=optin-monster-api-welcome' ) );
 			}
 		}
@@ -401,7 +401,7 @@ class OMAPI_Welcome {
 	public function footer( $text ) {
 
 		$new_text = sprintf( __( 'Thank you for using <a href="%1$s" target="_blank">OptinMonster</a>!', 'optin-monster-api' ),
-			'https://optinmonster.com'
+			'http://optinmonster.com'
 		);
 		return str_replace( '</span>', '', $text ) . ' | ' . $new_text . '</span>';
 

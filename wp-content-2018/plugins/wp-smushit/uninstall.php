@@ -10,12 +10,6 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit();
 }
-
-//Check if someone want to keep the stats and settings
-if( defined('WP_SMUSH_PRESERVE_STATS') &&  WP_SMUSH_PRESERVE_STATS ) {
-	return;
-}
-
 global $wpdb;
 
 $smushit_keys = array(
@@ -45,9 +39,7 @@ $smushit_keys = array(
 	'lossy-updated',
 	'version',
 	'networkwide',
-	'dir_path',
-	'scan',
-	'last_settings'
+	'dir_path'
 );
 
 //Cache Keys
@@ -92,10 +84,6 @@ if ( ! is_multisite() ) {
 
 //Delete Directory Smush stats
 delete_option( 'dir_smush_stats' );
-delete_option( 'wp_smush_scan' );
-delete_option( 'wp_smush_api_auth' );
-delete_option( 'wp_smush_dir_path' );
-delete_site_option( 'wp_smush_api_auth' );
 
 //Delete Post meta
 $meta_type  = 'post';

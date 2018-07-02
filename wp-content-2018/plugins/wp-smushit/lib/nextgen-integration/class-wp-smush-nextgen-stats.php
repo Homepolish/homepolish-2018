@@ -266,7 +266,8 @@ if ( ! class_exists( 'WpSmushNextGenStats' ) ) {
 			}
 
 			//Check if Lossy enabled
-			$opt_lossy_val = $wpsmush_settings->settings['lossy'];
+			$opt_lossy     = WP_SMUSH_PREFIX . 'lossy';
+			$opt_lossy_val = $wpsmush_settings->get_setting( $opt_lossy, false );
 
 			//Check if premium user, compression was lossless, and lossy compression is enabled
 			if ( !$show_resmush && $this->is_pro_user && ! $is_lossy && $opt_lossy_val && ! empty( $image_type ) && $image_type != 'image/gif' ) {
@@ -321,7 +322,7 @@ if ( ! class_exists( 'WpSmushNextGenStats' ) ) {
 				$smush_stats['percent'] = ! empty( $smush_stats['size_before'] ) && !empty( $smush_stats['size_after'] ) && $smush_stats['size_before'] > 0 ? ( $smush_stats['bytes'] / $smush_stats['size_before'] ) * 100 : $stats['percent'];
 			}
 
-			update_option( 'wp_smush_stats_nextgen', $smush_stats, false );
+			update_option( 'wp_smush_stats_nextgen', $smush_stats );
 
 			//Cahce the results, we don't need a timed cache expiration.
 			wp_cache_set( 'wp_smush_stats_nextgen', $smush_stats, 'nextgen' );
@@ -357,7 +358,7 @@ if ( ! class_exists( 'WpSmushNextGenStats' ) ) {
 				//Compression Percentage
 				$smush_stats['percent'] = ! empty( $smush_stats['size_before'] ) && !empty( $smush_stats['size_after'] ) && $smush_stats['size_before'] > 0 ? ( $smush_stats['bytes'] / $smush_stats['size_before'] ) * 100 : $stats['percent'];
 			}
-			update_option( 'wp_smush_stats_nextgen', $smush_stats, false );
+			update_option( 'wp_smush_stats_nextgen', $smush_stats );
 
 			//Cahce the results, we don't need a timed cache expiration.
 			wp_cache_set( 'wp_smush_stats_nextgen', $smush_stats, 'nextgen' );
@@ -368,13 +369,7 @@ if ( ! class_exists( 'WpSmushNextGenStats' ) ) {
 		 * @return bool|mixed|void
 		 */
 		function get_smush_stats() {
-
-			$smushed_stats = array(
-				'savings_bytes'   => 0,
-				'size_before'     => 0,
-				'size_after'      => 0,
-				'savings_percent' => 0
-			);
+			global $WpSmush;
 
 			//Clear up the stats
 			if( 0 == $this->total_count() ) {
@@ -383,32 +378,30 @@ if ( ! class_exists( 'WpSmushNextGenStats' ) ) {
 			}
 
 			// Check for the  wp_smush_images_smushed in the 'nextgen' group.
-			$stats = wp_cache_get( 'wp_smush_stats_nextgen', 'nextgen' );
+			$smushed_stats = wp_cache_get( 'wp_smush_stats_nextgen', 'nextgen' );
 
 			// If nothing is found, build the object.
-			if ( false === $stats ) {
+			if ( false === $smushed_stats ) {
 				// Check for the  wp_smush_images in the 'nextgen' group.
-				$stats = get_option( 'wp_smush_stats_nextgen', array() );
+				$smushed_stats = get_option( 'wp_smush_stats_nextgen', array() );
 
-				if ( ! is_wp_error( $stats ) ) {
+				if ( ! is_wp_error( $smushed_stats ) ) {
 					// In this case we don't need a timed cache expiration.
-					wp_cache_set( 'wp_smush_stats_nextgen', $stats, 'nextgen' );
+					wp_cache_set( 'wp_smush_stats_nextgen', $smushed_stats, 'nextgen' );
 				}
 			}
-			if ( empty( $stats['bytes'] ) || $stats['bytes'] < 0 ) {
-				$stats['bytes'] = 0;
+			if ( empty( $smushed_stats['bytes'] ) || $smushed_stats['bytes'] < 0 ) {
+				$smushed_stats['bytes'] = 0;
 			}
 
-			if ( ! empty( $stats['size_before'] ) && $stats['size_before'] > 0 ) {
-				$stats['percent'] = ( $stats['bytes'] / $stats['size_before'] ) * 100;
+			if ( ! empty( $smushed_stats['size_before'] ) && $smushed_stats['size_before'] > 0 ) {
+				$smushed_stats['percent'] = ( $smushed_stats['bytes'] / $smushed_stats['size_before'] ) * 100;
 			}
 
 			//Round off precentage
-			$stats['percent'] = ! empty( $stats['percent'] ) ? round( $stats['percent'], 1 ) : 0;
+			$smushed_stats['percent'] = ! empty( $smushed_stats['percent'] ) ? round( $smushed_stats['percent'], 1 ) : 0;
 
-			$stats['human'] = size_format( $stats['bytes'], 1 );
-
-			$smushed_stats = array_merge( $smushed_stats, $stats );
+			$smushed_stats['human'] = size_format( $smushed_stats['bytes'], 1 );
 
 			return $smushed_stats;
 		}
@@ -467,17 +460,9 @@ if ( ! class_exists( 'WpSmushNextGenStats' ) ) {
 				if ( $size_value->bytes > 0 ) {
 					$stats .= '<tr>
 					<td>' . strtoupper( $size_key ) . '</td>
-					<td>' . size_format( $size_value->bytes, 1 );
-
-				}
-
-				//Add percentage if set
-				if ( isset( $size_value->percent ) && $size_value->percent > 0 ) {
-					$stats .= " ( $size_value->percent% )";
-				}
-
-				$stats .='</td>
+					<td>' . size_format( $size_value->bytes, 1 ) . ' ( ' . $size_value->percent . '% )</td>
 				</tr>';
+				}
 			}
 			$stats .= '</tbody>
 				</table>

@@ -1,12 +1,11 @@
 <?php
 /*
 Plugin Name: HTML in Category Descriptions
-Version: 1.2.1.1
+Version: 1.2.1
 Plugin URI: http://wordpress.org/extend/plugins/allow-html-in-category-descriptions/
 Description: Allows you to add HTML code in category descriptions
 Author: Arno Esterhuizen
 Author URI: arno.esterhuizen@gmail.com
-Text Domain: allow-html-in-category-descriptions
 */
 
 // Disables Kses only for textarea saves

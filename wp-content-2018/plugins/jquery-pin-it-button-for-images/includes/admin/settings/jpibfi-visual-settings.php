@@ -111,8 +111,7 @@ class JPIBFI_Visual_Settings extends JPIBFI_Settings_Base {
 				"site_title"      => __( 'Site title (Settings->General)', 'jquery-pin-it-button-for-images' ),
 				"img_description" => __( 'Image description', 'jquery-pin-it-button-for-images' ),
 				"img_caption"     => __( 'Image caption', 'jquery-pin-it-button-for-images' ),
-				"img_alt"         => __( 'Image alt attribute', 'jquery-pin-it-button-for-images' ),
-				"data_pin_description" => __( 'data-pin-description (Pinterest\'s custom attribute)', 'jquery-pin-it-button-for-images' )
+				"img_alt"         => __( 'Image alt attribute', 'jquery-pin-it-button-for-images' )
 			),
 			'desc'    => __( 'From where the Pinterest message should be taken. Check which sources should be considered and prioritize them by dragging and dropping. The description will come from the top source that has data. Please note that "Image description" and "Image caption" work properly only for images that were added to your Media Library.', 'jquery-pin-it-button-for-images' ),
 			'type'    => 'multiselect'

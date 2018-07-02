@@ -21,9 +21,6 @@ class JPIBFI_Client {
 		add_action( 'wp_enqueue_scripts', array( $this, 'add_plugin_scripts' ) );
 		add_action( 'wp_head', array( $this, 'print_header_style' ) );
 		$this->add_conditional_filters();
-
-		//load dependency
-		require_once 'JPIBFI_Client_Helper.php';
 	}
 
 	private function add_conditional_filters() {
@@ -50,16 +47,18 @@ class JPIBFI_Client {
 			return;
 		}
 
-		wp_enqueue_script( 'jpibfi-script', $this->plugin_dir_url . 'js/jpibfi.client.js', array( 'jquery' ), $this->version, true );
+		$deps = array( 'jquery' );
 
-		$selection_options = $this->selection_options->get();
+		wp_enqueue_script( 'jpibfi-script', $this->plugin_dir_url . 'js/jpibfi.client.js', $deps, $this->version, false );
+
+		$selection_options                   = $this->selection_options->get();
+		$selection_options['image_selector'] = apply_filters( 'jpibfi_image_selector', $selection_options['image_selector'] );
 
 		$parameters_array = array(
 			'hover' => array_merge(
 				array( 'siteTitle' => esc_attr( get_bloginfo( 'name', 'display' ) ) ),
 				$selection_options,
-				$this->visual_options->get_options_for_view(),
-				$this->advanced_options->get_options_for_view()
+				$this->visual_options->get_options_for_view()
 			),
 		);
 		wp_localize_script( 'jpibfi-script', 'jpibfi_options', $parameters_array );
@@ -73,7 +72,6 @@ class JPIBFI_Client {
 		}
 
 		$visual_options_js = $this->visual_options->get_options_for_view();
-		$advanced_options = $this->advanced_options->get();
 
 		$custom_button_span_css = '';
 		$custom_button_css      = '';
@@ -87,21 +85,21 @@ class JPIBFI_Client {
 		}
 		ob_start();
 		?>
-<style type="text/css">
-	a.pinit-button.custom {
-	<?php echo $custom_button_css; ?>
-	}
+        <style type="text/css">
+            a.pinit-button.custom {
+            <?php echo $custom_button_css; ?>
+            }
 
-	a.pinit-button.custom span {
-	<?php echo $custom_button_span_css; ?>
-	}
+            a.pinit-button.custom span {
+            <?php echo $custom_button_span_css; ?>
+            }
 
-	.pinit-hover {
-		opacity: <?php echo (1 - $visual_options_js['transparency_value']); ?> !important;
-		filter: alpha(opacity=<?php echo (1 - $visual_options_js['transparency_value']) * 100; ?>) !important;
-	}
-	<?php echo $advanced_options['custom_css']; ?>
-</style>
+            img.pinit-hover {
+                opacity: <?php echo (1 - $visual_options_js['transparency_value']); ?> !important;
+                filter: alpha(opacity=<?php echo (1 - $visual_options_js['transparency_value']) * 100; ?>) !important;
+            }
+        </style>
+
 		<?php
 		echo ob_get_clean();
 	}
@@ -150,16 +148,22 @@ class JPIBFI_Client {
 				}
 			}
 
-            $att = $get_description || $get_caption ? $this->get_attachment( $id, $src ): null;
-            if ( $att != null ) {
-                $new_img .= $get_description ? sprintf( ' data-jpibfi-description="%s"', esc_attr( $att->post_content ) ): '';
-                $new_img .= $get_caption ? sprintf( ' data-jpibfi-caption="%s"', esc_attr( $att->post_excerpt ) ): '';
-            }
+			if ( $get_description || $get_caption ) {
+				$att = $this->get_attachment( $id, $src );
+				if ( $att != null ) {
+					if ( $get_description ) {
+						$new_img .= sprintf( ' data-jpibfi-description="%s"', esc_attr( $att->post_content ) );
+					}
+
+					if ( $get_caption ) {
+						$new_img .= sprintf( ' data-jpibfi-caption="%s"', esc_attr( $att->post_excerpt ) );
+					}
+				}
+			}
 
 			$new_img .= sprintf( ' data-jpibfi-post-excerpt="%s"', esc_attr( wp_kses( $post->post_excerpt, array() ) ) );
 			$new_img .= sprintf( ' data-jpibfi-post-url="%s"', esc_attr( get_permalink() ) );
 			$new_img .= sprintf( ' data-jpibfi-post-title="%s"', esc_attr( get_the_title() ) );
-			$new_img .= sprintf( ' data-jpibfi-src="%s"', esc_attr( $src ) );
 			$new_img .= ' >';
 			$content = str_replace( $img[0], $new_img, $content );
 		}
@@ -171,10 +175,7 @@ class JPIBFI_Client {
                 (function () {
                     if (!jQuery) return;
                     jQuery(document).ready(function () {
-						var $inputs = jQuery('.jpibfi');
-						var $closest = $inputs.closest('div, article');
-						$closest = $closest.length ? $closest : $inputs.parent();
-						$closest.addClass('jpibfi_container');
+                        jQuery('.jpibfi').closest('div').addClass('jpibfi_container');
                     });
                 })();
             </script>
@@ -184,7 +185,6 @@ class JPIBFI_Client {
 
 		return '<input class="jpibfi" type="hidden">' . $content . $jscript;
 	}
-
 
 	//function gets the id of the image by searching for class with wp-image- prefix, otherwise returns empty string
 	function get_post_id_from_image_classes( $class_attribute ) {
@@ -200,19 +200,15 @@ class JPIBFI_Client {
 		return '';
 	}
 
-	/**
-	 * @param $id
-	 * @param $src
-	 *
-	 * @return array|null|WP_Post
-	 */
 	function get_attachment( $id, $src ) {
 		$result = is_numeric( $id ) ? get_post( $id ) : null;
-		if ( $result )
-		    return $result;
 
-        $id = $this->get_attachment_id_by_url( $src );
-        return  $id !== 0 ? get_post( $id ) : null;
+		if ( null === $result ) {
+			$id     = $this->get_attachment_id_by_url( $src );
+			$result = $id !== 0 ? get_post( $id ) : null;
+		}
+
+		return $result;
 	}
 
 	/**
@@ -259,14 +255,13 @@ class JPIBFI_Client {
 		if ( is_feed() ) {
 			return false;
 		}
-		$existing_post_types = get_post_types();
 		$add_jpibfi               = false;
 		$jpibfi_selection_options = $this->selection_options->get();
 		$show_on                  = $jpibfi_selection_options['show_on'];
 		$show_array               = explode( ',', $show_on );
 
 		foreach ( $show_array as $show_tag ) {
-			if ( $this->is_tag( $show_tag, $existing_post_types ) ) {
+			if ( $this->is_tag( $show_tag ) ) {
 				$add_jpibfi = true;
 				break;
 			}
@@ -279,7 +274,7 @@ class JPIBFI_Client {
 		$disable_array = explode( ',', $disable_on );
 
 		foreach ( $disable_array as $disable_tag ) {
-			if ( $this->is_tag( $disable_tag, $existing_post_types ) ) {
+			if ( $this->is_tag( $disable_tag ) ) {
 				return false;
 			}
 		}
@@ -287,24 +282,20 @@ class JPIBFI_Client {
 		return true;
 	}
 
-	function is_tag( $tag, $existing_post_types ) {
+	function is_tag( $tag ) {
 		$tag = trim( $tag );
 		if ( is_numeric( $tag ) ) {
 			$int = intval( $tag );
 
 			return get_the_ID() === $int;
 		}
-		$tag_without = str_replace(']', '', str_replace('[', '', $tag));
-		
-		if ( in_array( $tag_without, $existing_post_types ) ) {
-			return is_singular( $tag_without ) || is_post_type_archive( $tag_without );
-		}
-				
 		switch ( strtolower( $tag ) ) {
 			case '[front]':
 				return is_front_page();
 			case '[single]':
 				return is_single();
+			case '[page]':
+				return is_page();
 			case '[archive]':
 				return is_archive();
 			case '[search]':

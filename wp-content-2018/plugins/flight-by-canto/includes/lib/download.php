@@ -1,6 +1,5 @@
 <?php
-$quality = isset($_REQUEST['quality']) ? $_REQUEST['quality'] : 'preview';
-$url = 'https://'. $_REQUEST['subdomain'] .'.cantoflight.com/api_binary/v1/image/'. $_REQUEST['id'] .'/'.$quality;
+$url = 'https://'. $_REQUEST['subdomain'] .'.cantoflight.com/api_binary/v1/image/'. $_REQUEST['id'] .'/preview';
 
 $header = array( 'Authorization: Bearer '. $_REQUEST['token']);
 
@@ -8,8 +7,8 @@ $ch = curl_init();
 
 $options = array(
     CURLOPT_URL            => $url,
-    CURLOPT_REFERER        => 'Wordpress Plugin',
-    CURLOPT_USERAGENT      => 'Wordpress Plugin',
+    CURLOPT_REFERER        => 'ian',
+    CURLOPT_USERAGENT      => 'ian',
     CURLOPT_HTTPHEADER     => $header,
     CURLOPT_SSL_VERIFYHOST => 0,
     CURLOPT_SSL_VERIFYPEER => 0,

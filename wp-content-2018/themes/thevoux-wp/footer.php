@@ -1,0 +1,1 @@
+<?php get_template_part( 'footer', hp_page_type() ); ?>

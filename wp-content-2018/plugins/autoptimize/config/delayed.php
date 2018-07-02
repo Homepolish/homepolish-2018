@@ -47,7 +47,6 @@ if($encoding != 'none' && $iscompressed == false)
 $eTag=md5($contents);
 $modTime=filemtime(__FILE__.'.none');
 
-date_default_timezone_set("UTC");
 $eTagMatch = (isset($_SERVER['HTTP_IF_NONE_MATCH']) && strpos($_SERVER['HTTP_IF_NONE_MATCH'],$eTag));
 $modTimeMatch = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) === $modTime);
 
@@ -63,7 +62,7 @@ if (($modTimeMatch)||($eTagMatch)) {
 	header('Vary: Accept-Encoding');
 	header('Content-Length: '.strlen($contents));
 	header('Content-type: %%CONTENT%%; charset=utf-8');
-	header('Cache-Control: max-age='.$expireTime.', public, immutable');
+	header('Cache-Control: max-age='.$expireTime.', public, must-revalidate');
 	header('Expires: '.gmdate('D, d M Y H:i:s', time() + $expireTime).' GMT');
 	header('ETag: ' . $eTag);
 	header('Last-Modified: '.gmdate('D, d M Y H:i:s', $modTime).' GMT');

@@ -2,8 +2,8 @@
 Contributors: mrsztuczkens, redearthdesign, brocheafoin, robertark
 Tags: pinterest, pin it, button, image, images, pinit, social media, hover, click, photo, photos
 Requires at least: 3.3.0
-Tested up to: 4.9.1
-Stable tag: 2.4.3
+Tested up to: 4.6.1
+Stable tag: 2.2.5
 License: GPLv2 or later
 
 Highlights images on hover and adds a Pinterest "Pin It" button over them for easy pinning.
@@ -67,62 +67,6 @@ Please report them in the plugin's support forum on Wordpress.org.
 4. Pinterest pop-up window
 
 == Changelog ==
-
-= 2.4.3 =
-* Released 2017-05-13
-* Added additional CSS clauses to prevent rendering errors on some themes
-
-= 2.4.2 =
-* Released 2017-03-16
-* Added support for data-pin-description attribute
-* Fixed pro version nag interval
-
-= 2.4.0 =
-* Released 2017-02-26
-* Added support for custom showing and disabling the plugin on custom post types
-
-= 2.3.4 =
-* Released 2017-12-13
-* Minor bug fix related to getting image source
-
-= 2.3.3 =
-* Released 2017-07-18
-* Another Visual Tab Bug Fix
-
-= 2.3.2 =
-* Released 2017-07-12
-* Visual Tab Bug Fix
-
-= 2.3.1 =
-* Released 2017-07-09
-* Settings panel code rework
-* Fixed issue with disabling review nag
-
-= 2.3.0 =
-* Released 2017-06-03
-* Moved client script to footer
-* Added warning if settings page does not work
-
-= 2.2.10 =
-* Released 2017-04-21
-* Minor JavaScript improvements
-
-= 2.2.9 =
-* Released 2017-03-27
-* Fixed one major JS bug
-
-= 2.2.8 =
-* Released 2017-03-26
-* Fixed issue with JS error on client
-* Fixed issue with using multiple enabled classes
-
-= 2.2.7 =
-* Released 2017-03-06
-* Turned off minification of JS admin file to fix Cloudflare issues
-
-= 2.2.6 =
-* Released 2017-02-16
-* Fixed conflict with other plugins that use angular
 
 = 2.2.5 =
 * Released 2017-01-31
@@ -359,45 +303,6 @@ Please report them in the plugin's support forum on Wordpress.org.
 * Feature: IE7 image highlight fix: using a transparent png instead of background-color
 
 == Upgrade Notice ==
-
-= 2.4.3 =
-* Added additional CSS clauses to prevent rendering errors on some themes
-
-= 2.4.2 =
-* Support for data-pin-description and one more minor fix
-
-= 2.4.0 =
-* Added support for custom showing and disabling the plugin on custom post types
-
-= 2.3.4 =
-* Minor bug fix related to getting image source
-
-= 2.3.3 =
-* Another Visual Tab Bug Fix
-
-= 2.3.2 =
-* Visual Tab Bug Fix
-
-= 2.3.1 =
-* Minor code improvements, fixed bug with disabling review nag
-
-= 2.3.0 =
-* Moved client script to footer, added warning for settings page error
-
-= 2.2.10 =
-* Minor JavaScript improvements
-
-= 2.2.9 =
-* Fixed one major JS bug
-
-= 2.2.8 =
-* Two minor bug fixes
-
-= 2.2.7 =
-* Turned off minification of JS admin file to fix Cloudflare issues
-
-= 2.2.6 =
-* Fixed conflict with other plugins that use angular
 
 = 2.2.5 =
 * Fixed issue with updating the settings

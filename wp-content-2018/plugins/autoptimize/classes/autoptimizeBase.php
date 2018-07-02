@@ -30,7 +30,6 @@ abstract class autoptimizeBase {
         }
 
         $siteHost=parse_url(AUTOPTIMIZE_WP_SITE_URL,PHP_URL_HOST);
-        $contentHost=parse_url(AUTOPTIMIZE_WP_ROOT_URL,PHP_URL_HOST);
         
         // normalize
         if (strpos($url,'//')===0) {
@@ -46,10 +45,6 @@ abstract class autoptimizeBase {
                 $subdir_levels=substr_count(preg_replace("/https?:\/\//","",AUTOPTIMIZE_WP_SITE_URL),"/");
                 $url = AUTOPTIMIZE_WP_SITE_URL.str_repeat("/..",$subdir_levels).$url;
             }
-        }
-        
-        if ($siteHost !== $contentHost) {
-            $url=str_replace(AUTOPTIMIZE_WP_CONTENT_URL,AUTOPTIMIZE_WP_SITE_URL.AUTOPTIMIZE_WP_CONTENT_NAME,$url);
         }
 
         // first check; hostname wp site should be hostname of url
@@ -87,28 +82,17 @@ abstract class autoptimizeBase {
         
         // try to remove "wp root url" from url while not minding http<>https
         $tmp_ao_root = preg_replace('/https?:/','',AUTOPTIMIZE_WP_ROOT_URL);
-        if ($siteHost !== $contentHost) {
-            // as we replaced the content-domain with the site-domain, we should match against that 
-            $tmp_ao_root = preg_replace('/https?:/','',AUTOPTIMIZE_WP_SITE_URL);
-        }
         $tmp_url = preg_replace('/https?:/','',$url);
         $path = str_replace($tmp_ao_root,'',$tmp_url);
         
-        // if path starts with :// or //, this is not a URL in the WP context and we have to assume we can't aggregate
+        // final check; if path starts with :// or //, this is not a URL in the WP context and we have to assume we can't aggregate
         if (preg_match('#^:?//#',$path)) {
             /** External script/css (adsense, etc) */
             return false;
         }
 
-        // prepend with WP_ROOT_DIR to have full path to file
         $path = str_replace('//','/',WP_ROOT_DIR.$path);
-        
-        // final check: does file exist and is it readable
-        if (file_exists($path) && is_file($path) && is_readable($path)) {
-            return $path;
-        } else {
-            return false;
-        }
+        return $path;
     }
 
     // needed for WPML-filter
@@ -299,12 +283,12 @@ abstract class autoptimizeBase {
     protected function inject_minified($in) {
         if ( strpos( $in, '%%INJECTLATER%%' ) !== false ) {
             $out = preg_replace_callback(
-                '#\/\*\!%%INJECTLATER'.AUTOPTIMIZE_HASH.'%%(.*?)%%INJECTLATER%%\*\/#is',
+                '#%%INJECTLATER'.AUTOPTIMIZE_HASH.'%%(.*?)%%INJECTLATER%%#is',
                 create_function(
                     '$matches',
                     '$filepath=base64_decode(strtok($matches[1],"|"));
                     $filecontent=file_get_contents($filepath);
-                    
+
                     // remove BOM
                     $filecontent = preg_replace("#\x{EF}\x{BB}\x{BF}#","",$filecontent);
 
@@ -316,7 +300,7 @@ abstract class autoptimizeBase {
                     $filecontent=preg_replace("#^\s*\/\*[^!].*\*\/\s?#Um","",$filecontent);
                     $filecontent=preg_replace("#(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+#", "\n", $filecontent);
 
-                    // differentiate between JS, CSS and other files
+                    // specific stuff for JS-files
                     if (substr($filepath,-3,3)===".js") {
                         if ((substr($filecontent,-1,1)!==";")&&(substr($filecontent,-1,1)!=="}")) {
                             $filecontent.=";";
@@ -341,80 +325,4 @@ abstract class autoptimizeBase {
         }
         return $out;
     }
-    
-    protected function minify_single($pathIn) {
-		// determine JS or CSS and set var (also mimetype), return false if neither
-		if ( $this->str_ends_in($pathIn,".js") === true ) {
-			$codeType="js";
-			$codeMime="text/javascript";
-		} else if ( $this->str_ends_in($pathIn,".css") === true ) {
-			$codeType="css";
-			$codeMime="text/css";			
-		} else {
-			return false;
-		}
-		
-		// if min.js or min.css return false
-		if (( $this->str_ends_in($pathIn,"-min.".$codeType) === true ) || ( $this->str_ends_in($pathIn,".min.".$codeType) === true ) || ( $this->str_ends_in($pathIn,"js/jquery/jquery.js") === true ) ) {
-			return false;
-		}
-		
-		// read file, return false if empty
-		$_toMinify = file_get_contents($pathIn);
-		if ( empty($_toMinify) ) return false;
-		
-		// check cache
-		$_md5hash = "single_".md5($_toMinify);
-		$_cache = new autoptimizeCache($_md5hash,$codeType);
-		if ($_cache->check() ) {
-			$_CachedMinifiedUrl = AUTOPTIMIZE_CACHE_URL.$_cache->getname();
-		} else {
-			// if not in cache first minify
-			$_Minified = $_toMinify;
-			if ($codeType === "js") {
-				if (class_exists('JSMin') && apply_filters( 'autoptimize_js_do_minify' , true)) {
-					if (@is_callable(array("JSMin","minify"))) {
-						$tmp_code = trim(JSMin::minify($_toMinify));
-					}
-				}
-			} else if ($codeType === "css") {
-                // make sure paths to background images/ imported css/ fonts .. are OK
-                $_toMinify = autoptimizeStyles::fixurls($pathIn,$_toMinify);
-                if (class_exists('Minify_CSS_Compressor')) {
-					$tmp_code = trim(Minify_CSS_Compressor::process($_toMinify));
-                } else if(class_exists('CSSmin')) {
-                    $cssmin = new CSSmin();
-                    if (method_exists($cssmin,"run")) {
-                        $tmp_code = trim($cssmin->run($_toMinify));
-                    } elseif (@is_callable(array($cssmin,"minify"))) {
-                        $tmp_code = trim(CssMin::minify($_toMinify));
-                    }
-                }
-			}
-			if (!empty($tmp_code)) {
-				$_Minified = $tmp_code;
-				unset($tmp_code);
-			}
-			// and then cache
-			$_cache->cache($_Minified,$codeMime);
-			$_CachedMinifiedUrl = AUTOPTIMIZE_CACHE_URL.$_cache->getname();
-		}
-		unset($_cache);
-	
-		// if CDN, then CDN
-		$_CachedMinifiedUrl = $this->url_replace_cdn($_CachedMinifiedUrl);									
-
-		return $_CachedMinifiedUrl;
-	}
-	
-	protected function str_ends_in($haystack,$needle) {
-		$needleLength = strlen($needle);
-		$haystackLength = strlen($haystack);
-		$lastPos=strrpos($haystack,$needle);
-		if ($lastPos === $haystackLength - $needleLength) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 }

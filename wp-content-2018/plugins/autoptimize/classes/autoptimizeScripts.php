@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class autoptimizeScripts extends autoptimizeBase {
     private $scripts = array();
-    private $dontmove = array('document.write','html5.js','show_ads.js','google_ad','histats.com/js','statcounter.com/counter/counter.js','ws.amazon.com/widgets','media.fastclick.net','/ads/','comment-form-quicktags/quicktags.php','edToolbar','intensedebate.com','scripts.chitika.net/','_gaq.push','jotform.com/','admin-bar.min.js','GoogleAnalyticsObject','plupload.full.min.js','syntaxhighlighter','adsbygoogle','gist.github.com','_stq','nonce','post_id','data-noptimize','wordfence_logHuman');
+    private $dontmove = array('document.write','html5.js','show_ads.js','google_ad','blogcatalog.com/w','tweetmeme.com/i','mybloglog.com/','histats.com/js','ads.smowtion.com/ad.js','statcounter.com/counter/counter.js','widgets.amung.us','ws.amazon.com/widgets','media.fastclick.net','/ads/','comment-form-quicktags/quicktags.php','edToolbar','intensedebate.com','scripts.chitika.net/','_gaq.push','jotform.com/','admin-bar.min.js','GoogleAnalyticsObject','plupload.full.min.js','syntaxhighlighter','adsbygoogle','gist.github.com','_stq','nonce','post_id','data-noptimize');
     private $domove = array('gaJsHost','load_cmc','jd.gallery.transitions.js','swfobject.embedSWF(','tiny_mce.js','tinyMCEPreInit.go');
     private $domovelast = array('addthis.com','/afsonline/show_afs_search.js','disqus.js','networkedblogs.com/getnetworkwidget','infolinks.com/js/','jd.gallery.js.php','jd.gallery.transitions.js','swfobject.embedSWF(','linkwithin.com/widget.js','tiny_mce.js','tinyMCEPreInit.go');
     private $trycatch = false;
@@ -25,26 +25,26 @@ class autoptimizeScripts extends autoptimizeBase {
         if ($noptimizeJS) return false;
 
         // only optimize known good JS?
-        $whitelistJS = apply_filters( 'autoptimize_filter_js_whitelist', '', $this->content );
+        $whitelistJS = apply_filters( 'autoptimize_filter_js_whitelist', "" );
         if (!empty($whitelistJS)) {
             $this->whitelist = array_filter(array_map('trim',explode(",",$whitelistJS)));
         }
 
         // is there JS we should simply remove
-        $removableJS = apply_filters( 'autoptimize_filter_js_removables', '', $this->content );
+        $removableJS = apply_filters( 'autoptimize_filter_js_removables', '');
         if (!empty($removableJS)) {
             $this->jsremovables = array_filter(array_map('trim',explode(",",$removableJS)));
         }
 
         // only header?
-        if( apply_filters('autoptimize_filter_js_justhead', $options['justhead']) == true ) {
+        if( apply_filters('autoptimize_filter_js_justhead',$options['justhead']) == true ) {
             $content = explode('</head>',$this->content,2);
             $this->content = $content[0].'</head>';
             $this->restofcontent = $content[1];
         }
         
         // include inline?
-        if( apply_filters('autoptimize_js_include_inline', $options['include_inline']) == true ) {
+        if( apply_filters('autoptimize_js_include_inline',$options['include_inline']) == true ) {
             $this->include_inline = true;
         }
 
@@ -58,19 +58,9 @@ class autoptimizeScripts extends autoptimizeBase {
 
         // get extra exclusions settings or filter
         $excludeJS = $options['js_exclude'];
-        $excludeJS = apply_filters( 'autoptimize_filter_js_exclude', $excludeJS, $this->content );
+        $excludeJS = apply_filters( 'autoptimize_filter_js_exclude', $excludeJS );
         if ($excludeJS!=="") {
-            if (is_array($excludeJS)) {
-                if(($removeKeys = array_keys($excludeJS,"remove")) !== false) {
-                    foreach ($removeKeys as $removeKey) {
-                        unset($excludeJS[$removeKey]);
-                        $this->jsremovables[]=$removeKey;
-                    }
-                }
-                $exclJSArr = array_keys($excludeJS);
-            } else {
-                $exclJSArr = array_filter(array_map('trim',explode(",",$excludeJS)));
-            }
+            $exclJSArr = array_filter(array_map('trim',explode(",",$excludeJS)));
             $this->dontmove = array_merge($exclJSArr,$this->dontmove);
         }
 
@@ -98,71 +88,53 @@ class autoptimizeScripts extends autoptimizeBase {
         // comments
         $this->content = $this->hide_comments($this->content);
 
-        // Get script files
-        if (preg_match_all('#<script.*</script>#Usmi',$this->content,$matches)) {
+        //Get script files
+        if(preg_match_all('#<script.*</script>#Usmi',$this->content,$matches)) {
             foreach($matches[0] as $tag) {
-                // only consider script aggregation for types whitelisted in should_aggregate-function
+                // only consider aggregation whitelisted in should_aggregate-function
                 if( !$this->should_aggregate($tag) ) {
                     $tag='';
                     continue;
                 }
-
-                if (preg_match('#<script[^>]*src=("|\')([^>]*)("|\')#Usmi',$tag,$source)) {
-                    // non-inline script
+                if(preg_match('#<script[^>]*src=("|\')([^>]*)("|\')#Usmi',$tag,$source)) {
                     if ($this->isremovable($tag,$this->jsremovables)) {
                         $this->content = str_replace($tag,'',$this->content);
                         continue;
                     }
-                    $explUrl = explode('?',$source[2],2);
-                    $url = $explUrl[0];
+                    
+                    // External script
+                    $url = current(explode('?',$source[2],2));
                     $path = $this->getpath($url);
-                    if($path !== false && preg_match('#\.js$#',$path) && $this->ismergeable($tag)) {
-                        // ok to optimize, add to array
-                        $this->scripts[] = $path;
-                    } else {
-                        $origTag = $tag;
-                        $newTag = $tag;
-                        
-                        // non-mergeable script (excluded or dynamic or external)
-                        if (is_array($excludeJS)) {
-                            // should we add flags?
-                            foreach ($excludeJS as $exclTag => $exclFlags) {
-                                if ( strpos($origTag,$exclTag)!==false && in_array($exclFlags,array("async","defer")) ) {
-                                   $newTag = str_replace('<script ','<script '.$exclFlags.' ',$newTag);
+                    if($path !== false && preg_match('#\.js$#',$path)) {
+                        //Inline
+                        if($this->ismergeable($tag)) {
+                            //We can merge it
+                            $this->scripts[] = $path;
+                        } else {
+                            //No merge, but maybe we can move it
+                            if($this->ismovable($tag)) {
+                                //Yeah, move it
+                                if($this->movetolast($tag)) {
+                                    $this->move['last'][] = $tag;
+                                } else {
+                                    $this->move['first'][] = $tag;
                                 }
+                            } else {
+                                //We shouldn't touch this
+                                $tag = '';
                             }
                         }
-                        
-   						// should we minify the non-aggregated script?
-						if ($path && apply_filters('autoptimize_filter_js_minify_excluded',false)) {
-							$_CachedMinifiedUrl = $this->minify_single($path);
-
-							// replace orig URL with minified URL from cache if so
-							if (!empty($_CachedMinifiedUrl)) {
-								$newTag = str_replace($url, $_CachedMinifiedUrl, $newTag);
-							}
-							
-							// remove querystring from URL in newTag
-							if ( !empty($explUrl[1]) ) {
-								$newTag = str_replace("?".$explUrl[1],"",$newTag);
-							}
-						}
-
-						// should we move the non-aggregated script?
-                        if( $this->ismovable($newTag) ) {
-                            // can be moved, flags and all
-                            if( $this->movetolast($newTag) )    {
-                                $this->move['last'][] = $newTag;
+                    } else {
+                        //External script (example: google analytics)
+                        //OR Script is dynamic (.php etc)
+                        if($this->ismovable($tag)) {
+                            if($this->movetolast($tag))    {
+                                $this->move['last'][] = $tag;
                             } else {
-                                $this->move['first'][] = $newTag;
+                                $this->move['first'][] = $tag;
                             }
                         } else {
-                            // cannot be moved, so if flag was added re-inject altered tag immediately
-                            if ( $origTag !== $newTag ) {
-                                $this->content = str_replace($origTag,$newTag,$this->content);
-                                $origTag = '';
-                            }
-                            // and forget about the $tag (not to be touched any more)
+                            //We shouldn't touch this
                             $tag = '';
                         }
                     }
@@ -182,9 +154,8 @@ class autoptimizeScripts extends autoptimizeBase {
                         $this->scripts[] = 'INLINE;'.$code;
                     } else {
                         // Can we move this?
-                        $autoptimize_js_moveable = apply_filters( 'autoptimize_js_moveable', '', $tag );
-                        if( $this->ismovable($tag) || $autoptimize_js_moveable !== '' ) {
-                            if( $this->movetolast($tag) || $autoptimize_js_moveable === 'last' ) {
+                        if($this->ismovable($tag)) {
+                            if($this->movetolast($tag))    {
                                 $this->move['last'][] = $tag;
                             } else {
                                 $this->move['first'][] = $tag;
@@ -220,7 +191,7 @@ class autoptimizeScripts extends autoptimizeBase {
                 if($this->trycatch) {
                     $script = 'try{'.$script.'}catch(e){}';
                 }
-                $tmpscript = apply_filters( 'autoptimize_js_individual_script', $script, '' );
+                $tmpscript = apply_filters( 'autoptimize_js_individual_script', $script, "" );
                 if ( has_filter('autoptimize_js_individual_script') && !empty($tmpscript) ) {
                     $script=$tmpscript;
                     $this->alreadyminified=true;
@@ -230,10 +201,8 @@ class autoptimizeScripts extends autoptimizeBase {
                 //External script
                 if($script !== false && file_exists($script) && is_readable($script)) {
                     $scriptsrc = file_get_contents($script);
-                    $scripthash = md5($scriptsrc);
                     $scriptsrc = preg_replace('/\x{EF}\x{BB}\x{BF}/','',$scriptsrc);
                     $scriptsrc = rtrim($scriptsrc,";\n\t\r").';';
-
                     //Add try-catch?
                     if($this->trycatch) {
                         $scriptsrc = 'try{'.$scriptsrc.'}catch(e){}';
@@ -242,8 +211,8 @@ class autoptimizeScripts extends autoptimizeBase {
                     if ( has_filter('autoptimize_js_individual_script') && !empty($tmpscriptsrc) ) {
                         $scriptsrc=$tmpscriptsrc;
                         $this->alreadyminified=true;
-                    } else if ($this->can_inject_late($script)) {
-                        $scriptsrc="/*!%%INJECTLATER".AUTOPTIMIZE_HASH."%%".base64_encode($script)."|".$scripthash."%%INJECTLATER%%*/";
+                    } else if ((( strpos($script,"min.js") !== false ) || ( strpos($script,"wp-includes/js/jquery/jquery.js") !== false )) && ( $this->inject_min_late === true )) {
+                        $scriptsrc="%%INJECTLATER".AUTOPTIMIZE_HASH."%%".base64_encode($script)."|".md5($scriptsrc)."%%INJECTLATER%%";
                     }
                     $this->jscode .= "\n".$scriptsrc;
                 }/*else{
@@ -279,10 +248,9 @@ class autoptimizeScripts extends autoptimizeBase {
             }
           } else {
               $this->jscode = $this->inject_minified($this->jscode);
-              return false;
+            return false;
           }
         }
-        $this->jscode = apply_filters( 'autoptimize_js_after_minify', $this->jscode );
         return true;
     }
     
@@ -343,9 +311,7 @@ class autoptimizeScripts extends autoptimizeBase {
     
     // Checks against the white- and blacklists
     private function ismergeable($tag) {
-		if (apply_filters('autoptimize_filter_js_dontaggregate',false)) {
-			return false;
-        } else if (!empty($this->whitelist)) {
+        if (!empty($this->whitelist)) {
             foreach ($this->whitelist as $match) {
                 if(strpos($tag,$match)!==false) {
                     return true;
@@ -440,30 +406,6 @@ class autoptimizeScripts extends autoptimizeBase {
             return true;
         } else {
             return false;
-        }
-    }
-
-    /**
-     * Determines wheter a <script> $tag can be excluded from minification (as already minified) based on:
-     * - inject_min_late being active
-     * - filename ending in `min.js`
-     * - filename matching `js/jquery/jquery.js` (wordpress core jquery, is minified)
-     * - filename matching one passed in the consider minified filter
-     * 
-     * @param string $jsPath
-     * @return bool
-	 */
-	private function can_inject_late($jsPath) {
-		$consider_minified_array = apply_filters('autoptimize_filter_js_consider_minified',false);
-        if ( $this->inject_min_late !== true ) {
-            // late-inject turned off
-            return false;
-        } else if ( (strpos($jsPath,"min.js") === false) && ( strpos($jsPath,"wp-includes/js/jquery/jquery.js") === false ) && ( str_replace($consider_minified_array, '', $jsPath) === $jsPath ) ) {
-			// file not minified based on filename & filter
-			return false;
-        } else {
-            // phew, all is safe, we can late-inject
-            return true;
         }
     }
 }
