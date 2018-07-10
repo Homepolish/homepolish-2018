@@ -23,8 +23,21 @@
         </a>
 
         <div class="hp-header__auth">
-        <a class="auth__link" href="/app/login">Log In</a>
+
+            <!-- out -->
+            
+            <span style="visibility: hidden;" class="login-link logged-in" data-logged-out="true">
+                <a class="auth__link tertiary auth-link" data-logout-link="true" href="/log_in">Log In</a>
+            </span>
+
+            <!-- in -->
+            
+            <span style="" class="other-link logout-link logged-out" data-logged-in="true">
+                <a class="auth__link tertiary dashboard-link" href="dashboard" data-dashboard-link="true" data-logout-link="true">My Dashboard</a> 
+                <a class="auth__link tertiary auth-link" href="/app/logout" data-logout-link="true">Log Out</a>
+            </span>
         </div>
+
         </div>
 
           <nav class="hp-header__nav">
@@ -72,10 +85,20 @@
     <a class="tertiary" href="/mag">The Magazine</a>
     </h5>
     </div>
-    <div class="other-links">
-    <h5 class="other-link login-link">
-    <a class="tertiary" href="/app/login">Log In</a>
-    </h5>
+   <div class="other-links hp-header__auth">
+
+        <!-- out -->
+        
+        <h5 class="other-link" data-logged-out="true">
+        <a class="tertiary auth-link" href="/log_in">Log In</a>
+        </h5>
+
+        <!-- in -->
+        
+        
+        <h5 class="other-link" data-logged-in="true">
+        <a href="/app/logout" class="tertiary auth-link" data-logout-link="true">Log Out</a>
+        </h5>
     </div>
     </div>
 </div>
