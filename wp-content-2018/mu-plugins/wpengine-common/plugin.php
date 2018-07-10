@@ -2017,6 +2017,11 @@ class WpeCommon extends WpePlugin_common {
             return false;
         }
 
+	// Don't run if we're on staging, since there is no cache
+	if ( is_wpe_snapshot() ) {
+	    return false;
+	}
+
         // If we've purged "enough" times, stop already.
         if ( isset($purge_counter) && $purge_counter > 2 && ! $force ) {
             return false;
