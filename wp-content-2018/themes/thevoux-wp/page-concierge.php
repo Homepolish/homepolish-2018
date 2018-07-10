@@ -8,8 +8,8 @@
 
 	$args = array( 
         //get_field( 'mobile_image' ), 
-        get_field( 'image' ), 
-        get_field( 'image' ), 
+        get_field( 'th_image' ), 
+        get_field( 'th_image' ), 
         '.svelte.landing-pages--concierge .concierge-hero .hero-image'
     );
     echo hp_image_styles( $args );
