@@ -165,17 +165,18 @@
                 echo '<p class="step__italics">' . $value['italicized_copy'] . '</p>'; 
             }
 
-            if( $value['link'] ) {
+            if( $value['offset_2x_link'] ) {
 
                 echo '<h5 class="step__link">
-                    <a class="cta-link" href="' .  $value['link']['url'] . '" target="_self">
-                    <span class="cta-link-text">' . $value['link']['title'] . '</span>
+                    <a class="cta-link" href="' .  $value['offset_2x_link']['url'] . '" target="_self">
+                    <span class="cta-link-text">' . $value['offset_2x_link']['title'] . '</span>
                     <span class="v1-icon-caret-right"></span>
                     </a>
                     </h5>';
             }
 
             echo '</div>';
+
             echo '</div>';
             echo '<hr>';
             $i++;
@@ -376,7 +377,7 @@
 <!-- press -->
 
 <?php 
-	$i = 1;
+    $i = 1;
     $press_items = get_field( 'pss_slides' );
 
     foreach( $press_items as $key => $press ) { 
