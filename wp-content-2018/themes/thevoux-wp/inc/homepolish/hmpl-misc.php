@@ -6,7 +6,7 @@ if( preg_match("/localhost/", $_SERVER['SERVER_NAME'], $matches) ) {
   define("HMPL_ENV", "prod");
 }
 
-/* Cloud Front URL Adjustments */
+/* Cloud Front URL Adjustments 
 if(HMPL_ENV == "dev") {
   define('WP_SITEURL', HMPL_LOCALHOST); // Testing URL * uncomment to show https://wp.homepolish.com when ready to go live
   define('WP_HOME', HMPL_LOCALHOST); // Testing URL * uncomment to show https://www.homepolish.com or https://www.homepolish.com when ready to test or go live
@@ -14,6 +14,7 @@ if(HMPL_ENV == "dev") {
   define('WP_SITEURL', 'https://wp.homepolish.com'); // The wp engine endpoint * must be on homepolish.com subdomain to avoid cross-domain issues
   define('WP_HOME', 'https://www.homepolish.com'); // How wordpress view the links * must also change urls in database to match
 }
+*/
 
 // /* Device Readings */
 // if($_SERVER['HTTP_CLOUDFRONT_IS_MOBILE_VIEWER'] == "true") { // [SOURCE] http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
@@ -478,6 +479,9 @@ function rewrite_rules() {
     global $wp_rewrite;
     $wp_rewrite->flush_rules();
   }
+
+  flush_rewrite_rules( 1 );
+  //add_rewrite_rule('/', 'index.php?pagename=homepage', 'top');
 
   // Make sure /mag and /magazine go to the homepage
   add_rewrite_rule('^(mag)(azine)?\/?$', 'index.php', 'top');

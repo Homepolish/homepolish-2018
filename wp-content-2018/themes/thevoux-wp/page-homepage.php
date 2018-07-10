@@ -238,7 +238,7 @@
         <?php 
             $i=1;
             $row = get_field( 'bs_styles' );
-            foreach( $row as $value ) {
+            foreach( ( array ) $row as $value ) {
 
                 $term = get_term( $value );
 
