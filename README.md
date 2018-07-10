@@ -11,7 +11,7 @@ $ cd homepolish-2018
 
 # Docroot and Database setup
 
-Download or clone the WordPress repo from https://github.com/WordPress/WordPress.git and copy all the files ~~EXCEPT for the wp-content directory~~ to the homepolish-2018 directory. We don't keep WordPress under version control; it's updated by WP Engine and we keep all of our wp-content files in the wp-content-2018 directory.
+Download or clone the WordPress repo from https://github.com/WordPress/WordPress.git and copy all the files to the homepolish-2018 directory. We don't keep WordPress under version control; it's updated by WP Engine and we keep all of our wp-content files in the wp-content-2018 directory.
 
 Open wp-config-hp.php and and enter your database username, password, etc, then save the file as wp-config.php. Do not modify wp-config-hp.php itself. Your new wp-config.php file is not under version control.
 
