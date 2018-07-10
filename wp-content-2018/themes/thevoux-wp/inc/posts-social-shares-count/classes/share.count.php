@@ -34,7 +34,7 @@ class PsscShareCount {
 	 */
 	public function pssc_twitter() { 
 		$json_string = $this->file_get_contents_curl( 'http://urls.api.twitter.com/1/urls/count.json?url=' . $this->url );
-		$json = json_decode( ( string ) $json_string, true );
+		//$json = json_decode( ( string ) $json_string, true );
 		return isset( $json['count'] ) ? intval( $json['count'] ) : 0;
 	}
 
