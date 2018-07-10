@@ -17,12 +17,19 @@
       .our-promise div:last-child {
         padding: 0 0 0 25px; } }
 
-.ctas {
-  text-align: center; }
-  @media only screen and (max-width: 768px) {
-    .ctas .formatted-copy--mobile-tablet {
-      display: inline-block;
-      width: 50%; } }
+@media only screen and (min-width: 768px) {
+  .ctas {
+    max-width: 800px;
+    margin: 0 auto !important; } }
+@media only screen and (min-width: 768px) {
+  .ctas .cta:first-child {
+    padding-right: 25px; }
+  .ctas .cta:last-child {
+    padding-left: 25px; } }
+@media only screen and (max-width: 768px) {
+  .ctas .formatted-copy--mobile-tablet {
+    display: inline-block;
+    width: 50%; } }
 
 @media only screen and (max-width: 767px) {
   .targeted-page-show .seo-text .seo-text-body {

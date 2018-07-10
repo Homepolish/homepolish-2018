@@ -47,7 +47,26 @@
 
 .ctas {
 
-	text-align: center;
+	@media only screen and (min-width: 768px) {
+
+		max-width: 800px;
+		margin: 0 auto !important;
+	}
+
+	.cta {
+
+		@media only screen and (min-width: 768px) {
+
+			&:first-child {
+
+				padding-right: 25px;
+			}
+			&:last-child {
+
+				padding-left: 25px;
+			}
+		}
+	}
 
 	.formatted-copy--mobile-tablet {
 
