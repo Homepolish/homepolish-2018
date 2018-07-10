@@ -145,7 +145,7 @@ function hp_page_meta_tags() {
 
   // Itemprop Image
 
-  echo '<meta itemprop="image" content="' . get_the_post_thumbnail_url( $post_ID ) . '">';
+  echo '<meta itemprop="image" content="' . get_the_post_thumbnail_url( $post_ID, 'full' ) . '">';
 
   // Item Props
   $row = array();
@@ -314,7 +314,9 @@ add_action('admin_head', 'hp_admin_css');
 */
 
 function deregister_qjuery() {  
+    
     if ( ! is_admin() ) {
+        
         wp_deregister_script( 'jquery' );
     }
 }  
