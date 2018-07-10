@@ -480,7 +480,7 @@ function rewrite_rules() {
     $wp_rewrite->flush_rules();
   }
 
-  flush_rewrite_rules( 1 );
+  //flush_rewrite_rules( 1 );
   //add_rewrite_rule('/', 'index.php?pagename=homepage', 'top');
 
   // Make sure /mag and /magazine go to the homepage
