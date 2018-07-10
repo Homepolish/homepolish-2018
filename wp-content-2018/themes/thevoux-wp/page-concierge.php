@@ -128,7 +128,7 @@
 						<?php $brand = $value['pb_brand_image']; ?>
 
 						<div class="logo-img-container">
-							<img alt="The logo of Homepolish partner <?php echo get_the_title( $brand->ID ); ?>" class="logo-img" src="<?php echo get_the_post_thumbnail_url( $brand->ID ); ?>">
+							<img alt="The logo of Homepolish partner <?php echo get_the_title( $brand->ID ); ?>" class="logo-img" src="<?php echo get_the_post_thumbnail_url( $brand->ID, 'full' ); ?>">
 						</div>
 
 						<?php if ( $i % 3 == 0 && $i != $count ) { ?>
