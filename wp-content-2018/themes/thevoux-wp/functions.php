@@ -315,7 +315,7 @@ add_action('admin_head', 'hp_admin_css');
 
 function deregister_qjuery() {  
     
-    if ( is_admin() ) {
+    if ( ! is_admin() && ! $GLOBALS['pagenow'] === 'wp-login.php' ) {
         
         wp_deregister_script( 'jquery' );
     }
