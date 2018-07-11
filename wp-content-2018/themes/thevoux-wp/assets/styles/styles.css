@@ -6,7 +6,9 @@
 
 @media only screen and (min-width: 768px) {
   .landing-pages--about-us .why-homepolish {
-    margin: 0; } }
+    margin: 0; }
+    .landing-pages--about-us .why-homepolish .text__wrapper {
+      width: 80%; } }
 .our-promise {
   padding: 0; }
   @media only screen and (min-width: 768px) {
