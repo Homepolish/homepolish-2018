@@ -2,14 +2,24 @@
 <div class="hiw-step pop-the-champagne">
 	<div class="hiw-step-head">
 		<h6 class="step-number">
-		<?php the_field( 'tr_title' ); ?>
+			<?php the_field( 'tr_title' ); ?>
 		</h6>
 		<h3 class="step-title">
-		<?php the_field( 'tr_subtitle' ); ?>
+			<?php the_field( 'tr_subtitle' ); ?>
 		</h3>
 		<p class="step-description">
-		<?php the_field( 'tr_copy' ); ?>
+			<?php the_field( 'tr_copy' ); ?>
 		</p>
+			<?php 
+				$link = get_field( 'tr_link' );
+				if ( $link ) { ?>
+
+				<p class="step-cta">
+				<a class="btn cta-btn" target="_blank" data-click="tags-cta" data-location="testimonial" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+			</p>
+
+				<?php }
+			?>
 	</div>
 	<div class="client-reviews">
 		<div class="client-review-content-container">
