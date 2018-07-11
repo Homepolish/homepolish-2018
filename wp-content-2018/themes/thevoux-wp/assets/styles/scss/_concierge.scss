@@ -2,12 +2,19 @@
 
 	.partners-header {
 
-		width: 75%;
+		//width: 75%;
 
 		.formatted-copy--mobile {
 
 			display: inline-block;
-			width: 50%;
+			width: 75%;
+		}
+		.formatted-copy--tablet-desktop {
+
+			display: inline-block;
+			margin: 0 auto;
+			width: 40%;
+
 		}
 	}
 

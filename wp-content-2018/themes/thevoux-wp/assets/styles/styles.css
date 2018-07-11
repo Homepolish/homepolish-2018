@@ -45,11 +45,13 @@
     .center-text .formatted-copy--desktop {
       max-width: 1080px; } }
 
-.landing-pages--concierge .partners-header {
+.landing-pages--concierge .partners-header .formatted-copy--mobile {
+  display: inline-block;
   width: 75%; }
-  .landing-pages--concierge .partners-header .formatted-copy--mobile {
-    display: inline-block;
-    width: 50%; }
+.landing-pages--concierge .partners-header .formatted-copy--tablet-desktop {
+  display: inline-block;
+  margin: 0 auto;
+  width: 40%; }
 .landing-pages--concierge .about-us .item-body {
   width: 75%;
   display: inline-block; }
