@@ -32,7 +32,7 @@ function hp_nav_is_active( $current_post ) {
 // Set canonical
 function hp_canonical_url() {
 
-  $domain   = get_bloginfo( 'wpurl' );
+  $domain   = get_bloginfo( 'url' );
   $permalink  = wp_make_link_relative( get_the_permalink() );
   return $canonical = $domain . $permalink;
 }
