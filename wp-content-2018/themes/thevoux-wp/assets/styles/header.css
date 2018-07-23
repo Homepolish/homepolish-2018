@@ -5,7 +5,7 @@
 /* end mag styles */
 
 
-
+//@media only screen and (min-width: $break-medium) {
 
 
 
@@ -164,7 +164,9 @@
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        padding: 20px 20px 0
+        /* padding: 20px 20px 0 */
+        height: 35px;
+        padding: 0 !important;
     }
 }
 

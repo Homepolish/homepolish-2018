@@ -2,6 +2,13 @@
 
 show_admin_bar( 0 );
 
+//echo '<!-- ' . get_bloginfo( 'wpurl' ) . '/?' . $_SERVER['QUERY_STRING'] . ' -->';
+function hpmag_preview_post_link() {
+  //return '<!-- ' . get_bloginfo( 'wpurl' ) . '/?' . $_SERVER['QUERY_STRING'] . ' -->';
+}
+add_filter( 'preview_post_link', 'hpmag_preview_post_link' );
+
+
 /**
 @ Visual Compser Shortcodes
 * VC elements in wp-admin are set up in inc/visual-composer-extend.php
@@ -180,10 +187,10 @@ add_action('wp_head', 'hp_page_meta_tags');
 */
 function hp_enqueue_scripts() {
 
-  wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/styles/header.css' );
+  //wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/styles/header.css' );
   //wp_enqueue_style( 'foundation', get_template_directory_uri() . '/assets/foundation/styles/foundation.css', null, null );
   //wp_enqueue_style( 'hp-foundation', get_template_directory_uri() . '/assets/foundation/styles/hp-foundation.css', null, null );
-  wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/styles/footer.css' );
+  //wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/styles/footer.css' );
 
   if ( hp_page_type() == '2018' ) {
 

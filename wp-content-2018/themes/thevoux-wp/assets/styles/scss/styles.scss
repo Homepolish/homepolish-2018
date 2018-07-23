@@ -45,11 +45,12 @@
 	box-shadow: 0 0 0 1px #ccc, 0 7px 0 1px #ccc, 0 14px 0 1px #ccc;
 }
 
-/* 
-	@media (min-width: 768px) {
-
-		a {
-			width: 75%;
-		}
+@media only screen and (min-width: 768px) {
+	.hp-header .hp-header__main {
+	    margin-top: 20px !important;
+	    padding: 1px 20px 0 !important;
+	    height: 12px;
+	    line-height: 12px;
+	    font-size: 12px;
 	}
-*/
+}

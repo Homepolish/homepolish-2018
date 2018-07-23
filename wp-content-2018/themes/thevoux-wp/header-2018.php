@@ -32,7 +32,7 @@
 
             <!-- in -->
             
-            <span style="" class="other-link logout-link logged-out" data-logged-in="true">
+            <span style="visibility: hidden;" class="other-link logout-link logged-out" data-logged-in="true">
                 <a class="auth__link tertiary dashboard-link" href="dashboard" data-dashboard-link="true" data-logout-link="true">My Dashboard</a> 
                 <a class="auth__link tertiary auth-link" href="/app/logout" data-logout-link="true">Log Out</a>
             </span>
