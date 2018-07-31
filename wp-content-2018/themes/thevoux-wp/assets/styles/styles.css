@@ -199,6 +199,9 @@
 .hp-header--transparent nav.top-bar.expanded .opaque {
   display: block; }
 
+.logout-link .auth-link {
+  visibility: hidden; }
+
 /* Hamburger */
 .top-bar .toggle-topbar.menu-icon a span::after {
   box-shadow: 0 0 0 1px #ccc, 0 7px 0 1px #ccc, 0 14px 0 1px #ccc; }

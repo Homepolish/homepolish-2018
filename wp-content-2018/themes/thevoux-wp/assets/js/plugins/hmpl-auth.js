@@ -132,7 +132,7 @@
       dashboardLinks = $('[data-dashboard-link]'),
       logoutLinks = $('[data-logout-link]');
 
-  var headerAuthSections = $('header .auth-link, #full-menu-auth');
+  var headerAuthSections = $('header .auth-link, header .dashboard-link, #full-menu-auth');
   var signupWidget = $('.widget_signup_widget');
   var mobileFooterSocialIcons = $('#mobile-social-icons');
   var menuLinks = $('#full-menu-links');
