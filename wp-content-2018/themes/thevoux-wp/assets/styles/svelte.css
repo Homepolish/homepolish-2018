@@ -10736,6 +10736,9 @@ table.dataTable, table.dataTable th, table.dataTable td {
 
 @media only screen and (min-width: 768px) {
     .book-now-cta .cta-content {
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 45px
     }
 }
@@ -12415,14 +12418,29 @@ body.lightbox-modal-open > .main-container {
         margin: 0 auto
     }
 
-    .landing-pages--about-us .why-homepolish .why-homepolish__section:nth-of-type(odd) {
+    .landing-pages--about-us .why-homepolish .why-homepolish__section-container {
+        padding: 80px 0;
+    }
+
+    .landing-pages--about-us .why-homepolish .why-homepolish__section-container:first-of-type {
+        padding-top: 0;
+        background-color: #f7f7f7;
+    }
+
+    .landing-pages--about-us .why-homepolish .why-homepolish__section-container:nth-of-type(even) {
+        background-color: #ffffff;
+    }
+
+    .landing-pages--about-us .why-homepolish .why-homepolish__section:nth-of-type(odd),
+    .landing-pages--about-us .why-homepolish .why-homepolish__section-container:nth-of-type(odd) .why-homepolish__section {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse
     }
 
-    .landing-pages--about-us .why-homepolish .why-homepolish__section:nth-of-type(even) {
+    .landing-pages--about-us .why-homepolish .why-homepolish__section:nth-of-type(even),
+    .landing-pages--about-us .why-homepolish .why-homepolish__section-container:nth-of-type(even) .why-homepolish__section  {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -13039,35 +13057,35 @@ body.lightbox-modal-open > .main-container {
     }
 }
 
-.landing-pages--homepage .about-blurb {
+.landing-pages .about-blurb {
     text-align: center
 }
 
 @media only screen and (max-width: 767px) {
-    .landing-pages--homepage .about-blurb {
+    .landing-pages .about-blurb {
         margin: 0 0 60px
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .landing-pages--homepage .about-blurb {
+    .landing-pages .about-blurb {
         margin: 0 0 100px
     }
 }
 
-.landing-pages--homepage .about-blurb .about-blurb__content {
+.landing-pages .about-blurb .about-blurb__content {
     margin: 0 auto
 }
 
 @media only screen and (max-width: 767px) {
-    .landing-pages--homepage .about-blurb .about-blurb__content {
+    .landing-pages .about-blurb .about-blurb__content {
         font-size: 1.50003rem;
         line-height: 2.00004rem
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .landing-pages--homepage .about-blurb .about-blurb__content {
+    .landing-pages .about-blurb .about-blurb__content {
         line-height: 2.71434rem
     }
 }
@@ -21662,4 +21680,139 @@ body[data-controller='designer_profiles'][data-action='show'] .lightbox-modal .c
 
 .hp-modal-component .hp-select-container.hp-select-container--invalid label {
     color: #e90000
+}
+
+.landing-pages .hiw {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+    .landing-pages .hiw {
+        padding: 80px 20px 40px
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .landing-pages .hiw {
+        margin: 0 15px;
+        padding: 160px 0 175px
+    }
+}
+
+.landing-pages .hiw .hiw__title, .landing-pages .hiw .hiw__header {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    text-align: center
+}
+
+.landing-pages .hiw .hiw__title {
+    margin-bottom: 15px;
+    letter-spacing: 0.12857rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .landing-pages .hiw .hiw__title {
+        font-family: "avenir-next-medium", Helvetica, Arial, sans-serif
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .landing-pages .hiw .hiw__header {
+        margin-bottom: 40px
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .landing-pages .hiw .hiw__header {
+        margin-bottom: 70px
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .landing-pages .hiw .hiw__section {
+        margin-bottom: 20px
+    }
+
+    .landing-pages .hiw .hiw__section:last-child {
+        margin-bottom: 0
+    }
+}
+
+.landing-pages .hiw .hiw__container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+    .landing-pages .hiw .hiw__container {
+        flex-direction: row;
+        width: 1080px;
+        margin: 0 auto;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .landing-pages .hiw .hiw__section {
+        padding: 0 15px;
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .landing-pages .hiw .section__text {
+        padding: 25px 0 40px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .landing-pages .hiw .section__text {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: left
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .landing-pages .hiw .text__wrapper {
+        padding-bottom: 30px
+    }
+}
+
+.landing-pages .hiw .text__header {
+    font-family: "avenir-next-medium", Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.12857rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .landing-pages .hiw .text__body {
+        font-size: 1rem;
+        line-height: 1.71432rem
+    }
+}
+
+.landing-pages .hiw .text__body + h5.cta__link {
+    margin-top: 15px
 }
