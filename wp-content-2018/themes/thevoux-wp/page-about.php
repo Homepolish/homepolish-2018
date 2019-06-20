@@ -120,7 +120,7 @@
 
 <!-- how it works -->
 
-<div class="hiw">
+<div class="hiw2">
     <h5 class="hiw__title">
         <?php the_field( 'hiw_title' ); ?>
     </h5>
